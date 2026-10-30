@@ -12,3 +12,4 @@ fuzz/coverage/
 packages/js/src/generated/
 packages/js/LICENSE
 packages/js/README.md
+/graft/
