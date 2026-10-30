@@ -416,24 +416,82 @@ fn night_fractions_and_night_marks() {
             "{rule:?}: {gap} vs {expected}"
         );
     }
+}
 
-    // Midnight and the last third split the night (maghrib .. next sunrise) at 1/2 and 2/3.
-    let t = compute(
-        date(2026, 10, 29),
+fn next_day(day: Date) -> Date {
+    day.days_since_unix_epoch()
+        .checked_add(1)
+        .and_then(|days| Date::from_days_since_unix_epoch(days).ok())
+        .expect("in range")
+}
+
+#[test]
+fn the_night_runs_from_maghrib_to_the_next_fajr() {
+    // Midnight is half of it and the last third begins at two thirds, each rounded to the
+    // nearest minute, a half minute up, as adhan-js's SunnahTimes does.
+    let riyadh = at(24.7136, 46.6753);
+    for day in [date(2026, 1, 1), date(2026, 6, 21), date(2026, 10, 29)] {
+        let t = compute(day, riyadh, Parameters::default()).expect("ok");
+        let next = compute(next_day(day), riyadh, Parameters::default()).expect("ok");
+        let maghrib = minutes(&t, Prayer::Maghrib);
+        let night = minutes(&next, Prayer::Fajr) - maghrib;
+        let midnight = t.midnight().expect("a night").unix_minutes();
+        let last_third = t.last_third().expect("a night").unix_minutes();
+        assert_eq!(midnight, maghrib + (night + 1) / 2, "{day} midnight");
+        assert_eq!(
+            last_third,
+            maghrib + (4 * night + 3) / 6,
+            "{day} last third"
+        );
+    }
+
+    // Hand-checked, Riyadh on 29 October 2026 (UTC+3): Maghrib 17:16, the next Fajr 04:40,
+    // a night of 684 minutes. Midnight is ⌊685 / 2⌋ = 342 minutes in, the last third
+    // ⌊2739 / 6⌋ = 456.
+    let t = compute(date(2026, 10, 29), riyadh, Parameters::default()).expect("ok");
+    let local = |minutes: i64| hhmm_utc(minutes + 180);
+    assert_eq!(local(minutes(&t, Prayer::Maghrib)), "17:16");
+    let next = compute(date(2026, 10, 30), riyadh, Parameters::default()).expect("ok");
+    assert_eq!(local(minutes(&next, Prayer::Fajr)), "04:40");
+    assert_eq!(
+        local(t.midnight().expect("a night").unix_minutes()),
+        "22:58"
+    );
+    assert_eq!(
+        local(t.last_third().expect("a night").unix_minutes()),
+        "00:52"
+    );
+}
+
+#[test]
+fn without_a_next_fajr_there_are_no_night_marks() {
+    // The last representable day: the next day is out of range.
+    let last = compute(
+        date(2100, 12, 31),
         at(24.7136, 46.6753),
         Parameters::default(),
     )
-    .expect("ok");
-    let maghrib = minutes(&t, Prayer::Maghrib);
-    let night = minutes(&t, Prayer::Sunrise) + 1440 - maghrib;
-    assert!(
-        (t.midnight().unix_minutes() - maghrib - night / 2).abs() <= 1,
-        "midnight"
-    );
-    assert!(
-        (t.last_third().unix_minutes() - maghrib - night * 2 / 3).abs() <= 1,
-        "last third"
-    );
+    .expect("the six times still compute");
+    assert_eq!((last.midnight(), last.last_third()), (None, None));
+
+    // With no high-latitude rule, Fajr disappears in summer at 52°N. On the last day it occurs,
+    // the next day has none.
+    let berlin = at(52.52, 13.405);
+    let params = Parameters {
+        high_latitude: HighLatitudeRule::None,
+        ..Method::MuslimWorldLeague.parameters()
+    };
+    let mut day = date(2026, 4, 1);
+    loop {
+        if let Ok(t) = compute(day, berlin, params)
+            && compute(next_day(day), berlin, params).is_err()
+        {
+            assert_eq!((t.midnight(), t.last_third()), (None, None), "{day}");
+            break;
+        }
+        day = next_day(day);
+        assert!(day < date(2026, 7, 1), "no edge found");
+    }
 }
 
 // ---------- the ordering guard ----------
@@ -487,17 +545,19 @@ fn coinciding_times_are_rejected() {
 }
 
 #[test]
-fn maghrib_pushed_past_midnight_is_rejected() {
-    // Midnight is measured from sunset, so a large Maghrib adjustment on a short night can
-    // overtake it even though every prayer is still in order.
+fn a_night_squeezed_out_by_adjustments_is_rejected() {
+    // Every prayer is still in order, but Maghrib pushed late and Fajr pulled early leave no
+    // night between them on a short summer night.
     let trondheim = at(63.4305, 10.3951);
     let day = date(2026, 6, 21);
     let base = Method::MuslimWorldLeague.parameters();
     let t = compute(day, trondheim, base).expect("computable");
-    let lead = (t.midnight().unix_seconds() - t.maghrib().unix_seconds()) / 60;
-    assert!(lead < 120, "night too long for the test: {lead} min");
+    let next = compute(next_day(day), trondheim, base).expect("computable");
+    let night = minutes(&next, Prayer::Fajr) - minutes(&t, Prayer::Maghrib);
+    assert!(night < 240, "night too long for the test: {night} min");
     let pushed = Parameters {
         adjustments: Adjustments {
+            fajr: MinuteAdjustment::new(-120).expect("in range"),
             maghrib: MinuteAdjustment::new(120).expect("in range"),
             isha: MinuteAdjustment::new(120).expect("in range"),
             ..base.adjustments

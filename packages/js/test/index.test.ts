@@ -55,7 +55,28 @@ describe("matches adhan-js fixtures", () => {
 				const tolerance = p === "asr" && Math.abs(c.latitude) > 50 ? 2 : 1;
 				expect(Math.abs(minutes - c.unix_minutes[p])).toBeLessThanOrEqual(tolerance);
 			}
+			// adhan-js's SunnahTimes: the night from Maghrib to the next day's Fajr.
+			expect(Math.abs(t.midnight!.getTime() / 60_000 - c.night.midnight)).toBeLessThanOrEqual(1);
+			expect(Math.abs(t.lastThird!.getTime() / 60_000 - c.night.last_third)).toBeLessThanOrEqual(1);
 		}
+	});
+});
+
+describe("the night", () => {
+	test("runs from Maghrib to the next day's Fajr", () => {
+		// Riyadh, 29 October 2026: Maghrib 17:16, the next Fajr 04:40 (UTC+3).
+		const riyadh = { latitude: latitude(24.7136), longitude: longitude(46.6753) };
+		const t = prayerTimes({ year: 2026, month: 10, day: 29 }, riyadh);
+		expect(t.midnight?.toISOString()).toBe("2026-10-29T19:58:00.000Z");
+		expect(t.lastThird?.toISOString()).toBe("2026-10-29T21:52:00.000Z");
+	});
+
+	test("is null without a next day's Fajr", () => {
+		const riyadh = { latitude: latitude(24.7136), longitude: longitude(46.6753) };
+		const t = prayerTimes({ year: 2100, month: 12, day: 31 }, riyadh);
+		expect(t.isha).toBeInstanceOf(Date);
+		expect(t.midnight).toBeNull();
+		expect(t.lastThird).toBeNull();
 	});
 });
 
@@ -64,11 +85,14 @@ describe("properties", () => {
 		fc.assert(
 			fc.property(civilDate, fc.double({ min: -55, max: 55, noNaN: true }), fc.double({ min: -180, max: 180, noNaN: true }), method, (date, lat, lng, m) => {
 				const t = prayerTimes(date, { latitude: latitude(lat), longitude: longitude(lng) }, { method: m });
-				const seq = [...PRAYERS.map((p) => t[p].getTime()), t.midnight.getTime(), t.lastThird.getTime()];
+				const seq = PRAYERS.map((p) => t[p].getTime());
 				expect(seq.every(Number.isInteger)).toBe(true);
 				for (let i = 1; i < 6; i++) expect(seq[i]!).toBeGreaterThan(seq[i - 1]!);
-				expect(t.midnight.getTime()).toBeGreaterThan(t.maghrib.getTime());
-				expect(t.lastThird.getTime()).toBeGreaterThan(t.midnight.getTime());
+				expect(t.midnight === null).toBe(t.lastThird === null);
+				if (t.midnight !== null && t.lastThird !== null) {
+					expect(t.midnight.getTime()).toBeGreaterThan(t.maghrib.getTime());
+					expect(t.lastThird.getTime()).toBeGreaterThan(t.midnight.getTime());
+				}
 			}),
 			{ numRuns: RUNS },
 		);

@@ -30,9 +30,9 @@ pub(crate) struct Config {
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 pub(crate) enum Clock {
     /// `18:45`.
-    #[default]
     TwentyFourHour,
     /// `6:45 PM`.
+    #[default]
     TwelveHour,
 }
 
@@ -78,8 +78,6 @@ pub(crate) enum ConfigError {
         /// 1-based line number.
         line: usize,
     },
-    /// A key we do not know.
-    UnknownKey(String),
     /// A key appeared twice.
     DuplicateKey(String),
     /// A value failed validation.
@@ -88,11 +86,21 @@ pub(crate) enum ConfigError {
     IncompleteLocation,
 }
 
+/// Every key this version reads.
+const KEYS: [&str; 7] = [
+    "latitude",
+    "longitude",
+    "method",
+    "asr",
+    "shafaq",
+    "clock",
+    "ramadan",
+];
+
 impl fmt::Display for ConfigError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
             Self::Malformed { line } => write!(f, "line {line}: expected `key = value`"),
-            Self::UnknownKey(key) => write!(f, "unknown setting `{key}`"),
             Self::DuplicateKey(key) => write!(f, "setting `{key}` appears twice"),
             Self::InvalidValue(key) => write!(f, "invalid value for `{key}`"),
             Self::IncompleteLocation => f.write_str("latitude and longitude must be set together"),
@@ -206,42 +214,51 @@ pub(crate) fn parse_location(line: &str) -> Result<Coordinates, String> {
 }
 
 impl Config {
-    /// Serialises to the on-disk format. Floats use Rust's shortest round-trip formatting, so
-    /// `parse(render(c)) == c` exactly.
+    /// Serialises to the on-disk format, with only the settings that differ from the default,
+    /// so a later change of default reaches everyone who never chose otherwise. Floats use
+    /// Rust's shortest round-trip formatting, so `parse(render(c)) == c` exactly.
     #[must_use]
     pub(crate) fn render(&self) -> String {
-        let location = self.location.map_or_else(String::new, |location| {
+        let default = Self::default();
+        let mut out = self.location.map_or_else(String::new, |location| {
             format!(
                 "latitude = {:?}\nlongitude = {:?}\n",
                 location.latitude.get(),
                 location.longitude.get()
             )
         });
-        let ramadan = self.ramadan.0.iter().fold(String::new(), |mut out, r| {
-            out.push_str("ramadan = ");
-            out.push_str(&r.first().to_string());
-            out.push_str("..");
-            out.push_str(&r.last().to_string());
-            out.push('\n');
-            out
-        });
-        format!(
-            "{location}method = {}\nasr = {}\nshafaq = {}\nclock = {}\n{ramadan}",
-            self.method.id(),
-            asr_id(self.asr),
+        let mut set = |key: &str, value: &str, is_default: bool| {
+            if !is_default {
+                out.push_str(key);
+                out.push_str(" = ");
+                out.push_str(value);
+                out.push('\n');
+            }
+        };
+        set("method", self.method.id(), self.method == default.method);
+        set("asr", asr_id(self.asr), self.asr == default.asr);
+        set(
+            "shafaq",
             shafaq_id(self.shafaq),
-            clock_id(self.clock)
-        )
+            self.shafaq == default.shafaq,
+        );
+        set("clock", clock_id(self.clock), self.clock == default.clock);
+        for r in &self.ramadan.0 {
+            set("ramadan", &format!("{}..{}", r.first(), r.last()), false);
+        }
+        out
     }
 
-    /// Parses the on-disk format. Blank lines and `#` comments are ignored; everything else is
-    /// strict. `ramadan` is the one key that may repeat, once per month.
+    /// Parses the on-disk format, with the keys it does not know. Blank lines and `#` comments
+    /// are ignored. An unknown key is skipped, so a file written by a newer `hya` still loads;
+    /// everything else is strict. `ramadan` is the one key that may repeat, once per month.
     ///
     /// # Errors
     ///
     /// Any [`ConfigError`].
-    pub(crate) fn parse(text: &str) -> Result<Self, ConfigError> {
+    pub(crate) fn parse(text: &str) -> Result<(Self, Vec<String>), ConfigError> {
         let mut config = Self::default();
+        let mut unknown = Vec::new();
         let (mut latitude, mut longitude) = (None, None);
         let mut seen: Vec<&str> = Vec::new();
         // Windows editors may save a byte-order mark, which `trim` keeps.
@@ -256,6 +273,10 @@ impl Config {
                 .split_once('=')
                 .map(|(k, v)| (k.trim(), v.trim()))
                 .ok_or(ConfigError::Malformed { line: line_number })?;
+            if !KEYS.contains(&key) {
+                unknown.push(key.to_owned());
+                continue;
+            }
             if key != "ramadan" && seen.contains(&key) {
                 return Err(ConfigError::DuplicateKey(key.to_owned()));
             }
@@ -275,7 +296,8 @@ impl Config {
                     }
                     config.ramadan.announce(announced);
                 }
-                other => return Err(ConfigError::UnknownKey(other.to_owned())),
+                // Every other key was skipped above.
+                _ => {}
             }
         }
         config.location = match (latitude, longitude) {
@@ -294,7 +316,7 @@ impl Config {
             (None, None) => None,
             (Some(_), None) | (None, Some(_)) => return Err(ConfigError::IncompleteLocation),
         };
-        Ok(config)
+        Ok((config, unknown))
     }
 }
 
@@ -302,25 +324,44 @@ impl Config {
 mod tests {
     use super::*;
 
+    /// The config alone, for tests of files with only known keys.
+    fn parsed(text: &str) -> Result<Config, ConfigError> {
+        Config::parse(text).map(|(config, _unknown)| config)
+    }
+
     #[test]
     fn default_round_trips() {
         let config = Config::default();
-        assert_eq!(Config::parse(&config.render()), Ok(config), "round trip");
+        assert_eq!(parsed(&config.render()), Ok(config), "round trip");
+    }
+
+    #[test]
+    fn only_choices_that_differ_from_the_default_are_saved() {
+        assert_eq!(
+            Config::default().render(),
+            "",
+            "nothing chosen, nothing saved"
+        );
+        let config = Config {
+            clock: Clock::TwentyFourHour,
+            ..Config::default()
+        };
+        assert_eq!(config.render(), "clock = 24\n");
     }
 
     #[test]
     fn files_from_before_shafaq_still_load() {
         let old =
             "latitude = 51.5\nlongitude = -0.1\nmethod = moonsighting_committee\nasr = standard\n";
-        let config = Config::parse(old).expect("valid");
+        let config = parsed(old).expect("valid");
         assert_eq!(config.shafaq, Shafaq::General, "defaults");
         assert_eq!(
-            Config::parse("shafaq = pink"),
+            parsed("shafaq = pink"),
             Err(ConfigError::InvalidValue("shafaq".into())),
             "unknown shafaq"
         );
         assert_eq!(
-            Config::parse("clock = 13"),
+            parsed("clock = 13"),
             Err(ConfigError::InvalidValue("clock".into())),
             "unknown clock"
         );
@@ -334,11 +375,7 @@ mod tests {
         config.ramadan.announce(next);
         config.ramadan.announce(late);
         assert_eq!(config.ramadan.0.as_slice(), &[late, next], "sorted");
-        assert_eq!(
-            Config::parse(&config.render()),
-            Ok(config.clone()),
-            "round trip"
-        );
+        assert_eq!(parsed(&config.render()), Ok(config.clone()), "round trip");
         let early = parse_ramadan("2026-02-17..2026-03-18").expect("valid");
         config.ramadan.announce(early);
         assert_eq!(
@@ -365,14 +402,14 @@ mod tests {
             "ramadan = 2026-2-x..2026-03-20",
         ] {
             assert_eq!(
-                Config::parse(bad),
+                parsed(bad),
                 Err(ConfigError::InvalidValue("ramadan".into())),
                 "{bad}"
             );
         }
         let twice = "ramadan = 2026-02-19..2026-03-20\nramadan = 2026-02-18..2026-03-19\n";
         assert!(
-            matches!(Config::parse(twice), Err(ConfigError::DuplicateKey(_))),
+            matches!(parsed(twice), Err(ConfigError::DuplicateKey(_))),
             "two announcements for one month"
         );
     }
@@ -402,42 +439,78 @@ mod tests {
             let c = parse_location(&format!("{lat}{sep}{lng}{end}")).expect("valid");
             proptest::prop_assert_eq!((c.latitude.get().to_bits(), c.longitude.get().to_bits()), (lat.to_bits(), lng.to_bits()));
         }
+
+        /// A newer version's settings, anywhere in the file, change nothing this one reads.
+        #[test]
+        fn unknown_keys_never_change_what_is_read(
+            keys in proptest::collection::vec("[a-z_]{1,12}", 0..4),
+            values in proptest::collection::vec("[ -~]{0,20}", 4),
+            positions in proptest::collection::vec(0_usize..5, 4),
+        ) {
+            let known = ["clock = 24", "latitude = 1", "longitude = 2", "asr = hanafi"];
+            let mut lines: Vec<String> = known.iter().map(|line| (*line).to_owned()).collect();
+            let mut added = Vec::new();
+            for ((key, value), position) in keys.iter().zip(&values).zip(&positions) {
+                if !KEYS.contains(&key.as_str()) {
+                    lines.insert((*position).min(lines.len()), format!("{key} = {value}"));
+                    added.push(key.clone());
+                }
+            }
+            let (config, mut unknown) = Config::parse(&lines.join("\n")).expect("loads");
+            proptest::prop_assert_eq!(Ok(config), parsed(&known.join("\n")));
+            unknown.sort();
+            added.sort();
+            proptest::prop_assert_eq!(unknown, added);
+        }
+
+        /// Any text loads or is refused; none makes the parser panic.
+        #[test]
+        fn parsing_is_total(text in "(\\PC|\n|=|#){0,200}") {
+            drop(Config::parse(&text));
+        }
+    }
+
+    #[test]
+    fn unknown_keys_are_skipped_and_named() {
+        let (config, unknown) =
+            Config::parse("colour = red\nclock = 24\ncolour = blue\nnotify = yes").expect("loads");
+        assert_eq!(
+            config.clock,
+            Clock::TwentyFourHour,
+            "known keys still apply"
+        );
+        assert_eq!(unknown, ["colour", "colour", "notify"]);
     }
 
     #[test]
     fn rejects_bad_input() {
         assert_eq!(
-            Config::parse("nonsense"),
+            parsed("nonsense"),
             Err(ConfigError::Malformed { line: 1 }),
             "malformed"
         );
         assert_eq!(
-            Config::parse("colour = red"),
-            Err(ConfigError::UnknownKey("colour".into())),
-            "unknown"
-        );
-        assert_eq!(
-            Config::parse("asr = hanafi\nasr = standard"),
+            parsed("asr = hanafi\nasr = standard"),
             Err(ConfigError::DuplicateKey("asr".into())),
             "duplicate"
         );
         assert_eq!(
-            Config::parse("latitude = 1"),
+            parsed("latitude = 1"),
             Err(ConfigError::IncompleteLocation),
             "half location"
         );
         assert_eq!(
-            Config::parse("latitude = 91\nlongitude = 0"),
+            parsed("latitude = 91\nlongitude = 0"),
             Err(ConfigError::InvalidValue("latitude".into())),
             "latitude out of range"
         );
         assert_eq!(
-            Config::parse("latitude = 1\nlongitude = 181"),
+            parsed("latitude = 1\nlongitude = 181"),
             Err(ConfigError::InvalidValue("longitude".into())),
             "longitude out of range"
         );
         assert_eq!(
-            Config::parse("\u{feff}latitude = 1\nlongitude = 2").map(|c| c.location.is_some()),
+            parsed("\u{feff}latitude = 1\nlongitude = 2").map(|c| c.location.is_some()),
             Ok(true),
             "byte-order mark"
         );
@@ -508,7 +581,7 @@ mod state_machine {
                 method: Method::UmmAlQura,
                 asr: AsrShadow::Standard,
                 shafaq: Shafaq::General,
-                clock: Clock::TwentyFourHour,
+                clock: Clock::TwelveHour,
                 ramadan: Vec::new(),
             })
             .boxed()
@@ -557,7 +630,10 @@ mod state_machine {
     struct ConfigFile;
 
     fn load(text: &str) -> Config {
-        Config::parse(text).unwrap_or_else(|e| panic!("stored config must parse: {e}\n---\n{text}"))
+        match Config::parse(text) {
+            Ok((config, unknown)) if unknown.is_empty() => config,
+            other => panic!("stored config must parse cleanly: {other:?}\n---\n{text}"),
+        }
     }
 
     impl StateMachineTest for ConfigFile {

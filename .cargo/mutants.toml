@@ -13,9 +13,10 @@ exclude_re = [
     # `length > limit` vs `>=`: when they are equal both arms return the same length; only
     # the high-latitude note could differ, and only on exact float equality (measure zero).
     'compute\.rs:\d+:\d+: replace > with >= in twilight_length',
-    # `maghrib < midnight` and `midnight < last_third` vs `<=`: equality needs a zero-length
-    # night, which polar-day detection rejects first.
-    'compute\.rs:\d+:\d+: replace < with <= in night_marks_are_ordered',
+    # `maghrib < midnight` and `last_third < next_fajr` vs `<=`: either equality needs a night
+    # of at most one minute, where midnight and the last third round to the same minute and
+    # `midnight < last_third` rejects it anyway (`a_night_too_short_to_split_is_out_of_order`).
+    'compute\.rs:\d+:(24|74): replace < with <= in night_marks',
     # Angle-based Maghrib only if `angle < isha`: `<=` differs only when the angle time equals
     # Isha exactly in floating point, two independent solutions (measure zero).
     'compute\.rs:\d+:\d+: replace < with <= in maghrib_or_sunset',

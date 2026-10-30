@@ -119,13 +119,14 @@ fuzz_target!(|data: &[u8]| {
             assert!(previous < Some(at), "out of order at {prayer:?}");
             previous = Some(at);
         }
-        assert!(
-            times.maghrib() < times.midnight(),
-            "midnight before maghrib"
+        assert_eq!(
+            times.midnight().is_some(),
+            times.last_third().is_some(),
+            "one night mark without the other"
         );
-        assert!(
-            times.midnight() < times.last_third(),
-            "last third before midnight"
-        );
+        if let (Some(midnight), Some(last_third)) = (times.midnight(), times.last_third()) {
+            assert!(times.maghrib() < midnight, "midnight before maghrib");
+            assert!(midnight < last_third, "last third before midnight");
+        }
     }
 });

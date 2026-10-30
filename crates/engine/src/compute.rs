@@ -119,8 +119,9 @@ pub struct Notes {
 
 /// A day's schedule.
 ///
-/// Invariant (enforced by [`compute`]): `fajr < sunrise < dhuhr < asr < maghrib < isha` and
-/// `maghrib < midnight < last_third`. Fields are private so the invariant cannot be broken.
+/// Invariant (enforced by [`compute`]): `fajr < sunrise < dhuhr < asr < maghrib < isha`, and,
+/// when the night marks exist, `maghrib < midnight < last_third` before the next day's Fajr.
+/// Fields are private so the invariant cannot be broken.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct PrayerTimes {
     fajr: Instant,
@@ -129,8 +130,8 @@ pub struct PrayerTimes {
     asr: Instant,
     maghrib: Instant,
     isha: Instant,
-    midnight: Instant,
-    last_third: Instant,
+    midnight: Option<Instant>,
+    last_third: Option<Instant>,
     notes: Notes,
 }
 
@@ -171,15 +172,18 @@ impl PrayerTimes {
         self.isha
     }
 
-    /// Halfway between sunset and the next sunrise.
+    /// Midnight (منتصف الليل): halfway through the night, which runs from Maghrib to the next
+    /// day's Fajr. `None` when the next day has no Fajr: the edge of polar day, a high-latitude
+    /// rule of [`HighLatitudeRule::None`], or past 2100.
     #[must_use]
-    pub const fn midnight(&self) -> Instant {
+    pub const fn midnight(&self) -> Option<Instant> {
         self.midnight
     }
 
-    /// Start of the last third of the night.
+    /// The last third of the night (الثلث الأخير) begins two thirds of the way from Maghrib to
+    /// the next day's Fajr. `None` exactly when [`PrayerTimes::midnight`] is.
     #[must_use]
-    pub const fn last_third(&self) -> Instant {
+    pub const fn last_third(&self) -> Option<Instant> {
         self.last_third
     }
 
@@ -341,12 +345,35 @@ fn to_instant(
         .ok_or(ComputeError::Unrepresentable)
 }
 
-/// Midnight and the last third fall strictly after Maghrib. Midnight is measured from sunset,
-/// so a large Maghrib adjustment on a short night can overtake it. Kept separate from the
-/// prayer ordering so mutation testing can name it: the `<` → `<=` mutants are equivalent,
-/// since a tie needs a zero-length night, which polar-day detection rejects first.
-fn night_marks_are_ordered(times: &PrayerTimes) -> bool {
-    times.maghrib < times.midnight && times.midnight < times.last_third
+/// Midnight and the start of the last third, from Maghrib and the next day's Fajr. As
+/// adhan-js's `SunnahTimes` does, each is rounded to the nearest minute, a half minute up:
+/// half of `n` minutes is `⌊(n + 1) / 2⌋`, and two thirds is `⌊(4n + 3) / 6⌋`.
+///
+/// # Errors
+///
+/// [`ComputeError::OutOfOrder`] unless `maghrib < midnight < last_third < next_fajr`, which
+/// adjustments can break on a night of a few minutes.
+fn night_marks(maghrib: Instant, next_fajr: Instant) -> Result<(Instant, Instant), ComputeError> {
+    let start = maghrib.unix_minutes();
+    let night = next_fajr.unix_minutes().saturating_sub(start);
+    // `night · numerator / denominator`, rounded half up: ⌊(2 · night · numerator + denominator)
+    // / (2 · denominator)⌋.
+    let mark = |numerator: i64, denominator: i64| {
+        night
+            .checked_mul(numerator.saturating_mul(2))
+            .and_then(|scaled| scaled.checked_add(denominator))
+            .and_then(|scaled| scaled.checked_div_euclid(denominator.saturating_mul(2)))
+            .and_then(|offset| start.checked_add(offset))
+            .map(Instant::from_unix_minutes)
+    };
+    match (mark(1, 2), mark(2, 3)) {
+        (Some(midnight), Some(last_third))
+            if maghrib < midnight && midnight < last_third && last_third < next_fajr =>
+        {
+            Ok((midnight, last_third))
+        }
+        _ => Err(ComputeError::OutOfOrder),
+    }
 }
 
 /// Maghrib, and whether the method's angle had to give way to sunset. As adhan-js does, an
@@ -360,7 +387,8 @@ fn maghrib_or_sunset(rule: MaghribRule, angle: Option<f64>, sunset: f64, isha: f
     }
 }
 
-/// Computes the prayer times for `date` at `coordinates`.
+/// Computes the prayer times for `date` at `coordinates`, and the night marks from that
+/// Maghrib to the next day's Fajr.
 ///
 /// `date` is the local *solar* day at the longitude: the day whose solar noon is the result's
 /// Dhuhr. That is the civil date almost everywhere. Where a time zone runs far ahead of the
@@ -378,6 +406,27 @@ fn maghrib_or_sunset(rule: MaghribRule, angle: Option<f64>, sunset: f64, isha: f
 /// - [`ComputeError::OutOfOrder`] if adjustments push times out of daily order.
 /// - [`ComputeError::Unrepresentable`] if a result is absurdly far from `date`.
 pub fn compute(
+    date: Date,
+    coordinates: Coordinates,
+    parameters: Parameters,
+) -> Result<PrayerTimes, ComputeError> {
+    let mut times = day(date, coordinates, parameters)?;
+    let next_fajr = date
+        .days_since_unix_epoch()
+        .checked_add(1)
+        .and_then(|days| Date::from_days_since_unix_epoch(days).ok())
+        .and_then(|next| day(next, coordinates, parameters).ok())
+        .map(|next| next.fajr);
+    if let Some(next_fajr) = next_fajr {
+        let (midnight, last_third) = night_marks(times.maghrib, next_fajr)?;
+        times.midnight = Some(midnight);
+        times.last_third = Some(last_third);
+    }
+    Ok(times)
+}
+
+/// One day's six times, without the night marks, which need the next day's Fajr.
+fn day(
     date: Date,
     coordinates: Coordinates,
     parameters: Parameters,
@@ -451,7 +500,6 @@ pub fn compute(
     notes.maghrib_at_sunset = maghrib_at_sunset;
 
     let adjust = parameters.adjustments;
-    let none = MinuteAdjustment::default();
     let at = |hours: f64, adjustment| {
         to_instant(date, hours, longitude, parameters.rounding, adjustment)
     };
@@ -462,8 +510,8 @@ pub fn compute(
         asr: at(asr, adjust.asr)?,
         maghrib: at(maghrib, adjust.maghrib)?,
         isha: at(isha, adjust.isha)?,
-        midnight: at(sunset + night / 2.0_f64, none)?,
-        last_third: at(sunset + night * 2.0_f64 / 3.0_f64, none)?,
+        midnight: None,
+        last_third: None,
         notes,
     };
 
@@ -471,11 +519,45 @@ pub fn compute(
         && times.sunrise < times.dhuhr
         && times.dhuhr < times.asr
         && times.asr < times.maghrib
-        && times.maghrib < times.isha
-        && night_marks_are_ordered(&times);
+        && times.maghrib < times.isha;
     if ordered {
         Ok(times)
     } else {
         Err(ComputeError::OutOfOrder)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn marks(night: i64) -> Result<(i64, i64), ComputeError> {
+        let maghrib = Instant::from_unix_minutes(1_000);
+        let next_fajr = Instant::from_unix_minutes(1_000_i64.saturating_add(night));
+        night_marks(maghrib, next_fajr).map(|(midnight, last_third)| {
+            (
+                midnight.unix_minutes().saturating_sub(1_000),
+                last_third.unix_minutes().saturating_sub(1_000),
+            )
+        })
+    }
+
+    #[test]
+    fn night_marks_round_to_the_nearest_minute_a_half_up() {
+        // Half of an odd night ends on a half minute, which rounds up.
+        assert_eq!(marks(600), Ok((300, 400)));
+        assert_eq!(marks(601), Ok((301, 401)));
+        // Two thirds of 3k + 1 is 2k + ⅔, up; of 3k + 2 is 2k + 1⅓, down.
+        assert_eq!(marks(602), Ok((301, 401)));
+        assert_eq!(marks(603), Ok((302, 402)));
+    }
+
+    #[test]
+    fn a_night_too_short_to_split_is_out_of_order() {
+        // Four minutes is the shortest night with room for both marks strictly inside it.
+        assert_eq!(marks(4), Ok((2, 3)));
+        for night in [3, 2, 1, 0, -1, -600] {
+            assert_eq!(marks(night), Err(ComputeError::OutOfOrder), "{night}");
+        }
     }
 }

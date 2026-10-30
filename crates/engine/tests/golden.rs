@@ -1,8 +1,9 @@
 //! Golden tests: agreement with adhan-js, an independent implementation using different
-//! (higher-precision) astronomical algorithms, across 22 cities × 24 dates × their methods.
+//! (higher-precision) astronomical algorithms, across 22 cities × 24 dates × their methods,
+//! for the six times and for midnight and the last third of the night.
 //! Regenerate with `bun scripts/generate-adhan-js.ts`.
 
-use hya_engine::{Coordinates, Date, HighLatitudeRule, Method, Prayer, Shafaq, compute};
+use hya_engine::{Coordinates, Date, HighLatitudeRule, Instant, Method, Prayer, Shafaq, compute};
 use serde::Deserialize;
 
 #[derive(Deserialize)]
@@ -20,6 +21,14 @@ struct Case {
     shafaq: Option<String>,
     date: (i16, u8, u8),
     unix_minutes: Times,
+    night: Night,
+}
+
+/// adhan-js's `SunnahTimes`: the night from Maghrib to the next day's Fajr.
+#[derive(Deserialize)]
+struct Night {
+    midnight: i64,
+    last_third: i64,
 }
 
 #[derive(Deserialize)]
@@ -58,6 +67,7 @@ fn agrees_with_adhan_js_within_one_minute() {
 
     let mut failures = Vec::new();
     let mut exact = 0_usize;
+    let mut night_exact = 0_usize;
     for case in &fixture.cases {
         let coordinates = Coordinates::new(case.latitude, case.longitude).expect("valid coords");
         let (year, month, day) = case.date;
@@ -101,6 +111,24 @@ fn agrees_with_adhan_js_within_one_minute() {
                 ));
             }
         }
+
+        for (name, ours, theirs) in [
+            ("midnight", times.midnight(), case.night.midnight),
+            ("last third", times.last_third(), case.night.last_third),
+        ] {
+            let ours = ours.map(Instant::unix_minutes);
+            match ours {
+                Some(ours) if ours.abs_diff(theirs) <= TOLERANCE_MINUTES => {
+                    if ours == theirs {
+                        night_exact = night_exact.saturating_add(1);
+                    }
+                }
+                _ => failures.push(format!(
+                    "{} {date} {name}: ours {ours:?}, adhan {theirs}",
+                    case.city
+                )),
+            }
+        }
     }
     assert!(
         failures.is_empty(),
@@ -112,5 +140,9 @@ fn agrees_with_adhan_js_within_one_minute() {
     assert!(
         exact * 10 >= fixture.cases.len() * 6 * 7,
         "only {exact} exact matches"
+    );
+    assert!(
+        night_exact * 10 >= fixture.cases.len() * 2 * 7,
+        "only {night_exact} exact night marks"
     );
 }

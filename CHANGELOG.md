@@ -4,6 +4,29 @@ All notable changes are listed here, newest first. The format follows [Keep a Ch
 
 ## [Unreleased]
 
+### Added
+
+- `hya --next` prints one line, such as `Asr 2:51 PM in 1h 23m`, for status bars.
+- `hya` lists Midnight and the Last third of the night in gray, in time order among the prayers.
+- `hya --reset` deletes the saved defaults, even a file this version cannot read.
+
+### Changed
+
+- **Breaking:** the night runs from Maghrib to the next day's Fajr, as adhan-js's `SunnahTimes` and common practice have it, not from sunset to the next sunrise. Midnight and the last third move earlier by up to an hour or so, and now agree with adhan-js within a minute in every golden case.
+- **Breaking:** `PrayerTimes::midnight` and `last_third` return `Option<Instant>`, and `midnight` and `lastThird` in JavaScript are `Date | null`. They are absent when the next day has no Fajr: at a polar edge, with no high-latitude rule, or on 31 December 2100.
+- In a terminal, `hya` leads with the next prayer and the time left, draws a bar for how much of the current window has passed, and dims past times. It no longer prints the date, method, and place. A pipe gets plain lines.
+- `hya` prints a 12-hour clock by default. `--clock 24` switches, and `--save` keeps it.
+- Notes name methods as people know them (Umm al-Qura, not umm_al_qura).
+- `--save` writes only the settings that differ from the default, so a later change of default reaches everyone who never chose otherwise.
+- `hya --help` groups the flags by what they change, in aligned columns with their defaults.
+- An unknown setting in the config file, perhaps from a newer version, is skipped with a note instead of stopping `hya`. An unreadable value still stops it, and the error suggests `hya --reset`.
+
+### Fixed
+
+- A run that fails, such as on an unknown `--tz`, no longer saves its flags.
+- The location prompt asks again after an answer it cannot read, instead of exiting.
+- `--lat nan` and `--lng inf` are rejected by name, like any other bad flag value.
+
 ## [0.1.1] - 2026-10-30
 
 ### Changed

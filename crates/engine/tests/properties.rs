@@ -124,6 +124,14 @@ fn day_offset(date: Date, times: &PrayerTimes, prayer: Prayer) -> i64 {
         .saturating_sub(i64::from(date.days_since_unix_epoch()).saturating_mul(1440))
 }
 
+/// `num/den` of the way from `from` to `to`, rounded to the nearest minute, a half up:
+/// ⌊(2·night·num + den) / (2·den)⌋, independent of how the engine computes it.
+fn fraction_of_night(from: i64, to: i64, num: i64, den: i64) -> Option<i64> {
+    let night = to.checked_sub(from)?;
+    let twice = night.checked_mul(num)?.checked_mul(2)?.checked_add(den)?;
+    from.checked_add(twice.checked_div(den.checked_mul(2)?)?)
+}
+
 proptest! {
     // 2000 cases by default; `PROPTEST_CASES=1000000` (`bun run deep:properties`) overrides it.
     #![proptest_config(ProptestConfig { cases: cases(), ..ProptestConfig::default() })]
@@ -184,8 +192,21 @@ proptest! {
                 for pair in order.windows(2) {
                     prop_assert!(t.get(pair[0]) < t.get(pair[1]), "{} !< {}", pair[0], pair[1]);
                 }
-                prop_assert!(t.maghrib() < t.midnight());
-                prop_assert!(t.midnight() < t.last_third());
+                // The night marks exist exactly when the next day has a Fajr, and split the
+                // night from Maghrib to it at a half and two thirds.
+                let next = date
+                    .days_since_unix_epoch()
+                    .checked_add(1)
+                    .and_then(|days| Date::from_days_since_unix_epoch(days).ok())
+                    .and_then(|next| compute(next, coords, params).ok());
+                prop_assert_eq!(t.midnight().is_some(), next.is_some());
+                prop_assert_eq!(t.last_third().is_some(), next.is_some());
+                if let (Some(midnight), Some(last_third), Some(next)) = (t.midnight(), t.last_third(), next) {
+                    prop_assert!(t.maghrib() < midnight && midnight < last_third && last_third < next.fajr());
+                    let (from, to) = (t.maghrib().unix_minutes(), next.fajr().unix_minutes());
+                    prop_assert_eq!(Some(midnight.unix_minutes()), fraction_of_night(from, to, 1, 2));
+                    prop_assert_eq!(Some(last_third.unix_minutes()), fraction_of_night(from, to, 2, 3));
+                }
                 // Every time lies within the requested day ± one day.
                 for prayer in Prayer::ALL {
                     prop_assert!((-1440..=2880).contains(&day_offset(date, &t, prayer)), "{prayer}");

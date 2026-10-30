@@ -1,4 +1,4 @@
-// Generates fixtures/adhan-js.json: golden prayer times from adhan-js, an independent implementation
+// Generates fixtures/adhan-js.json: golden prayer times and night marks (SunnahTimes) from adhan-js, an independent implementation
 // (Jean Meeus' higher-precision algorithms) that the Rust core must agree with to ±1 minute.
 // Run: bun scripts/generate-adhan-js.ts
 import { writeFileSync } from "node:fs";
@@ -80,7 +80,10 @@ for (const [city, latitude, longitude, method, shafaq] of CITIES) {
       if (method === "umm_al_qura" && isRamadan(2026, month, day)) {
         times.isha += 30;
       }
-      cases.push({ city, latitude, longitude, method, ...(shafaq && { shafaq }), date: [2026, month, day], unix_minutes: times });
+      // The night runs from Maghrib to the next day's Fajr; SunnahTimes computes that day itself.
+      const sunnah = new adhan.SunnahTimes(t);
+      const night = { midnight: minutes(sunnah.middleOfTheNight), last_third: minutes(sunnah.lastThirdOfTheNight) };
+      cases.push({ city, latitude, longitude, method, ...(shafaq && { shafaq }), date: [2026, month, day], unix_minutes: times, night });
     }
   }
 }

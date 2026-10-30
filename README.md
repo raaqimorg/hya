@@ -67,23 +67,40 @@ With no saved place, `hya` asks for one and saves it. After that, `hya` alone pr
 
 ```console
 $ hya --lat 24.7136 --lng 46.6753 --tz Asia/Riyadh
-2026-10-29  umm_al_qura  (Asia/Riyadh)
-  fajr     04:40
-  sunrise  05:58
-  dhuhr    11:38
-  asr      14:51
-  maghrib  17:16
-  isha     18:46
+
+  Asr in 1h 23m
+  ━━━━━━━━━━━──────────
+
+    Last third 12:52 AM
+    Fajr        4:40 AM
+    Sunrise     5:58 AM
+    Dhuhr      11:38 AM
+  ▸ Asr         2:51 PM
+    Maghrib     5:16 PM
+    Isha        6:46 PM
+    Midnight   10:58 PM
+```
+
+The next prayer comes first, with the time left and a bar for how much of the current window has passed. Past times are dim. After Isha, the next prayer is tomorrow's Fajr. Midnight and the last third divide the night from Maghrib to the next Fajr. They are listed in gray where they fall on the day: the last third of the night before, then midnight of the night ahead. For a status bar, `--next` prints one line:
+
+```console
+$ hya --next
+Asr 2:51 PM in 1h 23m
 ```
 
 | Flag             | Effect                                                        |
 | ---------------- | ------------------------------------------------------------- |
 | `--method <id>`  | Use a [method](#methods) by its ID                            |
 | `--country <cc>` | Use the method of that country's own authority, e.g. `JO`     |
-| `--clock 12`     | Print `6:46 PM` instead of `18:46`                            |
+| `--clock 24`     | Print `18:46` instead of `6:46 PM`                            |
+| `--date <date>`  | Show another day, e.g. `2027-02-15`                           |
+| `--next`         | Print only the next prayer and the time left                  |
 | `--save`         | Keep this run's flags as defaults (otherwise they apply once) |
+| `--reset`        | Forget every saved default                                    |
 
-Times go to stdout and notes to stderr, so `hya | …` receives only the times.
+Times go to stdout and notes to stderr, so `hya | …` receives only the times. Colour is off in a pipe and when `NO_COLOR` is set.
+
+Defaults live in `~/.config/hya/config` (`$XDG_CONFIG_HOME/hya/config` if set, `%APPDATA%\hya\config` on Windows), as `key = value` lines. Only choices that differ from the default are saved, so a new default reaches everyone who never chose otherwise. A setting this version does not know, perhaps from a newer one, is skipped with a note. A value it cannot read is an error that suggests `hya --reset`.
 
 ### JavaScript
 
@@ -155,7 +172,7 @@ Each time then needs its altitude:
 
 $$h_\text{Asr} = \operatorname{arccot}\big(k + \tan\lvert\varphi - \delta\rvert\big)$$
 
-- **Night marks:** the night runs from sunset to the next sunrise. Midnight is halfway through it, and the last third begins two thirds of the way through.
+- **Night marks:** the night runs from Maghrib to the next day's Fajr. Midnight is halfway through it, and the last third begins two thirds of the way through, each rounded to the nearest minute. Both are absent (`None` in Rust, `null` in JavaScript) when the next day has no Fajr.
 
 ## How Hya does it
 

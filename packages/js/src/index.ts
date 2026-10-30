@@ -115,8 +115,10 @@ export interface PrayerTimes {
 	readonly asr: Date;
 	readonly maghrib: Date;
 	readonly isha: Date;
-	readonly midnight: Date;
-	readonly lastThird: Date;
+	/** Halfway from Maghrib to the next day's Fajr. `null` when the next day has no Fajr. */
+	readonly midnight: Date | null;
+	/** Two thirds of the way from Maghrib to the next day's Fajr. `null` exactly when `midnight` is. */
+	readonly lastThird: Date | null;
 	readonly notes: {
 		readonly fajrHighLatitude: boolean;
 		readonly ishaHighLatitude: boolean;
@@ -214,6 +216,7 @@ function solarDay(date: CivilDate, location: Location, options: Options): Prayer
 		rethrow(error);
 	}
 	const at = (i: number): Date => new Date(raw[i] ?? Number.NaN);
+	const mark = (i: number): Date | null => (Number.isNaN(raw[i] ?? Number.NaN) ? null : at(i));
 	return {
 		fajr: at(0),
 		sunrise: at(1),
@@ -221,8 +224,8 @@ function solarDay(date: CivilDate, location: Location, options: Options): Prayer
 		asr: at(3),
 		maghrib: at(4),
 		isha: at(5),
-		midnight: at(6),
-		lastThird: at(7),
+		midnight: mark(6),
+		lastThird: mark(7),
 		notes: { fajrHighLatitude: raw[8] === 1, ishaHighLatitude: raw[9] === 1, ramadanIsha: raw[10] === 1, maghribAtSunset: raw[11] === 1 },
 	};
 }

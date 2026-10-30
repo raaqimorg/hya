@@ -11,7 +11,7 @@ use hya_engine::{
 use wasm_bindgen::prelude::wasm_bindgen;
 
 /// Layout of the array returned by [`compute`]: six prayer times, then midnight and last third
-/// (Unix milliseconds), then four 0/1 flags.
+/// (Unix milliseconds; `NaN` when the next day has no Fajr), then four 0/1 flags.
 pub const LAYOUT: [&str; 12] = [
     "fajr",
     "sunrise",
@@ -141,8 +141,12 @@ pub fn compute(
     for prayer in Prayer::ALL {
         out.push(millis(times.get(prayer)).ok_or_else(overflow)?);
     }
-    out.push(millis(times.midnight()).ok_or_else(overflow)?);
-    out.push(millis(times.last_third()).ok_or_else(overflow)?);
+    for mark in [times.midnight(), times.last_third()] {
+        out.push(match mark {
+            Some(instant) => millis(instant).ok_or_else(overflow)?,
+            None => f64::NAN,
+        });
+    }
     let notes = times.notes();
     out.extend([
         flag(notes.fajr_high_latitude),
