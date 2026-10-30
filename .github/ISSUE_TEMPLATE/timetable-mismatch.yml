@@ -1,0 +1,59 @@
+name: Timetable mismatch
+description: A time differs from what the authority for that place publishes
+labels: ["🕰️ timetable"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Only the authority's own publication can change a method: a ministry, a religious council, or its official calculator. A mosque's calendar or another app is useful context, but it is not enough on its own.
+  - type: input
+    id: place
+    attributes:
+      label: Place
+      description: City and country, and the coordinates that you used.
+      placeholder: "Amman, Jordan (31.9539, 35.9106)"
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Date
+      placeholder: "2026-11-02"
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: What you ran
+      description: The CLI command or the JS call, with the method and every option that you set.
+      render: shell
+      placeholder: "hya --lat 31.9539 --lng 35.9106 --tz Asia/Amman --date 2026-11-02 --method jordan"
+    validations:
+      required: true
+  - type: textarea
+    id: times
+    attributes:
+      label: Hya's times and the authority's times
+      value: |
+        | Prayer  | Hya | Authority |
+        | ------- | --- | --------- |
+        | Fajr    |     |           |
+        | Sunrise |     |           |
+        | Dhuhr   |     |           |
+        | Asr     |     |           |
+        | Maghrib |     |           |
+        | Isha    |     |           |
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Authority's timetable
+      description: A link to the authority's own page, file, or calculator.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: For example, whether the difference holds on other days, or only in one season.

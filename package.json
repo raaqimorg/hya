@@ -1,0 +1,42 @@
+{
+  "name": "hya",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare": "git config core.hooksPath .githooks 2>/dev/null || true",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "types": "tsc && turbo run types",
+    "ci": "bun run rust:fmt && bun run rust:lint && bun run rust:test && bun run rust:no-std && bun run ramadan:check && bun run build && bun run types && bun run test",
+    "rust:fmt": "cargo fmt --all --check",
+    "rust:lint": "cargo clippy --workspace --all-targets --locked -- -D warnings",
+    "rust:test": "cargo test --workspace --locked",
+    "rust:no-std": "cargo build -p hya-engine -p hya-countries --locked --target wasm32-unknown-unknown",
+    "deep": "bun run deep:properties && bun run deep:mutants && bun run deep:kani && bun run deep:fuzz",
+    "deep:properties": "PROPTEST_CASES=1000000 cargo test --release --locked -p hya-engine --test properties",
+    "deep:mutants": "cargo mutants",
+    "deep:kani": "cargo kani -p hya-engine && cargo kani -p hya-countries",
+    "deep:fuzz": "cd fuzz && cargo +nightly fuzz run compute -- -max_total_time=${FUZZ_SECONDS:-600}",
+    "deep:coverage": "cargo llvm-cov --workspace --html",
+    "fixtures": "bun scripts/generate-adhan-js.ts && bun scripts/generate-asr-reference.ts",
+    "fixtures:official": "bun scripts/fetch-official.ts",
+    "ramadan:generate": "bun scripts/generate-ramadan-table.ts",
+    "ramadan:check": "bun scripts/generate-ramadan-table.ts --check",
+    "release:check": "bun scripts/release-notes.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.4",
+    "adhan": "4.4.4",
+    "fast-check": "^4.3.0",
+    "turbo": "^2.11.10",
+    "typescript": "6.0.3"
+  },
+  "packageManager": "bun@1.4.3",
+  "engines": {
+    "bun": ">=1.4"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}

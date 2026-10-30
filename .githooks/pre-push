@@ -1,0 +1,17 @@
+#!/bin/sh
+# Every pushed commit must carry only hya.allowedEmail, then clippy must pass.
+set -eu
+allowed=$(git config --get hya.allowedEmail || true)
+zero=0000000000000000000000000000000000000000
+while read -r _local sha _remote remote_sha; do
+	[ "$sha" = "$zero" ] && continue
+	[ -n "$allowed" ] || continue
+	if [ "$remote_sha" = "$zero" ]; then range="$sha"; else range="$remote_sha..$sha"; fi
+	bad=$(git log --format='%ae%n%ce' "$range" | sort -u | grep -vxF "$allowed" || true)
+	if [ -n "$bad" ]; then
+		echo "pre-push: commits use addresses other than hya.allowedEmail <$allowed>:" >&2
+		echo "$bad" >&2
+		exit 1
+	fi
+done
+cargo clippy --workspace --all-targets --locked --quiet -- -D warnings

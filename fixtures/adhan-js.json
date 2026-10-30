@@ -1,0 +1,10086 @@
+{
+ "source": "adhan@4.4.4",
+ "year": 2026,
+ "cases": [
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29453894,
+    "sunrise": 29453978,
+    "dhuhr": 29454297,
+    "asr": 29454476,
+    "maghrib": 29454616,
+    "isha": 29454706
+   }
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29474057,
+    "sunrise": 29474140,
+    "dhuhr": 29474463,
+    "asr": 29474646,
+    "maghrib": 29474786,
+    "isha": 29474876
+   }
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29498535,
+    "sunrise": 29498616,
+    "dhuhr": 29498947,
+    "asr": 29499136,
+    "maghrib": 29499278,
+    "isha": 29499368
+   }
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29518688,
+    "sunrise": 29518767,
+    "dhuhr": 29519107,
+    "asr": 29519303,
+    "maghrib": 29519448,
+    "isha": 29519538
+   }
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29538838,
+    "sunrise": 29538916,
+    "dhuhr": 29539266,
+    "asr": 29539467,
+    "maghrib": 29539616,
+    "isha": 29539736
+   }
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29558985,
+    "sunrise": 29559063,
+    "dhuhr": 29559422,
+    "asr": 29559628,
+    "maghrib": 29559782,
+    "isha": 29559902
+   }
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29583446,
+    "sunrise": 29583525,
+    "dhuhr": 29583897,
+    "asr": 29584106,
+    "maghrib": 29584269,
+    "isha": 29584359
+   }
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29603591,
+    "sunrise": 29603672,
+    "dhuhr": 29604053,
+    "asr": 29604263,
+    "maghrib": 29604436,
+    "isha": 29604526
+   }
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29626614,
+    "sunrise": 29626698,
+    "dhuhr": 29627090,
+    "asr": 29627298,
+    "maghrib": 29627483,
+    "isha": 29627573
+   }
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29646763,
+    "sunrise": 29646850,
+    "dhuhr": 29647250,
+    "asr": 29647455,
+    "maghrib": 29647650,
+    "isha": 29647740
+   }
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29671234,
+    "sunrise": 29671324,
+    "dhuhr": 29671731,
+    "asr": 29671934,
+    "maghrib": 29672138,
+    "isha": 29672228
+   }
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29691392,
+    "sunrise": 29691484,
+    "dhuhr": 29691894,
+    "asr": 29692095,
+    "maghrib": 29692304,
+    "isha": 29692394
+   }
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29714436,
+    "sunrise": 29714528,
+    "dhuhr": 29714937,
+    "asr": 29715139,
+    "maghrib": 29715347,
+    "isha": 29715437
+   }
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29734604,
+    "sunrise": 29734693,
+    "dhuhr": 29735099,
+    "asr": 29735302,
+    "maghrib": 29735505,
+    "isha": 29735595
+   }
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29759095,
+    "sunrise": 29759181,
+    "dhuhr": 29759580,
+    "asr": 29759785,
+    "maghrib": 29759978,
+    "isha": 29760068
+   }
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29779264,
+    "sunrise": 29779348,
+    "dhuhr": 29779738,
+    "asr": 29779945,
+    "maghrib": 29780128,
+    "isha": 29780218
+   }
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29803754,
+    "sunrise": 29803834,
+    "dhuhr": 29804213,
+    "asr": 29804422,
+    "maghrib": 29804592,
+    "isha": 29804682
+   }
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29823921,
+    "sunrise": 29823999,
+    "dhuhr": 29824369,
+    "asr": 29824576,
+    "maghrib": 29824737,
+    "isha": 29824827
+   }
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29846967,
+    "sunrise": 29847045,
+    "dhuhr": 29847403,
+    "asr": 29847606,
+    "maghrib": 29847760,
+    "isha": 29847850
+   }
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29867133,
+    "sunrise": 29867211,
+    "dhuhr": 29867559,
+    "asr": 29867758,
+    "maghrib": 29867907,
+    "isha": 29867997
+   }
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29891621,
+    "sunrise": 29891700,
+    "dhuhr": 29892037,
+    "asr": 29892229,
+    "maghrib": 29892373,
+    "isha": 29892463
+   }
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29911788,
+    "sunrise": 29911869,
+    "dhuhr": 29912198,
+    "asr": 29912384,
+    "maghrib": 29912526,
+    "isha": 29912616
+   }
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29934838,
+    "sunrise": 29934921,
+    "dhuhr": 29935242,
+    "asr": 29935423,
+    "maghrib": 29935564,
+    "isha": 29935654
+   }
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29955006,
+    "sunrise": 29955090,
+    "dhuhr": 29955408,
+    "asr": 29955587,
+    "maghrib": 29955727,
+    "isha": 29955817
+   }
+  },
+  {
+   "city": "makkah",
+   "latitude": 21.4225,
+   "longitude": 39.8262,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29453917,
+    "sunrise": 29453999,
+    "dhuhr": 29454324,
+    "asr": 29454509,
+    "maghrib": 29454650,
+    "isha": 29454740
+   }
+  },
+  {
+   "city": "makkah",
+   "latitude": 21.4225,
+   "longitude": 39.8262,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29474081,
+    "sunrise": 29474161,
+    "dhuhr": 29474490,
+    "asr": 29474678,
+    "maghrib": 29474819,
+    "isha": 29474909
+   }
+  },
+  {
+   "city": "makkah",
+   "latitude": 21.4225,
+   "longitude": 39.8262,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29498560,
+    "sunrise": 29498638,
+    "dhuhr": 29498974,
+    "asr": 29499167,
+    "maghrib": 29499311,
+    "isha": 29499401
+   }
+  },
+  {
+   "city": "makkah",
+   "latitude": 21.4225,
+   "longitude": 39.8262,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29518714,
+    "sunrise": 29518791,
+    "dhuhr": 29519135,
+    "asr": 29519333,
+    "maghrib": 29519478,
+    "isha": 29519568
+   }
+  },
+  {
+   "city": "makkah",
+   "latitude": 21.4225,
+   "longitude": 39.8262,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29538865,
+    "sunrise": 29538941,
+    "dhuhr": 29539293,
+    "asr": 29539495,
+    "maghrib": 29539645,
+    "isha": 29539765
+   }
+  },
+  {
+   "city": "makkah",
+   "latitude": 21.4225,
+   "longitude": 39.8262,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29559014,
+    "sunrise": 29559090,
+    "dhuhr": 29559450,
+    "asr": 29559654,
+    "maghrib": 29559810,
+    "isha": 29559930
+   }
+  },
+  {
+   "city": "makkah",
+   "latitude": 21.4225,
+   "longitude": 39.8262,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29583477,
+    "sunrise": 29583554,
+    "dhuhr": 29583925,
+    "asr": 29584130,
+    "maghrib": 29584296,
+    "isha": 29584386
+   }
+  },
+  {
+   "city": "makkah",
+   "latitude": 21.4225,
+   "longitude": 39.8262,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29603623,
+    "sunrise": 29603702,
+    "dhuhr": 29604081,
+    "asr": 29604285,
+    "maghrib": 29604460,
+    "isha": 29604550
+   }
+  },
+  {
+   "city": "makkah",
+   "latitude": 21.4225,
+   "longitude": 39.8262,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29626649,
+    "sunrise": 29626730,
+    "dhuhr": 29627118,
+    "asr": 29627319,
+    "maghrib": 29627506,
+    "isha": 29627596
+   }
+  },
+  {
+   "city": "makkah",
+   "latitude": 21.4225,
+   "longitude": 39.8262,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29646799,
+    "sunrise": 29646882,
+    "dhuhr": 29647277,
+    "asr": 29647475,
+    "maghrib": 29647672,
+    "isha": 29647762
+   }
+  },
+  {
+   "city": "makkah",
+   "latitude": 21.4225,
+   "longitude": 39.8262,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29671271,
+    "sunrise": 29671358,
+    "dhuhr": 29671759,
+    "asr": 29671955,
+    "maghrib": 29672159,
+    "isha": 29672249
+   }
+  },
+  {
+   "city": "makkah",
+   "latitude": 21.4225,
+   "longitude": 39.8262,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29691430,
+    "sunrise": 29691518,
+    "dhuhr": 29691921,
+    "asr": 29692121,
+    "maghrib": 29692324,
+    "isha": 29692414
+   }
+  },
+  {
+   "city": "makkah",
+   "latitude": 21.4225,
+   "longitude": 39.8262,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29714474,
+    "sunrise": 29714562,
+    "dhuhr": 29714965,
+    "asr": 29715164,
+    "maghrib": 29715367,
+    "isha": 29715457
+   }
+  },
+  {
+   "city": "makkah",
+   "latitude": 21.4225,
+   "longitude": 39.8262,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29734641,
+    "sunrise": 29734727,
+    "dhuhr": 29735127,
+    "asr": 29735321,
+    "maghrib": 29735526,
+    "isha": 29735616
+   }
+  },
+  {
+   "city": "makkah",
+   "latitude": 21.4225,
+   "longitude": 39.8262,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29759131,
+    "sunrise": 29759214,
+    "dhuhr": 29759607,
+    "asr": 29759805,
+    "maghrib": 29760000,
+    "isha": 29760090
+   }
+  },
+  {
+   "city": "makkah",
+   "latitude": 21.4225,
+   "longitude": 39.8262,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29779298,
+    "sunrise": 29779379,
+    "dhuhr": 29779765,
+    "asr": 29779967,
+    "maghrib": 29780151,
+    "isha": 29780241
+   }
+  },
+  {
+   "city": "makkah",
+   "latitude": 21.4225,
+   "longitude": 39.8262,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29803786,
+    "sunrise": 29803864,
+    "dhuhr": 29804241,
+    "asr": 29804445,
+    "maghrib": 29804617,
+    "isha": 29804707
+   }
+  },
+  {
+   "city": "makkah",
+   "latitude": 21.4225,
+   "longitude": 39.8262,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29823951,
+    "sunrise": 29824028,
+    "dhuhr": 29824396,
+    "asr": 29824601,
+    "maghrib": 29824764,
+    "isha": 29824854
+   }
+  },
+  {
+   "city": "makkah",
+   "latitude": 21.4225,
+   "longitude": 39.8262,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29846996,
+    "sunrise": 29847072,
+    "dhuhr": 29847430,
+    "asr": 29847633,
+    "maghrib": 29847789,
+    "isha": 29847879
+   }
+  },
+  {
+   "city": "makkah",
+   "latitude": 21.4225,
+   "longitude": 39.8262,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29867160,
+    "sunrise": 29867236,
+    "dhuhr": 29867586,
+    "asr": 29867787,
+    "maghrib": 29867936,
+    "isha": 29868026
+   }
+  },
+  {
+   "city": "makkah",
+   "latitude": 21.4225,
+   "longitude": 39.8262,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29891646,
+    "sunrise": 29891724,
+    "dhuhr": 29892064,
+    "asr": 29892259,
+    "maghrib": 29892405,
+    "isha": 29892495
+   }
+  },
+  {
+   "city": "makkah",
+   "latitude": 21.4225,
+   "longitude": 39.8262,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29911812,
+    "sunrise": 29911892,
+    "dhuhr": 29912225,
+    "asr": 29912416,
+    "maghrib": 29912559,
+    "isha": 29912649
+   }
+  },
+  {
+   "city": "makkah",
+   "latitude": 21.4225,
+   "longitude": 39.8262,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29934861,
+    "sunrise": 29934942,
+    "dhuhr": 29935270,
+    "asr": 29935456,
+    "maghrib": 29935597,
+    "isha": 29935687
+   }
+  },
+  {
+   "city": "makkah",
+   "latitude": 21.4225,
+   "longitude": 39.8262,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29955029,
+    "sunrise": 29955111,
+    "dhuhr": 29955436,
+    "asr": 29955620,
+    "maghrib": 29955761,
+    "isha": 29955851
+   }
+  },
+  {
+   "city": "jeddah",
+   "latitude": 21.5433,
+   "longitude": 39.1728,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29453920,
+    "sunrise": 29454001,
+    "dhuhr": 29454327,
+    "asr": 29454512,
+    "maghrib": 29454652,
+    "isha": 29454742
+   }
+  },
+  {
+   "city": "jeddah",
+   "latitude": 21.5433,
+   "longitude": 39.1728,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29474083,
+    "sunrise": 29474164,
+    "dhuhr": 29474493,
+    "asr": 29474680,
+    "maghrib": 29474822,
+    "isha": 29474912
+   }
+  },
+  {
+   "city": "jeddah",
+   "latitude": 21.5433,
+   "longitude": 39.1728,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29498562,
+    "sunrise": 29498641,
+    "dhuhr": 29498977,
+    "asr": 29499170,
+    "maghrib": 29499313,
+    "isha": 29499403
+   }
+  },
+  {
+   "city": "jeddah",
+   "latitude": 21.5433,
+   "longitude": 39.1728,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29518717,
+    "sunrise": 29518794,
+    "dhuhr": 29519137,
+    "asr": 29519335,
+    "maghrib": 29519481,
+    "isha": 29519571
+   }
+  },
+  {
+   "city": "jeddah",
+   "latitude": 21.5433,
+   "longitude": 39.1728,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29538868,
+    "sunrise": 29538944,
+    "dhuhr": 29539296,
+    "asr": 29539497,
+    "maghrib": 29539647,
+    "isha": 29539767
+   }
+  },
+  {
+   "city": "jeddah",
+   "latitude": 21.5433,
+   "longitude": 39.1728,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29559016,
+    "sunrise": 29559092,
+    "dhuhr": 29559452,
+    "asr": 29559657,
+    "maghrib": 29559813,
+    "isha": 29559933
+   }
+  },
+  {
+   "city": "jeddah",
+   "latitude": 21.5433,
+   "longitude": 39.1728,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29583480,
+    "sunrise": 29583557,
+    "dhuhr": 29583927,
+    "asr": 29584133,
+    "maghrib": 29584298,
+    "isha": 29584388
+   }
+  },
+  {
+   "city": "jeddah",
+   "latitude": 21.5433,
+   "longitude": 39.1728,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29603626,
+    "sunrise": 29603704,
+    "dhuhr": 29604083,
+    "asr": 29604288,
+    "maghrib": 29604463,
+    "isha": 29604553
+   }
+  },
+  {
+   "city": "jeddah",
+   "latitude": 21.5433,
+   "longitude": 39.1728,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29626651,
+    "sunrise": 29626732,
+    "dhuhr": 29627120,
+    "asr": 29627322,
+    "maghrib": 29627509,
+    "isha": 29627599
+   }
+  },
+  {
+   "city": "jeddah",
+   "latitude": 21.5433,
+   "longitude": 39.1728,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29646801,
+    "sunrise": 29646885,
+    "dhuhr": 29647280,
+    "asr": 29647478,
+    "maghrib": 29647675,
+    "isha": 29647765
+   }
+  },
+  {
+   "city": "jeddah",
+   "latitude": 21.5433,
+   "longitude": 39.1728,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29671274,
+    "sunrise": 29671360,
+    "dhuhr": 29671761,
+    "asr": 29671957,
+    "maghrib": 29672162,
+    "isha": 29672252
+   }
+  },
+  {
+   "city": "jeddah",
+   "latitude": 21.5433,
+   "longitude": 39.1728,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29691433,
+    "sunrise": 29691521,
+    "dhuhr": 29691924,
+    "asr": 29692123,
+    "maghrib": 29692327,
+    "isha": 29692417
+   }
+  },
+  {
+   "city": "jeddah",
+   "latitude": 21.5433,
+   "longitude": 39.1728,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29714477,
+    "sunrise": 29714564,
+    "dhuhr": 29714967,
+    "asr": 29715166,
+    "maghrib": 29715370,
+    "isha": 29715460
+   }
+  },
+  {
+   "city": "jeddah",
+   "latitude": 21.5433,
+   "longitude": 39.1728,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29734643,
+    "sunrise": 29734730,
+    "dhuhr": 29735129,
+    "asr": 29735324,
+    "maghrib": 29735529,
+    "isha": 29735619
+   }
+  },
+  {
+   "city": "jeddah",
+   "latitude": 21.5433,
+   "longitude": 39.1728,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29759133,
+    "sunrise": 29759216,
+    "dhuhr": 29759610,
+    "asr": 29759808,
+    "maghrib": 29760003,
+    "isha": 29760093
+   }
+  },
+  {
+   "city": "jeddah",
+   "latitude": 21.5433,
+   "longitude": 39.1728,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29779301,
+    "sunrise": 29779381,
+    "dhuhr": 29779768,
+    "asr": 29779970,
+    "maghrib": 29780154,
+    "isha": 29780244
+   }
+  },
+  {
+   "city": "jeddah",
+   "latitude": 21.5433,
+   "longitude": 39.1728,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29803789,
+    "sunrise": 29803867,
+    "dhuhr": 29804243,
+    "asr": 29804448,
+    "maghrib": 29804620,
+    "isha": 29804710
+   }
+  },
+  {
+   "city": "jeddah",
+   "latitude": 21.5433,
+   "longitude": 39.1728,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29823954,
+    "sunrise": 29824030,
+    "dhuhr": 29824399,
+    "asr": 29824603,
+    "maghrib": 29824767,
+    "isha": 29824857
+   }
+  },
+  {
+   "city": "jeddah",
+   "latitude": 21.5433,
+   "longitude": 39.1728,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29846998,
+    "sunrise": 29847074,
+    "dhuhr": 29847433,
+    "asr": 29847636,
+    "maghrib": 29847791,
+    "isha": 29847881
+   }
+  },
+  {
+   "city": "jeddah",
+   "latitude": 21.5433,
+   "longitude": 39.1728,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29867163,
+    "sunrise": 29867239,
+    "dhuhr": 29867589,
+    "asr": 29867789,
+    "maghrib": 29867939,
+    "isha": 29868029
+   }
+  },
+  {
+   "city": "jeddah",
+   "latitude": 21.5433,
+   "longitude": 39.1728,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29891649,
+    "sunrise": 29891726,
+    "dhuhr": 29892067,
+    "asr": 29892262,
+    "maghrib": 29892407,
+    "isha": 29892497
+   }
+  },
+  {
+   "city": "jeddah",
+   "latitude": 21.5433,
+   "longitude": 39.1728,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29911815,
+    "sunrise": 29911894,
+    "dhuhr": 29912228,
+    "asr": 29912418,
+    "maghrib": 29912561,
+    "isha": 29912651
+   }
+  },
+  {
+   "city": "jeddah",
+   "latitude": 21.5433,
+   "longitude": 39.1728,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29934864,
+    "sunrise": 29934945,
+    "dhuhr": 29935272,
+    "asr": 29935458,
+    "maghrib": 29935600,
+    "isha": 29935690
+   }
+  },
+  {
+   "city": "jeddah",
+   "latitude": 21.5433,
+   "longitude": 39.1728,
+   "method": "umm_al_qura",
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29955032,
+    "sunrise": 29955113,
+    "dhuhr": 29955438,
+    "asr": 29955622,
+    "maghrib": 29955763,
+    "isha": 29955853
+   }
+  },
+  {
+   "city": "cairo",
+   "latitude": 30.0444,
+   "longitude": 31.2357,
+   "method": "egyptian",
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29453959,
+    "sunrise": 29454051,
+    "dhuhr": 29454360,
+    "asr": 29454528,
+    "maghrib": 29454666,
+    "isha": 29454749
+   }
+  },
+  {
+   "city": "cairo",
+   "latitude": 30.0444,
+   "longitude": 31.2357,
+   "method": "egyptian",
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29474121,
+    "sunrise": 29474212,
+    "dhuhr": 29474525,
+    "asr": 29474698,
+    "maghrib": 29474837,
+    "isha": 29474919
+   }
+  },
+  {
+   "city": "cairo",
+   "latitude": 30.0444,
+   "longitude": 31.2357,
+   "method": "egyptian",
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29498596,
+    "sunrise": 29498685,
+    "dhuhr": 29499010,
+    "asr": 29499191,
+    "maghrib": 29499332,
+    "isha": 29499412
+   }
+  },
+  {
+   "city": "cairo",
+   "latitude": 30.0444,
+   "longitude": 31.2357,
+   "method": "egyptian",
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29518748,
+    "sunrise": 29518835,
+    "dhuhr": 29519170,
+    "asr": 29519360,
+    "maghrib": 29519504,
+    "isha": 29519582
+   }
+  },
+  {
+   "city": "cairo",
+   "latitude": 30.0444,
+   "longitude": 31.2357,
+   "method": "egyptian",
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29538895,
+    "sunrise": 29538981,
+    "dhuhr": 29539328,
+    "asr": 29539526,
+    "maghrib": 29539674,
+    "isha": 29539751
+   }
+  },
+  {
+   "city": "cairo",
+   "latitude": 30.0444,
+   "longitude": 31.2357,
+   "method": "egyptian",
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29559039,
+    "sunrise": 29559125,
+    "dhuhr": 29559485,
+    "asr": 29559690,
+    "maghrib": 29559843,
+    "isha": 29559921
+   }
+  },
+  {
+   "city": "cairo",
+   "latitude": 30.0444,
+   "longitude": 31.2357,
+   "method": "egyptian",
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29583497,
+    "sunrise": 29583585,
+    "dhuhr": 29583960,
+    "asr": 29584171,
+    "maghrib": 29584334,
+    "isha": 29584412
+   }
+  },
+  {
+   "city": "cairo",
+   "latitude": 30.0444,
+   "longitude": 31.2357,
+   "method": "egyptian",
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29603638,
+    "sunrise": 29603728,
+    "dhuhr": 29604116,
+    "asr": 29604330,
+    "maghrib": 29604502,
+    "isha": 29604583
+   }
+  },
+  {
+   "city": "cairo",
+   "latitude": 30.0444,
+   "longitude": 31.2357,
+   "method": "egyptian",
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29626657,
+    "sunrise": 29626752,
+    "dhuhr": 29627153,
+    "asr": 29627369,
+    "maghrib": 29627552,
+    "isha": 29627637
+   }
+  },
+  {
+   "city": "cairo",
+   "latitude": 30.0444,
+   "longitude": 31.2357,
+   "method": "egyptian",
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29646803,
+    "sunrise": 29646902,
+    "dhuhr": 29647312,
+    "asr": 29647529,
+    "maghrib": 29647721,
+    "isha": 29647809
+   }
+  },
+  {
+   "city": "cairo",
+   "latitude": 30.0444,
+   "longitude": 31.2357,
+   "method": "egyptian",
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29671271,
+    "sunrise": 29671374,
+    "dhuhr": 29671794,
+    "asr": 29672009,
+    "maghrib": 29672212,
+    "isha": 29672303
+   }
+  },
+  {
+   "city": "cairo",
+   "latitude": 30.0444,
+   "longitude": 31.2357,
+   "method": "egyptian",
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29691428,
+    "sunrise": 29691533,
+    "dhuhr": 29691957,
+    "asr": 29692171,
+    "maghrib": 29692378,
+    "isha": 29692471
+   }
+  },
+  {
+   "city": "cairo",
+   "latitude": 30.0444,
+   "longitude": 31.2357,
+   "method": "egyptian",
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29714472,
+    "sunrise": 29714577,
+    "dhuhr": 29715000,
+    "asr": 29715215,
+    "maghrib": 29715420,
+    "isha": 29715513
+   }
+  },
+  {
+   "city": "cairo",
+   "latitude": 30.0444,
+   "longitude": 31.2357,
+   "method": "egyptian",
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29734641,
+    "sunrise": 29734744,
+    "dhuhr": 29735162,
+    "asr": 29735377,
+    "maghrib": 29735578,
+    "isha": 29735669
+   }
+  },
+  {
+   "city": "cairo",
+   "latitude": 30.0444,
+   "longitude": 31.2357,
+   "method": "egyptian",
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29759136,
+    "sunrise": 29759234,
+    "dhuhr": 29759642,
+    "asr": 29759858,
+    "maghrib": 29760049,
+    "isha": 29760135
+   }
+  },
+  {
+   "city": "cairo",
+   "latitude": 30.0444,
+   "longitude": 31.2357,
+   "method": "egyptian",
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29779308,
+    "sunrise": 29779402,
+    "dhuhr": 29779801,
+    "asr": 29780016,
+    "maghrib": 29780196,
+    "isha": 29780280
+   }
+  },
+  {
+   "city": "cairo",
+   "latitude": 30.0444,
+   "longitude": 31.2357,
+   "method": "egyptian",
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29803802,
+    "sunrise": 29803892,
+    "dhuhr": 29804276,
+    "asr": 29804488,
+    "maghrib": 29804658,
+    "isha": 29804738
+   }
+  },
+  {
+   "city": "cairo",
+   "latitude": 30.0444,
+   "longitude": 31.2357,
+   "method": "egyptian",
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29823972,
+    "sunrise": 29824059,
+    "dhuhr": 29824431,
+    "asr": 29824640,
+    "maghrib": 29824801,
+    "isha": 29824879
+   }
+  },
+  {
+   "city": "cairo",
+   "latitude": 30.0444,
+   "longitude": 31.2357,
+   "method": "egyptian",
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29847022,
+    "sunrise": 29847108,
+    "dhuhr": 29847466,
+    "asr": 29847668,
+    "maghrib": 29847821,
+    "isha": 29847898
+   }
+  },
+  {
+   "city": "cairo",
+   "latitude": 30.0444,
+   "longitude": 31.2357,
+   "method": "egyptian",
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29867190,
+    "sunrise": 29867277,
+    "dhuhr": 29867622,
+    "asr": 29867817,
+    "maghrib": 29867964,
+    "isha": 29868042
+   }
+  },
+  {
+   "city": "cairo",
+   "latitude": 30.0444,
+   "longitude": 31.2357,
+   "method": "egyptian",
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29891681,
+    "sunrise": 29891769,
+    "dhuhr": 29892100,
+    "asr": 29892285,
+    "maghrib": 29892428,
+    "isha": 29892507
+   }
+  },
+  {
+   "city": "cairo",
+   "latitude": 30.0444,
+   "longitude": 31.2357,
+   "method": "egyptian",
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29911850,
+    "sunrise": 29911940,
+    "dhuhr": 29912261,
+    "asr": 29912438,
+    "maghrib": 29912579,
+    "isha": 29912659
+   }
+  },
+  {
+   "city": "cairo",
+   "latitude": 30.0444,
+   "longitude": 31.2357,
+   "method": "egyptian",
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29934902,
+    "sunrise": 29934993,
+    "dhuhr": 29935305,
+    "asr": 29935475,
+    "maghrib": 29935615,
+    "isha": 29935697
+   }
+  },
+  {
+   "city": "cairo",
+   "latitude": 30.0444,
+   "longitude": 31.2357,
+   "method": "egyptian",
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29955071,
+    "sunrise": 29955163,
+    "dhuhr": 29955471,
+    "asr": 29955638,
+    "maghrib": 29955777,
+    "isha": 29955860
+   }
+  },
+  {
+   "city": "karachi",
+   "latitude": 24.8607,
+   "longitude": 67.0011,
+   "method": "karachi",
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29453815,
+    "sunrise": 29453897,
+    "dhuhr": 29454216,
+    "asr": 29454395,
+    "maghrib": 29454534,
+    "isha": 29454616
+   }
+  },
+  {
+   "city": "karachi",
+   "latitude": 24.8607,
+   "longitude": 67.0011,
+   "method": "karachi",
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29473978,
+    "sunrise": 29474059,
+    "dhuhr": 29474382,
+    "asr": 29474564,
+    "maghrib": 29474704,
+    "isha": 29474784
+   }
+  },
+  {
+   "city": "karachi",
+   "latitude": 24.8607,
+   "longitude": 67.0011,
+   "method": "karachi",
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29498456,
+    "sunrise": 29498534,
+    "dhuhr": 29498867,
+    "asr": 29499055,
+    "maghrib": 29499197,
+    "isha": 29499275
+   }
+  },
+  {
+   "city": "karachi",
+   "latitude": 24.8607,
+   "longitude": 67.0011,
+   "method": "karachi",
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29518610,
+    "sunrise": 29518686,
+    "dhuhr": 29519027,
+    "asr": 29519221,
+    "maghrib": 29519366,
+    "isha": 29519443
+   }
+  },
+  {
+   "city": "karachi",
+   "latitude": 24.8607,
+   "longitude": 67.0011,
+   "method": "karachi",
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29538759,
+    "sunrise": 29538835,
+    "dhuhr": 29539185,
+    "asr": 29539385,
+    "maghrib": 29539534,
+    "isha": 29539610
+   }
+  },
+  {
+   "city": "karachi",
+   "latitude": 24.8607,
+   "longitude": 67.0011,
+   "method": "karachi",
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29558906,
+    "sunrise": 29558981,
+    "dhuhr": 29559342,
+    "asr": 29559546,
+    "maghrib": 29559701,
+    "isha": 29559777
+   }
+  },
+  {
+   "city": "karachi",
+   "latitude": 24.8607,
+   "longitude": 67.0011,
+   "method": "karachi",
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29583367,
+    "sunrise": 29583444,
+    "dhuhr": 29583817,
+    "asr": 29584024,
+    "maghrib": 29584188,
+    "isha": 29584265
+   }
+  },
+  {
+   "city": "karachi",
+   "latitude": 24.8607,
+   "longitude": 67.0011,
+   "method": "karachi",
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29603512,
+    "sunrise": 29603590,
+    "dhuhr": 29603973,
+    "asr": 29604181,
+    "maghrib": 29604354,
+    "isha": 29604433
+   }
+  },
+  {
+   "city": "karachi",
+   "latitude": 24.8607,
+   "longitude": 67.0011,
+   "method": "karachi",
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29626535,
+    "sunrise": 29626617,
+    "dhuhr": 29627010,
+    "asr": 29627217,
+    "maghrib": 29627402,
+    "isha": 29627484
+   }
+  },
+  {
+   "city": "karachi",
+   "latitude": 24.8607,
+   "longitude": 67.0011,
+   "method": "karachi",
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29646684,
+    "sunrise": 29646768,
+    "dhuhr": 29647169,
+    "asr": 29647374,
+    "maghrib": 29647569,
+    "isha": 29647654
+   }
+  },
+  {
+   "city": "karachi",
+   "latitude": 24.8607,
+   "longitude": 67.0011,
+   "method": "karachi",
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29671155,
+    "sunrise": 29671243,
+    "dhuhr": 29671651,
+    "asr": 29671853,
+    "maghrib": 29672057,
+    "isha": 29672145
+   }
+  },
+  {
+   "city": "karachi",
+   "latitude": 24.8607,
+   "longitude": 67.0011,
+   "method": "karachi",
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29691313,
+    "sunrise": 29691402,
+    "dhuhr": 29691813,
+    "asr": 29692014,
+    "maghrib": 29692223,
+    "isha": 29692312
+   }
+  },
+  {
+   "city": "karachi",
+   "latitude": 24.8607,
+   "longitude": 67.0011,
+   "method": "karachi",
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29714357,
+    "sunrise": 29714446,
+    "dhuhr": 29714857,
+    "asr": 29715058,
+    "maghrib": 29715266,
+    "isha": 29715354
+   }
+  },
+  {
+   "city": "karachi",
+   "latitude": 24.8607,
+   "longitude": 67.0011,
+   "method": "karachi",
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29734525,
+    "sunrise": 29734612,
+    "dhuhr": 29735019,
+    "asr": 29735221,
+    "maghrib": 29735424,
+    "isha": 29735511
+   }
+  },
+  {
+   "city": "karachi",
+   "latitude": 24.8607,
+   "longitude": 67.0011,
+   "method": "karachi",
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29759016,
+    "sunrise": 29759100,
+    "dhuhr": 29759499,
+    "asr": 29759705,
+    "maghrib": 29759897,
+    "isha": 29759980
+   }
+  },
+  {
+   "city": "karachi",
+   "latitude": 24.8607,
+   "longitude": 67.0011,
+   "method": "karachi",
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29779185,
+    "sunrise": 29779266,
+    "dhuhr": 29779658,
+    "asr": 29779864,
+    "maghrib": 29780047,
+    "isha": 29780127
+   }
+  },
+  {
+   "city": "karachi",
+   "latitude": 24.8607,
+   "longitude": 67.0011,
+   "method": "karachi",
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29803675,
+    "sunrise": 29803753,
+    "dhuhr": 29804133,
+    "asr": 29804341,
+    "maghrib": 29804511,
+    "isha": 29804589
+   }
+  },
+  {
+   "city": "karachi",
+   "latitude": 24.8607,
+   "longitude": 67.0011,
+   "method": "karachi",
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29823841,
+    "sunrise": 29823918,
+    "dhuhr": 29824288,
+    "asr": 29824494,
+    "maghrib": 29824656,
+    "isha": 29824733
+   }
+  },
+  {
+   "city": "karachi",
+   "latitude": 24.8607,
+   "longitude": 67.0011,
+   "method": "karachi",
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29846888,
+    "sunrise": 29846964,
+    "dhuhr": 29847323,
+    "asr": 29847525,
+    "maghrib": 29847679,
+    "isha": 29847755
+   }
+  },
+  {
+   "city": "karachi",
+   "latitude": 24.8607,
+   "longitude": 67.0011,
+   "method": "karachi",
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29867054,
+    "sunrise": 29867130,
+    "dhuhr": 29867479,
+    "asr": 29867677,
+    "maghrib": 29867825,
+    "isha": 29867901
+   }
+  },
+  {
+   "city": "karachi",
+   "latitude": 24.8607,
+   "longitude": 67.0011,
+   "method": "karachi",
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29891542,
+    "sunrise": 29891619,
+    "dhuhr": 29891957,
+    "asr": 29892148,
+    "maghrib": 29892292,
+    "isha": 29892369
+   }
+  },
+  {
+   "city": "karachi",
+   "latitude": 24.8607,
+   "longitude": 67.0011,
+   "method": "karachi",
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29911709,
+    "sunrise": 29911788,
+    "dhuhr": 29912118,
+    "asr": 29912303,
+    "maghrib": 29912445,
+    "isha": 29912524
+   }
+  },
+  {
+   "city": "karachi",
+   "latitude": 24.8607,
+   "longitude": 67.0011,
+   "method": "karachi",
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29934759,
+    "sunrise": 29934840,
+    "dhuhr": 29935162,
+    "asr": 29935342,
+    "maghrib": 29935482,
+    "isha": 29935563
+   }
+  },
+  {
+   "city": "karachi",
+   "latitude": 24.8607,
+   "longitude": 67.0011,
+   "method": "karachi",
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29954927,
+    "sunrise": 29955009,
+    "dhuhr": 29955328,
+    "asr": 29955505,
+    "maghrib": 29955645,
+    "isha": 29955727
+   }
+  },
+  {
+   "city": "toronto",
+   "latitude": 43.6532,
+   "longitude": -79.3832,
+   "method": "north_america",
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29454445,
+    "sunrise": 29454531,
+    "dhuhr": 29454802,
+    "asr": 29454934,
+    "maghrib": 29455071,
+    "isha": 29455158
+   }
+  },
+  {
+   "city": "toronto",
+   "latitude": 43.6532,
+   "longitude": -79.3832,
+   "method": "north_america",
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29474603,
+    "sunrise": 29474688,
+    "dhuhr": 29474968,
+    "asr": 29475108,
+    "maghrib": 29475246,
+    "isha": 29475331
+   }
+  },
+  {
+   "city": "toronto",
+   "latitude": 43.6532,
+   "longitude": -79.3832,
+   "method": "north_america",
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29499072,
+    "sunrise": 29499154,
+    "dhuhr": 29499452,
+    "asr": 29499607,
+    "maghrib": 29499749,
+    "isha": 29499831
+   }
+  },
+  {
+   "city": "toronto",
+   "latitude": 43.6532,
+   "longitude": -79.3832,
+   "method": "north_america",
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29519216,
+    "sunrise": 29519296,
+    "dhuhr": 29519613,
+    "asr": 29519782,
+    "maghrib": 29519928,
+    "isha": 29520008
+   }
+  },
+  {
+   "city": "toronto",
+   "latitude": 43.6532,
+   "longitude": -79.3832,
+   "method": "north_america",
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29539355,
+    "sunrise": 29539434,
+    "dhuhr": 29539771,
+    "asr": 29539956,
+    "maghrib": 29540106,
+    "isha": 29540185
+   }
+  },
+  {
+   "city": "toronto",
+   "latitude": 43.6532,
+   "longitude": -79.3832,
+   "method": "north_america",
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29559491,
+    "sunrise": 29559570,
+    "dhuhr": 29559927,
+    "asr": 29560127,
+    "maghrib": 29560284,
+    "isha": 29560363
+   }
+  },
+  {
+   "city": "toronto",
+   "latitude": 43.6532,
+   "longitude": -79.3832,
+   "method": "north_america",
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29583938,
+    "sunrise": 29584019,
+    "dhuhr": 29584402,
+    "asr": 29584617,
+    "maghrib": 29584784,
+    "isha": 29584866
+   }
+  },
+  {
+   "city": "toronto",
+   "latitude": 43.6532,
+   "longitude": -79.3832,
+   "method": "north_america",
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29604070,
+    "sunrise": 29604155,
+    "dhuhr": 29604559,
+    "asr": 29604784,
+    "maghrib": 29604961,
+    "isha": 29605046
+   }
+  },
+  {
+   "city": "toronto",
+   "latitude": 43.6532,
+   "longitude": -79.3832,
+   "method": "north_america",
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29627079,
+    "sunrise": 29627170,
+    "dhuhr": 29627596,
+    "asr": 29627830,
+    "maghrib": 29628020,
+    "isha": 29628112
+   }
+  },
+  {
+   "city": "toronto",
+   "latitude": 43.6532,
+   "longitude": -79.3832,
+   "method": "north_america",
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29647215,
+    "sunrise": 29647312,
+    "dhuhr": 29647755,
+    "asr": 29647995,
+    "maghrib": 29648196,
+    "isha": 29648294
+   }
+  },
+  {
+   "city": "toronto",
+   "latitude": 43.6532,
+   "longitude": -79.3832,
+   "method": "north_america",
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29671673,
+    "sunrise": 29671779,
+    "dhuhr": 29672236,
+    "asr": 29672481,
+    "maghrib": 29672692,
+    "isha": 29672799
+   }
+  },
+  {
+   "city": "toronto",
+   "latitude": 43.6532,
+   "longitude": -79.3832,
+   "method": "north_america",
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29691825,
+    "sunrise": 29691935,
+    "dhuhr": 29692399,
+    "asr": 29692645,
+    "maghrib": 29692861,
+    "isha": 29692971
+   }
+  },
+  {
+   "city": "toronto",
+   "latitude": 43.6532,
+   "longitude": -79.3832,
+   "method": "north_america",
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29714871,
+    "sunrise": 29714980,
+    "dhuhr": 29715442,
+    "asr": 29715687,
+    "maghrib": 29715903,
+    "isha": 29716012
+   }
+  },
+  {
+   "city": "toronto",
+   "latitude": 43.6532,
+   "longitude": -79.3832,
+   "method": "north_america",
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29735046,
+    "sunrise": 29735150,
+    "dhuhr": 29735605,
+    "asr": 29735847,
+    "maghrib": 29736057,
+    "isha": 29736161
+   }
+  },
+  {
+   "city": "toronto",
+   "latitude": 43.6532,
+   "longitude": -79.3832,
+   "method": "north_america",
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29759551,
+    "sunrise": 29759647,
+    "dhuhr": 29760085,
+    "asr": 29760322,
+    "maghrib": 29760520,
+    "isha": 29760616
+   }
+  },
+  {
+   "city": "toronto",
+   "latitude": 43.6532,
+   "longitude": -79.3832,
+   "method": "north_america",
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29779733,
+    "sunrise": 29779822,
+    "dhuhr": 29780243,
+    "asr": 29780473,
+    "maghrib": 29780661,
+    "isha": 29780750
+   }
+  },
+  {
+   "city": "toronto",
+   "latitude": 43.6532,
+   "longitude": -79.3832,
+   "method": "north_america",
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29804238,
+    "sunrise": 29804321,
+    "dhuhr": 29804718,
+    "asr": 29804938,
+    "maghrib": 29805113,
+    "isha": 29805196
+   }
+  },
+  {
+   "city": "toronto",
+   "latitude": 43.6532,
+   "longitude": -79.3832,
+   "method": "north_america",
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29824417,
+    "sunrise": 29824497,
+    "dhuhr": 29824874,
+    "asr": 29825082,
+    "maghrib": 29825248,
+    "isha": 29825328
+   }
+  },
+  {
+   "city": "toronto",
+   "latitude": 43.6532,
+   "longitude": -79.3832,
+   "method": "north_america",
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29847476,
+    "sunrise": 29847555,
+    "dhuhr": 29847908,
+    "asr": 29848101,
+    "maghrib": 29848258,
+    "isha": 29848337
+   }
+  },
+  {
+   "city": "toronto",
+   "latitude": 43.6532,
+   "longitude": -79.3832,
+   "method": "north_america",
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29867653,
+    "sunrise": 29867732,
+    "dhuhr": 29868064,
+    "asr": 29868243,
+    "maghrib": 29868394,
+    "isha": 29868473
+   }
+  },
+  {
+   "city": "toronto",
+   "latitude": 43.6532,
+   "longitude": -79.3832,
+   "method": "north_america",
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29892153,
+    "sunrise": 29892233,
+    "dhuhr": 29892542,
+    "asr": 29892703,
+    "maghrib": 29892848,
+    "isha": 29892929
+   }
+  },
+  {
+   "city": "toronto",
+   "latitude": 43.6532,
+   "longitude": -79.3832,
+   "method": "north_america",
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29912329,
+    "sunrise": 29912412,
+    "dhuhr": 29912703,
+    "asr": 29912850,
+    "maghrib": 29912992,
+    "isha": 29913075
+   }
+  },
+  {
+   "city": "toronto",
+   "latitude": 43.6532,
+   "longitude": -79.3832,
+   "method": "north_america",
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29935386,
+    "sunrise": 29935471,
+    "dhuhr": 29935748,
+    "asr": 29935882,
+    "maghrib": 29936022,
+    "isha": 29936107
+   }
+  },
+  {
+   "city": "toronto",
+   "latitude": 43.6532,
+   "longitude": -79.3832,
+   "method": "north_america",
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29955557,
+    "sunrise": 29955644,
+    "dhuhr": 29955914,
+    "asr": 29956044,
+    "maghrib": 29956181,
+    "isha": 29956268
+   }
+  },
+  {
+   "city": "dubai",
+   "latitude": 25.2048,
+   "longitude": 55.2708,
+   "method": "dubai",
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29453862,
+    "sunrise": 29453941,
+    "dhuhr": 29454265,
+    "asr": 29454444,
+    "maghrib": 29454584,
+    "isha": 29454663
+   }
+  },
+  {
+   "city": "dubai",
+   "latitude": 25.2048,
+   "longitude": 55.2708,
+   "method": "dubai",
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29474025,
+    "sunrise": 29474103,
+    "dhuhr": 29474431,
+    "asr": 29474613,
+    "maghrib": 29474754,
+    "isha": 29474832
+   }
+  },
+  {
+   "city": "dubai",
+   "latitude": 25.2048,
+   "longitude": 55.2708,
+   "method": "dubai",
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29498502,
+    "sunrise": 29498579,
+    "dhuhr": 29498915,
+    "asr": 29499104,
+    "maghrib": 29499246,
+    "isha": 29499323
+   }
+  },
+  {
+   "city": "dubai",
+   "latitude": 25.2048,
+   "longitude": 55.2708,
+   "method": "dubai",
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29518656,
+    "sunrise": 29518731,
+    "dhuhr": 29519076,
+    "asr": 29519271,
+    "maghrib": 29519416,
+    "isha": 29519491
+   }
+  },
+  {
+   "city": "dubai",
+   "latitude": 25.2048,
+   "longitude": 55.2708,
+   "method": "dubai",
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29538805,
+    "sunrise": 29538879,
+    "dhuhr": 29539234,
+    "asr": 29539435,
+    "maghrib": 29539584,
+    "isha": 29539658
+   }
+  },
+  {
+   "city": "dubai",
+   "latitude": 25.2048,
+   "longitude": 55.2708,
+   "method": "dubai",
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29558951,
+    "sunrise": 29559025,
+    "dhuhr": 29559391,
+    "asr": 29559596,
+    "maghrib": 29559751,
+    "isha": 29559825
+   }
+  },
+  {
+   "city": "dubai",
+   "latitude": 25.2048,
+   "longitude": 55.2708,
+   "method": "dubai",
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29583413,
+    "sunrise": 29583488,
+    "dhuhr": 29583866,
+    "asr": 29584075,
+    "maghrib": 29584238,
+    "isha": 29584313
+   }
+  },
+  {
+   "city": "dubai",
+   "latitude": 25.2048,
+   "longitude": 55.2708,
+   "method": "dubai",
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29603557,
+    "sunrise": 29603634,
+    "dhuhr": 29604022,
+    "asr": 29604232,
+    "maghrib": 29604405,
+    "isha": 29604482
+   }
+  },
+  {
+   "city": "dubai",
+   "latitude": 25.2048,
+   "longitude": 55.2708,
+   "method": "dubai",
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29626580,
+    "sunrise": 29626660,
+    "dhuhr": 29627059,
+    "asr": 29627268,
+    "maghrib": 29627452,
+    "isha": 29627532
+   }
+  },
+  {
+   "city": "dubai",
+   "latitude": 25.2048,
+   "longitude": 55.2708,
+   "method": "dubai",
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29646729,
+    "sunrise": 29646811,
+    "dhuhr": 29647218,
+    "asr": 29647425,
+    "maghrib": 29647619,
+    "isha": 29647703
+   }
+  },
+  {
+   "city": "dubai",
+   "latitude": 25.2048,
+   "longitude": 55.2708,
+   "method": "dubai",
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29671200,
+    "sunrise": 29671286,
+    "dhuhr": 29671700,
+    "asr": 29671904,
+    "maghrib": 29672108,
+    "isha": 29672194
+   }
+  },
+  {
+   "city": "dubai",
+   "latitude": 25.2048,
+   "longitude": 55.2708,
+   "method": "dubai",
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29691358,
+    "sunrise": 29691445,
+    "dhuhr": 29691862,
+    "asr": 29692065,
+    "maghrib": 29692273,
+    "isha": 29692361
+   }
+  },
+  {
+   "city": "dubai",
+   "latitude": 25.2048,
+   "longitude": 55.2708,
+   "method": "dubai",
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29714402,
+    "sunrise": 29714489,
+    "dhuhr": 29714906,
+    "asr": 29715109,
+    "maghrib": 29715316,
+    "isha": 29715403
+   }
+  },
+  {
+   "city": "dubai",
+   "latitude": 25.2048,
+   "longitude": 55.2708,
+   "method": "dubai",
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29734569,
+    "sunrise": 29734655,
+    "dhuhr": 29735068,
+    "asr": 29735272,
+    "maghrib": 29735475,
+    "isha": 29735560
+   }
+  },
+  {
+   "city": "dubai",
+   "latitude": 25.2048,
+   "longitude": 55.2708,
+   "method": "dubai",
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29759061,
+    "sunrise": 29759143,
+    "dhuhr": 29759548,
+    "asr": 29759755,
+    "maghrib": 29759947,
+    "isha": 29760029
+   }
+  },
+  {
+   "city": "dubai",
+   "latitude": 25.2048,
+   "longitude": 55.2708,
+   "method": "dubai",
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29779230,
+    "sunrise": 29779310,
+    "dhuhr": 29779706,
+    "asr": 29779915,
+    "maghrib": 29780097,
+    "isha": 29780176
+   }
+  },
+  {
+   "city": "dubai",
+   "latitude": 25.2048,
+   "longitude": 55.2708,
+   "method": "dubai",
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29803720,
+    "sunrise": 29803797,
+    "dhuhr": 29804182,
+    "asr": 29804391,
+    "maghrib": 29804561,
+    "isha": 29804637
+   }
+  },
+  {
+   "city": "dubai",
+   "latitude": 25.2048,
+   "longitude": 55.2708,
+   "method": "dubai",
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29823887,
+    "sunrise": 29823962,
+    "dhuhr": 29824337,
+    "asr": 29824544,
+    "maghrib": 29824706,
+    "isha": 29824781
+   }
+  },
+  {
+   "city": "dubai",
+   "latitude": 25.2048,
+   "longitude": 55.2708,
+   "method": "dubai",
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29846934,
+    "sunrise": 29847008,
+    "dhuhr": 29847372,
+    "asr": 29847575,
+    "maghrib": 29847729,
+    "isha": 29847803
+   }
+  },
+  {
+   "city": "dubai",
+   "latitude": 25.2048,
+   "longitude": 55.2708,
+   "method": "dubai",
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29867100,
+    "sunrise": 29867174,
+    "dhuhr": 29867528,
+    "asr": 29867726,
+    "maghrib": 29867875,
+    "isha": 29867949
+   }
+  },
+  {
+   "city": "dubai",
+   "latitude": 25.2048,
+   "longitude": 55.2708,
+   "method": "dubai",
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29891588,
+    "sunrise": 29891663,
+    "dhuhr": 29892006,
+    "asr": 29892197,
+    "maghrib": 29892341,
+    "isha": 29892417
+   }
+  },
+  {
+   "city": "dubai",
+   "latitude": 25.2048,
+   "longitude": 55.2708,
+   "method": "dubai",
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29911756,
+    "sunrise": 29911833,
+    "dhuhr": 29912166,
+    "asr": 29912352,
+    "maghrib": 29912494,
+    "isha": 29912571
+   }
+  },
+  {
+   "city": "dubai",
+   "latitude": 25.2048,
+   "longitude": 55.2708,
+   "method": "dubai",
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29934805,
+    "sunrise": 29934884,
+    "dhuhr": 29935211,
+    "asr": 29935391,
+    "maghrib": 29935531,
+    "isha": 29935610
+   }
+  },
+  {
+   "city": "dubai",
+   "latitude": 25.2048,
+   "longitude": 55.2708,
+   "method": "dubai",
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29954974,
+    "sunrise": 29955053,
+    "dhuhr": 29955377,
+    "asr": 29955555,
+    "maghrib": 29955694,
+    "isha": 29955774
+   }
+  },
+  {
+   "city": "kuwait_city",
+   "latitude": 29.3759,
+   "longitude": 47.9774,
+   "method": "kuwait",
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29453898,
+    "sunrise": 29453983,
+    "dhuhr": 29454292,
+    "asr": 29454462,
+    "maghrib": 29454601,
+    "isha": 29454683
+   }
+  },
+  {
+   "city": "kuwait_city",
+   "latitude": 29.3759,
+   "longitude": 47.9774,
+   "method": "kuwait",
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29474060,
+    "sunrise": 29474143,
+    "dhuhr": 29474457,
+    "asr": 29474632,
+    "maghrib": 29474772,
+    "isha": 29474853
+   }
+  },
+  {
+   "city": "kuwait_city",
+   "latitude": 29.3759,
+   "longitude": 47.9774,
+   "method": "kuwait",
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29498536,
+    "sunrise": 29498617,
+    "dhuhr": 29498942,
+    "asr": 29499125,
+    "maghrib": 29499266,
+    "isha": 29499345
+   }
+  },
+  {
+   "city": "kuwait_city",
+   "latitude": 29.3759,
+   "longitude": 47.9774,
+   "method": "kuwait",
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29518687,
+    "sunrise": 29518767,
+    "dhuhr": 29519102,
+    "asr": 29519293,
+    "maghrib": 29519437,
+    "isha": 29519515
+   }
+  },
+  {
+   "city": "kuwait_city",
+   "latitude": 29.3759,
+   "longitude": 47.9774,
+   "method": "kuwait",
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29538835,
+    "sunrise": 29538914,
+    "dhuhr": 29539260,
+    "asr": 29539459,
+    "maghrib": 29539607,
+    "isha": 29539684
+   }
+  },
+  {
+   "city": "kuwait_city",
+   "latitude": 29.3759,
+   "longitude": 47.9774,
+   "method": "kuwait",
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29558979,
+    "sunrise": 29559058,
+    "dhuhr": 29559417,
+    "asr": 29559623,
+    "maghrib": 29559776,
+    "isha": 29559853
+   }
+  },
+  {
+   "city": "kuwait_city",
+   "latitude": 29.3759,
+   "longitude": 47.9774,
+   "method": "kuwait",
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29583438,
+    "sunrise": 29583518,
+    "dhuhr": 29583892,
+    "asr": 29584104,
+    "maghrib": 29584266,
+    "isha": 29584344
+   }
+  },
+  {
+   "city": "kuwait_city",
+   "latitude": 29.3759,
+   "longitude": 47.9774,
+   "method": "kuwait",
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29603580,
+    "sunrise": 29603662,
+    "dhuhr": 29604048,
+    "asr": 29604263,
+    "maghrib": 29604435,
+    "isha": 29604515
+   }
+  },
+  {
+   "city": "kuwait_city",
+   "latitude": 29.3759,
+   "longitude": 47.9774,
+   "method": "kuwait",
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29626600,
+    "sunrise": 29626686,
+    "dhuhr": 29627085,
+    "asr": 29627301,
+    "maghrib": 29627484,
+    "isha": 29627568
+   }
+  },
+  {
+   "city": "kuwait_city",
+   "latitude": 29.3759,
+   "longitude": 47.9774,
+   "method": "kuwait",
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29646746,
+    "sunrise": 29646836,
+    "dhuhr": 29647244,
+    "asr": 29647460,
+    "maghrib": 29647653,
+    "isha": 29647740
+   }
+  },
+  {
+   "city": "kuwait_city",
+   "latitude": 29.3759,
+   "longitude": 47.9774,
+   "method": "kuwait",
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29671215,
+    "sunrise": 29671309,
+    "dhuhr": 29671726,
+    "asr": 29671941,
+    "maghrib": 29672143,
+    "isha": 29672234
+   }
+  },
+  {
+   "city": "kuwait_city",
+   "latitude": 29.3759,
+   "longitude": 47.9774,
+   "method": "kuwait",
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29691373,
+    "sunrise": 29691468,
+    "dhuhr": 29691889,
+    "asr": 29692103,
+    "maghrib": 29692309,
+    "isha": 29692402
+   }
+  },
+  {
+   "city": "kuwait_city",
+   "latitude": 29.3759,
+   "longitude": 47.9774,
+   "method": "kuwait",
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29714417,
+    "sunrise": 29714512,
+    "dhuhr": 29714932,
+    "asr": 29715146,
+    "maghrib": 29715352,
+    "isha": 29715444
+   }
+  },
+  {
+   "city": "kuwait_city",
+   "latitude": 29.3759,
+   "longitude": 47.9774,
+   "method": "kuwait",
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29734586,
+    "sunrise": 29734678,
+    "dhuhr": 29735094,
+    "asr": 29735309,
+    "maghrib": 29735509,
+    "isha": 29735599
+   }
+  },
+  {
+   "city": "kuwait_city",
+   "latitude": 29.3759,
+   "longitude": 47.9774,
+   "method": "kuwait",
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29759079,
+    "sunrise": 29759168,
+    "dhuhr": 29759574,
+    "asr": 29759790,
+    "maghrib": 29759980,
+    "isha": 29760066
+   }
+  },
+  {
+   "city": "kuwait_city",
+   "latitude": 29.3759,
+   "longitude": 47.9774,
+   "method": "kuwait",
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29779251,
+    "sunrise": 29779336,
+    "dhuhr": 29779733,
+    "asr": 29779948,
+    "maghrib": 29780129,
+    "isha": 29780211
+   }
+  },
+  {
+   "city": "kuwait_city",
+   "latitude": 29.3759,
+   "longitude": 47.9774,
+   "method": "kuwait",
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29803744,
+    "sunrise": 29803825,
+    "dhuhr": 29804208,
+    "asr": 29804421,
+    "maghrib": 29804590,
+    "isha": 29804670
+   }
+  },
+  {
+   "city": "kuwait_city",
+   "latitude": 29.3759,
+   "longitude": 47.9774,
+   "method": "kuwait",
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29823913,
+    "sunrise": 29823993,
+    "dhuhr": 29824363,
+    "asr": 29824573,
+    "maghrib": 29824734,
+    "isha": 29824811
+   }
+  },
+  {
+   "city": "kuwait_city",
+   "latitude": 29.3759,
+   "longitude": 47.9774,
+   "method": "kuwait",
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29846962,
+    "sunrise": 29847041,
+    "dhuhr": 29847398,
+    "asr": 29847601,
+    "maghrib": 29847754,
+    "isha": 29847831
+   }
+  },
+  {
+   "city": "kuwait_city",
+   "latitude": 29.3759,
+   "longitude": 47.9774,
+   "method": "kuwait",
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29867130,
+    "sunrise": 29867209,
+    "dhuhr": 29867554,
+    "asr": 29867750,
+    "maghrib": 29867898,
+    "isha": 29867975
+   }
+  },
+  {
+   "city": "kuwait_city",
+   "latitude": 29.3759,
+   "longitude": 47.9774,
+   "method": "kuwait",
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29891620,
+    "sunrise": 29891701,
+    "dhuhr": 29892032,
+    "asr": 29892219,
+    "maghrib": 29892362,
+    "isha": 29892440
+   }
+  },
+  {
+   "city": "kuwait_city",
+   "latitude": 29.3759,
+   "longitude": 47.9774,
+   "method": "kuwait",
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29911790,
+    "sunrise": 29911872,
+    "dhuhr": 29912193,
+    "asr": 29912372,
+    "maghrib": 29912513,
+    "isha": 29912593
+   }
+  },
+  {
+   "city": "kuwait_city",
+   "latitude": 29.3759,
+   "longitude": 47.9774,
+   "method": "kuwait",
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29934841,
+    "sunrise": 29934925,
+    "dhuhr": 29935237,
+    "asr": 29935410,
+    "maghrib": 29935549,
+    "isha": 29935631
+   }
+  },
+  {
+   "city": "kuwait_city",
+   "latitude": 29.3759,
+   "longitude": 47.9774,
+   "method": "kuwait",
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29955010,
+    "sunrise": 29955095,
+    "dhuhr": 29955403,
+    "asr": 29955573,
+    "maghrib": 29955711,
+    "isha": 29955794
+   }
+  },
+  {
+   "city": "doha",
+   "latitude": 25.2854,
+   "longitude": 51.531,
+   "method": "qatar",
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29453878,
+    "sunrise": 29453959,
+    "dhuhr": 29454277,
+    "asr": 29454456,
+    "maghrib": 29454595,
+    "isha": 29454685
+   }
+  },
+  {
+   "city": "doha",
+   "latitude": 25.2854,
+   "longitude": 51.531,
+   "method": "qatar",
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29474041,
+    "sunrise": 29474121,
+    "dhuhr": 29474443,
+    "asr": 29474625,
+    "maghrib": 29474765,
+    "isha": 29474855
+   }
+  },
+  {
+   "city": "doha",
+   "latitude": 25.2854,
+   "longitude": 51.531,
+   "method": "qatar",
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29498518,
+    "sunrise": 29498597,
+    "dhuhr": 29498927,
+    "asr": 29499116,
+    "maghrib": 29499258,
+    "isha": 29499348
+   }
+  },
+  {
+   "city": "doha",
+   "latitude": 25.2854,
+   "longitude": 51.531,
+   "method": "qatar",
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29518672,
+    "sunrise": 29518749,
+    "dhuhr": 29519088,
+    "asr": 29519283,
+    "maghrib": 29519428,
+    "isha": 29519518
+   }
+  },
+  {
+   "city": "doha",
+   "latitude": 25.2854,
+   "longitude": 51.531,
+   "method": "qatar",
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29538821,
+    "sunrise": 29538897,
+    "dhuhr": 29539246,
+    "asr": 29539447,
+    "maghrib": 29539596,
+    "isha": 29539686
+   }
+  },
+  {
+   "city": "doha",
+   "latitude": 25.2854,
+   "longitude": 51.531,
+   "method": "qatar",
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29558967,
+    "sunrise": 29559043,
+    "dhuhr": 29559403,
+    "asr": 29559608,
+    "maghrib": 29559763,
+    "isha": 29559853
+   }
+  },
+  {
+   "city": "doha",
+   "latitude": 25.2854,
+   "longitude": 51.531,
+   "method": "qatar",
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29583429,
+    "sunrise": 29583506,
+    "dhuhr": 29583878,
+    "asr": 29584087,
+    "maghrib": 29584250,
+    "isha": 29584340
+   }
+  },
+  {
+   "city": "doha",
+   "latitude": 25.2854,
+   "longitude": 51.531,
+   "method": "qatar",
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29603573,
+    "sunrise": 29603652,
+    "dhuhr": 29604034,
+    "asr": 29604244,
+    "maghrib": 29604417,
+    "isha": 29604507
+   }
+  },
+  {
+   "city": "doha",
+   "latitude": 25.2854,
+   "longitude": 51.531,
+   "method": "qatar",
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29626596,
+    "sunrise": 29626678,
+    "dhuhr": 29627071,
+    "asr": 29627280,
+    "maghrib": 29627464,
+    "isha": 29627554
+   }
+  },
+  {
+   "city": "doha",
+   "latitude": 25.2854,
+   "longitude": 51.531,
+   "method": "qatar",
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29646744,
+    "sunrise": 29646829,
+    "dhuhr": 29647230,
+    "asr": 29647437,
+    "maghrib": 29647632,
+    "isha": 29647722
+   }
+  },
+  {
+   "city": "doha",
+   "latitude": 25.2854,
+   "longitude": 51.531,
+   "method": "qatar",
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29671215,
+    "sunrise": 29671304,
+    "dhuhr": 29671712,
+    "asr": 29671916,
+    "maghrib": 29672120,
+    "isha": 29672210
+   }
+  },
+  {
+   "city": "doha",
+   "latitude": 25.2854,
+   "longitude": 51.531,
+   "method": "qatar",
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29691374,
+    "sunrise": 29691463,
+    "dhuhr": 29691874,
+    "asr": 29692077,
+    "maghrib": 29692286,
+    "isha": 29692376
+   }
+  },
+  {
+   "city": "doha",
+   "latitude": 25.2854,
+   "longitude": 51.531,
+   "method": "qatar",
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29714418,
+    "sunrise": 29714507,
+    "dhuhr": 29714918,
+    "asr": 29715121,
+    "maghrib": 29715328,
+    "isha": 29715418
+   }
+  },
+  {
+   "city": "doha",
+   "latitude": 25.2854,
+   "longitude": 51.531,
+   "method": "qatar",
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29734585,
+    "sunrise": 29734673,
+    "dhuhr": 29735080,
+    "asr": 29735284,
+    "maghrib": 29735487,
+    "isha": 29735577
+   }
+  },
+  {
+   "city": "doha",
+   "latitude": 25.2854,
+   "longitude": 51.531,
+   "method": "qatar",
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29759077,
+    "sunrise": 29759161,
+    "dhuhr": 29759560,
+    "asr": 29759767,
+    "maghrib": 29759959,
+    "isha": 29760049
+   }
+  },
+  {
+   "city": "doha",
+   "latitude": 25.2854,
+   "longitude": 51.531,
+   "method": "qatar",
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29779246,
+    "sunrise": 29779327,
+    "dhuhr": 29779718,
+    "asr": 29779927,
+    "maghrib": 29780109,
+    "isha": 29780199
+   }
+  },
+  {
+   "city": "doha",
+   "latitude": 25.2854,
+   "longitude": 51.531,
+   "method": "qatar",
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29803736,
+    "sunrise": 29803814,
+    "dhuhr": 29804194,
+    "asr": 29804403,
+    "maghrib": 29804573,
+    "isha": 29804663
+   }
+  },
+  {
+   "city": "doha",
+   "latitude": 25.2854,
+   "longitude": 51.531,
+   "method": "qatar",
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29823903,
+    "sunrise": 29823980,
+    "dhuhr": 29824349,
+    "asr": 29824556,
+    "maghrib": 29824718,
+    "isha": 29824808
+   }
+  },
+  {
+   "city": "doha",
+   "latitude": 25.2854,
+   "longitude": 51.531,
+   "method": "qatar",
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29846950,
+    "sunrise": 29847026,
+    "dhuhr": 29847384,
+    "asr": 29847587,
+    "maghrib": 29847741,
+    "isha": 29847831
+   }
+  },
+  {
+   "city": "doha",
+   "latitude": 25.2854,
+   "longitude": 51.531,
+   "method": "qatar",
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29867116,
+    "sunrise": 29867192,
+    "dhuhr": 29867540,
+    "asr": 29867738,
+    "maghrib": 29867887,
+    "isha": 29867977
+   }
+  },
+  {
+   "city": "doha",
+   "latitude": 25.2854,
+   "longitude": 51.531,
+   "method": "qatar",
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29891604,
+    "sunrise": 29891681,
+    "dhuhr": 29892017,
+    "asr": 29892209,
+    "maghrib": 29892353,
+    "isha": 29892443
+   }
+  },
+  {
+   "city": "doha",
+   "latitude": 25.2854,
+   "longitude": 51.531,
+   "method": "qatar",
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29911772,
+    "sunrise": 29911851,
+    "dhuhr": 29912178,
+    "asr": 29912364,
+    "maghrib": 29912506,
+    "isha": 29912596
+   }
+  },
+  {
+   "city": "doha",
+   "latitude": 25.2854,
+   "longitude": 51.531,
+   "method": "qatar",
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29934821,
+    "sunrise": 29934902,
+    "dhuhr": 29935223,
+    "asr": 29935403,
+    "maghrib": 29935543,
+    "isha": 29935633
+   }
+  },
+  {
+   "city": "doha",
+   "latitude": 25.2854,
+   "longitude": 51.531,
+   "method": "qatar",
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29954990,
+    "sunrise": 29955072,
+    "dhuhr": 29955389,
+    "asr": 29955567,
+    "maghrib": 29955706,
+    "isha": 29955796
+   }
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "method": "singapore",
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29453624,
+    "sunrise": 29453707,
+    "dhuhr": 29454070,
+    "asr": 29454274,
+    "maghrib": 29454430,
+    "isha": 29454505
+   }
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "method": "singapore",
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29473791,
+    "sunrise": 29473873,
+    "dhuhr": 29474236,
+    "asr": 29474439,
+    "maghrib": 29474596,
+    "isha": 29474670
+   }
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "method": "singapore",
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29498277,
+    "sunrise": 29498357,
+    "dhuhr": 29498720,
+    "asr": 29498921,
+    "maghrib": 29499081,
+    "isha": 29499152
+   }
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "method": "singapore",
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29518439,
+    "sunrise": 29518517,
+    "dhuhr": 29518880,
+    "asr": 29519079,
+    "maghrib": 29519242,
+    "isha": 29519312
+   }
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "method": "singapore",
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29538598,
+    "sunrise": 29538675,
+    "dhuhr": 29539039,
+    "asr": 29539232,
+    "maghrib": 29539400,
+    "isha": 29539469
+   }
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "method": "singapore",
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29558754,
+    "sunrise": 29558831,
+    "dhuhr": 29559195,
+    "asr": 29559381,
+    "maghrib": 29559557,
+    "isha": 29559626
+   }
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "method": "singapore",
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29583229,
+    "sunrise": 29583305,
+    "dhuhr": 29583670,
+    "asr": 29583855,
+    "maghrib": 29584033,
+    "isha": 29584102
+   }
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "method": "singapore",
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29603383,
+    "sunrise": 29603461,
+    "dhuhr": 29603826,
+    "asr": 29604019,
+    "maghrib": 29604190,
+    "isha": 29604259
+   }
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "method": "singapore",
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29626418,
+    "sunrise": 29626497,
+    "dhuhr": 29626863,
+    "asr": 29627062,
+    "maghrib": 29627227,
+    "isha": 29627299
+   }
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "method": "singapore",
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29646575,
+    "sunrise": 29646656,
+    "dhuhr": 29647023,
+    "asr": 29647225,
+    "maghrib": 29647387,
+    "isha": 29647460
+   }
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "method": "singapore",
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29671054,
+    "sunrise": 29671137,
+    "dhuhr": 29671504,
+    "asr": 29671708,
+    "maghrib": 29671869,
+    "isha": 29671943
+   }
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "method": "singapore",
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29691216,
+    "sunrise": 29691300,
+    "dhuhr": 29691667,
+    "asr": 29691872,
+    "maghrib": 29692032,
+    "isha": 29692107
+   }
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "method": "singapore",
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29714259,
+    "sunrise": 29714343,
+    "dhuhr": 29714710,
+    "asr": 29714915,
+    "maghrib": 29715075,
+    "isha": 29715150
+   }
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "method": "singapore",
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29734423,
+    "sunrise": 29734505,
+    "dhuhr": 29734872,
+    "asr": 29735076,
+    "maghrib": 29735237,
+    "isha": 29735311
+   }
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "method": "singapore",
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29758905,
+    "sunrise": 29758986,
+    "dhuhr": 29759353,
+    "asr": 29759554,
+    "maghrib": 29759717,
+    "isha": 29759789
+   }
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "method": "singapore",
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29779066,
+    "sunrise": 29779145,
+    "dhuhr": 29779511,
+    "asr": 29779709,
+    "maghrib": 29779875,
+    "isha": 29779945
+   }
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "method": "singapore",
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29803544,
+    "sunrise": 29803621,
+    "dhuhr": 29803986,
+    "asr": 29804177,
+    "maghrib": 29804349,
+    "isha": 29804419
+   }
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "method": "singapore",
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29823700,
+    "sunrise": 29823777,
+    "dhuhr": 29824142,
+    "asr": 29824324,
+    "maghrib": 29824504,
+    "isha": 29824573
+   }
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "method": "singapore",
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29846735,
+    "sunrise": 29846812,
+    "dhuhr": 29847176,
+    "asr": 29847363,
+    "maghrib": 29847538,
+    "isha": 29847607
+   }
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "method": "singapore",
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29866891,
+    "sunrise": 29866969,
+    "dhuhr": 29867332,
+    "asr": 29867526,
+    "maghrib": 29867694,
+    "isha": 29867763
+   }
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "method": "singapore",
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29891368,
+    "sunrise": 29891447,
+    "dhuhr": 29891810,
+    "asr": 29892009,
+    "maghrib": 29892171,
+    "isha": 29892242
+   }
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "method": "singapore",
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29911527,
+    "sunrise": 29911608,
+    "dhuhr": 29911971,
+    "asr": 29912173,
+    "maghrib": 29912332,
+    "isha": 29912404
+   }
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "method": "singapore",
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29934570,
+    "sunrise": 29934653,
+    "dhuhr": 29935015,
+    "asr": 29935219,
+    "maghrib": 29935376,
+    "isha": 29935450
+   }
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "method": "singapore",
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29954735,
+    "sunrise": 29954819,
+    "dhuhr": 29955181,
+    "asr": 29955385,
+    "maghrib": 29955542,
+    "isha": 29955617
+   }
+  },
+  {
+   "city": "istanbul",
+   "latitude": 41.0082,
+   "longitude": 28.9784,
+   "method": "turkey",
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29453990,
+    "sunrise": 29454082,
+    "dhuhr": 29454373,
+    "asr": 29454513,
+    "maghrib": 29454653,
+    "isha": 29454740
+   }
+  },
+  {
+   "city": "istanbul",
+   "latitude": 41.0082,
+   "longitude": 28.9784,
+   "method": "turkey",
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29474150,
+    "sunrise": 29474240,
+    "dhuhr": 29474538,
+    "asr": 29474686,
+    "maghrib": 29474827,
+    "isha": 29474912
+   }
+  },
+  {
+   "city": "istanbul",
+   "latitude": 41.0082,
+   "longitude": 28.9784,
+   "method": "turkey",
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29498621,
+    "sunrise": 29498708,
+    "dhuhr": 29499023,
+    "asr": 29499183,
+    "maghrib": 29499328,
+    "isha": 29499410
+   }
+  },
+  {
+   "city": "istanbul",
+   "latitude": 41.0082,
+   "longitude": 28.9784,
+   "method": "turkey",
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29518766,
+    "sunrise": 29518852,
+    "dhuhr": 29519183,
+    "asr": 29519357,
+    "maghrib": 29519505,
+    "isha": 29519585
+   }
+  },
+  {
+   "city": "istanbul",
+   "latitude": 41.0082,
+   "longitude": 28.9784,
+   "method": "turkey",
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29538907,
+    "sunrise": 29538992,
+    "dhuhr": 29539341,
+    "asr": 29539529,
+    "maghrib": 29539682,
+    "isha": 29539761
+   }
+  },
+  {
+   "city": "istanbul",
+   "latitude": 41.0082,
+   "longitude": 28.9784,
+   "method": "turkey",
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29559045,
+    "sunrise": 29559129,
+    "dhuhr": 29559498,
+    "asr": 29559699,
+    "maghrib": 29559858,
+    "isha": 29559937
+   }
+  },
+  {
+   "city": "istanbul",
+   "latitude": 41.0082,
+   "longitude": 28.9784,
+   "method": "turkey",
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29583494,
+    "sunrise": 29583581,
+    "dhuhr": 29583973,
+    "asr": 29584187,
+    "maghrib": 29584356,
+    "isha": 29584438
+   }
+  },
+  {
+   "city": "istanbul",
+   "latitude": 41.0082,
+   "longitude": 28.9784,
+   "method": "turkey",
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29603627,
+    "sunrise": 29603718,
+    "dhuhr": 29604129,
+    "asr": 29604352,
+    "maghrib": 29604531,
+    "isha": 29604617
+   }
+  },
+  {
+   "city": "istanbul",
+   "latitude": 41.0082,
+   "longitude": 28.9784,
+   "method": "turkey",
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29626637,
+    "sunrise": 29626735,
+    "dhuhr": 29627166,
+    "asr": 29627397,
+    "maghrib": 29627588,
+    "isha": 29627680
+   }
+  },
+  {
+   "city": "istanbul",
+   "latitude": 41.0082,
+   "longitude": 28.9784,
+   "method": "turkey",
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29646773,
+    "sunrise": 29646879,
+    "dhuhr": 29647325,
+    "asr": 29647561,
+    "maghrib": 29647762,
+    "isha": 29647861
+   }
+  },
+  {
+   "city": "istanbul",
+   "latitude": 41.0082,
+   "longitude": 28.9784,
+   "method": "turkey",
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29671232,
+    "sunrise": 29671347,
+    "dhuhr": 29671807,
+    "asr": 29672046,
+    "maghrib": 29672257,
+    "isha": 29672364
+   }
+  },
+  {
+   "city": "istanbul",
+   "latitude": 41.0082,
+   "longitude": 28.9784,
+   "method": "turkey",
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29691384,
+    "sunrise": 29691504,
+    "dhuhr": 29691970,
+    "asr": 29692210,
+    "maghrib": 29692425,
+    "isha": 29692536
+   }
+  },
+  {
+   "city": "istanbul",
+   "latitude": 41.0082,
+   "longitude": 28.9784,
+   "method": "turkey",
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29714429,
+    "sunrise": 29714549,
+    "dhuhr": 29715013,
+    "asr": 29715252,
+    "maghrib": 29715467,
+    "isha": 29715577
+   }
+  },
+  {
+   "city": "istanbul",
+   "latitude": 41.0082,
+   "longitude": 28.9784,
+   "method": "turkey",
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29734604,
+    "sunrise": 29734718,
+    "dhuhr": 29735175,
+    "asr": 29735413,
+    "maghrib": 29735622,
+    "isha": 29735727
+   }
+  },
+  {
+   "city": "istanbul",
+   "latitude": 41.0082,
+   "longitude": 28.9784,
+   "method": "turkey",
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29759108,
+    "sunrise": 29759213,
+    "dhuhr": 29759655,
+    "asr": 29759889,
+    "maghrib": 29760087,
+    "isha": 29760184
+   }
+  },
+  {
+   "city": "istanbul",
+   "latitude": 41.0082,
+   "longitude": 28.9784,
+   "method": "turkey",
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29779289,
+    "sunrise": 29779387,
+    "dhuhr": 29779814,
+    "asr": 29780042,
+    "maghrib": 29780230,
+    "isha": 29780320
+   }
+  },
+  {
+   "city": "istanbul",
+   "latitude": 41.0082,
+   "longitude": 28.9784,
+   "method": "turkey",
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29803793,
+    "sunrise": 29803884,
+    "dhuhr": 29804289,
+    "asr": 29804508,
+    "maghrib": 29804684,
+    "isha": 29804768
+   }
+  },
+  {
+   "city": "istanbul",
+   "latitude": 41.0082,
+   "longitude": 28.9784,
+   "method": "turkey",
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29823971,
+    "sunrise": 29824057,
+    "dhuhr": 29824444,
+    "asr": 29824654,
+    "maghrib": 29824821,
+    "isha": 29824901
+   }
+  },
+  {
+   "city": "istanbul",
+   "latitude": 41.0082,
+   "longitude": 28.9784,
+   "method": "turkey",
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29847029,
+    "sunrise": 29847113,
+    "dhuhr": 29847479,
+    "asr": 29847675,
+    "maghrib": 29847833,
+    "isha": 29847912
+   }
+  },
+  {
+   "city": "istanbul",
+   "latitude": 41.0082,
+   "longitude": 28.9784,
+   "method": "turkey",
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29867204,
+    "sunrise": 29867288,
+    "dhuhr": 29867635,
+    "asr": 29867818,
+    "maghrib": 29867971,
+    "isha": 29868050
+   }
+  },
+  {
+   "city": "istanbul",
+   "latitude": 41.0082,
+   "longitude": 28.9784,
+   "method": "turkey",
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29891702,
+    "sunrise": 29891788,
+    "dhuhr": 29892113,
+    "asr": 29892280,
+    "maghrib": 29892427,
+    "isha": 29892508
+   }
+  },
+  {
+   "city": "istanbul",
+   "latitude": 41.0082,
+   "longitude": 28.9784,
+   "method": "turkey",
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29911876,
+    "sunrise": 29911964,
+    "dhuhr": 29912274,
+    "asr": 29912428,
+    "maghrib": 29912573,
+    "isha": 29912655
+   }
+  },
+  {
+   "city": "istanbul",
+   "latitude": 41.0082,
+   "longitude": 28.9784,
+   "method": "turkey",
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29934932,
+    "sunrise": 29935022,
+    "dhuhr": 29935318,
+    "asr": 29935462,
+    "maghrib": 29935604,
+    "isha": 29935689
+   }
+  },
+  {
+   "city": "istanbul",
+   "latitude": 41.0082,
+   "longitude": 28.9784,
+   "method": "turkey",
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29955103,
+    "sunrise": 29955195,
+    "dhuhr": 29955484,
+    "asr": 29955623,
+    "maghrib": 29955764,
+    "isha": 29955850
+   }
+  },
+  {
+   "city": "tehran",
+   "latitude": 35.6892,
+   "longitude": 51.389,
+   "method": "tehran",
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29453894,
+    "sunrise": 29453984,
+    "dhuhr": 29454278,
+    "asr": 29454434,
+    "maghrib": 29454592,
+    "isha": 29454642
+   }
+  },
+  {
+   "city": "tehran",
+   "latitude": 35.6892,
+   "longitude": 51.389,
+   "method": "tehran",
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29474055,
+    "sunrise": 29474144,
+    "dhuhr": 29474444,
+    "asr": 29474605,
+    "maghrib": 29474764,
+    "isha": 29474814
+   }
+  },
+  {
+   "city": "tehran",
+   "latitude": 35.6892,
+   "longitude": 51.389,
+   "method": "tehran",
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29498529,
+    "sunrise": 29498615,
+    "dhuhr": 29498928,
+    "asr": 29499101,
+    "maghrib": 29499261,
+    "isha": 29499309
+   }
+  },
+  {
+   "city": "tehran",
+   "latitude": 35.6892,
+   "longitude": 51.389,
+   "method": "tehran",
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29518677,
+    "sunrise": 29518762,
+    "dhuhr": 29519089,
+    "asr": 29519272,
+    "maghrib": 29519435,
+    "isha": 29519482
+   }
+  },
+  {
+   "city": "tehran",
+   "latitude": 35.6892,
+   "longitude": 51.389,
+   "method": "tehran",
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29538821,
+    "sunrise": 29538905,
+    "dhuhr": 29539247,
+    "asr": 29539441,
+    "maghrib": 29539608,
+    "isha": 29539654
+   }
+  },
+  {
+   "city": "tehran",
+   "latitude": 35.6892,
+   "longitude": 51.389,
+   "method": "tehran",
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29558962,
+    "sunrise": 29559046,
+    "dhuhr": 29559403,
+    "asr": 29559608,
+    "maghrib": 29559780,
+    "isha": 29559827
+   }
+  },
+  {
+   "city": "tehran",
+   "latitude": 35.6892,
+   "longitude": 51.389,
+   "method": "tehran",
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29583416,
+    "sunrise": 29583501,
+    "dhuhr": 29583878,
+    "asr": 29584093,
+    "maghrib": 29584274,
+    "isha": 29584322
+   }
+  },
+  {
+   "city": "tehran",
+   "latitude": 35.6892,
+   "longitude": 51.389,
+   "method": "tehran",
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29603554,
+    "sunrise": 29603642,
+    "dhuhr": 29604035,
+    "asr": 29604255,
+    "maghrib": 29604446,
+    "isha": 29604496
+   }
+  },
+  {
+   "city": "tehran",
+   "latitude": 35.6892,
+   "longitude": 51.389,
+   "method": "tehran",
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29626570,
+    "sunrise": 29626663,
+    "dhuhr": 29627072,
+    "asr": 29627297,
+    "maghrib": 29627500,
+    "isha": 29627553
+   }
+  },
+  {
+   "city": "tehran",
+   "latitude": 35.6892,
+   "longitude": 51.389,
+   "method": "tehran",
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29646712,
+    "sunrise": 29646810,
+    "dhuhr": 29647231,
+    "asr": 29647459,
+    "maghrib": 29647673,
+    "isha": 29647728
+   }
+  },
+  {
+   "city": "tehran",
+   "latitude": 35.6892,
+   "longitude": 51.389,
+   "method": "tehran",
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29671176,
+    "sunrise": 29671280,
+    "dhuhr": 29671712,
+    "asr": 29671941,
+    "maghrib": 29672166,
+    "isha": 29672224
+   }
+  },
+  {
+   "city": "tehran",
+   "latitude": 35.6892,
+   "longitude": 51.389,
+   "method": "tehran",
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29691332,
+    "sunrise": 29691438,
+    "dhuhr": 29691875,
+    "asr": 29692104,
+    "maghrib": 29692333,
+    "isha": 29692392
+   }
+  },
+  {
+   "city": "tehran",
+   "latitude": 35.6892,
+   "longitude": 51.389,
+   "method": "tehran",
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29714376,
+    "sunrise": 29714482,
+    "dhuhr": 29714918,
+    "asr": 29715147,
+    "maghrib": 29715375,
+    "isha": 29715434
+   }
+  },
+  {
+   "city": "tehran",
+   "latitude": 35.6892,
+   "longitude": 51.389,
+   "method": "tehran",
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29734547,
+    "sunrise": 29734650,
+    "dhuhr": 29735080,
+    "asr": 29735309,
+    "maghrib": 29735531,
+    "isha": 29735589
+   }
+  },
+  {
+   "city": "tehran",
+   "latitude": 35.6892,
+   "longitude": 51.389,
+   "method": "tehran",
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29759045,
+    "sunrise": 29759142,
+    "dhuhr": 29759561,
+    "asr": 29759787,
+    "maghrib": 29759999,
+    "isha": 29760053
+   }
+  },
+  {
+   "city": "tehran",
+   "latitude": 35.6892,
+   "longitude": 51.389,
+   "method": "tehran",
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29779221,
+    "sunrise": 29779313,
+    "dhuhr": 29779719,
+    "asr": 29779942,
+    "maghrib": 29780143,
+    "isha": 29780195
+   }
+  },
+  {
+   "city": "tehran",
+   "latitude": 35.6892,
+   "longitude": 51.389,
+   "method": "tehran",
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29803719,
+    "sunrise": 29803806,
+    "dhuhr": 29804194,
+    "asr": 29804412,
+    "maghrib": 29804601,
+    "isha": 29804649
+   }
+  },
+  {
+   "city": "tehran",
+   "latitude": 35.6892,
+   "longitude": 51.389,
+   "method": "tehran",
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29823892,
+    "sunrise": 29823977,
+    "dhuhr": 29824350,
+    "asr": 29824560,
+    "maghrib": 29824740,
+    "isha": 29824788
+   }
+  },
+  {
+   "city": "tehran",
+   "latitude": 35.6892,
+   "longitude": 51.389,
+   "method": "tehran",
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29846946,
+    "sunrise": 29847029,
+    "dhuhr": 29847384,
+    "asr": 29847585,
+    "maghrib": 29847757,
+    "isha": 29847803
+   }
+  },
+  {
+   "city": "tehran",
+   "latitude": 35.6892,
+   "longitude": 51.389,
+   "method": "tehran",
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29867117,
+    "sunrise": 29867201,
+    "dhuhr": 29867540,
+    "asr": 29867731,
+    "maghrib": 29867898,
+    "isha": 29867944
+   }
+  },
+  {
+   "city": "tehran",
+   "latitude": 35.6892,
+   "longitude": 51.389,
+   "method": "tehran",
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29891611,
+    "sunrise": 29891696,
+    "dhuhr": 29892018,
+    "asr": 29892196,
+    "maghrib": 29892358,
+    "isha": 29892406
+   }
+  },
+  {
+   "city": "tehran",
+   "latitude": 35.6892,
+   "longitude": 51.389,
+   "method": "tehran",
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29911783,
+    "sunrise": 29911870,
+    "dhuhr": 29912179,
+    "asr": 29912347,
+    "maghrib": 29912507,
+    "isha": 29912556
+   }
+  },
+  {
+   "city": "tehran",
+   "latitude": 35.6892,
+   "longitude": 51.389,
+   "method": "tehran",
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29934837,
+    "sunrise": 29934925,
+    "dhuhr": 29935223,
+    "asr": 29935382,
+    "maghrib": 29935541,
+    "isha": 29935591
+   }
+  },
+  {
+   "city": "tehran",
+   "latitude": 35.6892,
+   "longitude": 51.389,
+   "method": "tehran",
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29955007,
+    "sunrise": 29955097,
+    "dhuhr": 29955389,
+    "asr": 29955544,
+    "maghrib": 29955703,
+    "isha": 29955753
+   }
+  },
+  {
+   "city": "jakarta",
+   "latitude": -6.2088,
+   "longitude": 106.8456,
+   "method": "singapore",
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29453597,
+    "sunrise": 29453682,
+    "dhuhr": 29454058,
+    "asr": 29454264,
+    "maghrib": 29454431,
+    "isha": 29454507
+   }
+  },
+  {
+   "city": "jakarta",
+   "latitude": -6.2088,
+   "longitude": 106.8456,
+   "method": "singapore",
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29473765,
+    "sunrise": 29473849,
+    "dhuhr": 29474223,
+    "asr": 29474428,
+    "maghrib": 29474596,
+    "isha": 29474671
+   }
+  },
+  {
+   "city": "jakarta",
+   "latitude": -6.2088,
+   "longitude": 106.8456,
+   "method": "singapore",
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29498254,
+    "sunrise": 29498335,
+    "dhuhr": 29498708,
+    "asr": 29498907,
+    "maghrib": 29499078,
+    "isha": 29499151
+   }
+  },
+  {
+   "city": "jakarta",
+   "latitude": -6.2088,
+   "longitude": 106.8456,
+   "method": "singapore",
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29518419,
+    "sunrise": 29518498,
+    "dhuhr": 29518868,
+    "asr": 29519061,
+    "maghrib": 29519236,
+    "isha": 29519307
+   }
+  },
+  {
+   "city": "jakarta",
+   "latitude": -6.2088,
+   "longitude": 106.8456,
+   "method": "singapore",
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29538581,
+    "sunrise": 29538659,
+    "dhuhr": 29539026,
+    "asr": 29539210,
+    "maghrib": 29539392,
+    "isha": 29539462
+   }
+  },
+  {
+   "city": "jakarta",
+   "latitude": -6.2088,
+   "longitude": 106.8456,
+   "method": "singapore",
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29558741,
+    "sunrise": 29558818,
+    "dhuhr": 29559183,
+    "asr": 29559370,
+    "maghrib": 29559546,
+    "isha": 29559615
+   }
+  },
+  {
+   "city": "jakarta",
+   "latitude": -6.2088,
+   "longitude": 106.8456,
+   "method": "singapore",
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29583218,
+    "sunrise": 29583296,
+    "dhuhr": 29583658,
+    "asr": 29583852,
+    "maghrib": 29584018,
+    "isha": 29584088
+   }
+  },
+  {
+   "city": "jakarta",
+   "latitude": -6.2088,
+   "longitude": 106.8456,
+   "method": "singapore",
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29603376,
+    "sunrise": 29603454,
+    "dhuhr": 29603814,
+    "asr": 29604012,
+    "maghrib": 29604172,
+    "isha": 29604242
+   }
+  },
+  {
+   "city": "jakarta",
+   "latitude": -6.2088,
+   "longitude": 106.8456,
+   "method": "singapore",
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29626414,
+    "sunrise": 29626493,
+    "dhuhr": 29626851,
+    "asr": 29627052,
+    "maghrib": 29627207,
+    "isha": 29627278
+   }
+  },
+  {
+   "city": "jakarta",
+   "latitude": -6.2088,
+   "longitude": 106.8456,
+   "method": "singapore",
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29646573,
+    "sunrise": 29646654,
+    "dhuhr": 29647010,
+    "asr": 29647211,
+    "maghrib": 29647364,
+    "isha": 29647437
+   }
+  },
+  {
+   "city": "jakarta",
+   "latitude": -6.2088,
+   "longitude": 106.8456,
+   "method": "singapore",
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29671055,
+    "sunrise": 29671137,
+    "dhuhr": 29671492,
+    "asr": 29671693,
+    "maghrib": 29671844,
+    "isha": 29671919
+   }
+  },
+  {
+   "city": "jakarta",
+   "latitude": -6.2088,
+   "longitude": 106.8456,
+   "method": "singapore",
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29691217,
+    "sunrise": 29691301,
+    "dhuhr": 29691655,
+    "asr": 29691856,
+    "maghrib": 29692007,
+    "isha": 29692081
+   }
+  },
+  {
+   "city": "jakarta",
+   "latitude": -6.2088,
+   "longitude": 106.8456,
+   "method": "singapore",
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29714260,
+    "sunrise": 29714344,
+    "dhuhr": 29714698,
+    "asr": 29714899,
+    "maghrib": 29715050,
+    "isha": 29715125
+   }
+  },
+  {
+   "city": "jakarta",
+   "latitude": -6.2088,
+   "longitude": 106.8456,
+   "method": "singapore",
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29734423,
+    "sunrise": 29734505,
+    "dhuhr": 29734860,
+    "asr": 29735061,
+    "maghrib": 29735213,
+    "isha": 29735287
+   }
+  },
+  {
+   "city": "jakarta",
+   "latitude": -6.2088,
+   "longitude": 106.8456,
+   "method": "singapore",
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29758903,
+    "sunrise": 29758984,
+    "dhuhr": 29759340,
+    "asr": 29759542,
+    "maghrib": 29759695,
+    "isha": 29759767
+   }
+  },
+  {
+   "city": "jakarta",
+   "latitude": -6.2088,
+   "longitude": 106.8456,
+   "method": "singapore",
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29779061,
+    "sunrise": 29779141,
+    "dhuhr": 29779499,
+    "asr": 29779699,
+    "maghrib": 29779855,
+    "isha": 29779926
+   }
+  },
+  {
+   "city": "jakarta",
+   "latitude": -6.2088,
+   "longitude": 106.8456,
+   "method": "singapore",
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29803536,
+    "sunrise": 29803614,
+    "dhuhr": 29803974,
+    "asr": 29804172,
+    "maghrib": 29804333,
+    "isha": 29804403
+   }
+  },
+  {
+   "city": "jakarta",
+   "latitude": -6.2088,
+   "longitude": 106.8456,
+   "method": "singapore",
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29823689,
+    "sunrise": 29823767,
+    "dhuhr": 29824129,
+    "asr": 29824323,
+    "maghrib": 29824490,
+    "isha": 29824560
+   }
+  },
+  {
+   "city": "jakarta",
+   "latitude": -6.2088,
+   "longitude": 106.8456,
+   "method": "singapore",
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29846721,
+    "sunrise": 29846798,
+    "dhuhr": 29847164,
+    "asr": 29847349,
+    "maghrib": 29847528,
+    "isha": 29847597
+   }
+  },
+  {
+   "city": "jakarta",
+   "latitude": -6.2088,
+   "longitude": 106.8456,
+   "method": "singapore",
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29866874,
+    "sunrise": 29866952,
+    "dhuhr": 29867320,
+    "asr": 29867505,
+    "maghrib": 29867686,
+    "isha": 29867756
+   }
+  },
+  {
+   "city": "jakarta",
+   "latitude": -6.2088,
+   "longitude": 106.8456,
+   "method": "singapore",
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29891347,
+    "sunrise": 29891427,
+    "dhuhr": 29891798,
+    "asr": 29891993,
+    "maghrib": 29892167,
+    "isha": 29892238
+   }
+  },
+  {
+   "city": "jakarta",
+   "latitude": -6.2088,
+   "longitude": 106.8456,
+   "method": "singapore",
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29911504,
+    "sunrise": 29911586,
+    "dhuhr": 29911959,
+    "asr": 29912159,
+    "maghrib": 29912330,
+    "isha": 29912403
+   }
+  },
+  {
+   "city": "jakarta",
+   "latitude": -6.2088,
+   "longitude": 106.8456,
+   "method": "singapore",
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29934544,
+    "sunrise": 29934628,
+    "dhuhr": 29935003,
+    "asr": 29935208,
+    "maghrib": 29935376,
+    "isha": 29935451
+   }
+  },
+  {
+   "city": "jakarta",
+   "latitude": -6.2088,
+   "longitude": 106.8456,
+   "method": "singapore",
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29954708,
+    "sunrise": 29954794,
+    "dhuhr": 29955169,
+    "asr": 29955375,
+    "maghrib": 29955543,
+    "isha": 29955619
+   }
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "method": "muslim_world_league",
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29453875,
+    "sunrise": 29453979,
+    "dhuhr": 29454411,
+    "asr": 29454635,
+    "maghrib": 29454841,
+    "isha": 29454938
+   }
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "method": "muslim_world_league",
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29474051,
+    "sunrise": 29474151,
+    "dhuhr": 29474577,
+    "asr": 29474800,
+    "maghrib": 29475000,
+    "isha": 29475094
+   }
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "method": "muslim_world_league",
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29498553,
+    "sunrise": 29498648,
+    "dhuhr": 29499061,
+    "asr": 29499283,
+    "maghrib": 29499471,
+    "isha": 29499560
+   }
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "method": "muslim_world_league",
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29518731,
+    "sunrise": 29518821,
+    "dhuhr": 29519221,
+    "asr": 29519441,
+    "maghrib": 29519619,
+    "isha": 29519703
+   }
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "method": "muslim_world_league",
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29538908,
+    "sunrise": 29538994,
+    "dhuhr": 29539380,
+    "asr": 29539594,
+    "maghrib": 29539763,
+    "isha": 29539843
+   }
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "method": "muslim_world_league",
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29559081,
+    "sunrise": 29559166,
+    "dhuhr": 29559536,
+    "asr": 29559744,
+    "maghrib": 29559904,
+    "isha": 29559983
+   }
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "method": "muslim_world_league",
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29583576,
+    "sunrise": 29583658,
+    "dhuhr": 29584011,
+    "asr": 29584210,
+    "maghrib": 29584361,
+    "isha": 29584439
+   }
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "method": "muslim_world_league",
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29603746,
+    "sunrise": 29603829,
+    "dhuhr": 29604167,
+    "asr": 29604356,
+    "maghrib": 29604503,
+    "isha": 29604582
+   }
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "method": "muslim_world_league",
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29626796,
+    "sunrise": 29626881,
+    "dhuhr": 29627204,
+    "asr": 29627382,
+    "maghrib": 29627525,
+    "isha": 29627605
+   }
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "method": "muslim_world_league",
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29646965,
+    "sunrise": 29647051,
+    "dhuhr": 29647364,
+    "asr": 29647533,
+    "maghrib": 29647674,
+    "isha": 29647755
+   }
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "method": "muslim_world_league",
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29671454,
+    "sunrise": 29671543,
+    "dhuhr": 29671845,
+    "asr": 29672006,
+    "maghrib": 29672145,
+    "isha": 29672229
+   }
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "method": "muslim_world_league",
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29691620,
+    "sunrise": 29691710,
+    "dhuhr": 29692008,
+    "asr": 29692166,
+    "maghrib": 29692304,
+    "isha": 29692388
+   }
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "method": "muslim_world_league",
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29714663,
+    "sunrise": 29714752,
+    "dhuhr": 29715051,
+    "asr": 29715210,
+    "maghrib": 29715348,
+    "isha": 29715432
+   }
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "method": "muslim_world_league",
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29734821,
+    "sunrise": 29734909,
+    "dhuhr": 29735213,
+    "asr": 29735377,
+    "maghrib": 29735516,
+    "isha": 29735599
+   }
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "method": "muslim_world_league",
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29759293,
+    "sunrise": 29759379,
+    "dhuhr": 29759694,
+    "asr": 29759866,
+    "maghrib": 29760007,
+    "isha": 29760088
+   }
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "method": "muslim_world_league",
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29779441,
+    "sunrise": 29779525,
+    "dhuhr": 29779852,
+    "asr": 29780034,
+    "maghrib": 29780177,
+    "isha": 29780256
+   }
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "method": "muslim_world_league",
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29803902,
+    "sunrise": 29803985,
+    "dhuhr": 29804327,
+    "asr": 29804521,
+    "maghrib": 29804668,
+    "isha": 29804747
+   }
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "method": "muslim_world_league",
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29824043,
+    "sunrise": 29824126,
+    "dhuhr": 29824483,
+    "asr": 29824685,
+    "maghrib": 29824838,
+    "isha": 29824916
+   }
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "method": "muslim_world_league",
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29847059,
+    "sunrise": 29847143,
+    "dhuhr": 29847517,
+    "asr": 29847728,
+    "maghrib": 29847889,
+    "isha": 29847968
+   }
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "method": "muslim_world_league",
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29867198,
+    "sunrise": 29867285,
+    "dhuhr": 29867673,
+    "asr": 29867890,
+    "maghrib": 29868060,
+    "isha": 29868142
+   }
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "method": "muslim_world_league",
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29891654,
+    "sunrise": 29891746,
+    "dhuhr": 29892151,
+    "asr": 29892372,
+    "maghrib": 29892554,
+    "isha": 29892641
+   }
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "method": "muslim_world_league",
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29911798,
+    "sunrise": 29911895,
+    "dhuhr": 29912312,
+    "asr": 29912535,
+    "maghrib": 29912728,
+    "isha": 29912818
+   }
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "method": "muslim_world_league",
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29934827,
+    "sunrise": 29934928,
+    "dhuhr": 29935356,
+    "asr": 29935581,
+    "maghrib": 29935783,
+    "isha": 29935878
+   }
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "method": "muslim_world_league",
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29954985,
+    "sunrise": 29955089,
+    "dhuhr": 29955522,
+    "asr": 29955747,
+    "maghrib": 29955953,
+    "isha": 29956051
+   }
+  },
+  {
+   "city": "los_angeles",
+   "latitude": 34.0522,
+   "longitude": -118.2437,
+   "method": "north_america",
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29454584,
+    "sunrise": 29454659,
+    "dhuhr": 29454958,
+    "asr": 29455117,
+    "maghrib": 29455255,
+    "isha": 29455329
+   }
+  },
+  {
+   "city": "los_angeles",
+   "latitude": 34.0522,
+   "longitude": -118.2437,
+   "method": "north_america",
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29474745,
+    "sunrise": 29474818,
+    "dhuhr": 29475124,
+    "asr": 29475288,
+    "maghrib": 29475427,
+    "isha": 29475500
+   }
+  },
+  {
+   "city": "los_angeles",
+   "latitude": 34.0522,
+   "longitude": -118.2437,
+   "method": "north_america",
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29499219,
+    "sunrise": 29499290,
+    "dhuhr": 29499608,
+    "asr": 29499783,
+    "maghrib": 29499924,
+    "isha": 29499995
+   }
+  },
+  {
+   "city": "los_angeles",
+   "latitude": 34.0522,
+   "longitude": -118.2437,
+   "method": "north_america",
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29519368,
+    "sunrise": 29519437,
+    "dhuhr": 29519768,
+    "asr": 29519954,
+    "maghrib": 29520097,
+    "isha": 29520167
+   }
+  },
+  {
+   "city": "los_angeles",
+   "latitude": 34.0522,
+   "longitude": -118.2437,
+   "method": "north_america",
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29539513,
+    "sunrise": 29539581,
+    "dhuhr": 29539926,
+    "asr": 29540122,
+    "maghrib": 29540269,
+    "isha": 29540338
+   }
+  },
+  {
+   "city": "los_angeles",
+   "latitude": 34.0522,
+   "longitude": -118.2437,
+   "method": "north_america",
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29559655,
+    "sunrise": 29559723,
+    "dhuhr": 29560083,
+    "asr": 29560287,
+    "maghrib": 29560441,
+    "isha": 29560510
+   }
+  },
+  {
+   "city": "los_angeles",
+   "latitude": 34.0522,
+   "longitude": -118.2437,
+   "method": "north_america",
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29584110,
+    "sunrise": 29584180,
+    "dhuhr": 29584558,
+    "asr": 29584771,
+    "maghrib": 29584934,
+    "isha": 29585004
+   }
+  },
+  {
+   "city": "los_angeles",
+   "latitude": 34.0522,
+   "longitude": -118.2437,
+   "method": "north_america",
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29604250,
+    "sunrise": 29604322,
+    "dhuhr": 29604714,
+    "asr": 29604933,
+    "maghrib": 29605105,
+    "isha": 29605177
+   }
+  },
+  {
+   "city": "los_angeles",
+   "latitude": 34.0522,
+   "longitude": -118.2437,
+   "method": "north_america",
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29627268,
+    "sunrise": 29627344,
+    "dhuhr": 29627751,
+    "asr": 29627974,
+    "maghrib": 29628157,
+    "isha": 29628233
+   }
+  },
+  {
+   "city": "los_angeles",
+   "latitude": 34.0522,
+   "longitude": -118.2437,
+   "method": "north_america",
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29647413,
+    "sunrise": 29647491,
+    "dhuhr": 29647910,
+    "asr": 29648134,
+    "maghrib": 29648328,
+    "isha": 29648407
+   }
+  },
+  {
+   "city": "los_angeles",
+   "latitude": 34.0522,
+   "longitude": -118.2437,
+   "method": "north_america",
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29671880,
+    "sunrise": 29671963,
+    "dhuhr": 29672392,
+    "asr": 29672617,
+    "maghrib": 29672819,
+    "isha": 29672902
+   }
+  },
+  {
+   "city": "los_angeles",
+   "latitude": 34.0522,
+   "longitude": -118.2437,
+   "method": "north_america",
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29692037,
+    "sunrise": 29692121,
+    "dhuhr": 29692555,
+    "asr": 29692779,
+    "maghrib": 29692986,
+    "isha": 29693070
+   }
+  },
+  {
+   "city": "los_angeles",
+   "latitude": 34.0522,
+   "longitude": -118.2437,
+   "method": "north_america",
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29715081,
+    "sunrise": 29715165,
+    "dhuhr": 29715598,
+    "asr": 29715822,
+    "maghrib": 29716028,
+    "isha": 29716112
+   }
+  },
+  {
+   "city": "los_angeles",
+   "latitude": 34.0522,
+   "longitude": -118.2437,
+   "method": "north_america",
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29735251,
+    "sunrise": 29735333,
+    "dhuhr": 29735760,
+    "asr": 29735984,
+    "maghrib": 29736185,
+    "isha": 29736266
+   }
+  },
+  {
+   "city": "los_angeles",
+   "latitude": 34.0522,
+   "longitude": -118.2437,
+   "method": "north_america",
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29759747,
+    "sunrise": 29759824,
+    "dhuhr": 29760240,
+    "asr": 29760463,
+    "maghrib": 29760654,
+    "isha": 29760731
+   }
+  },
+  {
+   "city": "los_angeles",
+   "latitude": 34.0522,
+   "longitude": -118.2437,
+   "method": "north_america",
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29779920,
+    "sunrise": 29779995,
+    "dhuhr": 29780398,
+    "asr": 29780618,
+    "maghrib": 29780800,
+    "isha": 29780874
+   }
+  },
+  {
+   "city": "los_angeles",
+   "latitude": 34.0522,
+   "longitude": -118.2437,
+   "method": "north_america",
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29804416,
+    "sunrise": 29804487,
+    "dhuhr": 29804874,
+    "asr": 29805089,
+    "maghrib": 29805259,
+    "isha": 29805329
+   }
+  },
+  {
+   "city": "los_angeles",
+   "latitude": 34.0522,
+   "longitude": -118.2437,
+   "method": "north_america",
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29824587,
+    "sunrise": 29824656,
+    "dhuhr": 29825029,
+    "asr": 29825238,
+    "maghrib": 29825399,
+    "isha": 29825468
+   }
+  },
+  {
+   "city": "los_angeles",
+   "latitude": 34.0522,
+   "longitude": -118.2437,
+   "method": "north_america",
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29847639,
+    "sunrise": 29847708,
+    "dhuhr": 29848064,
+    "asr": 29848263,
+    "maghrib": 29848417,
+    "isha": 29848485
+   }
+  },
+  {
+   "city": "los_angeles",
+   "latitude": 34.0522,
+   "longitude": -118.2437,
+   "method": "north_america",
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29867809,
+    "sunrise": 29867878,
+    "dhuhr": 29868220,
+    "asr": 29868410,
+    "maghrib": 29868559,
+    "isha": 29868627
+   }
+  },
+  {
+   "city": "los_angeles",
+   "latitude": 34.0522,
+   "longitude": -118.2437,
+   "method": "north_america",
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29892303,
+    "sunrise": 29892373,
+    "dhuhr": 29892698,
+    "asr": 29892876,
+    "maghrib": 29893020,
+    "isha": 29893090
+   }
+  },
+  {
+   "city": "los_angeles",
+   "latitude": 34.0522,
+   "longitude": -118.2437,
+   "method": "north_america",
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29912474,
+    "sunrise": 29912546,
+    "dhuhr": 29912859,
+    "asr": 29913028,
+    "maghrib": 29913169,
+    "isha": 29913241
+   }
+  },
+  {
+   "city": "los_angeles",
+   "latitude": 34.0522,
+   "longitude": -118.2437,
+   "method": "north_america",
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29935527,
+    "sunrise": 29935600,
+    "dhuhr": 29935903,
+    "asr": 29936064,
+    "maghrib": 29936204,
+    "isha": 29936277
+   }
+  },
+  {
+   "city": "los_angeles",
+   "latitude": 34.0522,
+   "longitude": -118.2437,
+   "method": "north_america",
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29955697,
+    "sunrise": 29955771,
+    "dhuhr": 29956069,
+    "asr": 29956227,
+    "maghrib": 29956365,
+    "isha": 29956440
+   }
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29454145,
+    "sunrise": 29454246,
+    "dhuhr": 29454489,
+    "asr": 29454586,
+    "maghrib": 29454725,
+    "isha": 29454819
+   }
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29474300,
+    "sunrise": 29474399,
+    "dhuhr": 29474655,
+    "asr": 29474762,
+    "maghrib": 29474904,
+    "isha": 29474994
+   }
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29498761,
+    "sunrise": 29498859,
+    "dhuhr": 29499139,
+    "asr": 29499266,
+    "maghrib": 29499413,
+    "isha": 29499499
+   }
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29518898,
+    "sunrise": 29518994,
+    "dhuhr": 29519300,
+    "asr": 29519446,
+    "maghrib": 29519599,
+    "isha": 29519681
+   }
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29539031,
+    "sunrise": 29539126,
+    "dhuhr": 29539458,
+    "asr": 29539625,
+    "maghrib": 29539784,
+    "isha": 29539863
+   }
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29559161,
+    "sunrise": 29559255,
+    "dhuhr": 29559614,
+    "asr": 29559801,
+    "maghrib": 29559968,
+    "isha": 29560044
+   }
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29583600,
+    "sunrise": 29583696,
+    "dhuhr": 29584089,
+    "asr": 29584298,
+    "maghrib": 29584477,
+    "isha": 29584548
+   }
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29603725,
+    "sunrise": 29603825,
+    "dhuhr": 29604246,
+    "asr": 29604470,
+    "maghrib": 29604660,
+    "isha": 29604729
+   }
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29626729,
+    "sunrise": 29626833,
+    "dhuhr": 29627283,
+    "asr": 29627521,
+    "maghrib": 29627727,
+    "isha": 29627792
+   }
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29646861,
+    "sunrise": 29646969,
+    "dhuhr": 29647442,
+    "asr": 29647690,
+    "maghrib": 29647909,
+    "isha": 29647975
+   }
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29671316,
+    "sunrise": 29671429,
+    "dhuhr": 29671923,
+    "asr": 29672179,
+    "maghrib": 29672411,
+    "isha": 29672482
+   }
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29691465,
+    "sunrise": 29691583,
+    "dhuhr": 29692086,
+    "asr": 29692344,
+    "maghrib": 29692583,
+    "isha": 29692658
+   }
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29714510,
+    "sunrise": 29714628,
+    "dhuhr": 29715129,
+    "asr": 29715386,
+    "maghrib": 29715624,
+    "isha": 29715699
+   }
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29734688,
+    "sunrise": 29734801,
+    "dhuhr": 29735292,
+    "asr": 29735544,
+    "maghrib": 29735774,
+    "isha": 29735845
+   }
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29759197,
+    "sunrise": 29759304,
+    "dhuhr": 29759772,
+    "asr": 29760016,
+    "maghrib": 29760232,
+    "isha": 29760297
+   }
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29779382,
+    "sunrise": 29779486,
+    "dhuhr": 29779930,
+    "asr": 29780164,
+    "maghrib": 29780366,
+    "isha": 29780431
+   }
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29803894,
+    "sunrise": 29803993,
+    "dhuhr": 29804406,
+    "asr": 29804623,
+    "maghrib": 29804810,
+    "isha": 29804879
+   }
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29824080,
+    "sunrise": 29824175,
+    "dhuhr": 29824561,
+    "asr": 29824762,
+    "maghrib": 29824938,
+    "isha": 29825010
+   }
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29847147,
+    "sunrise": 29847241,
+    "dhuhr": 29847595,
+    "asr": 29847775,
+    "maghrib": 29847941,
+    "isha": 29848017
+   }
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29867329,
+    "sunrise": 29867424,
+    "dhuhr": 29867751,
+    "asr": 29867911,
+    "maghrib": 29868070,
+    "isha": 29868150
+   }
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29891837,
+    "sunrise": 29891934,
+    "dhuhr": 29892229,
+    "asr": 29892365,
+    "maghrib": 29892517,
+    "isha": 29892600
+   }
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29912020,
+    "sunrise": 29912118,
+    "dhuhr": 29912390,
+    "asr": 29912508,
+    "maghrib": 29912654,
+    "isha": 29912741
+   }
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29935084,
+    "sunrise": 29935184,
+    "dhuhr": 29935435,
+    "asr": 29935536,
+    "maghrib": 29935678,
+    "isha": 29935769
+   }
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29955258,
+    "sunrise": 29955360,
+    "dhuhr": 29955601,
+    "asr": 29955695,
+    "maghrib": 29955835,
+    "isha": 29955929
+   }
+  },
+  {
+   "city": "london_red",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "red",
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29454145,
+    "sunrise": 29454246,
+    "dhuhr": 29454489,
+    "asr": 29454586,
+    "maghrib": 29454725,
+    "isha": 29454798
+   }
+  },
+  {
+   "city": "london_red",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "red",
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29474300,
+    "sunrise": 29474399,
+    "dhuhr": 29474655,
+    "asr": 29474762,
+    "maghrib": 29474904,
+    "isha": 29474973
+   }
+  },
+  {
+   "city": "london_red",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "red",
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29498761,
+    "sunrise": 29498859,
+    "dhuhr": 29499139,
+    "asr": 29499266,
+    "maghrib": 29499413,
+    "isha": 29499478
+   }
+  },
+  {
+   "city": "london_red",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "red",
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29518898,
+    "sunrise": 29518994,
+    "dhuhr": 29519300,
+    "asr": 29519446,
+    "maghrib": 29519599,
+    "isha": 29519660
+   }
+  },
+  {
+   "city": "london_red",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "red",
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29539031,
+    "sunrise": 29539126,
+    "dhuhr": 29539458,
+    "asr": 29539625,
+    "maghrib": 29539784,
+    "isha": 29539841
+   }
+  },
+  {
+   "city": "london_red",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "red",
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29559161,
+    "sunrise": 29559255,
+    "dhuhr": 29559614,
+    "asr": 29559801,
+    "maghrib": 29559968,
+    "isha": 29560022
+   }
+  },
+  {
+   "city": "london_red",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "red",
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29583600,
+    "sunrise": 29583696,
+    "dhuhr": 29584089,
+    "asr": 29584298,
+    "maghrib": 29584477,
+    "isha": 29584532
+   }
+  },
+  {
+   "city": "london_red",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "red",
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29603725,
+    "sunrise": 29603825,
+    "dhuhr": 29604246,
+    "asr": 29604470,
+    "maghrib": 29604660,
+    "isha": 29604718
+   }
+  },
+  {
+   "city": "london_red",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "red",
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29626729,
+    "sunrise": 29626833,
+    "dhuhr": 29627283,
+    "asr": 29627521,
+    "maghrib": 29627727,
+    "isha": 29627789
+   }
+  },
+  {
+   "city": "london_red",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "red",
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29646861,
+    "sunrise": 29646969,
+    "dhuhr": 29647442,
+    "asr": 29647690,
+    "maghrib": 29647909,
+    "isha": 29647975
+   }
+  },
+  {
+   "city": "london_red",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "red",
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29671316,
+    "sunrise": 29671429,
+    "dhuhr": 29671923,
+    "asr": 29672179,
+    "maghrib": 29672411,
+    "isha": 29672482
+   }
+  },
+  {
+   "city": "london_red",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "red",
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29691465,
+    "sunrise": 29691583,
+    "dhuhr": 29692086,
+    "asr": 29692344,
+    "maghrib": 29692583,
+    "isha": 29692658
+   }
+  },
+  {
+   "city": "london_red",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "red",
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29714510,
+    "sunrise": 29714628,
+    "dhuhr": 29715129,
+    "asr": 29715386,
+    "maghrib": 29715624,
+    "isha": 29715698
+   }
+  },
+  {
+   "city": "london_red",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "red",
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29734688,
+    "sunrise": 29734801,
+    "dhuhr": 29735292,
+    "asr": 29735544,
+    "maghrib": 29735774,
+    "isha": 29735845
+   }
+  },
+  {
+   "city": "london_red",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "red",
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29759197,
+    "sunrise": 29759304,
+    "dhuhr": 29759772,
+    "asr": 29760016,
+    "maghrib": 29760232,
+    "isha": 29760297
+   }
+  },
+  {
+   "city": "london_red",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "red",
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29779382,
+    "sunrise": 29779486,
+    "dhuhr": 29779930,
+    "asr": 29780164,
+    "maghrib": 29780366,
+    "isha": 29780428
+   }
+  },
+  {
+   "city": "london_red",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "red",
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29803894,
+    "sunrise": 29803993,
+    "dhuhr": 29804406,
+    "asr": 29804623,
+    "maghrib": 29804810,
+    "isha": 29804868
+   }
+  },
+  {
+   "city": "london_red",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "red",
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29824080,
+    "sunrise": 29824175,
+    "dhuhr": 29824561,
+    "asr": 29824762,
+    "maghrib": 29824938,
+    "isha": 29824992
+   }
+  },
+  {
+   "city": "london_red",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "red",
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29847147,
+    "sunrise": 29847241,
+    "dhuhr": 29847595,
+    "asr": 29847775,
+    "maghrib": 29847941,
+    "isha": 29847996
+   }
+  },
+  {
+   "city": "london_red",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "red",
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29867329,
+    "sunrise": 29867424,
+    "dhuhr": 29867751,
+    "asr": 29867911,
+    "maghrib": 29868070,
+    "isha": 29868128
+   }
+  },
+  {
+   "city": "london_red",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "red",
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29891837,
+    "sunrise": 29891934,
+    "dhuhr": 29892229,
+    "asr": 29892365,
+    "maghrib": 29892517,
+    "isha": 29892579
+   }
+  },
+  {
+   "city": "london_red",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "red",
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29912020,
+    "sunrise": 29912118,
+    "dhuhr": 29912390,
+    "asr": 29912508,
+    "maghrib": 29912654,
+    "isha": 29912720
+   }
+  },
+  {
+   "city": "london_red",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "red",
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29935084,
+    "sunrise": 29935184,
+    "dhuhr": 29935435,
+    "asr": 29935536,
+    "maghrib": 29935678,
+    "isha": 29935748
+   }
+  },
+  {
+   "city": "london_red",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "red",
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29955258,
+    "sunrise": 29955360,
+    "dhuhr": 29955601,
+    "asr": 29955695,
+    "maghrib": 29955835,
+    "isha": 29955908
+   }
+  },
+  {
+   "city": "london_white",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "white",
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29454145,
+    "sunrise": 29454246,
+    "dhuhr": 29454489,
+    "asr": 29454586,
+    "maghrib": 29454725,
+    "isha": 29454819
+   }
+  },
+  {
+   "city": "london_white",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "white",
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29474300,
+    "sunrise": 29474399,
+    "dhuhr": 29474655,
+    "asr": 29474762,
+    "maghrib": 29474904,
+    "isha": 29474995
+   }
+  },
+  {
+   "city": "london_white",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "white",
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29498761,
+    "sunrise": 29498859,
+    "dhuhr": 29499139,
+    "asr": 29499266,
+    "maghrib": 29499413,
+    "isha": 29499501
+   }
+  },
+  {
+   "city": "london_white",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "white",
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29518898,
+    "sunrise": 29518994,
+    "dhuhr": 29519300,
+    "asr": 29519446,
+    "maghrib": 29519599,
+    "isha": 29519684
+   }
+  },
+  {
+   "city": "london_white",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "white",
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29539031,
+    "sunrise": 29539126,
+    "dhuhr": 29539458,
+    "asr": 29539625,
+    "maghrib": 29539784,
+    "isha": 29539866
+   }
+  },
+  {
+   "city": "london_white",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "white",
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29559161,
+    "sunrise": 29559255,
+    "dhuhr": 29559614,
+    "asr": 29559801,
+    "maghrib": 29559968,
+    "isha": 29560048
+   }
+  },
+  {
+   "city": "london_white",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "white",
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29583600,
+    "sunrise": 29583696,
+    "dhuhr": 29584089,
+    "asr": 29584298,
+    "maghrib": 29584477,
+    "isha": 29584561
+   }
+  },
+  {
+   "city": "london_white",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "white",
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29603725,
+    "sunrise": 29603825,
+    "dhuhr": 29604246,
+    "asr": 29604470,
+    "maghrib": 29604660,
+    "isha": 29604753
+   }
+  },
+  {
+   "city": "london_white",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "white",
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29626729,
+    "sunrise": 29626833,
+    "dhuhr": 29627283,
+    "asr": 29627521,
+    "maghrib": 29627727,
+    "isha": 29627830
+   }
+  },
+  {
+   "city": "london_white",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "white",
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29646861,
+    "sunrise": 29646969,
+    "dhuhr": 29647442,
+    "asr": 29647690,
+    "maghrib": 29647909,
+    "isha": 29648023
+   }
+  },
+  {
+   "city": "london_white",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "white",
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29671316,
+    "sunrise": 29671429,
+    "dhuhr": 29671923,
+    "asr": 29672179,
+    "maghrib": 29672411,
+    "isha": 29672541
+   }
+  },
+  {
+   "city": "london_white",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "white",
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29691465,
+    "sunrise": 29691583,
+    "dhuhr": 29692086,
+    "asr": 29692344,
+    "maghrib": 29692583,
+    "isha": 29692725
+   }
+  },
+  {
+   "city": "london_white",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "white",
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29714510,
+    "sunrise": 29714628,
+    "dhuhr": 29715129,
+    "asr": 29715386,
+    "maghrib": 29715624,
+    "isha": 29715764
+   }
+  },
+  {
+   "city": "london_white",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "white",
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29734688,
+    "sunrise": 29734801,
+    "dhuhr": 29735292,
+    "asr": 29735544,
+    "maghrib": 29735774,
+    "isha": 29735902
+   }
+  },
+  {
+   "city": "london_white",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "white",
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29759197,
+    "sunrise": 29759304,
+    "dhuhr": 29759772,
+    "asr": 29760016,
+    "maghrib": 29760232,
+    "isha": 29760344
+   }
+  },
+  {
+   "city": "london_white",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "white",
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29779382,
+    "sunrise": 29779486,
+    "dhuhr": 29779930,
+    "asr": 29780164,
+    "maghrib": 29780366,
+    "isha": 29780468
+   }
+  },
+  {
+   "city": "london_white",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "white",
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29803894,
+    "sunrise": 29803993,
+    "dhuhr": 29804406,
+    "asr": 29804623,
+    "maghrib": 29804810,
+    "isha": 29804901
+   }
+  },
+  {
+   "city": "london_white",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "white",
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29824080,
+    "sunrise": 29824175,
+    "dhuhr": 29824561,
+    "asr": 29824762,
+    "maghrib": 29824938,
+    "isha": 29825021
+   }
+  },
+  {
+   "city": "london_white",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "white",
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29847147,
+    "sunrise": 29847241,
+    "dhuhr": 29847595,
+    "asr": 29847775,
+    "maghrib": 29847941,
+    "isha": 29848022
+   }
+  },
+  {
+   "city": "london_white",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "white",
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29867329,
+    "sunrise": 29867424,
+    "dhuhr": 29867751,
+    "asr": 29867911,
+    "maghrib": 29868070,
+    "isha": 29868153
+   }
+  },
+  {
+   "city": "london_white",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "white",
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29891837,
+    "sunrise": 29891934,
+    "dhuhr": 29892229,
+    "asr": 29892365,
+    "maghrib": 29892517,
+    "isha": 29892603
+   }
+  },
+  {
+   "city": "london_white",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "white",
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29912020,
+    "sunrise": 29912118,
+    "dhuhr": 29912390,
+    "asr": 29912508,
+    "maghrib": 29912654,
+    "isha": 29912743
+   }
+  },
+  {
+   "city": "london_white",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "white",
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29935084,
+    "sunrise": 29935184,
+    "dhuhr": 29935435,
+    "asr": 29935536,
+    "maghrib": 29935678,
+    "isha": 29935770
+   }
+  },
+  {
+   "city": "london_white",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "method": "moonsighting_committee",
+   "shafaq": "white",
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29955258,
+    "sunrise": 29955360,
+    "dhuhr": 29955601,
+    "asr": 29955695,
+    "maghrib": 29955835,
+    "isha": 29955929
+   }
+  },
+  {
+   "city": "birmingham",
+   "latitude": 52.4862,
+   "longitude": -1.8904,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29454157,
+    "sunrise": 29454258,
+    "dhuhr": 29454496,
+    "asr": 29454589,
+    "maghrib": 29454727,
+    "isha": 29454821
+   }
+  },
+  {
+   "city": "birmingham",
+   "latitude": 52.4862,
+   "longitude": -1.8904,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29474311,
+    "sunrise": 29474411,
+    "dhuhr": 29474662,
+    "asr": 29474765,
+    "maghrib": 29474907,
+    "isha": 29474997
+   }
+  },
+  {
+   "city": "birmingham",
+   "latitude": 52.4862,
+   "longitude": -1.8904,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29498771,
+    "sunrise": 29498869,
+    "dhuhr": 29499146,
+    "asr": 29499270,
+    "maghrib": 29499417,
+    "isha": 29499503
+   }
+  },
+  {
+   "city": "birmingham",
+   "latitude": 52.4862,
+   "longitude": -1.8904,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29518907,
+    "sunrise": 29519004,
+    "dhuhr": 29519307,
+    "asr": 29519451,
+    "maghrib": 29519603,
+    "isha": 29519686
+   }
+  },
+  {
+   "city": "birmingham",
+   "latitude": 52.4862,
+   "longitude": -1.8904,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29539039,
+    "sunrise": 29539134,
+    "dhuhr": 29539465,
+    "asr": 29539630,
+    "maghrib": 29539790,
+    "isha": 29539869
+   }
+  },
+  {
+   "city": "birmingham",
+   "latitude": 52.4862,
+   "longitude": -1.8904,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29559168,
+    "sunrise": 29559262,
+    "dhuhr": 29559621,
+    "asr": 29559807,
+    "maghrib": 29559975,
+    "isha": 29560051
+   }
+  },
+  {
+   "city": "birmingham",
+   "latitude": 52.4862,
+   "longitude": -1.8904,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29583606,
+    "sunrise": 29583702,
+    "dhuhr": 29584096,
+    "asr": 29584305,
+    "maghrib": 29584485,
+    "isha": 29584556
+   }
+  },
+  {
+   "city": "birmingham",
+   "latitude": 52.4862,
+   "longitude": -1.8904,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29603730,
+    "sunrise": 29603830,
+    "dhuhr": 29604253,
+    "asr": 29604477,
+    "maghrib": 29604669,
+    "isha": 29604738
+   }
+  },
+  {
+   "city": "birmingham",
+   "latitude": 52.4862,
+   "longitude": -1.8904,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29626732,
+    "sunrise": 29626836,
+    "dhuhr": 29627290,
+    "asr": 29627529,
+    "maghrib": 29627737,
+    "isha": 29627802
+   }
+  },
+  {
+   "city": "birmingham",
+   "latitude": 52.4862,
+   "longitude": -1.8904,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29646863,
+    "sunrise": 29646972,
+    "dhuhr": 29647449,
+    "asr": 29647698,
+    "maghrib": 29647920,
+    "isha": 29647986
+   }
+  },
+  {
+   "city": "birmingham",
+   "latitude": 52.4862,
+   "longitude": -1.8904,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29671317,
+    "sunrise": 29671431,
+    "dhuhr": 29671930,
+    "asr": 29672187,
+    "maghrib": 29672424,
+    "isha": 29672495
+   }
+  },
+  {
+   "city": "birmingham",
+   "latitude": 52.4862,
+   "longitude": -1.8904,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29691466,
+    "sunrise": 29691584,
+    "dhuhr": 29692093,
+    "asr": 29692353,
+    "maghrib": 29692595,
+    "isha": 29692671
+   }
+  },
+  {
+   "city": "birmingham",
+   "latitude": 52.4862,
+   "longitude": -1.8904,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29714511,
+    "sunrise": 29714629,
+    "dhuhr": 29715136,
+    "asr": 29715395,
+    "maghrib": 29715636,
+    "isha": 29715711
+   }
+  },
+  {
+   "city": "birmingham",
+   "latitude": 52.4862,
+   "longitude": -1.8904,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29734689,
+    "sunrise": 29734803,
+    "dhuhr": 29735299,
+    "asr": 29735553,
+    "maghrib": 29735786,
+    "isha": 29735857
+   }
+  },
+  {
+   "city": "birmingham",
+   "latitude": 52.4862,
+   "longitude": -1.8904,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29759199,
+    "sunrise": 29759307,
+    "dhuhr": 29759779,
+    "asr": 29760024,
+    "maghrib": 29760242,
+    "isha": 29760308
+   }
+  },
+  {
+   "city": "birmingham",
+   "latitude": 52.4862,
+   "longitude": -1.8904,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29779386,
+    "sunrise": 29779490,
+    "dhuhr": 29779937,
+    "asr": 29780171,
+    "maghrib": 29780376,
+    "isha": 29780441
+   }
+  },
+  {
+   "city": "birmingham",
+   "latitude": 52.4862,
+   "longitude": -1.8904,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29803899,
+    "sunrise": 29803998,
+    "dhuhr": 29804413,
+    "asr": 29804630,
+    "maghrib": 29804819,
+    "isha": 29804888
+   }
+  },
+  {
+   "city": "birmingham",
+   "latitude": 52.4862,
+   "longitude": -1.8904,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29824086,
+    "sunrise": 29824182,
+    "dhuhr": 29824568,
+    "asr": 29824768,
+    "maghrib": 29824946,
+    "isha": 29825018
+   }
+  },
+  {
+   "city": "birmingham",
+   "latitude": 52.4862,
+   "longitude": -1.8904,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29847154,
+    "sunrise": 29847249,
+    "dhuhr": 29847602,
+    "asr": 29847781,
+    "maghrib": 29847948,
+    "isha": 29848024
+   }
+  },
+  {
+   "city": "birmingham",
+   "latitude": 52.4862,
+   "longitude": -1.8904,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29867337,
+    "sunrise": 29867433,
+    "dhuhr": 29867758,
+    "asr": 29867916,
+    "maghrib": 29868076,
+    "isha": 29868156
+   }
+  },
+  {
+   "city": "birmingham",
+   "latitude": 52.4862,
+   "longitude": -1.8904,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29891846,
+    "sunrise": 29891944,
+    "dhuhr": 29892236,
+    "asr": 29892369,
+    "maghrib": 29892521,
+    "isha": 29892605
+   }
+  },
+  {
+   "city": "birmingham",
+   "latitude": 52.4862,
+   "longitude": -1.8904,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29912030,
+    "sunrise": 29912129,
+    "dhuhr": 29912397,
+    "asr": 29912511,
+    "maghrib": 29912658,
+    "isha": 29912745
+   }
+  },
+  {
+   "city": "birmingham",
+   "latitude": 52.4862,
+   "longitude": -1.8904,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29935095,
+    "sunrise": 29935195,
+    "dhuhr": 29935442,
+    "asr": 29935539,
+    "maghrib": 29935680,
+    "isha": 29935772
+   }
+  },
+  {
+   "city": "birmingham",
+   "latitude": 52.4862,
+   "longitude": -1.8904,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29955270,
+    "sunrise": 29955372,
+    "dhuhr": 29955608,
+    "asr": 29955698,
+    "maghrib": 29955836,
+    "isha": 29955931
+   }
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29454184,
+    "sunrise": 29454287,
+    "dhuhr": 29454506,
+    "asr": 29454581,
+    "maghrib": 29454717,
+    "isha": 29454812
+   }
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29474336,
+    "sunrise": 29474437,
+    "dhuhr": 29474671,
+    "asr": 29474759,
+    "maghrib": 29474899,
+    "isha": 29474990
+   }
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29498791,
+    "sunrise": 29498891,
+    "dhuhr": 29499156,
+    "asr": 29499267,
+    "maghrib": 29499414,
+    "isha": 29499501
+   }
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29518924,
+    "sunrise": 29519022,
+    "dhuhr": 29519316,
+    "asr": 29519450,
+    "maghrib": 29519604,
+    "isha": 29519687
+   }
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29539051,
+    "sunrise": 29539148,
+    "dhuhr": 29539474,
+    "asr": 29539632,
+    "maghrib": 29539794,
+    "isha": 29539874
+   }
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29559177,
+    "sunrise": 29559272,
+    "dhuhr": 29559631,
+    "asr": 29559812,
+    "maghrib": 29559983,
+    "isha": 29560059
+   }
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29583615,
+    "sunrise": 29583708,
+    "dhuhr": 29584106,
+    "asr": 29584312,
+    "maghrib": 29584498,
+    "isha": 29584570
+   }
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29603748,
+    "sunrise": 29603832,
+    "dhuhr": 29604262,
+    "asr": 29604487,
+    "maghrib": 29604686,
+    "isha": 29604755
+   }
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29626760,
+    "sunrise": 29626834,
+    "dhuhr": 29627299,
+    "asr": 29627542,
+    "maghrib": 29627759,
+    "isha": 29627823
+   }
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29646899,
+    "sunrise": 29646965,
+    "dhuhr": 29647458,
+    "asr": 29647713,
+    "maghrib": 29647946,
+    "isha": 29648009
+   }
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29671362,
+    "sunrise": 29671420,
+    "dhuhr": 29671940,
+    "asr": 29672204,
+    "maghrib": 29672454,
+    "isha": 29672509
+   }
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29691516,
+    "sunrise": 29691571,
+    "dhuhr": 29692103,
+    "asr": 29692370,
+    "maghrib": 29692627,
+    "isha": 29692679
+   }
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29714560,
+    "sunrise": 29714616,
+    "dhuhr": 29715146,
+    "asr": 29715412,
+    "maghrib": 29715668,
+    "isha": 29715721
+   }
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29734732,
+    "sunrise": 29734793,
+    "dhuhr": 29735308,
+    "asr": 29735569,
+    "maghrib": 29735815,
+    "isha": 29735873
+   }
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29759233,
+    "sunrise": 29759302,
+    "dhuhr": 29759788,
+    "asr": 29760038,
+    "maghrib": 29760267,
+    "isha": 29760332
+   }
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29779412,
+    "sunrise": 29779488,
+    "dhuhr": 29779947,
+    "asr": 29780183,
+    "maghrib": 29780396,
+    "isha": 29780461
+   }
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29803914,
+    "sunrise": 29804001,
+    "dhuhr": 29804422,
+    "asr": 29804639,
+    "maghrib": 29804834,
+    "isha": 29804903
+   }
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29824092,
+    "sunrise": 29824189,
+    "dhuhr": 29824577,
+    "asr": 29824775,
+    "maghrib": 29824958,
+    "isha": 29825030
+   }
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29847164,
+    "sunrise": 29847260,
+    "dhuhr": 29847612,
+    "asr": 29847784,
+    "maghrib": 29847955,
+    "isha": 29848032
+   }
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29867351,
+    "sunrise": 29867448,
+    "dhuhr": 29867768,
+    "asr": 29867917,
+    "maghrib": 29868080,
+    "isha": 29868160
+   }
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29891865,
+    "sunrise": 29891963,
+    "dhuhr": 29892246,
+    "asr": 29892366,
+    "maghrib": 29892520,
+    "isha": 29892605
+   }
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29912052,
+    "sunrise": 29912153,
+    "dhuhr": 29912407,
+    "asr": 29912506,
+    "maghrib": 29912653,
+    "isha": 29912741
+   }
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29935121,
+    "sunrise": 29935223,
+    "dhuhr": 29935451,
+    "asr": 29935531,
+    "maghrib": 29935672,
+    "isha": 29935764
+   }
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29955298,
+    "sunrise": 29955401,
+    "dhuhr": 29955617,
+    "asr": 29955690,
+    "maghrib": 29955826,
+    "isha": 29955922
+   }
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29454462,
+    "sunrise": 29454558,
+    "dhuhr": 29454839,
+    "asr": 29454973,
+    "maghrib": 29455113,
+    "isha": 29455203
+   }
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29474621,
+    "sunrise": 29474716,
+    "dhuhr": 29475005,
+    "asr": 29475146,
+    "maghrib": 29475288,
+    "isha": 29475374
+   }
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29499089,
+    "sunrise": 29499183,
+    "dhuhr": 29499489,
+    "asr": 29499644,
+    "maghrib": 29499789,
+    "isha": 29499872
+   }
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29519234,
+    "sunrise": 29519326,
+    "dhuhr": 29519650,
+    "asr": 29519819,
+    "maghrib": 29519967,
+    "isha": 29520047
+   }
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29539374,
+    "sunrise": 29539465,
+    "dhuhr": 29539808,
+    "asr": 29539991,
+    "maghrib": 29540144,
+    "isha": 29540222
+   }
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29559512,
+    "sunrise": 29559602,
+    "dhuhr": 29559964,
+    "asr": 29560161,
+    "maghrib": 29560320,
+    "isha": 29560395
+   }
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29583961,
+    "sunrise": 29584053,
+    "dhuhr": 29584439,
+    "asr": 29584650,
+    "maghrib": 29584819,
+    "isha": 29584891
+   }
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29604095,
+    "sunrise": 29604190,
+    "dhuhr": 29604595,
+    "asr": 29604816,
+    "maghrib": 29604995,
+    "isha": 29605064
+   }
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29627108,
+    "sunrise": 29627207,
+    "dhuhr": 29627633,
+    "asr": 29627861,
+    "maghrib": 29628052,
+    "isha": 29628118
+   }
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29647248,
+    "sunrise": 29647350,
+    "dhuhr": 29647792,
+    "asr": 29648025,
+    "maghrib": 29648227,
+    "isha": 29648294
+   }
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29671712,
+    "sunrise": 29671818,
+    "dhuhr": 29672273,
+    "asr": 29672510,
+    "maghrib": 29672722,
+    "isha": 29672794
+   }
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29691865,
+    "sunrise": 29691975,
+    "dhuhr": 29692436,
+    "asr": 29692674,
+    "maghrib": 29692891,
+    "isha": 29692965
+   }
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29714910,
+    "sunrise": 29715019,
+    "dhuhr": 29715479,
+    "asr": 29715717,
+    "maghrib": 29715933,
+    "isha": 29716007
+   }
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29735083,
+    "sunrise": 29735189,
+    "dhuhr": 29735642,
+    "asr": 29735877,
+    "maghrib": 29736087,
+    "isha": 29736158
+   }
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29759583,
+    "sunrise": 29759684,
+    "dhuhr": 29760122,
+    "asr": 29760352,
+    "maghrib": 29760552,
+    "isha": 29760618
+   }
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29779761,
+    "sunrise": 29779859,
+    "dhuhr": 29780280,
+    "asr": 29780505,
+    "maghrib": 29780693,
+    "isha": 29780760
+   }
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29804262,
+    "sunrise": 29804356,
+    "dhuhr": 29804755,
+    "asr": 29804970,
+    "maghrib": 29805147,
+    "isha": 29805216
+   }
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29824439,
+    "sunrise": 29824531,
+    "dhuhr": 29824911,
+    "asr": 29825115,
+    "maghrib": 29825283,
+    "isha": 29825355
+   }
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29847497,
+    "sunrise": 29847588,
+    "dhuhr": 29847945,
+    "asr": 29848136,
+    "maghrib": 29848295,
+    "isha": 29848370
+   }
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29867671,
+    "sunrise": 29867763,
+    "dhuhr": 29868101,
+    "asr": 29868279,
+    "maghrib": 29868432,
+    "isha": 29868510
+   }
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29892170,
+    "sunrise": 29892263,
+    "dhuhr": 29892579,
+    "asr": 29892739,
+    "maghrib": 29892888,
+    "isha": 29892969
+   }
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29912346,
+    "sunrise": 29912440,
+    "dhuhr": 29912740,
+    "asr": 29912888,
+    "maghrib": 29913033,
+    "isha": 29913117
+   }
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29935403,
+    "sunrise": 29935499,
+    "dhuhr": 29935785,
+    "asr": 29935921,
+    "maghrib": 29936063,
+    "isha": 29936151
+   }
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29955575,
+    "sunrise": 29955671,
+    "dhuhr": 29955951,
+    "asr": 29956082,
+    "maghrib": 29956223,
+    "isha": 29956313
+   }
+  },
+  {
+   "city": "sydney",
+   "latitude": -33.8688,
+   "longitude": 151.2093,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29453345,
+    "sunrise": 29453448,
+    "dhuhr": 29453884,
+    "asr": 29454103,
+    "maghrib": 29454312,
+    "isha": 29454386
+   }
+  },
+  {
+   "city": "sydney",
+   "latitude": -33.8688,
+   "longitude": 151.2093,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29473520,
+    "sunrise": 29473619,
+    "dhuhr": 29474049,
+    "asr": 29474269,
+    "maghrib": 29474472,
+    "isha": 29474543
+   }
+  },
+  {
+   "city": "sydney",
+   "latitude": -33.8688,
+   "longitude": 151.2093,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29498022,
+    "sunrise": 29498116,
+    "dhuhr": 29498534,
+    "asr": 29498752,
+    "maghrib": 29498944,
+    "isha": 29499011
+   }
+  },
+  {
+   "city": "sydney",
+   "latitude": -33.8688,
+   "longitude": 151.2093,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29518200,
+    "sunrise": 29518290,
+    "dhuhr": 29518694,
+    "asr": 29518910,
+    "maghrib": 29519091,
+    "isha": 29519159
+   }
+  },
+  {
+   "city": "sydney",
+   "latitude": -33.8688,
+   "longitude": 151.2093,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29538376,
+    "sunrise": 29538463,
+    "dhuhr": 29538853,
+    "asr": 29539064,
+    "maghrib": 29539235,
+    "isha": 29539305
+   }
+  },
+  {
+   "city": "sydney",
+   "latitude": -33.8688,
+   "longitude": 151.2093,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29558550,
+    "sunrise": 29558634,
+    "dhuhr": 29559009,
+    "asr": 29559214,
+    "maghrib": 29559377,
+    "isha": 29559449
+   }
+  },
+  {
+   "city": "sydney",
+   "latitude": -33.8688,
+   "longitude": 151.2093,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29583044,
+    "sunrise": 29583127,
+    "dhuhr": 29583484,
+    "asr": 29583679,
+    "maghrib": 29583834,
+    "isha": 29583908
+   }
+  },
+  {
+   "city": "sydney",
+   "latitude": -33.8688,
+   "longitude": 151.2093,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29603214,
+    "sunrise": 29603297,
+    "dhuhr": 29603640,
+    "asr": 29603826,
+    "maghrib": 29603976,
+    "isha": 29604053
+   }
+  },
+  {
+   "city": "sydney",
+   "latitude": -33.8688,
+   "longitude": 151.2093,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29626265,
+    "sunrise": 29626349,
+    "dhuhr": 29626677,
+    "asr": 29626852,
+    "maghrib": 29626998,
+    "isha": 29627077
+   }
+  },
+  {
+   "city": "sydney",
+   "latitude": -33.8688,
+   "longitude": 151.2093,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29646434,
+    "sunrise": 29646520,
+    "dhuhr": 29646837,
+    "asr": 29647002,
+    "maghrib": 29647146,
+    "isha": 29647227
+   }
+  },
+  {
+   "city": "sydney",
+   "latitude": -33.8688,
+   "longitude": 151.2093,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29670923,
+    "sunrise": 29671011,
+    "dhuhr": 29671318,
+    "asr": 29671476,
+    "maghrib": 29671617,
+    "isha": 29671702
+   }
+  },
+  {
+   "city": "sydney",
+   "latitude": -33.8688,
+   "longitude": 151.2093,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29691089,
+    "sunrise": 29691178,
+    "dhuhr": 29691481,
+    "asr": 29691635,
+    "maghrib": 29691776,
+    "isha": 29691862
+   }
+  },
+  {
+   "city": "sydney",
+   "latitude": -33.8688,
+   "longitude": 151.2093,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29714132,
+    "sunrise": 29714221,
+    "dhuhr": 29714524,
+    "asr": 29714679,
+    "maghrib": 29714820,
+    "isha": 29714906
+   }
+  },
+  {
+   "city": "sydney",
+   "latitude": -33.8688,
+   "longitude": 151.2093,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29734290,
+    "sunrise": 29734378,
+    "dhuhr": 29734686,
+    "asr": 29734845,
+    "maghrib": 29734987,
+    "isha": 29735071
+   }
+  },
+  {
+   "city": "sydney",
+   "latitude": -33.8688,
+   "longitude": 151.2093,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29758762,
+    "sunrise": 29758848,
+    "dhuhr": 29759167,
+    "asr": 29759335,
+    "maghrib": 29759479,
+    "isha": 29759560
+   }
+  },
+  {
+   "city": "sydney",
+   "latitude": -33.8688,
+   "longitude": 151.2093,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29778910,
+    "sunrise": 29778995,
+    "dhuhr": 29779325,
+    "asr": 29779502,
+    "maghrib": 29779648,
+    "isha": 29779727
+   }
+  },
+  {
+   "city": "sydney",
+   "latitude": -33.8688,
+   "longitude": 151.2093,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29803371,
+    "sunrise": 29803454,
+    "dhuhr": 29803800,
+    "asr": 29803989,
+    "maghrib": 29804140,
+    "isha": 29804216
+   }
+  },
+  {
+   "city": "sydney",
+   "latitude": -33.8688,
+   "longitude": 151.2093,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29823512,
+    "sunrise": 29823595,
+    "dhuhr": 29823956,
+    "asr": 29824153,
+    "maghrib": 29824309,
+    "isha": 29824384
+   }
+  },
+  {
+   "city": "sydney",
+   "latitude": -33.8688,
+   "longitude": 151.2093,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29846529,
+    "sunrise": 29846613,
+    "dhuhr": 29846990,
+    "asr": 29847197,
+    "maghrib": 29847361,
+    "isha": 29847432
+   }
+  },
+  {
+   "city": "sydney",
+   "latitude": -33.8688,
+   "longitude": 151.2093,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29866668,
+    "sunrise": 29866754,
+    "dhuhr": 29867146,
+    "asr": 29867358,
+    "maghrib": 29867531,
+    "isha": 29867601
+   }
+  },
+  {
+   "city": "sydney",
+   "latitude": -33.8688,
+   "longitude": 151.2093,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29891124,
+    "sunrise": 29891215,
+    "dhuhr": 29891624,
+    "asr": 29891841,
+    "maghrib": 29892026,
+    "isha": 29892093
+   }
+  },
+  {
+   "city": "sydney",
+   "latitude": -33.8688,
+   "longitude": 151.2093,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29911268,
+    "sunrise": 29911364,
+    "dhuhr": 29911785,
+    "asr": 29912004,
+    "maghrib": 29912199,
+    "isha": 29912267
+   }
+  },
+  {
+   "city": "sydney",
+   "latitude": -33.8688,
+   "longitude": 151.2093,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": {
+    "fajr": 29934297,
+    "sunrise": 29934397,
+    "dhuhr": 29934829,
+    "asr": 29935049,
+    "maghrib": 29935254,
+    "isha": 29935326
+   }
+  },
+  {
+   "city": "sydney",
+   "latitude": -33.8688,
+   "longitude": 151.2093,
+   "method": "moonsighting_committee",
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": {
+    "fajr": 29954455,
+    "sunrise": 29954558,
+    "dhuhr": 29954995,
+    "asr": 29955215,
+    "maghrib": 29955425,
+    "isha": 29955499
+   }
+  }
+ ]
+}

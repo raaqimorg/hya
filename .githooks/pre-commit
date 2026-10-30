@@ -1,0 +1,14 @@
+#!/bin/sh
+# Fast: identity, then formatting. Lint and tests run in CI and in `bun run ci`.
+set -eu
+allowed=$(git config --get hya.allowedEmail || true)
+if [ -n "$allowed" ]; then
+	for who in GIT_AUTHOR_IDENT GIT_COMMITTER_IDENT; do
+		email=$(git var "$who" | sed -E 's/.*<([^>]*)>.*/\1/')
+		if [ "$email" != "$allowed" ]; then
+			echo "pre-commit: $who is <$email>, but hya.allowedEmail is <$allowed>." >&2
+			exit 1
+		fi
+	done
+fi
+cargo fmt --all --check || { echo "pre-commit: run cargo fmt --all" >&2; exit 1; }

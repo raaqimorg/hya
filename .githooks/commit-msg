@@ -1,0 +1,12 @@
+#!/bin/sh
+# Refuses a Co-authored-by trailer with an address other than hya.allowedEmail, so no tool or
+# agent can add another identity to the history.
+set -eu
+allowed=$(git config --get hya.allowedEmail || true)
+[ -n "$allowed" ] || exit 0
+bad=$(grep -iE '^co-authored-by:' "$1" | sed -E 's/.*<([^>]*)>.*/\1/' | grep -vxF "$allowed" || true)
+if [ -n "$bad" ]; then
+	echo "commit-msg: Co-authored-by addresses other than hya.allowedEmail <$allowed>:" >&2
+	echo "$bad" >&2
+	exit 1
+fi

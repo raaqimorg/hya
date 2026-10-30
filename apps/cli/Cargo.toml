@@ -1,0 +1,29 @@
+[package]
+name = "hya-cli"
+description = "Offline prayer times in the terminal."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+publish = true
+keywords = ["prayer-times", "salah", "cli"]
+categories = ["command-line-utilities"]
+
+[[bin]]
+name = "hya"
+path = "src/main.rs"
+
+[dependencies]
+hya-engine.workspace = true
+hya-countries.workspace = true
+clap.workspace = true
+jiff.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+proptest-state-machine.workspace = true
+
+[lints]
+workspace = true

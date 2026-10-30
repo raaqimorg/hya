@@ -1,0 +1,52 @@
+# The fast gate: what `bun run ci` runs, on every push and pull request. Slow checks
+# (mutants, Kani, fuzzing, a million property cases, other OSes) are in deep.yml, on demand.
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: always
+  RUSTFLAGS: -D warnings
+
+jobs:
+  rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.99.0
+        with: { components: "rustfmt, clippy", targets: wasm32-unknown-unknown }
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo fmt --all --check
+      - run: cargo clippy --workspace --all-targets --locked
+      - run: cargo test --workspace --locked
+      - name: no_std build of the libraries
+        run: cargo build -p hya-engine -p hya-countries --locked --target wasm32-unknown-unknown
+      - uses: EmbarkStudios/cargo-deny-action@v2
+
+  js:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.99.0
+        with: { targets: wasm32-unknown-unknown }
+      - uses: Swatinem/rust-cache@v2
+      - uses: taiki-e/install-action@v2
+        with: { tool: wasm-bindgen-cli@0.2.129 }
+      - uses: oven-sh/setup-bun@v2
+        with: { bun-version: 1.4.3 }
+      - run: bun install --frozen-lockfile
+      - run: bun run ramadan:check
+      - run: bunx tsc
+      - run: bun run --filter @raaqimorg/hya build
+      - run: bun run --filter @raaqimorg/hya types
+      - run: bun run --filter @raaqimorg/hya test

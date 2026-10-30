@@ -1,0 +1,74 @@
+name: Bug report
+description: Something in the library, the JS package, or the CLI behaves incorrectly
+labels: ["🐛 bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For security vulnerabilities, do not open an issue. See [SECURITY.md](https://github.com/raaqimorg/hya/blob/main/.github/SECURITY.md). For a wrong time, use the **Timetable mismatch** form.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where
+      options:
+        - Rust library (hya-engine, hya-countries)
+        - JS package (@raaqimorg/hya)
+        - CLI (hya)
+        - Build or local setup
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you expected, and what you got instead. Include the exact input.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Run ...
+        2. See ...
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: What breaks, and what is the worst case if it stays unfixed?
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, and the Rust, Bun, or browser version.
+  - type: markdown
+    attributes:
+      value: |
+        ### If you plan to send the fix
+
+        Fill in the fields below. A pull request needs them, and for a larger change we agree on the approach here before any code is written. See [CONTRIBUTING.md](https://github.com/raaqimorg/hya/blob/main/.github/CONTRIBUTING.md).
+  - type: textarea
+    id: root-cause
+    attributes:
+      label: Root cause
+      description: Which code causes the bug? Link the file and lines.
+  - type: textarea
+    id: proposed-fix
+    attributes:
+      label: Proposed fix
+      description: A snippet or a clear description.
+  - type: textarea
+    id: reasoning
+    attributes:
+      label: Reasoning
+      description: Why the fix addresses the underlying problem rather than the symptom.
+  - type: textarea
+    id: trade-offs
+    attributes:
+      label: Trade-offs
+      description: Could it introduce new bugs, mask others, or move times elsewhere? Which methods, latitudes, and seasons does the changed code touch?

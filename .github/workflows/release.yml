@@ -1,0 +1,185 @@
+# A release: runs when a version tag is pushed (see "Releasing" in CONTRIBUTING.md).
+#
+# It checks that the tag matches every version and CHANGELOG.md, runs the fast gate, builds the
+# CLI for each platform, publishes to crates.io and npm, and then creates the GitHub Release.
+# Publishing uses trusted publishing (OIDC): no token is stored in the repository or its secrets.
+# A version that is already on a registry is skipped, so a failed release can be re-run.
+name: release
+
+on:
+  push:
+    tags: ["v[0-9]+.[0-9]+.[0-9]+*"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+env:
+  CARGO_TERM_COLOR: always
+  USER_AGENT: hya release (https://github.com/raaqimorg/hya)
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.99.0
+        with: { components: "rustfmt, clippy", targets: wasm32-unknown-unknown }
+      - uses: Swatinem/rust-cache@v2
+      - uses: taiki-e/install-action@v2
+        with: { tool: wasm-bindgen-cli@0.2.129 }
+      - uses: oven-sh/setup-bun@v2
+        with: { bun-version: 1.4.3 }
+      - run: bun install --frozen-lockfile
+      - name: The tag matches every version and the changelog
+        id: version
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          bun scripts/release-notes.ts "$version" > /dev/null
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+      - run: bun run ci
+
+  build:
+    needs: check
+    strategy:
+      matrix:
+        include:
+          - { target: x86_64-unknown-linux-gnu, os: ubuntu-latest }
+          - { target: aarch64-unknown-linux-gnu, os: ubuntu-24.04-arm }
+          - { target: x86_64-apple-darwin, os: macos-latest }
+          - { target: aarch64-apple-darwin, os: macos-latest }
+          - { target: x86_64-pc-windows-msvc, os: windows-latest }
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.99.0
+        with: { targets: "${{ matrix.target }}" }
+      # rust-toolchain.toml selects the toolchain; give it this target too.
+      - run: rustup target add ${{ matrix.target }}
+      - run: cargo build --release --locked -p hya-cli --target ${{ matrix.target }}
+      - name: Archive the binary with the README and license
+        shell: bash
+        env:
+          TARGET: ${{ matrix.target }}
+          VERSION: ${{ needs.check.outputs.version }}
+        run: |
+          name="hya-$VERSION-$TARGET"
+          mkdir "$name"
+          cp README.md LICENSE "$name/"
+          if [[ "$TARGET" == *windows* ]]; then
+            cp "target/$TARGET/release/hya.exe" "$name/"
+            7z a "$name.zip" "$name" > /dev/null
+          else
+            cp "target/$TARGET/release/hya" "$name/"
+            tar -czf "$name.tar.gz" "$name"
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.target }}
+          if-no-files-found: error
+          path: |
+            hya-*.tar.gz
+            hya-*.zip
+
+  crates:
+    needs: [check, build]
+    runs-on: ubuntu-latest
+    environment: release
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.99.0
+      - name: Find the crates not yet published at this version
+        id: pending
+        env:
+          VERSION: ${{ needs.check.outputs.version }}
+        run: |
+          pending=""
+          for crate in hya-engine hya-countries hya-cli; do
+            if ! curl -sfo /dev/null -A "$USER_AGENT" "https://crates.io/api/v1/crates/$crate/$VERSION"; then
+              pending="$pending $crate"
+            fi
+          done
+          echo "crates=$pending" >> "$GITHUB_OUTPUT"
+      - if: steps.pending.outputs.crates != ''
+        id: auth
+        uses: rust-lang/crates-io-auth-action@v1
+      - if: steps.pending.outputs.crates != ''
+        name: Publish, dependencies first
+        env:
+          CARGO_REGISTRY_TOKEN: ${{ steps.auth.outputs.token }}
+          CRATES: ${{ steps.pending.outputs.crates }}
+        run: for crate in $CRATES; do cargo publish --locked -p "$crate"; done
+
+  npm:
+    needs: [check, build]
+    runs-on: ubuntu-latest
+    environment: release
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.99.0
+        with: { targets: wasm32-unknown-unknown }
+      - uses: Swatinem/rust-cache@v2
+      - uses: taiki-e/install-action@v2
+        with: { tool: wasm-bindgen-cli@0.2.129 }
+      - uses: oven-sh/setup-bun@v2
+        with: { bun-version: 1.4.3 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 24, registry-url: "https://registry.npmjs.org" }
+      # Trusted publishing needs npm 11.5.1 or later.
+      - run: npm install --global npm@11
+      - name: Is this version already published?
+        id: published
+        env:
+          VERSION: ${{ needs.check.outputs.version }}
+        run: |
+          if npm view "@raaqimorg/hya@$VERSION" version > /dev/null 2>&1; then
+            echo "published=true" >> "$GITHUB_OUTPUT"
+          fi
+      - if: steps.published.outputs.published != 'true'
+        run: bun install --frozen-lockfile && bun run --filter @raaqimorg/hya build
+      - if: steps.published.outputs.published != 'true'
+        name: Publish with provenance
+        working-directory: packages/js
+        env:
+          VERSION: ${{ needs.check.outputs.version }}
+        run: |
+          tag="latest"
+          if [[ "$VERSION" == *-* ]]; then tag="next"; fi
+          npm publish --provenance --access public --tag "$tag"
+
+  github:
+    needs: [check, build, crates, npm]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with: { bun-version: 1.4.3 }
+      - uses: actions/download-artifact@v4
+        with: { path: dist, merge-multiple: true }
+      - name: Checksums
+        working-directory: dist
+        run: sha256sum hya-* > SHA256SUMS
+      - name: Create the release, or update its files on a re-run
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.check.outputs.version }}
+        run: |
+          if gh release view "$GITHUB_REF_NAME" > /dev/null 2>&1; then
+            gh release upload "$GITHUB_REF_NAME" dist/* --clobber
+            exit 0
+          fi
+          bun scripts/release-notes.ts "$VERSION" > notes.md
+          prerelease=""
+          if [[ "$VERSION" == *-* ]]; then prerelease="--prerelease"; fi
+          gh release create "$GITHUB_REF_NAME" dist/* --verify-tag --title "Hya $VERSION" --notes-file notes.md $prerelease

@@ -1,0 +1,21 @@
+[package]
+name = "hya-countries"
+description = "Country to customary prayer-time method, for hya-engine. no_std, no allocation."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+publish = true
+keywords = ["prayer-times", "salah", "islam", "no-std"]
+categories = ["no-std", "date-and-time"]
+
+[dependencies]
+hya-engine.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+
+[lints]
+workspace = true

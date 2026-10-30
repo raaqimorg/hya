@@ -1,0 +1,14 @@
+target/
+node_modules/
+dist/
+.turbo/
+*.tsbuildinfo
+.DS_Store
+mutants.out*/
+fuzz/target/
+fuzz/artifacts/
+fuzz/corpus/
+fuzz/coverage/
+packages/js/src/generated/
+packages/js/LICENSE
+packages/js/README.md

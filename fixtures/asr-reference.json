@@ -1,0 +1,4613 @@
+{
+ "source": "NOAA solar model, exact noon-shadow definition",
+ "cases": [
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 1,
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": 29454273.157
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 1,
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": 29474438.391
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 1,
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": 29498920.619
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 1,
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": 29519077.97
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 1,
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": 29539230.994
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 1,
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": 29559379.94
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 1,
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": 29583854.659
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 1,
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": 29604018.759
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 1,
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": 29627061.866
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 1,
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": 29647224.379
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 1,
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": 29671708.008
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 1,
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": 29691871.369
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 1,
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": 29714914.664
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 1,
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": 29735075.889
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 1,
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": 29759553.777
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 1,
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": 29779708.295
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 1,
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": 29804176.749
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 1,
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": 29824323.332
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 1,
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": 29847362.377
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 1,
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": 29867525.462
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 1,
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": 29892008.702
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 1,
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": 29912172.274
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 1,
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": 29935218.188
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 1,
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": 29955384.77
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 2,
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": 29454328.84
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 2,
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": 29474494.893
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 2,
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": 29498979.119
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 2,
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": 29519139.099
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 2,
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": 29539295.83
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 2,
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": 29559449.776
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 2,
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": 29583924.921
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 2,
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": 29604084.326
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 2,
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": 29627123.669
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 2,
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": 29647283.989
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 2,
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": 29671766.036
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 2,
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": 29691928.83
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 2,
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": 29714972.209
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 2,
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": 29735134.151
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 2,
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": 29759613.831
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 2,
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": 29779770.744
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 2,
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": 29804243.533
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 2,
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": 29824395.183
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 2,
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": 29847431.147
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 2,
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": 29867589.567
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 2,
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": 29892068.748
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 2,
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": 29912230.067
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 2,
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": 29935274.401
+  },
+  {
+   "city": "singapore",
+   "latitude": 1.3521,
+   "longitude": 103.8198,
+   "factor": 2,
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": 29955440.35
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 1,
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": 29454476.121
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 1,
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": 29474645.35
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 1,
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": 29499135.96
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 1,
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": 29519302.471
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 1,
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": 29539466.214
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 1,
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": 29559627.199
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 1,
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": 29584105.364
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 1,
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": 29604262.231
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 1,
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": 29627298.106
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 1,
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": 29647455.148
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 1,
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": 29671933.742
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 1,
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": 29692094.966
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 1,
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": 29715138.6
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 1,
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": 29735302.457
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 1,
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": 29759785.716
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 1,
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": 29779945.797
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 1,
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": 29804422.002
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 1,
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": 29824575.961
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 1,
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": 29847606.887
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 1,
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": 29867758.325
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 1,
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": 29892229.219
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 1,
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": 29912384.452
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 1,
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": 29935423.526
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 1,
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": 29955587.093
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 2,
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": 29454520.022
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 2,
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": 29474690.043
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 2,
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": 29499182.41
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 2,
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": 29519351.001
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 2,
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": 29539517.415
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 2,
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": 29559681.696
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 2,
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": 29584164.721
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 2,
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": 29604326.222
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 2,
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": 29627367.791
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 2,
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": 29647529.665
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 2,
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": 29672012.932
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 2,
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": 29692176.156
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 2,
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": 29715219.406
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 2,
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": 29735380.698
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 2,
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": 29759858.908
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 2,
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": 29780014.109
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 2,
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": 29804484.425
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 2,
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": 29824633.987
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 2,
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": 29847660.604
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 2,
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": 29867808.935
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 2,
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": 29892276.852
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 2,
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": 29912430.253
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 2,
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": 29935467.914
+  },
+  {
+   "city": "riyadh",
+   "latitude": 24.7136,
+   "longitude": 46.6753,
+   "factor": 2,
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": 29955630.878
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 1,
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": 29454634.904
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 1,
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": 29474800.484
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 1,
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": 29499283.265
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 1,
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": 29519441.072
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 1,
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": 29539594.733
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 1,
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": 29559744.929
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 1,
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": 29584210.01
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 1,
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": 29604356.866
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 1,
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": 29627382.925
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 1,
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": 29647533.312
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 1,
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": 29672006.661
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 1,
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": 29692165.988
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 1,
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": 29715210.088
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 1,
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": 29735376.642
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 1,
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": 29759866.017
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 1,
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": 29780033.308
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 1,
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": 29804520.409
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 1,
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": 29824684.546
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 1,
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": 29847727.672
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 1,
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": 29867889.606
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 1,
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": 29892372.055
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 1,
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": 29912535.067
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 1,
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": 29935580.336
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 1,
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": 29955746.524
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 2,
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": 29454710.144
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 2,
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": 29474873.106
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 2,
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": 29499350.923
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 2,
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": 29519504.06
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 2,
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": 29539653.144
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 2,
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": 29559799.178
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 2,
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": 29584259.929
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 2,
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": 29604403.82
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 2,
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": 29627427.108
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 2,
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": 29647575.593
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 2,
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": 29672047.35
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 2,
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": 29692206.049
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 2,
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": 29715250.267
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 2,
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": 29735417.638
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 2,
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": 29759908.79
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 2,
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": 29780078.102
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 2,
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": 29804568.296
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 2,
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": 29824735.531
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 2,
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": 29847782.854
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 2,
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": 29867949.007
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 2,
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": 29892437.032
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 2,
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": 29912604.555
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 2,
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": 29935654.022
+  },
+  {
+   "city": "cape_town",
+   "latitude": -33.9249,
+   "longitude": 18.4241,
+   "factor": 2,
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": 29955822.208
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 1,
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": 29454972.433
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 1,
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": 29475145.423
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 1,
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": 29499643.529
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 1,
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": 29519817.804
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 1,
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": 29539990.119
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 1,
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": 29560160.069
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 1,
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": 29584649.252
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 1,
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": 29604815.019
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 1,
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": 29627860.451
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 1,
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": 29648024.788
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 1,
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": 29672509.918
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 1,
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": 29692673.791
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 1,
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": 29715716.841
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 1,
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": 29735877.129
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 1,
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": 29760353.041
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 1,
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": 29780505.434
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 1,
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": 29804971.239
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 1,
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": 29825116.24
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 1,
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": 29848136.862
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 1,
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": 29868279.487
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 1,
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": 29892740.393
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 1,
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": 29912888.542
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 1,
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": 29935921.652
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 1,
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": 29956082.622
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 2,
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": 29455009.083
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 2,
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": 29475183.367
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 2,
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": 29499684.053
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 2,
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": 29519861.034
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 2,
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": 29540036.465
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 2,
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": 29560209.93
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 2,
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": 29584703.918
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 2,
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": 29604874.016
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 2,
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": 29627924.549
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 2,
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": 29648093.062
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 2,
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": 29672582.102
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 2,
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": 29692747.584
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 2,
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": 29715790.251
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 2,
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": 29735948.35
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 2,
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": 29760419.933
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 2,
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": 29780568.051
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 2,
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": 29805028.532
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 2,
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": 29825169.387
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 2,
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": 29848185.71
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 2,
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": 29868324.988
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 2,
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": 29892782.339
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 2,
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": 29912928.023
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 2,
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": 29935959.027
+  },
+  {
+   "city": "chicago",
+   "latitude": 41.8781,
+   "longitude": -87.6298,
+   "factor": 2,
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": 29956119.04
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 1,
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": 29454585.596
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 1,
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": 29474761.413
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 1,
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": 29499265.26
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 1,
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": 29519445.416
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 1,
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": 29539624.073
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 1,
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": 29559800.464
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 1,
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": 29584297.268
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 1,
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": 29604468.943
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 1,
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": 29627520.462
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 1,
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": 29647689.26
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 1,
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": 29672178.25
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 1,
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": 29692343.655
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 1,
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": 29715386.401
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 1,
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": 29735544.677
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 1,
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": 29760016.326
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 1,
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": 29780164.089
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 1,
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": 29804623.358
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 1,
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": 29824762.476
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 1,
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": 29847776.037
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 1,
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": 29867912.361
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 1,
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": 29892365.814
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 1,
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": 29912508.444
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 1,
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": 29935536.706
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 1,
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": 29955695.409
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 2,
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": 29454615.726
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 2,
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": 29474793.622
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 2,
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": 29499301.396
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 2,
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": 29519485.356
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 2,
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": 29539668.067
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 2,
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": 29559848.722
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 2,
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": 29584351.036
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 2,
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": 29604527.507
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 2,
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": 29627584.574
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 2,
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": 29647757.879
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 2,
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": 29672251.083
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 2,
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": 29692418.236
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 2,
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": 29715460.603
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 2,
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": 29735616.561
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 2,
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": 29760083.585
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 2,
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": 29780226.745
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 2,
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": 29804680.201
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 2,
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": 29824814.68
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 2,
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": 29847823.237
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 2,
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": 29867955.426
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 2,
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": 29892404.118
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 2,
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": 29912543.146
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 2,
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": 29935568.088
+  },
+  {
+   "city": "london",
+   "latitude": 51.5074,
+   "longitude": -0.1278,
+   "factor": 2,
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": 29955725.191
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 1,
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": 29454580.47
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 1,
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": 29474757.951
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 1,
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": 29499265.085
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 1,
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": 29519448.546
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 1,
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": 29539630.719
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 1,
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": 29559810.633
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 1,
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": 29584311.552
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 1,
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": 29604486.384
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 1,
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": 29627541.126
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 1,
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": 29647712.268
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 1,
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": 29672203.268
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 1,
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": 29692369.459
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 1,
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": 29715412.021
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 1,
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": 29735569.22
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 1,
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": 29760038.59
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 1,
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": 29780183.872
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 1,
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": 29804639.617
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 1,
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": 29824775.543
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 1,
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": 29847785.241
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 1,
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": 29867918.09
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 1,
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": 29892367.401
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 1,
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": 29912506.952
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 1,
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": 29935532.515
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 1,
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": 29955689.988
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 2,
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": 29454605.927
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 2,
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": 29474786.157
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 2,
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": 29499298.338
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 2,
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": 29519486.497
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 2,
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": 29539673.478
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 2,
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": 29559858.269
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 2,
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": 29584365.304
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 2,
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": 29604545.361
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 2,
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": 29627606.1
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 2,
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": 29647782.103
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 2,
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": 29672277.65
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 2,
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": 29692445.728
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 2,
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": 29715487.875
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 2,
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": 29735642.563
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 2,
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": 29760106.94
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 2,
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": 29780247.257
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 2,
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": 29804696.712
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 2,
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": 29824827.563
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 2,
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": 29847831.675
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 2,
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": 29867959.759
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 2,
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": 29892403.35
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 2,
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": 29912538.379
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 2,
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": 29935559.629
+  },
+  {
+   "city": "glasgow",
+   "latitude": 55.8642,
+   "longitude": -4.2518,
+   "factor": 2,
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": 29955714.977
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 1,
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": 29454496.334
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 1,
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": 29474675.634
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 1,
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": 29499186.384
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 1,
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": 29519373.473
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 1,
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": 29539559.482
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 1,
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": 29559743.216
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 1,
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": 29584248.569
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 1,
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": 29604426.78
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 1,
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": 29627484.963
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 1,
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": 29647658.601
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 1,
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": 29672151.746
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 1,
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": 29692318.782
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 1,
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": 29715361.169
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 1,
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": 29735517.243
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 1,
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": 29759984.22
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 1,
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": 29780126.885
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 1,
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": 29804578.897
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 1,
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": 29824711.42
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 1,
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": 29847716.97
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 1,
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": 29867846.055
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 1,
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": 29892290.83
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 1,
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": 29912426.969
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 1,
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": 29935449.506
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 1,
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": 29955605.571
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 2,
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": 29454515.58
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 2,
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": 29474698.573
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 2,
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": 29499215.928
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 2,
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": 29519408.937
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 2,
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": 29539600.767
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 2,
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": 29559790.189
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 2,
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": 29584302.458
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 2,
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": 29604486.474
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 2,
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": 29627551.277
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 2,
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": 29647730.283
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 2,
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": 29672228.47
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 2,
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": 29692397.608
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 2,
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": 29715439.537
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 2,
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": 29735592.824
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 2,
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": 29760054.28
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 2,
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": 29780191.471
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 2,
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": 29804636.537
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 2,
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": 29824763.404
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 2,
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": 29847762.596
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 2,
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": 29867886.079
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 2,
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": 29892323.839
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 2,
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": 29912454.189
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 2,
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": 29935471.012
+  },
+  {
+   "city": "oslo",
+   "latitude": 59.9139,
+   "longitude": 10.7522,
+   "factor": 2,
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": 29955624.195
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 1,
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": 29455032.444
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 1,
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": 29475193.186
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 1,
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": 29499666.227
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 1,
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": 29519813.896
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 1,
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": 29539956.322
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 1,
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": 29560094.719
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 1,
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": 29584545.252
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 1,
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": 29604680.356
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 1,
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": 29627693.863
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 1,
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": 29647834.777
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 1,
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": 29672299.791
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 1,
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": 29692455.837
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 1,
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": 29715500.788
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 1,
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": 29735671.964
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 1,
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": 29760170.835
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 1,
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": 29780348.113
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 1,
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": 29804848.779
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 1,
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": 29825024.611
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 1,
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": 29848081.168
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 1,
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": 29868254.562
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 1,
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": 29892749.987
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 1,
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": 29912922.225
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 1,
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": 29935975.315
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 1,
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": 29956144.975
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 2,
+   "date": [
+    2026,
+    1,
+    1
+   ],
+   "unix_minutes": 29455106.986
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 2,
+   "date": [
+    2026,
+    1,
+    15
+   ],
+   "unix_minutes": 29475264.911
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 2,
+   "date": [
+    2026,
+    2,
+    1
+   ],
+   "unix_minutes": 29499732.616
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 2,
+   "date": [
+    2026,
+    2,
+    15
+   ],
+   "unix_minutes": 29519875.196
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 2,
+   "date": [
+    2026,
+    3,
+    1
+   ],
+   "unix_minutes": 29540012.495
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 2,
+   "date": [
+    2026,
+    3,
+    15
+   ],
+   "unix_minutes": 29560146.004
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 2,
+   "date": [
+    2026,
+    4,
+    1
+   ],
+   "unix_minutes": 29584591.003
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 2,
+   "date": [
+    2026,
+    4,
+    15
+   ],
+   "unix_minutes": 29604721.824
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 2,
+   "date": [
+    2026,
+    5,
+    1
+   ],
+   "unix_minutes": 29627730.692
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 2,
+   "date": [
+    2026,
+    5,
+    15
+   ],
+   "unix_minutes": 29647867.898
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 2,
+   "date": [
+    2026,
+    6,
+    1
+   ],
+   "unix_minutes": 29672329.378
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 2,
+   "date": [
+    2026,
+    6,
+    15
+   ],
+   "unix_minutes": 29692483.92
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 2,
+   "date": [
+    2026,
+    7,
+    1
+   ],
+   "unix_minutes": 29715529.201
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 2,
+   "date": [
+    2026,
+    7,
+    15
+   ],
+   "unix_minutes": 29735702.363
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 2,
+   "date": [
+    2026,
+    8,
+    1
+   ],
+   "unix_minutes": 29760205.098
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 2,
+   "date": [
+    2026,
+    8,
+    15
+   ],
+   "unix_minutes": 29780386.18
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 2,
+   "date": [
+    2026,
+    9,
+    1
+   ],
+   "unix_minutes": 29804891.811
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 2,
+   "date": [
+    2026,
+    9,
+    15
+   ],
+   "unix_minutes": 29825071.957
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 2,
+   "date": [
+    2026,
+    10,
+    1
+   ],
+   "unix_minutes": 29848133.766
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 2,
+   "date": [
+    2026,
+    10,
+    15
+   ],
+   "unix_minutes": 29868312.072
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 2,
+   "date": [
+    2026,
+    11,
+    1
+   ],
+   "unix_minutes": 29892813.691
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 2,
+   "date": [
+    2026,
+    11,
+    15
+   ],
+   "unix_minutes": 29912990.796
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 2,
+   "date": [
+    2026,
+    12,
+    1
+   ],
+   "unix_minutes": 29936048.327
+  },
+  {
+   "city": "punta_arenas",
+   "latitude": -53.1638,
+   "longitude": -70.9171,
+   "factor": 2,
+   "date": [
+    2026,
+    12,
+    15
+   ],
+   "unix_minutes": 29956220.053
+  }
+ ]
+}

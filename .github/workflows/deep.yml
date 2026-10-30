@@ -1,0 +1,76 @@
+# The slow checks, run by hand: Actions → deep → Run workflow. Each job is also a local
+# `bun run deep:*` script. Run them before a release, and after a change to the calculation.
+name: deep
+
+on:
+  workflow_dispatch:
+    inputs:
+      check:
+        description: Which check to run
+        type: choice
+        default: all
+        options: [all, properties, mutants, kani, fuzz, platforms]
+
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: always
+  RUSTFLAGS: -D warnings
+
+jobs:
+  properties:
+    if: inputs.check == 'all' || inputs.check == 'properties'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.99.0
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo test --release --locked -p hya-engine --test properties
+        env: { PROPTEST_CASES: "1000000" }
+
+  mutants:
+    if: inputs.check == 'all' || inputs.check == 'mutants'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.99.0
+      - uses: Swatinem/rust-cache@v2
+      - uses: taiki-e/install-action@v2
+        with: { tool: cargo-mutants }
+      - run: cargo mutants
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: mutants-out, path: mutants.out }
+
+  kani:
+    if: inputs.check == 'all' || inputs.check == 'kani'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: { crate: [engine, countries] }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: model-checking/kani-github-action@v1
+        with: { working-directory: "crates/${{ matrix.crate }}" }
+
+  fuzz:
+    if: inputs.check == 'all' || inputs.check == 'fuzz'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@nightly
+      - uses: taiki-e/install-action@v2
+        with: { tool: cargo-fuzz }
+      - run: cargo +nightly fuzz run compute -- -max_total_time=1800
+        working-directory: fuzz
+
+  platforms:
+    if: inputs.check == 'all' || inputs.check == 'platforms'
+    strategy:
+      matrix: { os: [macos-latest, windows-latest] }
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.99.0
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo test --workspace --locked

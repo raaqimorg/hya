@@ -1,0 +1,33 @@
+# cargo-mutants: every surviving mutant is a line of logic no test noticed changing.
+# Run: bun run deep:mutants (on demand, not in CI)
+examine_globs = ["crates/engine/src/**/*.rs", "crates/countries/src/**/*.rs"]
+# The generated table is data, not logic; Kani harnesses only build under `cargo kani`.
+exclude_globs = ["crates/engine/src/ramadan_table.rs", "crates/engine/src/verification.rs", "crates/countries/src/verification.rs"]
+timeout_multiplier = 3.0
+
+# Equivalent mutants, reviewed by hand. Each is unobservable for any valid input:
+exclude_re = [
+    # Overflow guard before the `as` cast: branded inputs keep offsets within ±2 days, far
+    # below the 7-day limit, so the guard never fires. Kept as defence in depth.
+    'compute\.rs:\d+:\d+: replace (\|\| with &&|> with ==|> with >=) in to_instant',
+    # `length > limit` vs `>=`: when they are equal both arms return the same length; only
+    # the high-latitude note could differ, and only on exact float equality (measure zero).
+    'compute\.rs:\d+:\d+: replace > with >= in twilight_length',
+    # `maghrib < midnight` and `midnight < last_third` vs `<=`: equality needs a zero-length
+    # night, which polar-day detection rejects first.
+    'compute\.rs:\d+:\d+: replace < with <= in night_marks_are_ordered',
+    # Angle-based Maghrib only if `angle < isha`: `<=` differs only when the angle time equals
+    # Isha exactly in floating point, two independent solutions (measure zero).
+    'compute\.rs:\d+:\d+: replace < with <= in maghrib_or_sunset',
+    # Seasonal-twilight segment boundaries: the committee's curve is continuous, so at days
+    # 91/137/183/229/275 both neighbouring segments give the same value (pinned by
+    # `seasonal::tests::segment_anchors`). Which one is chosen there cannot change any output.
+    'seasonal\.rs:\d+:\d+: replace < with <= in minutes',
+    # Announced Ramadan, end of the disputed window: on that exact day the announcement says
+    # "not Ramadan" (it is past `last`) and so does the calendar (past 1 Shawwal, with the next
+    # Ramadan ~320 days away), so widening the window by one day changes nothing.
+    'ramadan\.rs:\d+:\d+: replace < with <= in AnnouncedRamadan::contains_day',
+    # `nearest`: a Ramadan starting exactly on `day` lands in `before` or `after`, but its
+    # distance is 0, so it is chosen either way.
+    'ramadan\.rs:\d+:\d+: replace < with <= in nearest',
+]

@@ -1,0 +1,22 @@
+[package]
+name = "hya-fuzz"
+version = "0.0.0"
+edition = "2024"
+publish = false
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+hya-engine = { path = "../crates/engine" }
+
+[[bin]]
+name = "compute"
+path = "fuzz_targets/compute.rs"
+test = false
+doc = false
+bench = false
+
+# Standalone workspace: the fuzzer needs nightly, the main workspace pins stable.
+[workspace]

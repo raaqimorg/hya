@@ -1,0 +1,21 @@
+[package]
+name = "hya-wasm"
+description = "WebAssembly bindings for hya-engine: numbers in, numbers out."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+publish.workspace = true
+keywords = ["prayer-times", "wasm"]
+categories = ["wasm"]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+hya-engine.workspace = true
+wasm-bindgen.workspace = true
+
+[lints]
+workspace = true

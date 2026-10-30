@@ -1,0 +1,108 @@
+[workspace]
+resolver = "3"
+members = ["crates/engine", "crates/countries", "crates/wasm", "apps/cli"]
+exclude = ["fuzz"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.99"
+license = "MIT"
+repository = "https://github.com/raaqimorg/hya"
+readme = "README.md"
+# Each published crate sets `publish = true`; the rest (wasm, fuzz) stay private.
+publish = false
+
+[workspace.dependencies]
+hya-engine = { path = "crates/engine", version = "0.1.0" }
+hya-countries = { path = "crates/countries", version = "0.1.0" }
+libm = "0.2"
+proptest = "1"
+proptest-state-machine = "0.9"
+jiff = "0.2"
+clap = { version = "4.6", features = ["derive"] }
+wasm-bindgen = "0.2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+missing_docs = "deny"
+missing_debug_implementations = "deny"
+missing_copy_implementations = "deny"
+unreachable_pub = "deny"
+unused_must_use = "deny"
+unused_results = "deny"
+unused_qualifications = "deny"
+unit_bindings = "deny"
+trivial_casts = "deny"
+trivial_numeric_casts = "deny"
+let_underscore_drop = "deny"
+rust_2018_idioms = { level = "deny", priority = -1 }
+unexpected_cfgs = { level = "deny", check-cfg = ["cfg(kani)", "cfg(fuzzing)"] }
+
+[workspace.lints.clippy]
+all = { level = "deny", priority = -1 }
+pedantic = { level = "deny", priority = -1 }
+cargo = { level = "deny", priority = -1 }
+# Metadata we cannot satisfy for unpublished workspace crates.
+cargo_common_metadata = "allow"
+multiple_crate_versions = "allow"
+# Restriction lints: no panics, no lossy casts, no silent overflow.
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
+panic_in_result_fn = "deny"
+unwrap_in_result = "deny"
+indexing_slicing = "deny"
+string_slice = "deny"
+unreachable = "deny"
+todo = "deny"
+unimplemented = "deny"
+dbg_macro = "deny"
+arithmetic_side_effects = "deny"
+as_conversions = "deny"
+cast_possible_truncation = "deny"
+cast_sign_loss = "deny"
+cast_possible_wrap = "deny"
+float_cmp = "deny"
+float_cmp_const = "deny"
+lossy_float_literal = "deny"
+default_numeric_fallback = "deny"
+wildcard_enum_match_arm = "deny"
+exit = "deny"
+mem_forget = "deny"
+print_stdout = "deny"
+print_stderr = "deny"
+let_underscore_must_use = "deny"
+let_underscore_future = "deny"
+allow_attributes = "deny"
+allow_attributes_without_reason = "deny"
+std_instead_of_core = "deny"
+std_instead_of_alloc = "deny"
+alloc_instead_of_core = "deny"
+shadow_unrelated = "deny"
+partial_pub_fields = "deny"
+rest_pat_in_fully_bound_structs = "deny"
+missing_assert_message = "deny"
+undocumented_unsafe_blocks = "deny"
+
+[profile.dev]
+debug = "line-tables-only"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+strip = true
+overflow-checks = true
+panic = "abort"
+
+[profile.wasm]
+inherits = "release"
+opt-level = "z"
+
+# Property tests run hot loops; optimise them even in test builds.
+[profile.test]
+opt-level = 2
+overflow-checks = true

@@ -1,0 +1,25 @@
+[package]
+name = "hya-engine"
+description = "Pure, offline, no_std Islamic prayer-time calculation. No I/O, no clock, no allocation."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+publish = true
+keywords = ["prayer-times", "salah", "islam", "astronomy", "no-std"]
+categories = ["no-std", "date-and-time", "science"]
+# The tests read fixtures from the repository root, so they only run from a checkout.
+exclude = ["/tests"]
+
+[dependencies]
+libm.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+[lints]
+workspace = true
