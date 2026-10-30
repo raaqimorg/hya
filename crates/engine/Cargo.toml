@@ -1,6 +1,6 @@
 [package]
 name = "hya-engine"
-description = "Pure, offline, no_std Islamic prayer-time calculation. No I/O, no clock, no allocation."
+description = "Islamic prayer times from coordinates alone, with no network. Hard-tested, machine-verified, and matched against official timetables. The Rust library: no_std, no allocation."
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true

@@ -1,6 +1,6 @@
 [package]
 name = "hya-cli"
-description = "Offline prayer times in the terminal."
+description = "Islamic prayer times from coordinates alone, with no network. Hard-tested, machine-verified, and matched against official timetables. The hya command."
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true

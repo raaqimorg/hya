@@ -1,7 +1,7 @@
 {
   "name": "@raaqimorg/hya",
-  "version": "0.1.0",
-  "description": "Offline Islamic prayer times. The Hya Rust core compiled to WebAssembly, inlined: no network, no async init.",
+  "version": "0.1.1",
+  "description": "Islamic prayer times from coordinates alone, with no network. Hard-tested, machine-verified, and matched against official timetables. WebAssembly inlined, zero dependencies, synchronous.",
   "license": "MIT",
   "repository": {
     "type": "git",

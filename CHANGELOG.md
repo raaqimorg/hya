@@ -4,6 +4,13 @@ All notable changes are listed here, newest first. The format follows [Keep a Ch
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-10-30
+
+### Changed
+
+- README: a shorter introduction, separate Install and Usage sections, a table of CLI flags, and crates.io and npm version badges.
+- Package descriptions on crates.io and npm.
+
 ## [0.1.0] - 2026-10-30
 
 The first release.
@@ -17,5 +24,6 @@ The first release.
 - `@raaqimorg/hya`: the JavaScript package, with the WebAssembly inlined and no network or async start-up.
 - `hya-cli`: the `hya` command, with saved defaults (`--save`), `--country`, `--clock 12`, and times on stdout and notes on stderr.
 
-[Unreleased]: https://github.com/raaqimorg/hya/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/raaqimorg/hya/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/raaqimorg/hya/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/raaqimorg/hya/releases/tag/v0.1.0

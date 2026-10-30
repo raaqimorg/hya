@@ -8,6 +8,8 @@
         "$TURBO_DEFAULT$",
         "!src/generated/**",
         "../../tsconfig.json",
+        "../../README.md",
+        "../../LICENSE",
         "../../Cargo.toml",
         "../../Cargo.lock",
         "../../rust-toolchain.toml",

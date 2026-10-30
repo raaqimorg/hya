@@ -1,6 +1,6 @@
 [package]
 name = "hya-countries"
-description = "Country to customary prayer-time method, for hya-engine. no_std, no allocation."
+description = "The prayer-time method of each country's own authority, for hya-engine. no_std, no allocation."
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true

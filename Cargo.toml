@@ -4,7 +4,7 @@ members = ["crates/engine", "crates/countries", "crates/wasm", "apps/cli"]
 exclude = ["fuzz"]
 
 [workspace.package]
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 rust-version = "1.99"
 license = "MIT"
@@ -14,8 +14,8 @@ readme = "README.md"
 publish = false
 
 [workspace.dependencies]
-hya-engine = { path = "crates/engine", version = "0.1.0" }
-hya-countries = { path = "crates/countries", version = "0.1.0" }
+hya-engine = { path = "crates/engine", version = "0.1.1" }
+hya-countries = { path = "crates/countries", version = "0.1.1" }
 libm = "0.2"
 proptest = "1"
 proptest-state-machine = "0.9"
