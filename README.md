@@ -59,7 +59,16 @@ let times = compute(Date::new(2026, 10, 29)?, riyadh, Parameters::default())?;
 assert!(times.fajr() < times.sunrise());
 ```
 
-**From source.** None of the three is published yet. You need [rustup](https://rustup.rs) and [Bun](https://bun.sh) 1.4 or later:
+**Install.** Each part has its own package. Prebuilt `hya` binaries for Linux, macOS, and Windows are on the [releases page](https://github.com/raaqimorg/hya/releases).
+
+```bash
+cargo install hya-cli        # the hya command
+npm install @raaqimorg/hya   # the JavaScript package (or bun add, pnpm add)
+cargo add hya-engine         # the Rust library
+cargo add hya-countries      # country to method, for the Rust library
+```
+
+**From source.** You need [rustup](https://rustup.rs) and [Bun](https://bun.sh) 1.4 or later:
 
 ```bash
 git clone https://github.com/raaqimorg/hya.git
