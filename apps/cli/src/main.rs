@@ -8,7 +8,7 @@ mod config;
 use core::fmt::{self, Write as _};
 use std::ffi::OsString;
 use std::io::{self, IsTerminal as _, Write as _};
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 use std::process::ExitCode;
 use std::{env, fs};
 
@@ -190,8 +190,27 @@ fn write_help() -> Result<String, fmt::Error> {
         line.push_str("  ");
     }
     writeln!(out, "  {}", line.trim_end())?;
-    write!(out, "\n{dim}Defaults live in ~/.config/hya/config.{dim:#}")?;
+    // No full stop after the path: it would be copied with it.
+    write!(out, "\n{dim}Saved defaults: {}{dim:#}", saved_at())?;
     Ok(out)
+}
+
+/// Where `--save` writes, for the help: `~` for the home directory, as people type it.
+fn saved_at() -> String {
+    let Some(path) = config_path() else {
+        return "nowhere (set HOME, XDG_CONFIG_HOME or APPDATA)".to_owned();
+    };
+    env::var_os("HOME")
+        .map(PathBuf::from)
+        .filter(|home| home.is_absolute())
+        .and_then(|home| {
+            path.strip_prefix(home)
+                .ok()
+                .map(|rest| Path::new("~").join(rest))
+        })
+        .unwrap_or_else(|| path.clone())
+        .display()
+        .to_string()
 }
 
 /// `$XDG_CONFIG_HOME/hya/config`, else `~/.config/hya/config`, else (Windows)

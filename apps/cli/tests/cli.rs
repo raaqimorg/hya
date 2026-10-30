@@ -644,3 +644,18 @@ fn a_config_path_that_cannot_be_read_or_removed_is_an_error() {
         assert!(stderr.contains("config"), "names the path: {stderr}");
     }
 }
+
+#[test]
+fn the_help_ends_with_the_real_config_path_alone() {
+    let dir = config_dir("help-path");
+    let output = hya(&dir, &["--help"]);
+    assert!(output.status.success(), "{}", text(&output.stderr));
+    let stdout = text(&output.stdout);
+    let last = stdout.trim_end().lines().last().expect("a line");
+    let path = saved_config(&dir);
+    assert_eq!(
+        last,
+        format!("Saved defaults: {}", path.display()),
+        "copyable as is"
+    );
+}
