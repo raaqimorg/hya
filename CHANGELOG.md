@@ -4,6 +4,8 @@ All notable changes are listed here, newest first. The format follows [Keep a Ch
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-10-31
+
 ### Added
 
 - `hya --next` prints one line, such as `Asr 2:51 PM in 1h 23m`, for status bars.
@@ -26,6 +28,7 @@ All notable changes are listed here, newest first. The format follows [Keep a Ch
 - A run that fails, such as on an unknown `--tz`, no longer saves its flags.
 - The location prompt asks again after an answer it cannot read, instead of exiting.
 - `--lat nan` and `--lng inf` are rejected by name, like any other bad flag value.
+- `--help` ends with the real config path, with no full stop to copy along with it.
 
 ## [0.1.1] - 2026-10-30
 
@@ -47,6 +50,7 @@ The first release.
 - `@raaqimorg/hya`: the JavaScript package, with the WebAssembly inlined and no network or async start-up.
 - `hya-cli`: the `hya` command, with saved defaults (`--save`), `--country`, `--clock 12`, and times on stdout and notes on stderr.
 
-[Unreleased]: https://github.com/raaqimorg/hya/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/raaqimorg/hya/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/raaqimorg/hya/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/raaqimorg/hya/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/raaqimorg/hya/releases/tag/v0.1.0
