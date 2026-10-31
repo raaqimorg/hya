@@ -57,6 +57,13 @@ struct SunPosition {
     equation_of_time: f64,
 }
 
+impl SunPosition {
+    /// Solar transit, in local mean solar hours.
+    fn transit(self) -> f64 {
+        wrap_hours(12.0 - self.equation_of_time)
+    }
+}
+
 fn sun_position(julian_day: f64) -> SunPosition {
     let days = julian_day - 2_451_545.0_f64;
     let mean_anomaly = wrap(357.529 + 0.985_600_28 * days, 360.0);
@@ -105,7 +112,7 @@ impl Sky {
 
     /// Solar transit, evaluated near `hours`.
     pub(crate) fn noon(self, hours: f64) -> f64 {
-        wrap_hours(12.0 - self.sun_at(hours).equation_of_time)
+        self.sun_at(hours).transit()
     }
 
     /// When the sun's centre is `depression` degrees below the horizon, near `hours`.
@@ -115,14 +122,20 @@ impl Sky {
     }
 
     fn time_at_altitude(self, altitude: f64, hours: f64, side: Side) -> Option<f64> {
-        let declination = self.sun_at(hours).declination;
+        self.time_at_altitude_for(self.sun_at(hours), altitude, side)
+    }
+
+    /// [`Sky::time_at_altitude`] for a sun position already evaluated, so a caller that needs
+    /// it too does not evaluate it twice.
+    fn time_at_altitude_for(self, sun: SunPosition, altitude: f64, side: Side) -> Option<f64> {
+        let declination = sun.declination;
         let cos_hour_angle = (sin_deg(altitude) - sin_deg(declination) * sin_deg(self.latitude))
             / (cos_deg(declination) * cos_deg(self.latitude));
         if !cos_hour_angle.is_finite() || !(-1.0_f64..=1.0_f64).contains(&cos_hour_angle) {
             return None;
         }
         let offset = acos_deg(cos_hour_angle) / 15.0_f64;
-        let noon = self.noon(hours);
+        let noon = sun.transit();
         Some(match side {
             Side::Morning => noon - offset,
             Side::Evening => noon + offset,
@@ -132,9 +145,10 @@ impl Sky {
     /// Asr: when an object's shadow is `factor` times its length plus its noon shadow.
     pub(crate) fn asr(self, factor: f64, hours: f64) -> Option<f64> {
         // The noon shadow is the shadow at transit, so it uses the declination at transit.
-        let declination = self.sun_at(self.noon(hours)).declination;
+        let sun = self.sun_at(hours);
+        let declination = self.sun_at(sun.transit()).declination;
         let altitude = acot_deg(factor + tan_deg(libm::fabs(self.latitude - declination)));
-        self.time_at_altitude(altitude, hours, Side::Evening)
+        self.time_at_altitude_for(sun, altitude, Side::Evening)
     }
 }
 
