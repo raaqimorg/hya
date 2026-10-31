@@ -40,6 +40,8 @@ fn hya_in_zone(dir: &Path, zone: &str, args: &[&str]) -> Output {
 }
 
 /// The minute of the day a time is printed at, from a 24-hour line such as `  Isha  19:59`.
+/// On today's date the next prayer's line goes on with the time left (`19:59   in 45m`), so
+/// this reads the time itself, not the line's last word.
 fn minute_of(stdout: &str, name: &str) -> i32 {
     let line = stdout
         .lines()
@@ -47,8 +49,7 @@ fn minute_of(stdout: &str, name: &str) -> i32 {
         .expect("the time is printed");
     let (hours, minutes) = line
         .split_whitespace()
-        .last()
-        .and_then(|time| time.split_once(':'))
+        .find_map(|word| word.split_once(':'))
         .expect("HH:MM");
     hours
         .parse::<i32>()
