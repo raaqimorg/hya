@@ -4,6 +4,11 @@ All notable changes are listed here, newest first. The format follows [Keep a Ch
 
 ## [Unreleased]
 
+### Changed
+
+- `compute` is about a third faster: each time is found with one evaluation of the sun's position where it used two (three for Asr). Results are bit-for-bit the same.
+- `prayerTimes` with `timeZone` is about four times faster in JavaScript: it builds one date formatter per zone, not one per call.
+
 ## [0.2.0] - 2026-10-31
 
 ### Added

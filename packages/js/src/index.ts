@@ -164,18 +164,29 @@ function ramadanDates(ramadan: Options["ramadan"]): Int16Array {
 	);
 }
 
+/** Building an `Intl.DateTimeFormat` costs more than the calculation, so each zone gets one. */
+const dateFormats = new Map<string, Intl.DateTimeFormat>();
+
+function dateFormat(timeZone: string): Intl.DateTimeFormat {
+	let format = dateFormats.get(timeZone);
+	if (format === undefined) {
+		try {
+			format = new Intl.DateTimeFormat("en-CA", { timeZone, year: "numeric", month: "2-digit", day: "2-digit" });
+		} catch {
+			throw new PrayerTimesError("invalid_input", `unknown time zone ${timeZone}`);
+		}
+		dateFormats.set(timeZone, format);
+	}
+	return format;
+}
+
 /** One day's prayer times. All instants are absolute (`Date`); format them in any time zone. */
 export function prayerTimes(date: CivilDate, location: Location, options: Options = {}): PrayerTimes {
 	const times = solarDay(date, location, options);
 	if (options.timeZone === undefined) {
 		return times;
 	}
-	let format: Intl.DateTimeFormat;
-	try {
-		format = new Intl.DateTimeFormat("en-CA", { timeZone: options.timeZone, year: "numeric", month: "2-digit", day: "2-digit" });
-	} catch {
-		throw new PrayerTimesError("invalid_input", `unknown time zone ${options.timeZone}`);
-	}
+	const format = dateFormat(options.timeZone);
 	const wanted = `${String(date.year).padStart(4, "0")}-${String(date.month).padStart(2, "0")}-${String(date.day).padStart(2, "0")}`;
 	const onDate = (candidate: PrayerTimes): boolean => format.format(candidate.dhuhr) === wanted;
 	if (onDate(times)) {
