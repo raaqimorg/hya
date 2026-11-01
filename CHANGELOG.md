@@ -4,6 +4,8 @@ All notable changes are listed here, newest first. The format follows [Keep a Ch
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-10-31
+
 ### Changed
 
 - `compute` is about a third faster: each time is found with one evaluation of the sun's position where it used two (three for Asr). Results are bit-for-bit the same.
@@ -55,7 +57,8 @@ The first release.
 - `@raaqimorg/hya`: the JavaScript package, with the WebAssembly inlined and no network or async start-up.
 - `hya-cli`: the `hya` command, with saved defaults (`--save`), `--country`, `--clock 12`, and times on stdout and notes on stderr.
 
-[Unreleased]: https://github.com/raaqimorg/hya/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/raaqimorg/hya/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/raaqimorg/hya/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/raaqimorg/hya/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/raaqimorg/hya/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/raaqimorg/hya/releases/tag/v0.1.0
