@@ -4,6 +4,7 @@
 //! and output. The calculation is `hya_engine::compute`.
 
 mod config;
+mod window;
 
 use core::fmt::{self, Write as _};
 use std::ffi::OsString;
