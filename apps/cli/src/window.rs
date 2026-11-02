@@ -1,6 +1,6 @@
 //! The active prayer window: how long after its own adhan a prayer is still shown as current.
 
-use hya_engine::{Prayer, PrayerTimes};
+use hya_engine::{Instant, Prayer, PrayerTimes};
 
 /// The window length, in minutes, for `prayer`: the adhan→iqama gap plus a buffer for praying
 /// it, chosen from the baseline or Ramadan table. `None` for [`Prayer::Sunrise`], which is
@@ -9,13 +9,10 @@ pub(crate) const fn window_minutes(prayer: Prayer, ramadan: bool) -> Option<u32>
     match (prayer, ramadan) {
         (Prayer::Sunrise, _) => None,
         (Prayer::Fajr, false) => Some(40),
-        (Prayer::Fajr, true) => Some(30),
-        (Prayer::Dhuhr, _) => Some(30),
-        (Prayer::Asr, _) => Some(30),
+        (Prayer::Fajr | Prayer::Isha, true) | (Prayer::Dhuhr | Prayer::Asr, _) => Some(30),
         (Prayer::Maghrib, false) => Some(20),
         (Prayer::Maghrib, true) => Some(25),
         (Prayer::Isha, false) => Some(35),
-        (Prayer::Isha, true) => Some(30),
     }
 }
 
@@ -30,7 +27,7 @@ pub(crate) fn waqt_end(prayer: Prayer, times: &PrayerTimes) -> Option<i64> {
         Prayer::Dhuhr => Some(times.asr().unix_seconds()),
         Prayer::Asr => Some(times.maghrib().unix_seconds()),
         Prayer::Maghrib => Some(times.isha().unix_seconds()),
-        Prayer::Isha => times.midnight().map(|instant| instant.unix_seconds()),
+        Prayer::Isha => times.midnight().map(Instant::unix_seconds),
     }
 }
 
@@ -63,9 +60,9 @@ fn active_in(
     times: &PrayerTimes,
     ramadan: bool,
 ) -> Option<Active> {
-    let minutes = window_minutes(prayer, ramadan).expect("real prayer");
+    let minutes = window_minutes(prayer, ramadan)?;
     let ends = capped_end(at, minutes, waqt_end(prayer, times));
-    (now < ends).then_some(Active {
+    (at <= now && now < ends).then_some(Active {
         prayer,
         at,
         now,
@@ -88,19 +85,18 @@ pub(crate) fn active_at(
         .filter(|&prayer| times.get(prayer).unix_seconds() <= now)
         .max_by_key(|&prayer| times.get(prayer).unix_seconds());
 
-    match started_today {
-        Some(prayer) => active_in(
+    if let Some(prayer) = started_today {
+        active_in(
             prayer,
             times.get(prayer).unix_seconds(),
             now,
             times,
             ramadan,
-        ),
-        None => {
-            let (yesterday_times, yesterday_ramadan) = yesterday()?;
-            let at = yesterday_times.get(Prayer::Isha).unix_seconds();
-            active_in(Prayer::Isha, at, now, &yesterday_times, yesterday_ramadan)
-        }
+        )
+    } else {
+        let (yesterday_times, yesterday_ramadan) = yesterday()?;
+        let at = yesterday_times.get(Prayer::Isha).unix_seconds();
+        active_in(Prayer::Isha, at, now, &yesterday_times, yesterday_ramadan)
     }
 }
 
@@ -252,6 +248,45 @@ mod tests {
         .expect("active");
         assert_eq!(active.prayer, Prayer::Isha);
         assert_eq!(active.at, yesterday_isha);
+    }
+
+    #[test]
+    fn fajrs_window_is_capped_at_sunrise_when_shorter_than_its_own_length() {
+        // Oulu, 2026-06-21: Fajr to Sunrise is 16 minutes, far short of Fajr's 40-minute
+        // baseline window, so the cap — not the table length — decides when it closes.
+        let times = compute(
+            Date::new(2026, 6, 21).expect("valid"),
+            Coordinates::new(65.0121, 25.4651).expect("valid"),
+            Parameters::default(),
+        )
+        .expect("computable");
+        let fajr = times.get(Prayer::Fajr).unix_seconds();
+        let sunrise = times.sunrise().unix_seconds();
+        assert_eq!(sunrise - fajr, 16 * 60, "sanity: a 16-minute gap");
+
+        let active = active_at(sunrise - 1, &times, false, || None).expect("active");
+        assert_eq!(active.prayer, Prayer::Fajr);
+        assert_eq!(active.ends, sunrise);
+        assert!(active_at(sunrise, &times, false, || None).is_none());
+    }
+
+    #[test]
+    fn nothing_is_active_before_yesterdays_isha_has_begun() {
+        let today = riyadh();
+        let yesterday = compute(
+            Date::new(2026, 10, 28).expect("valid"),
+            Coordinates::new(24.7136, 46.6753).expect("valid"),
+            Parameters::default(),
+        )
+        .expect("computable");
+        let yesterday_isha = yesterday.get(Prayer::Isha).unix_seconds();
+        assert!(
+            active_at(yesterday_isha - 60, &today, false, || Some((
+                yesterday, false
+            )))
+            .is_none(),
+            "a prayer cannot be active before its own adhan"
+        );
     }
 
     #[test]

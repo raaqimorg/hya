@@ -357,16 +357,7 @@ fn run() -> Result<(), String> {
         config.ramadan.announce(announced);
     }
     let asked = config.location.is_none();
-    let location = if let Some(location) = config.location {
-        location
-    } else {
-        if !io::stdin().is_terminal() {
-            return Err("no saved location: pass --lat and --lng (add --save to keep them)".into());
-        }
-        let location = ask_location(&mut io::stdin().lock(), &mut io::stderr().lock())?;
-        config.location = Some(location);
-        location
-    };
+    let location = resolve_location(&mut config)?;
 
     let zone = match &args.tz {
         Some(name) => TimeZone::get(name).map_err(|e| e.to_string())?,
@@ -393,42 +384,16 @@ fn run() -> Result<(), String> {
     let times = schedule_on(civil, &zone, date, location, parameters_on(date))?;
     let night = night_on(civil, &zone, location, &parameters_on, &times);
 
-    // The countdown only makes sense for today.
-    let next = (civil == today)
-        .then(|| {
-            next_from(
-                Timestamp::now().as_second(),
-                &times,
-                || time_on(civil, -1, Prayer::Isha, &zone, location, &parameters_on),
-                || time_on(civil, 1, Prayer::Fajr, &zone, location, &parameters_on),
-            )
-        })
-        .flatten();
-
-    let active = (civil == today)
-        .then(|| {
-            window::active_at(
-                Timestamp::now().as_second(),
-                &times,
-                config.ramadan.for_date(date).contains(date),
-                || {
-                    let yesterday_times =
-                        schedule_near(civil, -1, &zone, location, &parameters_on)?;
-                    let yesterday_date = civil
-                        .checked_sub(jiff::Span::new().days(1))
-                        .ok()
-                        .and_then(|d| engine_date(d).ok())?;
-                    Some((
-                        yesterday_times,
-                        config
-                            .ramadan
-                            .for_date(yesterday_date)
-                            .contains(yesterday_date),
-                    ))
-                },
-            )
-        })
-        .flatten();
+    let next = next_now(civil, today, &times, &zone, location, &parameters_on);
+    let active = active_now(
+        civil,
+        today,
+        &times,
+        &config,
+        &zone,
+        location,
+        &parameters_on,
+    );
 
     let screen = Screen {
         zone: &zone,
@@ -444,6 +409,79 @@ fn run() -> Result<(), String> {
         Err(e) if e.kind() == io::ErrorKind::BrokenPipe => Ok(()),
         result => result.map_err(|e| e.to_string()),
     }
+}
+
+/// The configured location, prompting for one on a terminal when none is saved yet.
+fn resolve_location(config: &mut Config) -> Result<Coordinates, String> {
+    if let Some(location) = config.location {
+        return Ok(location);
+    }
+    if !io::stdin().is_terminal() {
+        return Err("no saved location: pass --lat and --lng (add --save to keep them)".into());
+    }
+    let location = ask_location(&mut io::stdin().lock(), &mut io::stderr().lock())?;
+    config.location = Some(location);
+    Ok(location)
+}
+
+/// The countdown to the next prayer, or `None` for any day but `today` (the countdown only
+/// makes sense for today).
+fn next_now(
+    civil: jiff::civil::Date,
+    today: jiff::civil::Date,
+    times: &PrayerTimes,
+    zone: &TimeZone,
+    location: Coordinates,
+    parameters_on: &impl Fn(Date) -> Parameters,
+) -> Option<Next> {
+    (civil == today)
+        .then(|| {
+            next_from(
+                Timestamp::now().as_second(),
+                times,
+                || time_on(civil, -1, Prayer::Isha, zone, location, parameters_on),
+                || time_on(civil, 1, Prayer::Fajr, zone, location, parameters_on),
+            )
+        })
+        .flatten()
+}
+
+/// The active prayer window for `civil`, or `None` for any day but `today` — mirrors how `next`
+/// is computed in `run()`, with yesterday's own schedule and Ramadan status for Isha's carry
+/// across midnight.
+fn active_now(
+    civil: jiff::civil::Date,
+    today: jiff::civil::Date,
+    times: &PrayerTimes,
+    config: &Config,
+    zone: &TimeZone,
+    location: Coordinates,
+    parameters_on: &impl Fn(Date) -> Parameters,
+) -> Option<window::Active> {
+    (civil == today)
+        .then(|| {
+            let date = engine_date(civil).ok()?;
+            window::active_at(
+                Timestamp::now().as_second(),
+                times,
+                config.ramadan.for_date(date).contains(date),
+                || {
+                    let yesterday_times = schedule_near(civil, -1, zone, location, parameters_on)?;
+                    let yesterday_date = civil
+                        .checked_sub(jiff::Span::new().days(1_i32))
+                        .ok()
+                        .and_then(|d| engine_date(d).ok())?;
+                    Some((
+                        yesterday_times,
+                        config
+                            .ramadan
+                            .for_date(yesterday_date)
+                            .contains(yesterday_date),
+                    ))
+                },
+            )
+        })
+        .flatten()
 }
 
 /// The times on stdout; with `--next`, only the next prayer. Notes on stderr.
@@ -704,6 +742,7 @@ impl Screen<'_> {
             let row = format!("{name:<NAME_WIDTH$} {}", self.local(at)?);
             if let Some(active) = self.active
                 && prayer == Some(active.prayer)
+                && at == active.at
             {
                 writeln!(out, "  {} {}", paint(ACCENT, "▸"), paint(ACCENT_BOLD, &row))?;
                 continue;
@@ -1037,7 +1076,9 @@ mod tests {
             .find(|line| line.contains("Maghrib"))
             .expect("a Maghrib row");
         assert!(!maghrib_row.contains("▸"), "{screen}");
-        assert!(!maghrib_row.contains(DIM), "{screen}");
+        // `styled_at` strips ANSI codes, so a DIM check needs the raw, colored output.
+        let raw = written(&times, at + 9 * 60, &config, true);
+        assert!(!raw.contains(&format!("{DIM}Maghrib")), "{raw}");
     }
 
     #[test]
@@ -1045,12 +1086,12 @@ mod tests {
         let times = riyadh();
         let config = Config::default();
         let at = times.get(Prayer::Asr).unix_seconds();
-        let screen = styled_at(at + 9 * 60, &config);
-        let asr_row = screen
-            .lines()
-            .find(|line| line.contains("Asr"))
-            .expect("an Asr row");
-        assert!(!asr_row.contains(DIM), "{screen}");
+        let raw = written(&times, at + 9 * 60, &config, true);
+        assert!(
+            raw.contains(&format!("{ACCENT_BOLD}Asr         2:51 PM{RESET}")),
+            "{raw}"
+        );
+        assert!(!raw.contains(&format!("{DIM}Asr         2:51 PM")), "{raw}");
     }
 
     #[test]
@@ -1065,7 +1106,7 @@ mod tests {
         let empty_cells = bar.chars().filter(|&c| c == '─').count();
         assert!(filled_cells > 0 && empty_cells > 0, "{bar}");
         assert!(
-            (filled_cells as i64 - empty_cells as i64).abs() <= 1,
+            filled_cells.abs_diff(empty_cells) <= 1,
             "roughly half filled at the window's midpoint: {bar}"
         );
     }
@@ -1123,6 +1164,40 @@ mod tests {
         screen.write(&mut out).expect("written");
         let text = String::from_utf8(out).expect("utf-8");
         assert!(text.contains("Asr  now · 9m ago"), "{text}");
+    }
+
+    #[test]
+    fn the_active_marker_does_not_land_on_a_same_day_namesake_row() {
+        // `active.at` can belong to a different occurrence of the same prayer than the one in
+        // today's `rows()` (e.g. yesterday's Isha, still active across midnight). Only the row
+        // whose own instant matches `active.at` gets the ▸ marker.
+        let times = riyadh();
+        let config = Config::default();
+        let zone = TimeZone::get("Asia/Riyadh").expect("zone");
+        let not_todays_isha = times.get(Prayer::Isha).unix_seconds() - 86_400;
+        let screen = Screen {
+            zone: &zone,
+            config: &config,
+            times: &times,
+            night: &[],
+            next: None,
+            active: Some(window::Active {
+                prayer: Prayer::Isha,
+                at: not_todays_isha,
+                now: not_todays_isha + 9 * 60,
+                ends: not_todays_isha + 30 * 60,
+            }),
+            color: true,
+        };
+        let mut out = Vec::new();
+        screen.write(&mut out).expect("written");
+        let text = String::from_utf8(out).expect("utf-8");
+        // The ▸ marker and the row's own ACCENT_BOLD span are adjacent only on a marked row;
+        // the active header also paints "Isha" ACCENT_BOLD, but never right after a "▸".
+        assert!(
+            !text.contains(&format!("▸{RESET} {ACCENT_BOLD}Isha")),
+            "{text}"
+        );
     }
 
     #[test]
