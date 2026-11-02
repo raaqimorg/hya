@@ -639,7 +639,35 @@ impl Screen<'_> {
     /// ```
     fn write_styled(&self, out: &mut impl io::Write) -> io::Result<()> {
         writeln!(out)?;
-        if let Some(next) = self.next {
+        if let Some(active) = self.active {
+            writeln!(
+                out,
+                "  {}",
+                paint(
+                    ACCENT_BOLD,
+                    &format!(
+                        "{}  now · {}",
+                        prayer_name(active.prayer),
+                        since(active.now, active.at)
+                    )
+                )
+            )?;
+            // As wide as a row below it: the marker, the name, and the time.
+            let width = self
+                .local(active.at)?
+                .chars()
+                .count()
+                .saturating_add(NAME_WIDTH)
+                .saturating_add(3);
+            let filled = filled(active.at, active.now, active.ends, width);
+            writeln!(
+                out,
+                "  {}{}",
+                paint(ACCENT, &"━".repeat(filled)),
+                paint(DIM, &"─".repeat(width.saturating_sub(filled)))
+            )?;
+            writeln!(out)?;
+        } else if let Some(next) = self.next {
             let tomorrow = if next.tomorrow {
                 paint(
                     DIM,
@@ -674,8 +702,16 @@ impl Screen<'_> {
         }
         for (prayer, name, at) in self.rows() {
             let row = format!("{name:<NAME_WIDTH$} {}", self.local(at)?);
+            if let Some(active) = self.active
+                && prayer == Some(active.prayer)
+            {
+                writeln!(out, "  {} {}", paint(ACCENT, "▸"), paint(ACCENT_BOLD, &row))?;
+                continue;
+            }
             match self.next {
-                Some(next) if !next.tomorrow && prayer == Some(next.prayer) => {
+                Some(next)
+                    if self.active.is_none() && !next.tomorrow && prayer == Some(next.prayer) =>
+                {
                     writeln!(out, "  {} {}", paint(ACCENT, "▸"), paint(ACCENT_BOLD, &row))?;
                 }
                 // The night's marks are no prayer: always in the background.
@@ -799,6 +835,17 @@ fn left(now: i64, at: i64) -> String {
         (0, minutes) => format!("{minutes}m"),
         (hours, 0) => format!("{hours}h"),
         (hours, minutes) => format!("{hours}h {minutes}m"),
+    }
+}
+
+/// `9m ago`, `just now`: the time since `at`, rounded down to the minute. Windows never reach
+/// 60 minutes, so unlike [`left`] there is no hour branch.
+fn since(now: i64, at: i64) -> String {
+    let minutes = now.saturating_sub(at).checked_div(60).unwrap_or(0);
+    if minutes == 0 {
+        "just now".to_owned()
+    } else {
+        format!("{minutes}m ago")
     }
 }
 
@@ -967,6 +1014,118 @@ mod tests {
     }
 
     #[test]
+    fn since_reads_minutes_elapsed_rounded_down() {
+        let at = 1_000;
+        assert_eq!(since(at, at), "just now");
+        assert_eq!(since(at + 59, at), "just now");
+        assert_eq!(since(at + 60, at), "1m ago");
+        assert_eq!(since(at + 9 * 60 + 59, at), "9m ago");
+    }
+
+    #[test]
+    fn the_active_prayer_leads_the_header_and_marks_its_own_row() {
+        let times = riyadh();
+        let config = Config::default();
+        let at = times.get(Prayer::Asr).unix_seconds();
+        let screen = styled_at(at + 9 * 60, &config);
+        let lines: Vec<&str> = screen.lines().collect();
+        assert_eq!(lines.get(1), Some(&"  Asr  now · 9m ago"), "{screen}");
+        assert!(screen.contains("  ▸ Asr         2:51 PM"), "{screen}");
+        // Maghrib (the literal next prayer) is plain, not highlighted, not dimmed.
+        let maghrib_row = lines
+            .iter()
+            .find(|line| line.contains("Maghrib"))
+            .expect("a Maghrib row");
+        assert!(!maghrib_row.contains("▸"), "{screen}");
+        assert!(!maghrib_row.contains(DIM), "{screen}");
+    }
+
+    #[test]
+    fn the_active_prayers_own_row_is_not_dimmed_even_though_its_time_has_passed() {
+        let times = riyadh();
+        let config = Config::default();
+        let at = times.get(Prayer::Asr).unix_seconds();
+        let screen = styled_at(at + 9 * 60, &config);
+        let asr_row = screen
+            .lines()
+            .find(|line| line.contains("Asr"))
+            .expect("an Asr row");
+        assert!(!asr_row.contains(DIM), "{screen}");
+    }
+
+    #[test]
+    fn the_active_window_bar_tracks_the_window_not_the_gap_to_next() {
+        let times = riyadh();
+        let config = Config::default();
+        let at = times.get(Prayer::Asr).unix_seconds();
+        // Halfway through Asr's 30m window.
+        let screen = styled_at(at + 15 * 60, &config);
+        let bar = screen.lines().nth(2).expect("the bar");
+        let filled_cells = bar.chars().filter(|&c| c == '━').count();
+        let empty_cells = bar.chars().filter(|&c| c == '─').count();
+        assert!(filled_cells > 0 && empty_cells > 0, "{bar}");
+        assert!(
+            (filled_cells as i64 - empty_cells as i64).abs() <= 1,
+            "roughly half filled at the window's midpoint: {bar}"
+        );
+    }
+
+    #[test]
+    fn outside_any_window_the_header_is_unchanged() {
+        let times = riyadh();
+        let config = Config::default();
+        let before_asr = times.get(Prayer::Asr).unix_seconds() - 83 * 60;
+        let screen = styled_at(before_asr, &config);
+        assert_eq!(screen.lines().nth(1), Some("  Asr in 1h 23m"), "{screen}");
+    }
+
+    #[test]
+    fn ishas_active_header_never_carries_the_tomorrow_suffix() {
+        // Once Isha has passed, `next_from` already points at tomorrow's Fajr (`next.tomorrow`
+        // is true) — exactly during Isha's own active window. The active header must win
+        // outright, with no trace of the "tomorrow HH:MM" suffix that next-prayer rendering
+        // would add.
+        let times = riyadh();
+        let config = Config::default();
+        let at = times.get(Prayer::Isha).unix_seconds();
+        let screen = styled_at(at + 9 * 60, &config);
+        assert_eq!(
+            screen.lines().nth(1),
+            Some("  Isha  now · 9m ago"),
+            "{screen}"
+        );
+        assert!(!screen.contains("tomorrow"), "{screen}");
+    }
+
+    #[test]
+    fn the_active_header_renders_even_when_next_from_found_nothing() {
+        // Polar night: today has no Fajr tomorrow, so `next` is `None` and the pre-existing
+        // header block is skipped entirely today. An active window must still render on its own.
+        let times = riyadh();
+        let config = Config::default();
+        let zone = TimeZone::get("Asia/Riyadh").expect("zone");
+        let at = times.get(Prayer::Asr).unix_seconds();
+        let screen = Screen {
+            zone: &zone,
+            config: &config,
+            times: &times,
+            night: &[],
+            next: None,
+            active: Some(window::Active {
+                prayer: Prayer::Asr,
+                at,
+                now: at + 9 * 60,
+                ends: at + 30 * 60,
+            }),
+            color: true,
+        };
+        let mut out = Vec::new();
+        screen.write(&mut out).expect("written");
+        let text = String::from_utf8(out).expect("utf-8");
+        assert!(text.contains("Asr  now · 9m ago"), "{text}");
+    }
+
+    #[test]
     fn the_screen_leads_with_the_next_prayer_and_marks_it() {
         let times = riyadh();
         let config = Config::default();
@@ -1044,10 +1203,21 @@ mod tests {
         let raw = written(&times, before_asr, &config, true);
         assert!(raw.contains(&format!("{DIM}Last third 12:52 AM")), "{raw}");
         assert!(raw.contains(&format!("{DIM}Midnight   10:58 PM")), "{raw}");
+        // Just after Isha, its own active window is open: the screen shows Isha as current,
+        // not tomorrow's Fajr countdown.
         let after_isha = times.get(Prayer::Isha).unix_seconds().saturating_add(60);
         assert_eq!(
             styled_at(after_isha, &config).lines().nth(1),
-            Some("  Fajr in 9h 53m  tomorrow 4:40 AM")
+            Some("  Isha  now · 1m ago")
+        );
+        // Once that window has closed, the tomorrow-Fajr countdown (with its suffix) returns.
+        let well_after_isha = times
+            .get(Prayer::Isha)
+            .unix_seconds()
+            .saturating_add(36 * 60);
+        assert_eq!(
+            styled_at(well_after_isha, &config).lines().nth(1),
+            Some("  Fajr in 9h 18m  tomorrow 4:40 AM")
         );
     }
 
