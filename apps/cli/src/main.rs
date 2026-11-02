@@ -405,12 +405,38 @@ fn run() -> Result<(), String> {
         })
         .flatten();
 
+    let active = (civil == today)
+        .then(|| {
+            window::active_at(
+                Timestamp::now().as_second(),
+                &times,
+                config.ramadan.for_date(date).contains(date),
+                || {
+                    let yesterday_times =
+                        schedule_near(civil, -1, &zone, location, &parameters_on)?;
+                    let yesterday_date = civil
+                        .checked_sub(jiff::Span::new().days(1))
+                        .ok()
+                        .and_then(|d| engine_date(d).ok())?;
+                    Some((
+                        yesterday_times,
+                        config
+                            .ramadan
+                            .for_date(yesterday_date)
+                            .contains(yesterday_date),
+                    ))
+                },
+            )
+        })
+        .flatten();
+
     let screen = Screen {
         zone: &zone,
         config: &config,
         times: &times,
         night: &night,
         next,
+        active,
         color: io::stdout().is_terminal() && color_allowed(),
     };
     match show(&screen, args.next, chosen_for) {
@@ -586,6 +612,7 @@ struct Screen<'a> {
     /// Midnight and the last third on the day shown, from [`night_on`].
     night: &'a [(&'static str, i64)],
     next: Option<Next>,
+    active: Option<window::Active>,
     color: bool,
 }
 
@@ -897,6 +924,7 @@ mod tests {
                 || None,
                 || Some(times.fajr().unix_seconds().saturating_add(86_400)),
             ),
+            active: window::active_at(now, times, false, || None),
             color,
         };
         let mut out = Vec::new();
@@ -916,6 +944,26 @@ mod tests {
             }
         }
         plain
+    }
+
+    #[test]
+    fn active_is_none_for_a_date_that_is_not_today() {
+        // Mirrors how `next` is already `None` for a non-today `--date`: viewing another day's
+        // schedule must not report an active window "now" either.
+        let times = riyadh();
+        let config = Config::default();
+        let screen = Screen {
+            zone: &TimeZone::get("Asia/Riyadh").expect("zone"),
+            config: &config,
+            times: &times,
+            night: &[],
+            next: None,
+            active: None,
+            color: true,
+        };
+        let mut out = Vec::new();
+        screen.write(&mut out).expect("written");
+        assert!(!String::from_utf8(out).expect("utf-8").contains("now"));
     }
 
     #[test]
