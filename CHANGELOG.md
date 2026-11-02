@@ -4,6 +4,12 @@ All notable changes are listed here, newest first. The format follows [Keep a Ch
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-11-02
+
+### Added
+
+- In a terminal, `hya` shows a prayer as current for a while after its own adhan — covering the adhan-to-iqama gap and time to pray — before it counts down to the next one, such as `Isha  now · 9m ago`. Plain output and `--next` are unchanged.
+
 ## [0.2.1] - 2026-10-31
 
 ### Changed
@@ -57,7 +63,8 @@ The first release.
 - `@raaqimorg/hya`: the JavaScript package, with the WebAssembly inlined and no network or async start-up.
 - `hya-cli`: the `hya` command, with saved defaults (`--save`), `--country`, `--clock 12`, and times on stdout and notes on stderr.
 
-[Unreleased]: https://github.com/raaqimorg/hya/compare/v0.2.1...HEAD
+[Unreleased]: https://github.com/raaqimorg/hya/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/raaqimorg/hya/compare/v0.2.1...v0.3.0
 [0.2.1]: https://github.com/raaqimorg/hya/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/raaqimorg/hya/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/raaqimorg/hya/compare/v0.1.0...v0.1.1
