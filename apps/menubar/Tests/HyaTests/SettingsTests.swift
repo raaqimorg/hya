@@ -16,6 +16,7 @@ final class SettingsTests: XCTestCase {
 
     func testSaveThenLoadRoundTrips() {
         let defaults = UserDefaults(suiteName: #function)!
+        defaults.removePersistentDomain(forName: #function)
         let store = SettingsStore(defaults: defaults)
         XCTAssertNil(store.coordinates)
         store.save(Coordinates(latitude: 24.7136, longitude: 46.6753))
