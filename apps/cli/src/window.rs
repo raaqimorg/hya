@@ -100,6 +100,17 @@ pub(crate) fn active_at(
     }
 }
 
+/// Every prayer's own adhan instant and the instant its active window closes, for
+/// `times`/`ramadan`. `ends` is `None` only for [`Prayer::Sunrise`], which has no window.
+pub(crate) fn windows_for(times: &PrayerTimes, ramadan: bool) -> [(Prayer, i64, Option<i64>); 6] {
+    Prayer::ALL.map(|prayer| {
+        let at = times.get(prayer).unix_seconds();
+        let ends = window_minutes(prayer, ramadan)
+            .map(|minutes| capped_end(at, minutes, waqt_end(prayer, times)));
+        (prayer, at, ends)
+    })
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -311,6 +322,35 @@ mod tests {
         let at = last_day.get(Prayer::Isha).unix_seconds();
         let active = active_at(at + 10 * 60, &last_day, false, || None).expect("active");
         assert_eq!(active.prayer, Prayer::Isha);
+    }
+
+    #[test]
+    fn windows_for_matches_active_at_for_every_today_prayer() {
+        let times = riyadh();
+        for (prayer, at, ends) in windows_for(&times, false) {
+            if prayer == Prayer::Sunrise {
+                assert_eq!(ends, None);
+                continue;
+            }
+            let active =
+                active_in(prayer, at, at + 1, &times, false).expect("active just after at");
+            assert_eq!(Some(active.ends), ends);
+        }
+    }
+
+    #[test]
+    fn windows_for_ramadan_shortens_the_same_entries_as_window_minutes() {
+        let times = riyadh();
+        let baseline = windows_for(&times, false);
+        let ramadan = windows_for(&times, true);
+        let isha = Prayer::ALL
+            .iter()
+            .position(|&p| p == Prayer::Isha)
+            .expect("isha");
+        assert!(
+            ramadan[isha].2 < baseline[isha].2,
+            "Isha's window is shorter in Ramadan"
+        );
     }
 
     #[test]
