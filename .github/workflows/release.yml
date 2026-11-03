@@ -86,6 +86,20 @@ jobs:
             hya-*.tar.gz
             hya-*.zip
 
+  macos-dmg:
+    needs: check
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: dtolnay/rust-toolchain@1.99.0
+        with: { targets: aarch64-apple-darwin }
+      - run: apps/menubar/Scripts/package-dmg.sh "${{ needs.check.outputs.version }}"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: hya-menubar-macos
+          if-no-files-found: error
+          path: apps/menubar/dist/Hya.dmg
+
   crates:
     needs: [check, build]
     runs-on: ubuntu-latest
@@ -157,7 +171,7 @@ jobs:
           npm publish --provenance --access public --tag "$tag"
 
   github:
-    needs: [check, build, crates, npm]
+    needs: [check, build, macos-dmg, crates, npm]
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -169,7 +183,7 @@ jobs:
         with: { path: dist, merge-multiple: true }
       - name: Checksums
         working-directory: dist
-        run: sha256sum hya-* > SHA256SUMS
+        run: sha256sum hya-* Hya.dmg > SHA256SUMS
       - name: Create the release, or update its files on a re-run
         env:
           GH_TOKEN: ${{ github.token }}

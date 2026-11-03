@@ -50,3 +50,12 @@ jobs:
       - run: bun run --filter @raaqimorg/hya build
       - run: bun run --filter @raaqimorg/hya types
       - run: bun run --filter @raaqimorg/hya test
+
+  swift:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v7
+      - run: swift build
+        working-directory: apps/menubar
+      - run: swift test
+        working-directory: apps/menubar
