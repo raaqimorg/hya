@@ -33,6 +33,7 @@ struct SettingsView: View {
             HStack {
                 if let onCancel {
                     Button("Cancel", action: onCancel)
+                        .buttonStyle(.borderless)
                 }
                 Spacer()
                 Button("Save") {
@@ -40,6 +41,7 @@ struct SettingsView: View {
                     SettingsStore.shared.save(coordinates)
                     onSave()
                 }
+                .buttonStyle(.borderedProminent)
                 .disabled(validated == nil)
             }
         }

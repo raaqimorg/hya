@@ -26,13 +26,16 @@ struct ScheduleListView: View {
             footer
         }
         .padding()
+        .frame(minWidth: 220)
     }
 
     private var footer: some View {
         HStack {
             Button("Settings…", action: onSettings)
+                .buttonStyle(.borderless)
             Spacer()
             Button("Quit") { NSApplication.shared.terminate(nil) }
+                .buttonStyle(.borderless)
         }
     }
 
@@ -41,6 +44,8 @@ struct ScheduleListView: View {
             Text(name)
             Spacer()
             Text(Self.timeFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(window.at))))
+                .monospacedDigit()
+                .foregroundStyle(.secondary)
         }
         .fontWeight(isActive(window, at: Date()) ? .bold : .regular)
     }

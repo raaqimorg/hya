@@ -11,6 +11,7 @@ struct HyaApp: App {
     var body: some Scene {
         MenuBarExtra(label) {
             content
+                .popoverChrome()
         }
         .menuBarExtraStyle(.window)
     }
