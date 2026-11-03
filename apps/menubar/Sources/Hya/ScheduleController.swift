@@ -60,7 +60,7 @@ final class ScheduleController: ObservableObject {
             recomputeDisplayText()
         case .failure(let error):
             lastError = error
-            displayText = "hya — No times"
+            displayText = "hya: No times"
         }
     }
 

@@ -17,11 +17,11 @@ struct HyaApp: App {
     private var label: String {
         switch appState.mode {
         case .needsLocation:
-            return "hya — Set location"
+            return "hya: Set location"
         case .ready:
             return appState.scheduleController.displayText
         case .error:
-            return "hya — No times"
+            return "hya: No times"
         }
     }
 
