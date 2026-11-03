@@ -302,6 +302,8 @@ dependencies = [
  "jiff",
  "proptest",
  "proptest-state-machine",
+ "serde",
+ "serde_json",
 ]
 
 [[package]]

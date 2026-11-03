@@ -4,6 +4,10 @@ All notable changes are listed here, newest first. The format follows [Keep a Ch
 
 ## [Unreleased]
 
+### Added
+
+- `hya --json` prints a machine-readable snapshot of today's schedule, the active window, and what's next, for status bars and scripts.
+
 ## [0.3.0] - 2026-11-02
 
 ### Added

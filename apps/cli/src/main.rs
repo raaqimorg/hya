@@ -4,6 +4,7 @@
 //! and output. The calculation is `hya_engine::compute`.
 
 mod config;
+mod json;
 mod window;
 
 use core::fmt::{self, Write as _};
@@ -28,6 +29,10 @@ use jiff::{Timestamp, Zoned};
 /// Islamic prayer times from coordinates alone. `--help` prints [`HELP`].
 #[derive(Debug, Parser)]
 #[command(name = "hya", version, override_usage = "hya [flags]", override_help = help())]
+#[expect(
+    clippy::struct_excessive_bools,
+    reason = "each is its own independent CLI flag, not a state machine"
+)]
 struct Args {
     #[arg(long, value_name = "deg", allow_hyphen_values = true, requires = "lng",
         value_parser = finite)]
@@ -57,6 +62,8 @@ struct Args {
     clock: Option<Clock>,
     #[arg(long, conflicts_with = "date")]
     next: bool,
+    #[arg(long, conflicts_with = "next")]
+    json: bool,
     #[arg(long)]
     save: bool,
     #[arg(long, exclusive = true)]
@@ -116,6 +123,7 @@ const HELP: [(&str, &[Row]); 4] = [
             ("--date <date>", "Day to show, e.g. 2027-02-15", "today"),
             ("--clock <12|24>", "Clock", "12"),
             ("--next", "Print only the next prayer", ""),
+            ("--json", "Print a machine-readable snapshot", ""),
         ],
     ),
     (
@@ -310,6 +318,10 @@ fn ask_location(
     }
 }
 
+#[expect(
+    clippy::too_many_lines,
+    reason = "a sequential CLI flow: parse, resolve config, compute, then one of three outputs"
+)]
 fn run() -> Result<(), String> {
     let args = Args::parse();
     if args.reset {
@@ -395,6 +407,20 @@ fn run() -> Result<(), String> {
         &parameters_on,
     );
 
+    if args.json {
+        return write_json(
+            civil,
+            &config,
+            &zone,
+            location,
+            &parameters_on,
+            date,
+            &times,
+            active,
+            next,
+        );
+    }
+
     let screen = Screen {
         zone: &zone,
         config: &config,
@@ -409,6 +435,38 @@ fn run() -> Result<(), String> {
         Err(e) if e.kind() == io::ErrorKind::BrokenPipe => Ok(()),
         result => result.map_err(|e| e.to_string()),
     }
+}
+
+/// Writes the `--json` snapshot for `times`/`active`/`next`, resolving yesterday's schedule
+/// and tomorrow's Fajr itself so `run()` need not.
+#[expect(
+    clippy::too_many_arguments,
+    reason = "every value `run()` already has in scope"
+)]
+fn write_json(
+    civil: jiff::civil::Date,
+    config: &Config,
+    zone: &TimeZone,
+    location: Coordinates,
+    parameters_on: &impl Fn(Date) -> Parameters,
+    date: Date,
+    times: &PrayerTimes,
+    active: Option<window::Active>,
+    next: Option<Next>,
+) -> Result<(), String> {
+    let ramadan_today = config.ramadan.for_date(date).contains(date);
+    let yesterday = yesterday_schedule(civil, config, zone, location, parameters_on);
+    let tomorrow_fajr = time_on(civil, 1, Prayer::Fajr, zone, location, parameters_on);
+    let snapshot = json::build(
+        Timestamp::now().as_second(),
+        times,
+        ramadan_today,
+        active,
+        next,
+        yesterday,
+        tomorrow_fajr,
+    );
+    serde_json::to_writer_pretty(io::stdout().lock(), &snapshot).map_err(|e| e.to_string())
 }
 
 /// The configured location, prompting for one on a terminal when none is saved yet.
@@ -465,23 +523,33 @@ fn active_now(
                 Timestamp::now().as_second(),
                 times,
                 config.ramadan.for_date(date).contains(date),
-                || {
-                    let yesterday_times = schedule_near(civil, -1, zone, location, parameters_on)?;
-                    let yesterday_date = civil
-                        .checked_sub(jiff::Span::new().days(1_i32))
-                        .ok()
-                        .and_then(|d| engine_date(d).ok())?;
-                    Some((
-                        yesterday_times,
-                        config
-                            .ramadan
-                            .for_date(yesterday_date)
-                            .contains(yesterday_date),
-                    ))
-                },
+                || yesterday_schedule(civil, config, zone, location, parameters_on),
             )
         })
         .flatten()
+}
+
+/// Yesterday's own schedule and Ramadan status, for Isha's carry-over across midnight — shared
+/// by [`active_now`] and the `--json` snapshot so this logic lives in exactly one place.
+fn yesterday_schedule(
+    civil: jiff::civil::Date,
+    config: &Config,
+    zone: &TimeZone,
+    location: Coordinates,
+    parameters_on: &impl Fn(Date) -> Parameters,
+) -> Option<(PrayerTimes, bool)> {
+    let yesterday_times = schedule_near(civil, -1, zone, location, parameters_on)?;
+    let yesterday_date = civil
+        .checked_sub(jiff::Span::new().days(1_i32))
+        .ok()
+        .and_then(|d| engine_date(d).ok())?;
+    Some((
+        yesterday_times,
+        config
+            .ramadan
+            .for_date(yesterday_date)
+            .contains(yesterday_date),
+    ))
 }
 
 /// The times on stdout; with `--next`, only the next prayer. Notes on stderr.

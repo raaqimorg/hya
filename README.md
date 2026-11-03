@@ -95,6 +95,7 @@ Asr 2:51 PM in 1h 23m
 | `--clock 24`     | Print `18:46` instead of `6:46 PM`                            |
 | `--date <date>`  | Show another day, e.g. `2027-02-15`                           |
 | `--next`         | Print only the next prayer and the time left                  |
+| `--json`         | Print a machine-readable snapshot, for status bars and scripts |
 | `--save`         | Keep this run's flags as defaults (otherwise they apply once) |
 | `--reset`        | Forget every saved default                                    |
 

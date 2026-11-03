@@ -325,6 +325,57 @@ fn next_is_only_for_today() {
     assert!(!output.status.success(), "--next with --date accepted");
 }
 
+#[test]
+fn json_reports_the_active_window_and_todays_six_prayers() {
+    let dir = config_dir("json-active");
+    let out = hya(
+        &dir,
+        &[
+            "--json",
+            "--lat",
+            "24.7136",
+            "--lng",
+            "46.6753",
+            "--date",
+            "2026-10-29",
+        ],
+    );
+    assert!(out.status.success(), "{out:?}");
+    let value: serde_json::Value = serde_json::from_slice(&out.stdout).expect("valid json");
+    assert!(value["today"]["fajr"]["at"].is_number());
+    assert_eq!(value["today"]["sunrise"]["ends"], serde_json::Value::Null);
+}
+
+#[test]
+fn json_and_next_conflict() {
+    let dir = config_dir("json-next-conflict");
+    let out = hya(
+        &dir,
+        &["--json", "--next", "--lat", "24.7136", "--lng", "46.6753"],
+    );
+    assert!(!out.status.success());
+}
+
+#[test]
+fn json_at_a_polar_night_date_fails_cleanly_not_with_malformed_output() {
+    let dir = config_dir("json-polar");
+    // Tromsø, midwinter: polar night.
+    let out = hya(
+        &dir,
+        &[
+            "--json",
+            "--lat",
+            "69.6492",
+            "--lng",
+            "18.9553",
+            "--date",
+            "2026-12-21",
+        ],
+    );
+    assert!(!out.status.success());
+    assert!(serde_json::from_slice::<serde_json::Value>(&out.stdout).is_err());
+}
+
 // ---------- what a failed run leaves behind ----------
 
 #[test]
