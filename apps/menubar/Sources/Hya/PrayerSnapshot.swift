@@ -37,26 +37,31 @@ func formatDuration(seconds: Int64) -> String {
     return "\(hours)h:\(String(format: "%02d", minutes))m"
 }
 
+/// Whether `now` falls inside `window`'s own `at...ends` span. Always `false` for a window
+/// with no `ends` (e.g. Sunrise).
+func isActive(_ window: Window, at now: Date) -> Bool {
+    guard let ends = window.ends else { return false }
+    let nowSeconds = Int64(now.timeIntervalSince1970)
+    return (window.at...ends).contains(nowSeconds)
+}
+
 func statusText(for snapshot: PrayerSnapshot, at now: Date) -> String {
     let nowSeconds = Int64(now.timeIntervalSince1970)
     let today = snapshot.today
 
-    var active: [(name: String, at: Int64, ends: Int64?)] = [
-        ("Fajr", today.fajr.at, today.fajr.ends),
-        ("Sunrise", today.sunrise.at, today.sunrise.ends),
-        ("Dhuhr", today.dhuhr.at, today.dhuhr.ends),
-        ("Asr", today.asr.at, today.asr.ends),
-        ("Maghrib", today.maghrib.at, today.maghrib.ends),
-        ("Isha", today.isha.at, today.isha.ends),
+    var active: [(name: String, window: Window)] = [
+        ("Fajr", today.fajr),
+        ("Sunrise", today.sunrise),
+        ("Dhuhr", today.dhuhr),
+        ("Asr", today.asr),
+        ("Maghrib", today.maghrib),
+        ("Isha", today.isha),
     ]
     if let yesterdayIsha = snapshot.yesterdayIsha {
-        active.append(("Isha", yesterdayIsha.at, yesterdayIsha.ends))
+        active.append(("Isha", yesterdayIsha))
     }
 
-    if let current = active.first(where: { entry in
-        guard let ends = entry.ends else { return false }
-        return (entry.at...ends).contains(nowSeconds)
-    }), let ends = current.ends {
+    if let current = active.first(where: { isActive($0.window, at: now) }), let ends = current.window.ends {
         return "\(current.name) (-\(formatDuration(seconds: ends - nowSeconds)))"
     }
 
