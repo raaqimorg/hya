@@ -22,4 +22,16 @@ final class SettingsTests: XCTestCase {
         store.save(Coordinates(latitude: 24.7136, longitude: 46.6753))
         XCTAssertEqual(store.coordinates, Coordinates(latitude: 24.7136, longitude: 46.6753))
     }
+
+    func testInitialTextIsEmptyWithNoSavedCoordinates() {
+        let initial = SettingsView.initialText(for: nil)
+        XCTAssertEqual(initial.latitude, "")
+        XCTAssertEqual(initial.longitude, "")
+    }
+
+    func testInitialTextReflectsSavedCoordinates() {
+        let initial = SettingsView.initialText(for: Coordinates(latitude: 24.7136, longitude: 46.6753))
+        XCTAssertEqual(initial.latitude, "24.7136")
+        XCTAssertEqual(initial.longitude, "46.6753")
+    }
 }

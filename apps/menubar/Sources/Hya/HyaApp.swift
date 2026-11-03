@@ -29,7 +29,10 @@ struct HyaApp: App {
     private var content: some View {
         switch appState.mode {
         case .needsLocation:
-            SettingsView(onSave: { appState.settingsSaved() })
+            SettingsView(
+                onSave: { appState.settingsSaved() },
+                onCancel: SettingsStore.shared.coordinates != nil ? { appState.mode = .ready } : nil
+            )
         case .ready:
             ScheduleListView(
                 scheduleController: appState.scheduleController,
