@@ -50,33 +50,33 @@ func statusText(for snapshot: PrayerSnapshot, at now: Date) -> String {
     let today = snapshot.today
 
     var active: [(name: String, window: Window)] = [
-        ("Fajr", today.fajr),
-        ("Sunrise", today.sunrise),
-        ("Dhuhr", today.dhuhr),
+        ("Faj", today.fajr),
+        ("Sun", today.sunrise),
+        ("Dhu", today.dhuhr),
         ("Asr", today.asr),
-        ("Maghrib", today.maghrib),
-        ("Isha", today.isha),
+        ("Mag", today.maghrib),
+        ("Ish", today.isha),
     ]
     if let yesterdayIsha = snapshot.yesterdayIsha {
-        active.append(("Isha", yesterdayIsha))
+        active.append(("Ish", yesterdayIsha))
     }
 
     if let current = active.first(where: { isActive($0.window, at: now) }), let ends = current.window.ends {
-        return "\(current.name) (-\(formatDuration(seconds: ends - nowSeconds)))"
+        return "\(current.name) -\(formatDuration(seconds: ends - nowSeconds))"
     }
 
     var upcoming: [(name: String, at: Int64)] = [
-        ("Fajr", today.fajr.at),
-        ("Dhuhr", today.dhuhr.at),
+        ("Faj", today.fajr.at),
+        ("Dhu", today.dhuhr.at),
         ("Asr", today.asr.at),
-        ("Maghrib", today.maghrib.at),
-        ("Isha", today.isha.at),
+        ("Mag", today.maghrib.at),
+        ("Ish", today.isha.at),
     ]
     if let tomorrowFajr = snapshot.tomorrowFajr {
-        upcoming.append(("Fajr", tomorrowFajr))
+        upcoming.append(("Faj", tomorrowFajr))
     }
     if let next = upcoming.filter({ $0.at > nowSeconds }).min(by: { $0.at < $1.at }) {
-        return "\(next.name) (+\(formatDuration(seconds: next.at - nowSeconds)))"
+        return "\(next.name) +\(formatDuration(seconds: next.at - nowSeconds))"
     }
 
     return "hya"
