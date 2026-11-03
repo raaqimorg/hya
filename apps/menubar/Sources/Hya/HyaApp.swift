@@ -12,6 +12,7 @@ struct HyaApp: App {
         MenuBarExtra(label) {
             content
         }
+        .menuBarExtraStyle(.window)
     }
 
     private var label: String {
