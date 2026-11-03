@@ -50,7 +50,7 @@ func statusText(for snapshot: PrayerSnapshot, at now: Date) -> String {
     let today = snapshot.today
 
     var active: [(name: String, window: Window)] = [
-        ("Faj", today.fajr),
+        ("Fjr", today.fajr),
         ("Sun", today.sunrise),
         ("Dhu", today.dhuhr),
         ("Asr", today.asr),
@@ -66,14 +66,14 @@ func statusText(for snapshot: PrayerSnapshot, at now: Date) -> String {
     }
 
     var upcoming: [(name: String, at: Int64)] = [
-        ("Faj", today.fajr.at),
+        ("Fjr", today.fajr.at),
         ("Dhu", today.dhuhr.at),
         ("Asr", today.asr.at),
         ("Mag", today.maghrib.at),
         ("Ish", today.isha.at),
     ]
     if let tomorrowFajr = snapshot.tomorrowFajr {
-        upcoming.append(("Faj", tomorrowFajr))
+        upcoming.append(("Fjr", tomorrowFajr))
     }
     if let next = upcoming.filter({ $0.at > nowSeconds }).min(by: { $0.at < $1.at }) {
         return "\(next.name) +\(formatDuration(seconds: next.at - nowSeconds))"

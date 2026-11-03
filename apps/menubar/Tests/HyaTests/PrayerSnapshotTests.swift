@@ -32,6 +32,11 @@ final class PrayerSnapshotTests: XCTestCase {
         let snapshot = fixture(yesterdayIsha: Window(at: -300, ends: 1500)) // still open 1200s after midnight
         XCTAssertEqual(statusText(for: snapshot, at: Date(timeIntervalSince1970: 300)), "Ish -20m")
     }
+
+    func testStatusTextAbbreviatesFajrAsFjr() {
+        let snapshot = fixture(fajr: Window(at: 5000, ends: 5600))
+        XCTAssertEqual(statusText(for: snapshot, at: Date(timeIntervalSince1970: 5000 - 38 * 60)), "Fjr +38m")
+    }
 }
 
 private let neutralWindow = Window(at: 0, ends: nil)
