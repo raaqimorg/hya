@@ -1,11 +1,11 @@
 import Foundation
 
-struct Window: Decodable {
+struct Window: Decodable, Equatable {
     let at: Int64
     let ends: Int64?
 }
 
-struct Today: Decodable {
+struct Today: Decodable, Equatable {
     let fajr: Window
     let sunrise: Window
     let dhuhr: Window
@@ -14,7 +14,7 @@ struct Today: Decodable {
     let isha: Window
 }
 
-struct PrayerSnapshot: Decodable {
+struct PrayerSnapshot: Decodable, Equatable {
     let generatedAt: Int64
     let today: Today
     let yesterdayIsha: Window?
