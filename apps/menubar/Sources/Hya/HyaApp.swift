@@ -12,6 +12,7 @@ struct HyaApp: App {
         MenuBarExtra(label) {
             content
                 .popoverChrome()
+                .resetSettingsOnDismiss(appState)
         }
         .menuBarExtraStyle(.window)
     }
