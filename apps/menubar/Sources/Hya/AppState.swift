@@ -11,7 +11,7 @@ final class AppState: ObservableObject {
     @Published var mode: Mode
     let scheduleController: ScheduleController
 
-    private var cancellable: AnyCancellable?
+    private var cancellables: Set<AnyCancellable> = []
 
     /// The bundled `hya` CLI binary: a sibling of this app's own executable, placed there by
     /// `package-dmg.sh` under `Contents/MacOS/`. Named `hya-cli`, not `hya`: macOS's default
@@ -46,7 +46,7 @@ final class AppState: ObservableObject {
     }
 
     private func observe() {
-        cancellable = scheduleController.$lastError.sink { [weak self] error in
+        scheduleController.$lastError.sink { [weak self] error in
             guard let self else { return }
             if let error {
                 mode = .error(error)
@@ -55,6 +55,12 @@ final class AppState: ObservableObject {
             } else if SettingsStore.shared.coordinates != nil {
                 mode = .ready
             }
-        }
+        }.store(in: &cancellables)
+
+        // Forwarded so the menu bar label (which observes only `AppState`, not the nested
+        // `scheduleController`) re-renders on every minute tick, midnight refetch, and wake.
+        scheduleController.objectWillChange.sink { [weak self] _ in
+            self?.objectWillChange.send()
+        }.store(in: &cancellables)
     }
 }
