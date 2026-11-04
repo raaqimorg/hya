@@ -4,6 +4,17 @@ All notable changes are listed here, newest first. The format follows [Keep a Ch
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-11-04
+
+### Added
+
+- The menu bar app can mute system audio and post a notification 5 minutes before each prayer (Fajr, Dhuhr, Asr, Maghrib, Isha). Off by default; enable it in Settings.
+
+### Fixed
+
+- The menu bar app's active-prayer countdown (e.g. "Asr -12m") now counts up from the prayer's own adhan, instead of counting down to the internal "still shown as current" window boundary, which read as a confusing, unrelated number.
+- Opening Settings from the menu bar no longer switches the menu bar label to "hya: Set location" until you actually save; it now keeps showing the live countdown until you do.
+
 ## [0.4.1] - 2026-11-04
 
 ### Fixed
@@ -76,7 +87,8 @@ The first release.
 - `@raaqimorg/hya`: the JavaScript package, with the WebAssembly inlined and no network or async start-up.
 - `hya-cli`: the `hya` command, with saved defaults (`--save`), `--country`, `--clock 12`, and times on stdout and notes on stderr.
 
-[Unreleased]: https://github.com/raaqimorg/hya/compare/v0.4.1...HEAD
+[Unreleased]: https://github.com/raaqimorg/hya/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/raaqimorg/hya/compare/v0.4.1...v0.5.0
 [0.4.1]: https://github.com/raaqimorg/hya/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/raaqimorg/hya/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/raaqimorg/hya/compare/v0.2.1...v0.3.0
