@@ -18,6 +18,18 @@ final class PrayerSnapshotTests: XCTestCase {
         XCTAssertEqual(formatDuration(seconds: 0), "0m")
     }
 
+    func testFormatDurationRoundsUpAPartialMinute() {
+        XCTAssertEqual(formatDuration(seconds: 59, roundUp: true), "1m")
+    }
+
+    func testFormatDurationRoundUpLeavesExactMinutesUnchanged() {
+        XCTAssertEqual(formatDuration(seconds: 38 * 60, roundUp: true), "38m")
+    }
+
+    func testFormatDurationRoundUpCanCrossAnHourBoundary() {
+        XCTAssertEqual(formatDuration(seconds: 60 * 60 - 1, roundUp: true), "1h:00m")
+    }
+
     func testStatusTextInsideTodaysWindowShowsMinusAsTimeSinceAdhan() {
         let snapshot = fixture(asr: Window(at: 1000, ends: 2000))
         XCTAssertEqual(statusText(for: snapshot, at: Date(timeIntervalSince1970: 1000 + 12 * 60)), "Asr -12m")
@@ -26,6 +38,11 @@ final class PrayerSnapshotTests: XCTestCase {
     func testStatusTextWaitingForNextShowsPlus() {
         let snapshot = fixture(maghrib: Window(at: 5000, ends: 5600))
         XCTAssertEqual(statusText(for: snapshot, at: Date(timeIntervalSince1970: 5000 - 38 * 60)), "Mag +38m")
+    }
+
+    func testStatusTextWaitingForNextRoundsUpAPartialMinuteLikeTheCLI() {
+        let snapshot = fixture(maghrib: Window(at: 5000, ends: 5600))
+        XCTAssertEqual(statusText(for: snapshot, at: Date(timeIntervalSince1970: 5000 - 38 * 60 - 30)), "Mag +39m")
     }
 
     func testStatusTextJustAfterMidnightUsesYesterdaysIsha() {

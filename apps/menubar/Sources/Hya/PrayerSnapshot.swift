@@ -32,12 +32,16 @@ struct PrayerSnapshot: Decodable, Equatable {
     }
 }
 
-func formatDuration(seconds: Int64) -> String {
-    if seconds < 3600 {
-        return "\(seconds / 60)m"
+/// `roundUp` matches the CLI's own convention (`left()` in `apps/cli/src/main.rs`): time
+/// already elapsed rounds down ("9m ago" means a full 9 minutes passed), time remaining
+/// rounds up ("in 15m" means within the next 15 minutes, not 15 full minutes away).
+func formatDuration(seconds: Int64, roundUp: Bool = false) -> String {
+    let minutesTotal = roundUp ? (seconds + 59) / 60 : seconds / 60
+    if minutesTotal < 60 {
+        return "\(minutesTotal)m"
     }
-    let hours = seconds / 3600
-    let minutes = (seconds % 3600) / 60
+    let hours = minutesTotal / 60
+    let minutes = minutesTotal % 60
     return "\(hours)h:\(String(format: "%02d", minutes))m"
 }
 
@@ -78,7 +82,7 @@ func statusText(for snapshot: PrayerSnapshot, at now: Date) -> String {
         upcoming.append(("Fjr", tomorrowFajr))
     }
     if let next = upcoming.filter({ $0.at > nowSeconds }).min(by: { $0.at < $1.at }) {
-        return "\(next.name) +\(formatDuration(seconds: next.at - nowSeconds))"
+        return "\(next.name) +\(formatDuration(seconds: next.at - nowSeconds, roundUp: true))"
     }
 
     return "hya"
