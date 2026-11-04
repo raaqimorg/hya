@@ -61,8 +61,8 @@ func statusText(for snapshot: PrayerSnapshot, at now: Date) -> String {
         active.append(("Ish", yesterdayIsha))
     }
 
-    if let current = active.first(where: { isActive($0.window, at: now) }), let ends = current.window.ends {
-        return "\(current.name) -\(formatDuration(seconds: ends - nowSeconds))"
+    if let current = active.first(where: { isActive($0.window, at: now) }) {
+        return "\(current.name) -\(formatDuration(seconds: nowSeconds - current.window.at))"
     }
 
     var upcoming: [(name: String, at: Int64)] = [

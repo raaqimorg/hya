@@ -18,9 +18,9 @@ final class PrayerSnapshotTests: XCTestCase {
         XCTAssertEqual(formatDuration(seconds: 0), "0m")
     }
 
-    func testStatusTextInsideTodaysWindowShowsMinus() {
-        let snapshot = fixture(asr: Window(at: 1000, ends: 2000)) // 1000s=16m40s window
-        XCTAssertEqual(statusText(for: snapshot, at: Date(timeIntervalSince1970: 1000 + 12 * 60)), "Asr -4m")
+    func testStatusTextInsideTodaysWindowShowsMinusAsTimeSinceAdhan() {
+        let snapshot = fixture(asr: Window(at: 1000, ends: 2000))
+        XCTAssertEqual(statusText(for: snapshot, at: Date(timeIntervalSince1970: 1000 + 12 * 60)), "Asr -12m")
     }
 
     func testStatusTextWaitingForNextShowsPlus() {
@@ -30,7 +30,7 @@ final class PrayerSnapshotTests: XCTestCase {
 
     func testStatusTextJustAfterMidnightUsesYesterdaysIsha() {
         let snapshot = fixture(yesterdayIsha: Window(at: -300, ends: 1500)) // still open 1200s after midnight
-        XCTAssertEqual(statusText(for: snapshot, at: Date(timeIntervalSince1970: 300)), "Ish -20m")
+        XCTAssertEqual(statusText(for: snapshot, at: Date(timeIntervalSince1970: 300)), "Ish -10m")
     }
 
     func testStatusTextAbbreviatesFajrAsFjr() {
