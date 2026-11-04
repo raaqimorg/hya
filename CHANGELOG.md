@@ -4,9 +4,12 @@ All notable changes are listed here, newest first. The format follows [Keep a Ch
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-11-04
+
 ### Added
 
 - `hya --json` prints a machine-readable snapshot of today's schedule, the active window, and what's next, for status bars and scripts.
+- A macOS menu bar app (`Hya.app`, in the release's DMG): shows the next prayer and a countdown in the menu bar, with a dropdown for today's full schedule and a Settings screen for latitude and longitude.
 
 ## [0.3.0] - 2026-11-02
 
@@ -67,7 +70,8 @@ The first release.
 - `@raaqimorg/hya`: the JavaScript package, with the WebAssembly inlined and no network or async start-up.
 - `hya-cli`: the `hya` command, with saved defaults (`--save`), `--country`, `--clock 12`, and times on stdout and notes on stderr.
 
-[Unreleased]: https://github.com/raaqimorg/hya/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/raaqimorg/hya/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/raaqimorg/hya/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/raaqimorg/hya/compare/v0.2.1...v0.3.0
 [0.2.1]: https://github.com/raaqimorg/hya/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/raaqimorg/hya/compare/v0.1.1...v0.2.0
