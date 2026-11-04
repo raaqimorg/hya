@@ -4,6 +4,8 @@
 # CLI for each platform, publishes to crates.io and npm, and then creates the GitHub Release.
 # Publishing uses trusted publishing (OIDC): no token is stored in the repository or its secrets.
 # A version that is already on a registry is skipped, so a failed release can be re-run.
+# The macOS CLI builds and the menu bar DMG (build-macos, macos-dmg) are best-effort: nothing
+# else needs them, so GitHub's macOS runner capacity can never block crates/npm/the release.
 name: release
 
 on:
@@ -51,8 +53,6 @@ jobs:
         include:
           - { target: x86_64-unknown-linux-gnu, os: ubuntu-latest }
           - { target: aarch64-unknown-linux-gnu, os: ubuntu-24.04-arm }
-          - { target: x86_64-apple-darwin, os: macos-latest }
-          - { target: aarch64-apple-darwin, os: macos-latest }
           - { target: x86_64-pc-windows-msvc, os: windows-latest }
     runs-on: ${{ matrix.os }}
     steps:
@@ -86,6 +86,43 @@ jobs:
             hya-*.tar.gz
             hya-*.zip
 
+  # macOS-hosted runners are frequently unavailable ("not acquired by Runner even
+  # after multiple attempts"). These two jobs are best-effort: nothing below
+  # depends on them, so that capacity problem never blocks crates/npm/github.
+  # When they can't get a runner, build these from source locally instead
+  # (see "Releasing" in CONTRIBUTING.md) and `gh release upload` the result.
+  build-macos:
+    needs: check
+    strategy:
+      matrix:
+        include:
+          - { target: x86_64-apple-darwin, os: macos-latest }
+          - { target: aarch64-apple-darwin, os: macos-latest }
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: dtolnay/rust-toolchain@1.99.0
+        with: { targets: "${{ matrix.target }}" }
+      # rust-toolchain.toml selects the toolchain; give it this target too.
+      - run: rustup target add ${{ matrix.target }}
+      - run: cargo build --release --locked -p hya-cli --target ${{ matrix.target }}
+      - name: Archive the binary with the README and license
+        shell: bash
+        env:
+          TARGET: ${{ matrix.target }}
+          VERSION: ${{ needs.check.outputs.version }}
+        run: |
+          name="hya-$VERSION-$TARGET"
+          mkdir "$name"
+          cp README.md LICENSE "$name/"
+          cp "target/$TARGET/release/hya" "$name/"
+          tar -czf "$name.tar.gz" "$name"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: ${{ matrix.target }}
+          if-no-files-found: error
+          path: hya-*.tar.gz
+
   macos-dmg:
     needs: check
     runs-on: macos-latest
@@ -101,7 +138,7 @@ jobs:
           path: apps/menubar/dist/Hya.dmg
 
   crates:
-    needs: [check, build]
+    needs: [check]
     runs-on: ubuntu-latest
     environment: release
     permissions:
@@ -132,7 +169,7 @@ jobs:
         run: for crate in $CRATES; do cargo publish --locked -p "$crate"; done
 
   npm:
-    needs: [check, build]
+    needs: [check]
     runs-on: ubuntu-latest
     environment: release
     permissions:
@@ -171,7 +208,7 @@ jobs:
           npm publish --provenance --access public --tag "$tag"
 
   github:
-    needs: [check, build, macos-dmg, crates, npm]
+    needs: [check, build, crates, npm]
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -183,7 +220,14 @@ jobs:
         with: { path: dist, merge-multiple: true }
       - name: Checksums
         working-directory: dist
-        run: sha256sum hya-* Hya.dmg > SHA256SUMS
+        # build-macos/macos-dmg are best-effort (see the comment above them), so
+        # their files may not be here yet; checksum whatever actually arrived.
+        run: |
+          files=()
+          for f in hya-* Hya.dmg; do
+            [[ -e "$f" ]] && files+=("$f")
+          done
+          sha256sum "${files[@]}" > SHA256SUMS
       - name: Create the release, or update its files on a re-run
         env:
           GH_TOKEN: ${{ github.token }}
