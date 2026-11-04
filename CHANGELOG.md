@@ -4,6 +4,19 @@ All notable changes are listed here, newest first. The format follows [Keep a Ch
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-11-04
+
+### Added
+
+- `--json` (and the menu bar app) now include `midnight` and `last_third`, matching what the plain-text table already showed.
+- `Hya.app` has a real icon, used in Finder, its About panel, and notifications.
+- A Reset button in the menu bar app, to clear the saved location.
+
+### Changed
+
+- The menu bar app's location editor is no longer a separate Settings screen: latitude, longitude, and the mute toggle are always visible above today's schedule, with a refresh button that applies and recomputes immediately.
+- The popover's background now uses the vibrancy material real menu bar dropdowns use, instead of a flatter, lighter generic material.
+
 ## [0.5.0] - 2026-11-04
 
 ### Added
@@ -87,7 +100,8 @@ The first release.
 - `@raaqimorg/hya`: the JavaScript package, with the WebAssembly inlined and no network or async start-up.
 - `hya-cli`: the `hya` command, with saved defaults (`--save`), `--country`, `--clock 12`, and times on stdout and notes on stderr.
 
-[Unreleased]: https://github.com/raaqimorg/hya/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/raaqimorg/hya/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/raaqimorg/hya/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/raaqimorg/hya/compare/v0.4.1...v0.5.0
 [0.4.1]: https://github.com/raaqimorg/hya/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/raaqimorg/hya/compare/v0.3.0...v0.4.0
