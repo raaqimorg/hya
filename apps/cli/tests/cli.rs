@@ -357,12 +357,17 @@ fn json_reports_midnight_and_last_third() {
             "24.7136",
             "--lng",
             "46.6753",
+            "--tz",
+            "Asia/Riyadh",
             "--date",
             "2026-10-29",
         ],
     );
     assert!(out.status.success(), "{out:?}");
     let value: serde_json::Value = serde_json::from_slice(&out.stdout).expect("valid json");
+    // Pinning --tz to the coordinates' own zone matters here: night_marks_on decides which
+    // night's mark to report by which civil day the zone places it on, so a zone far from the
+    // location (as an unpinned, host-dependent zone could be) can shift the answer by a day.
     // Last third is the end of the night before (just before today's Fajr); midnight is from
     // tonight's own (just before tomorrow's Fajr), so it falls later, not earlier.
     assert!(value["midnight"].is_number(), "{value}");
