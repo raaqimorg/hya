@@ -4,6 +4,12 @@ All notable changes are listed here, newest first. The format follows [Keep a Ch
 
 ## [Unreleased]
 
+## [0.4.1] - 2026-11-04
+
+### Fixed
+
+- The menu bar app's countdown kept showing the time it had when the Mac fell asleep, or otherwise went stale, until something else (an error, or a Settings change) happened to redraw it. It now updates every minute, right after sleep, and at midnight.
+
 ## [0.4.0] - 2026-11-04
 
 ### Added
@@ -70,7 +76,8 @@ The first release.
 - `@raaqimorg/hya`: the JavaScript package, with the WebAssembly inlined and no network or async start-up.
 - `hya-cli`: the `hya` command, with saved defaults (`--save`), `--country`, `--clock 12`, and times on stdout and notes on stderr.
 
-[Unreleased]: https://github.com/raaqimorg/hya/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/raaqimorg/hya/compare/v0.4.1...HEAD
+[0.4.1]: https://github.com/raaqimorg/hya/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/raaqimorg/hya/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/raaqimorg/hya/compare/v0.2.1...v0.3.0
 [0.2.1]: https://github.com/raaqimorg/hya/compare/v0.2.0...v0.2.1
