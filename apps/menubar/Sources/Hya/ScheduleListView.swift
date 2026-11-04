@@ -15,12 +15,18 @@ struct ScheduleListView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             if let snapshot = scheduleController.snapshot {
+                if let lastThird = snapshot.lastThird {
+                    row("Last third", at: lastThird)
+                }
                 row("Fajr", snapshot.today.fajr)
                 row("Sunrise", snapshot.today.sunrise)
                 row("Dhuhr", snapshot.today.dhuhr)
                 row("Asr", snapshot.today.asr)
                 row("Maghrib", snapshot.today.maghrib)
                 row("Isha", snapshot.today.isha)
+                if let midnight = snapshot.midnight {
+                    row("Midnight", at: midnight)
+                }
             }
             Divider()
             footer
@@ -48,5 +54,17 @@ struct ScheduleListView: View {
                 .foregroundStyle(.secondary)
         }
         .fontWeight(isActive(window, at: Date()) ? .bold : .regular)
+    }
+
+    /// Midnight and the last third are reference marks, not prayer windows: no `ends`, so never
+    /// bold like an active prayer.
+    private func row(_ name: String, at timestamp: Int64) -> some View {
+        HStack {
+            Text(name)
+            Spacer()
+            Text(Self.timeFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(timestamp))))
+                .monospacedDigit()
+                .foregroundStyle(.secondary)
+        }
     }
 }

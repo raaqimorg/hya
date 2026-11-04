@@ -17,12 +17,16 @@ struct Today: Decodable, Equatable {
 struct PrayerSnapshot: Decodable, Equatable {
     let generatedAt: Int64
     let today: Today
+    let midnight: Int64?
+    let lastThird: Int64?
     let yesterdayIsha: Window?
     let tomorrowFajr: Int64?
 
     enum CodingKeys: String, CodingKey {
         case generatedAt = "generated_at"
         case today
+        case midnight
+        case lastThird = "last_third"
         case yesterdayIsha = "yesterday_isha"
         case tomorrowFajr = "tomorrow_fajr"
     }

@@ -20,8 +20,8 @@ use clap::builder::{PossibleValuesParser, TypedValueParser as _};
 use config::{Clock, Config, parse_asr, parse_clock, parse_location, parse_ramadan, parse_shafaq};
 use hya_countries::{CountryCode, Entry};
 use hya_engine::{
-    AnnouncedRamadan, AsrShadow, Coordinates, Date, HighLatitudeRule, Method, Parameters, Prayer,
-    PrayerTimes, Shafaq, compute,
+    AnnouncedRamadan, AsrShadow, Coordinates, Date, HighLatitudeRule, Instant, Method, Parameters,
+    Prayer, PrayerTimes, Shafaq, compute,
 };
 use jiff::tz::TimeZone;
 use jiff::{Timestamp, Zoned};
@@ -457,6 +457,7 @@ fn write_json(
     let ramadan_today = config.ramadan.for_date(date).contains(date);
     let yesterday = yesterday_schedule(civil, config, zone, location, parameters_on);
     let tomorrow_fajr = time_on(civil, 1, Prayer::Fajr, zone, location, parameters_on);
+    let (midnight, last_third) = night_marks_on(civil, zone, location, parameters_on, times);
     let snapshot = json::build(
         Timestamp::now().as_second(),
         times,
@@ -465,6 +466,8 @@ fn write_json(
         next,
         yesterday,
         tomorrow_fajr,
+        midnight,
+        last_third,
     );
     serde_json::to_writer_pretty(io::stdout().lock(), &snapshot).map_err(|e| e.to_string())
 }
@@ -638,6 +641,28 @@ fn schedule_near(
 /// Midnight and the last third that fall on `civil` in `zone`, from the night before it and
 /// the day's own, `today`'s. The night before usually gives its last third, the day's own
 /// night its midnight.
+fn night_marks_on(
+    civil: jiff::civil::Date,
+    zone: &TimeZone,
+    location: Coordinates,
+    parameters_on: &impl Fn(Date) -> Parameters,
+    today: &PrayerTimes,
+) -> (Option<i64>, Option<i64>) {
+    let yesterday = schedule_near(civil, -1, zone, location, parameters_on);
+    let on_civil = |at: i64| {
+        Timestamp::from_second(at).is_ok_and(|at| at.to_zoned(zone.clone()).date() == civil)
+    };
+    let pick = |mark: fn(&PrayerTimes) -> Option<Instant>| {
+        yesterday.iter().chain([today]).find_map(|times| {
+            mark(times)
+                .map(Instant::unix_seconds)
+                .filter(|&at| on_civil(at))
+        })
+    };
+    (pick(PrayerTimes::midnight), pick(PrayerTimes::last_third))
+}
+
+/// `night_marks_on`, as the `(label, instant)` rows the terminal table prints.
 fn night_on(
     civil: jiff::civil::Date,
     zone: &TimeZone,
@@ -645,20 +670,10 @@ fn night_on(
     parameters_on: &impl Fn(Date) -> Parameters,
     today: &PrayerTimes,
 ) -> Vec<(&'static str, i64)> {
-    let yesterday = schedule_near(civil, -1, zone, location, parameters_on);
-    yesterday
-        .iter()
-        .chain([today])
-        .flat_map(|times| {
-            [
-                ("Midnight", times.midnight()),
-                ("Last third", times.last_third()),
-            ]
-        })
-        .filter_map(|(name, at)| Some((name, at?.unix_seconds())))
-        .filter(|&(_, at)| {
-            Timestamp::from_second(at).is_ok_and(|at| at.to_zoned(zone.clone()).date() == civil)
-        })
+    let (midnight, last_third) = night_marks_on(civil, zone, location, parameters_on, today);
+    [("Midnight", midnight), ("Last third", last_third)]
+        .into_iter()
+        .filter_map(|(name, at)| Some((name, at?)))
         .collect()
 }
 

@@ -347,6 +347,30 @@ fn json_reports_the_active_window_and_todays_six_prayers() {
 }
 
 #[test]
+fn json_reports_midnight_and_last_third() {
+    let dir = config_dir("json-night");
+    let out = hya(
+        &dir,
+        &[
+            "--json",
+            "--lat",
+            "24.7136",
+            "--lng",
+            "46.6753",
+            "--date",
+            "2026-10-29",
+        ],
+    );
+    assert!(out.status.success(), "{out:?}");
+    let value: serde_json::Value = serde_json::from_slice(&out.stdout).expect("valid json");
+    // Last third is the end of the night before (just before today's Fajr); midnight is from
+    // tonight's own (just before tomorrow's Fajr), so it falls later, not earlier.
+    assert!(value["midnight"].is_number(), "{value}");
+    assert!(value["last_third"].is_number(), "{value}");
+    assert!(value["last_third"].as_i64() < value["midnight"].as_i64());
+}
+
+#[test]
 fn json_and_next_conflict() {
     let dir = config_dir("json-next-conflict");
     let out = hya(

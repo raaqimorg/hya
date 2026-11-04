@@ -85,12 +85,16 @@ private func fixture(
     asr: Window = neutralWindow,
     maghrib: Window = neutralWindow,
     isha: Window = neutralWindow,
+    midnight: Int64? = nil,
+    lastThird: Int64? = nil,
     yesterdayIsha: Window? = nil,
     tomorrowFajr: Int64? = nil
 ) -> PrayerSnapshot {
     PrayerSnapshot(
         generatedAt: 0,
         today: Today(fajr: fajr, sunrise: sunrise, dhuhr: dhuhr, asr: asr, maghrib: maghrib, isha: isha),
+        midnight: midnight,
+        lastThird: lastThird,
         yesterdayIsha: yesterdayIsha,
         tomorrowFajr: tomorrowFajr
     )

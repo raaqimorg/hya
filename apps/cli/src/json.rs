@@ -1,6 +1,7 @@
-//! The `--json` snapshot: today's six prayer windows, yesterday's Isha window (for the
-//! midnight carry-over), tomorrow's Fajr, and the already-resolved active/next prayer — all
-//! in Unix seconds, so a caller never has to redo any of `hya`'s own math.
+//! The `--json` snapshot: today's six prayer windows, tonight's midnight and last third,
+//! yesterday's Isha window (for the midnight carry-over), tomorrow's Fajr, and the
+//! already-resolved active/next prayer — all in Unix seconds, so a caller never has to redo
+//! any of `hya`'s own math.
 
 use hya_engine::{Prayer, PrayerTimes};
 use serde::Serialize;
@@ -44,13 +45,20 @@ pub(crate) struct Snapshot {
     pub(crate) active: Option<ActiveJson>,
     pub(crate) next: Option<NextJson>,
     pub(crate) today: Today,
+    pub(crate) midnight: Option<i64>,
+    pub(crate) last_third: Option<i64>,
     pub(crate) yesterday_isha: Option<Window>,
     pub(crate) tomorrow_fajr: Option<i64>,
 }
 
 /// Builds the `--json` snapshot from the pieces `run()` already computes: today's resolved
-/// `active`/`next` prayer, today's own `times`/`ramadan_today`, yesterday's schedule (for
-/// Isha's midnight carry-over), and tomorrow's Fajr instant.
+/// `active`/`next` prayer, today's own `times`/`ramadan_today`, tonight's midnight and last
+/// third (from `night_marks_on`), yesterday's schedule (for Isha's midnight carry-over), and
+/// tomorrow's Fajr instant.
+#[expect(
+    clippy::too_many_arguments,
+    reason = "every value `write_json` already has in scope"
+)]
 pub(crate) fn build(
     now: i64,
     times: &PrayerTimes,
@@ -59,6 +67,8 @@ pub(crate) fn build(
     next: Option<Next>,
     yesterday: Option<(PrayerTimes, bool)>,
     tomorrow_fajr: Option<i64>,
+    midnight: Option<i64>,
+    last_third: Option<i64>,
 ) -> Snapshot {
     let to_window = |(_, at, ends): (Prayer, i64, Option<i64>)| Window { at, ends };
     let [fajr, sunrise, dhuhr, asr, maghrib, isha] = window::windows_for(times, ramadan_today);
@@ -89,6 +99,8 @@ pub(crate) fn build(
         active,
         next,
         today,
+        midnight,
+        last_third,
         yesterday_isha,
         tomorrow_fajr,
     }
@@ -118,6 +130,8 @@ mod tests {
             None,
             None,
             None,
+            None,
+            None,
         );
         assert_eq!(snapshot.today.sunrise.ends, None);
         assert!(snapshot.today.fajr.ends.is_some());
@@ -134,10 +148,32 @@ mod tests {
             None,
             None,
             Some(1_000_050_000),
+            Some(1_000_010_000),
+            Some(1_000_020_000),
         );
         let value: serde_json::Value = serde_json::to_value(&snapshot).expect("serializable");
         assert_eq!(value["tomorrow_fajr"], 1_000_050_000_i64);
+        assert_eq!(value["midnight"], 1_000_010_000_i64);
+        assert_eq!(value["last_third"], 1_000_020_000_i64);
         assert!(value["today"]["fajr"]["ends"].is_number());
         assert_eq!(value["today"]["sunrise"]["ends"], serde_json::Value::Null);
+    }
+
+    #[test]
+    fn midnight_and_last_third_are_null_when_absent() {
+        let snapshot = build(
+            1_000_000_000,
+            &riyadh(),
+            false,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+        );
+        let value: serde_json::Value = serde_json::to_value(&snapshot).expect("serializable");
+        assert_eq!(value["midnight"], serde_json::Value::Null);
+        assert_eq!(value["last_third"], serde_json::Value::Null);
     }
 }
