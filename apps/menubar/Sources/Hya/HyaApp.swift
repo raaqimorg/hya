@@ -29,28 +29,34 @@ struct HyaApp: App {
 
     @ViewBuilder
     private var content: some View {
-        switch appState.mode {
-        case .needsLocation:
+        if appState.mode == .needsLocation {
+            SettingsView(onSave: { appState.settingsSaved() }, onCancel: nil)
+        } else if appState.settingsPresented {
             SettingsView(
                 onSave: { appState.settingsSaved() },
-                onCancel: SettingsStore.shared.coordinates != nil ? { appState.mode = .ready } : nil
+                onCancel: { appState.settingsPresented = false }
             )
-        case .ready:
-            ScheduleListView(
-                scheduleController: appState.scheduleController,
-                onSettings: { appState.mode = .needsLocation }
-            )
-        case .error(let error):
-            VStack(alignment: .leading, spacing: 4) {
-                Text(description(for: error))
-                Divider()
-                HStack {
-                    Button("Settings…") { appState.mode = .needsLocation }
-                    Spacer()
-                    Button("Quit") { NSApplication.shared.terminate(nil) }
+        } else {
+            switch appState.mode {
+            case .needsLocation:
+                EmptyView()
+            case .ready:
+                ScheduleListView(
+                    scheduleController: appState.scheduleController,
+                    onSettings: { appState.settingsPresented = true }
+                )
+            case .error(let error):
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(description(for: error))
+                    Divider()
+                    HStack {
+                        Button("Settings…") { appState.settingsPresented = true }
+                        Spacer()
+                        Button("Quit") { NSApplication.shared.terminate(nil) }
+                    }
                 }
+                .padding()
             }
-            .padding()
         }
     }
 

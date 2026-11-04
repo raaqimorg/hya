@@ -19,6 +19,39 @@ final class AppStateTests: XCTestCase {
         XCTAssertGreaterThan(changeCount, 0, "AppState should notify its own observers when the schedule controller refreshes after wake")
     }
 
+    func testSettingsPresentedStartsFalse() throws {
+        SettingsStore.shared.save(Coordinates(latitude: 21.4225, longitude: 39.8262))
+        let scriptURL = try Self.makeFixtureScript()
+        defer { try? FileManager.default.removeItem(at: scriptURL) }
+
+        let appState = AppState(executableURL: scriptURL)
+        XCTAssertFalse(appState.settingsPresented)
+    }
+
+    func testOpeningSettingsDoesNotChangeMode() throws {
+        SettingsStore.shared.save(Coordinates(latitude: 21.4225, longitude: 39.8262))
+        let scriptURL = try Self.makeFixtureScript()
+        defer { try? FileManager.default.removeItem(at: scriptURL) }
+
+        let appState = AppState(executableURL: scriptURL)
+        appState.settingsPresented = true
+
+        XCTAssertEqual(appState.mode, .ready)
+    }
+
+    func testSettingsSavedResetsSettingsPresented() throws {
+        SettingsStore.shared.save(Coordinates(latitude: 21.4225, longitude: 39.8262))
+        let scriptURL = try Self.makeFixtureScript()
+        defer { try? FileManager.default.removeItem(at: scriptURL) }
+
+        let appState = AppState(executableURL: scriptURL)
+        appState.settingsPresented = true
+
+        appState.settingsSaved()
+
+        XCTAssertFalse(appState.settingsPresented)
+    }
+
     private static func makeFixtureScript() throws -> URL {
         let url = FileManager.default.temporaryDirectory.appendingPathComponent("hya-fixture-\(UUID().uuidString)")
         let json = """

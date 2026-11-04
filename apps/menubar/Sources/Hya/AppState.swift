@@ -1,7 +1,7 @@
 import Combine
 import Foundation
 
-enum Mode {
+enum Mode: Equatable {
     case needsLocation
     case ready
     case error(HyaProcessError)
@@ -9,6 +9,7 @@ enum Mode {
 
 final class AppState: ObservableObject {
     @Published var mode: Mode
+    @Published var settingsPresented = false
     let scheduleController: ScheduleController
 
     private var cancellables: Set<AnyCancellable> = []
@@ -42,6 +43,7 @@ final class AppState: ObservableObject {
         guard let coordinates = SettingsStore.shared.coordinates else { return }
         scheduleController.stop()
         mode = .ready
+        settingsPresented = false
         scheduleController.start(coordinates: coordinates)
     }
 
