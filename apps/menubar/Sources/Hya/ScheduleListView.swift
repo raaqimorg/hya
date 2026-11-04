@@ -1,9 +1,10 @@
-import AppKit
 import SwiftUI
 
+/// Just the prayer rows: the header (location, refresh, mute) and the Quit footer live one
+/// level up, in `HyaApp`'s own `content`, since they're shown no matter what `scheduleController`
+/// has — this view only ever renders when there's a snapshot to show.
 struct ScheduleListView: View {
     @ObservedObject var scheduleController: ScheduleController
-    let onSettings: () -> Void
 
     private static let timeFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -28,20 +29,6 @@ struct ScheduleListView: View {
                     row("Midnight", at: midnight)
                 }
             }
-            Divider()
-            footer
-        }
-        .padding()
-        .frame(minWidth: 220)
-    }
-
-    private var footer: some View {
-        HStack {
-            Button("Settings…", action: onSettings)
-                .buttonStyle(.borderless)
-            Spacer()
-            Button("Quit") { NSApplication.shared.terminate(nil) }
-                .buttonStyle(.borderless)
         }
     }
 

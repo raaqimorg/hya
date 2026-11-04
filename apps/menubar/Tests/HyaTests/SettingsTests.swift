@@ -24,15 +24,25 @@ final class SettingsTests: XCTestCase {
     }
 
     func testInitialTextIsEmptyWithNoSavedCoordinates() {
-        let initial = SettingsView.initialText(for: nil)
+        let initial = LocationHeaderView.initialText(for: nil)
         XCTAssertEqual(initial.latitude, "")
         XCTAssertEqual(initial.longitude, "")
     }
 
     func testInitialTextReflectsSavedCoordinates() {
-        let initial = SettingsView.initialText(for: Coordinates(latitude: 24.7136, longitude: 46.6753))
+        let initial = LocationHeaderView.initialText(for: Coordinates(latitude: 24.7136, longitude: 46.6753))
         XCTAssertEqual(initial.latitude, "24.7136")
         XCTAssertEqual(initial.longitude, "46.6753")
+    }
+
+    func testClearCoordinatesRemovesSavedLocation() {
+        let defaults = UserDefaults(suiteName: #function)!
+        defaults.removePersistentDomain(forName: #function)
+        let store = SettingsStore(defaults: defaults)
+        store.save(Coordinates(latitude: 24.7136, longitude: 46.6753))
+        store.clearCoordinates()
+        XCTAssertNil(store.coordinates)
+        XCTAssertNil(SettingsStore(defaults: defaults).coordinates)
     }
 
     func testMuteBeforePrayerIsOffByDefault() {

@@ -52,6 +52,12 @@ final class SettingsStore: ObservableObject {
         self.coordinates = coordinates
     }
 
+    func clearCoordinates() {
+        defaults.removeObject(forKey: Self.latitudeKey)
+        defaults.removeObject(forKey: Self.longitudeKey)
+        coordinates = nil
+    }
+
     func setMuteBeforePrayerEnabled(_ enabled: Bool) {
         defaults.set(enabled, forKey: Self.muteBeforePrayerKey)
         muteBeforePrayerEnabled = enabled

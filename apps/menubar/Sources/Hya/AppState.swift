@@ -9,7 +9,10 @@ enum Mode: Equatable {
 
 final class AppState: ObservableObject {
     @Published var mode: Mode
-    @Published var settingsPresented = false
+    /// Bumped on every `resetLocation()`, so `HyaApp` can give `LocationHeaderView` a fresh
+    /// `.id()` and force it to re-seed its fields from the now-cleared `SettingsStore` rather
+    /// than keep showing the stale text it was initialized with.
+    @Published private(set) var locationResetToken = UUID()
     let scheduleController: ScheduleController
 
     private var cancellables: Set<AnyCancellable> = []
@@ -37,14 +40,24 @@ final class AppState: ObservableObject {
         }
     }
 
-    /// Called after `SettingsView` has already saved the new coordinates to `SettingsStore`;
-    /// restarts the controller against them.
-    func settingsSaved() {
-        guard let coordinates = SettingsStore.shared.coordinates else { return }
+    /// Persists newly entered coordinates and restarts the schedule controller against them,
+    /// whether this is the first location ever set or a later change. Also the target of the
+    /// manual refresh button, so pressing it with unchanged coordinates is a harmless way to
+    /// force a recompute right now.
+    func applyLocation(_ coordinates: Coordinates) {
+        SettingsStore.shared.save(coordinates)
         scheduleController.stop()
         mode = .ready
-        settingsPresented = false
         scheduleController.start(coordinates: coordinates)
+    }
+
+    /// The target of the Reset button: clears the saved location and returns to the same
+    /// first-run state a fresh install starts in.
+    func resetLocation() {
+        SettingsStore.shared.clearCoordinates()
+        scheduleController.stop()
+        mode = .needsLocation
+        locationResetToken = UUID()
     }
 
     private func observe() {

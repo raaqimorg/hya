@@ -19,37 +19,31 @@ final class AppStateTests: XCTestCase {
         XCTAssertGreaterThan(changeCount, 0, "AppState should notify its own observers when the schedule controller refreshes after wake")
     }
 
-    func testSettingsPresentedStartsFalse() throws {
-        SettingsStore.shared.save(Coordinates(latitude: 21.4225, longitude: 39.8262))
+    func testApplyLocationPersistsAndKeepsModeReady() throws {
+        SettingsStore.shared.save(Coordinates(latitude: 0, longitude: 0))
         let scriptURL = try Self.makeFixtureScript()
         defer { try? FileManager.default.removeItem(at: scriptURL) }
 
         let appState = AppState(executableURL: scriptURL)
-        XCTAssertFalse(appState.settingsPresented)
-    }
-
-    func testOpeningSettingsDoesNotChangeMode() throws {
-        SettingsStore.shared.save(Coordinates(latitude: 21.4225, longitude: 39.8262))
-        let scriptURL = try Self.makeFixtureScript()
-        defer { try? FileManager.default.removeItem(at: scriptURL) }
-
-        let appState = AppState(executableURL: scriptURL)
-        appState.settingsPresented = true
+        let coordinates = Coordinates(latitude: 21.4225, longitude: 39.8262)
+        appState.applyLocation(coordinates)
 
         XCTAssertEqual(appState.mode, .ready)
+        XCTAssertEqual(SettingsStore.shared.coordinates, coordinates)
     }
 
-    func testSettingsSavedResetsSettingsPresented() throws {
+    func testResetLocationClearsSettingsAndReturnsToNeedsLocation() throws {
         SettingsStore.shared.save(Coordinates(latitude: 21.4225, longitude: 39.8262))
         let scriptURL = try Self.makeFixtureScript()
         defer { try? FileManager.default.removeItem(at: scriptURL) }
 
         let appState = AppState(executableURL: scriptURL)
-        appState.settingsPresented = true
+        XCTAssertEqual(appState.mode, .ready)
 
-        appState.settingsSaved()
+        appState.resetLocation()
 
-        XCTAssertFalse(appState.settingsPresented)
+        XCTAssertEqual(appState.mode, .needsLocation)
+        XCTAssertNil(SettingsStore.shared.coordinates)
     }
 
     private static func makeFixtureScript() throws -> URL {

@@ -12,7 +12,6 @@ struct HyaApp: App {
         MenuBarExtra(label) {
             content
                 .popoverChrome()
-                .resetSettingsOnDismiss(appState)
         }
         .menuBarExtraStyle(.window)
     }
@@ -28,37 +27,34 @@ struct HyaApp: App {
         }
     }
 
-    @ViewBuilder
+    /// One persistent view: the location header is always visible, never a separate screen to
+    /// leave or get stuck in, with whatever `mode` currently has below it.
     private var content: some View {
-        if appState.mode == .needsLocation {
-            SettingsView(onSave: { appState.settingsSaved() }, onCancel: nil)
-        } else if appState.settingsPresented {
-            SettingsView(
-                onSave: { appState.settingsSaved() },
-                onCancel: { appState.settingsPresented = false }
-            )
-        } else {
+        VStack(alignment: .leading, spacing: 8) {
+            LocationHeaderView(onApply: appState.applyLocation)
+                .id(appState.locationResetToken)
+            Divider()
             switch appState.mode {
             case .needsLocation:
-                EmptyView()
+                Text("Set your location above to see today's prayer times.")
+                    .foregroundStyle(.secondary)
             case .ready:
-                ScheduleListView(
-                    scheduleController: appState.scheduleController,
-                    onSettings: { appState.settingsPresented = true }
-                )
+                ScheduleListView(scheduleController: appState.scheduleController)
             case .error(let error):
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(description(for: error))
-                    Divider()
-                    HStack {
-                        Button("Settings…") { appState.settingsPresented = true }
-                        Spacer()
-                        Button("Quit") { NSApplication.shared.terminate(nil) }
-                    }
-                }
-                .padding()
+                Text(description(for: error))
+            }
+            Divider()
+            HStack {
+                Button("Reset") { appState.resetLocation() }
+                    .buttonStyle(.borderless)
+                    .disabled(appState.mode == .needsLocation)
+                Spacer()
+                Button("Quit") { NSApplication.shared.terminate(nil) }
+                    .buttonStyle(.borderless)
             }
         }
+        .padding()
+        .frame(minWidth: 260)
     }
 
     private func description(for error: HyaProcessError) -> String {
