@@ -4,7 +4,7 @@ struct Coordinates: Codable, Equatable {
     let latitude: Double
     let longitude: Double
 
-    enum ValidationError: Error {
+    enum ValidationError: Error, Equatable {
         case notFinite
         case latitudeOutOfRange
         case longitudeOutOfRange

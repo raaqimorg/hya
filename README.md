@@ -88,16 +88,21 @@ $ hya --next
 Asr 2:51 PM in 1h 23m
 ```
 
-| Flag             | Effect                                                        |
-| ---------------- | ------------------------------------------------------------- |
-| `--method <id>`  | Use a [method](#methods) by its ID                            |
-| `--country <cc>` | Use the method of that country's own authority, e.g. `JO`     |
-| `--clock 24`     | Print `18:46` instead of `6:46 PM`                            |
-| `--date <date>`  | Show another day, e.g. `2027-02-15`                           |
-| `--next`         | Print only the next prayer and the time left                  |
-| `--json`         | Print a machine-readable snapshot, for status bars and scripts |
-| `--save`         | Keep this run's flags as defaults (otherwise they apply once) |
-| `--reset`        | Forget every saved default                                    |
+| Flag                | Effect                                                          |
+| ------------------- | ---------------------------------------------------------------- |
+| `--lat`, `--lng`    | The place, in degrees (north/east positive), instead of a saved one |
+| `--tz <zone>`       | Time zone for `--date` and the civil day, e.g. `Asia/Riyadh`     |
+| `--method <id>`     | Use a [method](#methods) by its ID                              |
+| `--country <cc>`    | Use the method of that country's own authority, e.g. `JO`       |
+| `--asr <rule>`      | Asr shadow: `standard` or `hanafi`                               |
+| `--shafaq <glow>`   | Isha glow for the season-adjusted rule: `general`, `red`, or `white` |
+| `--ramadan <a..b>`  | An announced Ramadan, e.g. `2027-02-09..2027-03-10`              |
+| `--clock 24`        | Print `18:46` instead of `6:46 PM`                               |
+| `--date <date>`     | Show another day, e.g. `2027-02-15`                              |
+| `--next`            | Print only the next prayer and the time left                    |
+| `--json`            | Print a machine-readable snapshot, for status bars and scripts  |
+| `--save`            | Keep this run's flags as defaults (otherwise they apply once)   |
+| `--reset`           | Forget every saved default                                       |
 
 Times go to stdout and notes to stderr, so `hya | …` receives only the times. Colour is off in a pipe and when `NO_COLOR` is set.
 
@@ -355,8 +360,8 @@ Any method can use any high-latitude rule. With the season-adjusted rule, Isha f
 
 - **Umm al-Qura.** The official calculator behind ummulqura.org.sa computes times for any coordinates. The fixture holds all of 2026 for Makkah, Riyadh, and Tabuk. With the authority's rounding, 88–89% of times are exact to the minute, and every time is within 2 minutes. Isha is 120 minutes after Maghrib on exactly the calendar's 30 days of Ramadan 1447, and 90 on every other day.
 - **Singapore.** MUIS publishes one timetable for the island, on data.gov.sg under an open licence, and does not say which point it computes for. At the best-fitting point (1.28°N, 103.82°E), every time on every day of 2026 is within a minute, and 73% are exact.
-- **Malaysia.** JAKIM computes each zone at one reference point. Wilayah Persekutuan publishes its points. At those points, every time on every day of 2026 is within 2 minutes, and 72–98% are exact. Fajr is 18° (it moved from 20° in 2019). Kelantan uses 17° for Isha in every zone, about 4 minutes earlier, so it has its own preset. The tests also check the Isha angle in all 55 lowland zones. Highland zones (Cameron Highlands, Genting, Bukit Larut, Kundasang) use their elevation, and the tests skip them.
-- **Jordan.** The Ministry of Awqaf publishes from the current day to 31 December, so the fixture covers 30 October to 31 December 2026 for Amman, Irbid, and Aqaba. The ministry does not publish its reference points, so the test measures every time from Dhuhr, which cancels longitude. Fajr, Asr, and Isha are within 2 minutes every day in all three cities, and a degree either way (Fajr 19°, Isha 17°) fails. The ministry gives each region its own sunrise and Maghrib margin. The preset uses Amman's, which elsewhere is up to 5 minutes more cautious, never less.
+- **Malaysia.** JAKIM computes each zone at one reference point. Wilayah Persekutuan publishes its points. At those points, every time on every day of 2026 is within 2 minutes, and 72–98% are exact. Fajr is 18° (it moved from 20° in 2019). Kelantan uses 17° for Isha in every zone, about 4 minutes earlier, so it has its own method. The tests also check the Isha angle in all 55 lowland zones. Highland zones (Cameron Highlands, Genting, Bukit Larut, Kundasang) use their elevation, and the tests skip them.
+- **Jordan.** The Ministry of Awqaf publishes from the current day to 31 December, so the fixture covers 30 October to 31 December 2026 for Amman, Irbid, and Aqaba. The ministry does not publish its reference points, so the test measures every time from Dhuhr, which cancels longitude. Fajr, Asr, and Isha are within 2 minutes every day in all three cities, and a degree either way (Fajr 19°, Isha 17°) fails. The ministry gives each region its own sunrise and Maghrib margin. The method uses Amman's, which elsewhere is up to 5 minutes more cautious, never less.
 - **Türkiye.** Against Diyanet's Istanbul timetable for 396 days, every time is within 2 minutes. Diyanet publishes its times only on its own site and through an API that needs registration, so there is no committed fixture and no test in CI.
 
 </details>
@@ -367,7 +372,7 @@ Any method can use any high-latitude rule. With the season-adjusted rule, Isha f
 
 Hya adds a method only when its parameters reproduce the authority's own timetable. Figures that circulate only on third-party sites are not enough. As of October 2026:
 
-- **Russia (DUM RF).** Its Moscow timetables fit Fajr 18° and Isha 15° (not the widely quoted 16° and 15°), with sunrise −5, Dhuhr +5, and Maghrib +5 minutes. But from May to July, Isha moves between two rules along a curve that no rule tried here reproduces, up to 21 minutes off. The preset would be wrong for a quarter of the year.
+- **Russia (DUM RF).** Its Moscow timetables fit Fajr 18° and Isha 15° (not the widely quoted 16° and 15°), with sunrise −5, Dhuhr +5, and Maghrib +5 minutes. But from May to July, Isha moves between two rules along a curve that no rule tried here reproduces, up to 21 minutes off. The method would be wrong for a quarter of the year.
 - **France (UOIF, Musulmans de France, 12°).** We found no timetable from the organisation itself, and its former domain now redirects elsewhere. The 12° figure comes only from third parties.
 - **Indonesia and Morocco.** Their authorities' methods are not implemented yet.
 

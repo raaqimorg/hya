@@ -502,9 +502,9 @@ fn next_now(
         .flatten()
 }
 
-/// The active prayer window for `civil`, or `None` for any day but `today` — mirrors how `next`
+/// The active prayer window for `civil`, or `None` for any day but `today` (mirrors how `next`
 /// is computed in `run()`, with yesterday's own schedule and Ramadan status for Isha's carry
-/// across midnight.
+/// across midnight).
 fn active_now(
     civil: jiff::civil::Date,
     today: jiff::civil::Date,
@@ -527,8 +527,8 @@ fn active_now(
         .flatten()
 }
 
-/// Yesterday's own schedule and Ramadan status, for Isha's carry-over across midnight — shared
-/// by [`active_now`] and the `--json` snapshot so this logic lives in exactly one place.
+/// Yesterday's own schedule and Ramadan status, for Isha's carry-over across midnight (shared
+/// by [`active_now`] and the `--json` snapshot so this logic lives in exactly one place).
 fn yesterday_schedule(
     civil: jiff::civil::Date,
     config: &Config,

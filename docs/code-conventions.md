@@ -23,7 +23,7 @@ There is no linter for this yet; match the existing files.
 
 ## Comments
 
-Code should explain itself through names and small functions. Write a comment only for a non-obvious *why*: a platform quirk (the `hya-cli` rename, `AppState.swift`), a constraint the type system cannot express (`nextLocalMidnight`'s force-unwrap), or a reference to the evidence behind a constant (the falak-convention comment in `crates/engine/src/solar.rs`). Never write a comment that only restates the line below it. An unusual decision that needs more than a line goes in [`docs/exceptions.md`](exceptions.md) instead, with a short pointer comment at the code.
+Code should explain itself through names and small functions. Write a comment only for a non-obvious *why*: a platform quirk (the `hya-cli` rename, `AppState.swift`), a constraint the type system cannot express (`nextLocalMidnight`'s force-unwrap), or a reference to the evidence behind a constant (the falak-convention comment in `crates/engine/src/compute.rs`). Never write a comment that only restates the line below it. An unusual decision that needs more than a line goes in [`docs/exceptions.md`](exceptions.md) instead, with a short pointer comment at the code.
 
 ## Writing
 

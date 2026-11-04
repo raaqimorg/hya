@@ -1,5 +1,5 @@
 //! Property-based and metamorphic tests: invariants that must hold for *every* input, checked
-//! on thousands of random inputs per run (`PROPTEST_CASES=100000` for a deep run).
+//! on thousands of random inputs per run (`PROPTEST_CASES=1000000` for a deep run).
 
 #![expect(
     clippy::expect_used,

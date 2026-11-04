@@ -1,6 +1,6 @@
 //! The `--json` snapshot: today's six prayer windows, tonight's midnight and last third,
 //! yesterday's Isha window (for the midnight carry-over), tomorrow's Fajr, and the
-//! already-resolved active/next prayer — all in Unix seconds, so a caller never has to redo
+//! already-resolved active/next prayer, all in Unix seconds, so a caller never has to redo
 //! any of `hya`'s own math.
 
 use hya_engine::{Prayer, PrayerTimes};

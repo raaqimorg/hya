@@ -16,8 +16,8 @@ pub(crate) const fn window_minutes(prayer: Prayer, ramadan: bool) -> Option<u32>
     }
 }
 
-/// The Unix-second instant after which `prayer`'s own waqt has ended — the hard cap on its
-/// active window. `None` when there is no earlier boundary than the window's own length
+/// The Unix-second instant after which `prayer`'s own waqt has ended (the hard cap on its
+/// active window). `None` when there is no earlier boundary than the window's own length
 /// (`Prayer::Sunrise`, which is moot since it's never active, and `Prayer::Isha` when
 /// `times.midnight()` is `None`).
 pub(crate) fn waqt_end(prayer: Prayer, times: &PrayerTimes) -> Option<i64> {

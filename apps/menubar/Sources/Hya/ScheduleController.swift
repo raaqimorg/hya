@@ -1,6 +1,8 @@
 import Foundation
 import AppKit
 
+/// The next local midnight strictly after `now`. Always succeeds: a calendar always has a
+/// next midnight, so the force-unwrap can't fail.
 func nextLocalMidnight(after now: Date, calendar: Calendar = .current) -> Date {
     calendar.nextDate(
         after: now,
