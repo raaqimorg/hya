@@ -37,6 +37,43 @@ final class PrayerSnapshotTests: XCTestCase {
         let snapshot = fixture(fajr: Window(at: 5000, ends: 5600))
         XCTAssertEqual(statusText(for: snapshot, at: Date(timeIntervalSince1970: 5000 - 38 * 60)), "Fjr +38m")
     }
+
+    func testPrayerToMuteFiresAtTheStartOfTheFiveMinuteWindow() {
+        let snapshot = fixture(asr: Window(at: 1000, ends: 2000))
+        let result = prayerToMute(for: snapshot, at: Date(timeIntervalSince1970: 1000 - 5 * 60), lastTriggered: nil)
+        XCTAssertEqual(result?.name, "Asr")
+        XCTAssertEqual(result?.at, 1000)
+    }
+
+    func testPrayerToMuteDoesNotFireBeforeTheFiveMinuteWindow() {
+        let snapshot = fixture(asr: Window(at: 1000, ends: 2000))
+        let result = prayerToMute(for: snapshot, at: Date(timeIntervalSince1970: 1000 - 5 * 60 - 1), lastTriggered: nil)
+        XCTAssertNil(result)
+    }
+
+    func testPrayerToMuteDoesNotFireAtOrAfterThePrayerTime() {
+        let snapshot = fixture(asr: Window(at: 1000, ends: 2000))
+        XCTAssertNil(prayerToMute(for: snapshot, at: Date(timeIntervalSince1970: 1000), lastTriggered: nil))
+        XCTAssertNil(prayerToMute(for: snapshot, at: Date(timeIntervalSince1970: 1000 + 10), lastTriggered: nil))
+    }
+
+    func testPrayerToMuteSkipsAnAlreadyTriggeredPrayer() {
+        let snapshot = fixture(asr: Window(at: 1000, ends: 2000))
+        let result = prayerToMute(for: snapshot, at: Date(timeIntervalSince1970: 1000 - 5 * 60), lastTriggered: 1000)
+        XCTAssertNil(result)
+    }
+
+    func testPrayerToMuteIgnoresSunrise() {
+        let snapshot = fixture(sunrise: Window(at: 1000, ends: nil))
+        let result = prayerToMute(for: snapshot, at: Date(timeIntervalSince1970: 1000 - 5 * 60), lastTriggered: nil)
+        XCTAssertNil(result)
+    }
+
+    func testPrayerToMuteUsesFullPrayerNames() {
+        let snapshot = fixture(fajr: Window(at: 1000, ends: 2000))
+        let result = prayerToMute(for: snapshot, at: Date(timeIntervalSince1970: 1000 - 5 * 60), lastTriggered: nil)
+        XCTAssertEqual(result?.name, "Fajr")
+    }
 }
 
 private let neutralWindow = Window(at: 0, ends: nil)

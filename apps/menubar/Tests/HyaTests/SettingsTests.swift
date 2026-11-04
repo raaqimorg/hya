@@ -34,4 +34,20 @@ final class SettingsTests: XCTestCase {
         XCTAssertEqual(initial.latitude, "24.7136")
         XCTAssertEqual(initial.longitude, "46.6753")
     }
+
+    func testMuteBeforePrayerIsOffByDefault() {
+        let defaults = UserDefaults(suiteName: #function)!
+        defaults.removePersistentDomain(forName: #function)
+        let store = SettingsStore(defaults: defaults)
+        XCTAssertFalse(store.muteBeforePrayerEnabled)
+    }
+
+    func testMuteBeforePrayerSetThenReadRoundTrips() {
+        let defaults = UserDefaults(suiteName: #function)!
+        defaults.removePersistentDomain(forName: #function)
+        let store = SettingsStore(defaults: defaults)
+        store.setMuteBeforePrayerEnabled(true)
+        XCTAssertTrue(store.muteBeforePrayerEnabled)
+        XCTAssertTrue(SettingsStore(defaults: defaults).muteBeforePrayerEnabled)
+    }
 }

@@ -81,3 +81,23 @@ func statusText(for snapshot: PrayerSnapshot, at now: Date) -> String {
 
     return "hya"
 }
+
+/// Today's prayer whose 5-minute pre-window `now` currently falls in, i.e. `[at - 5m, at)`, unless
+/// `lastTriggered` is already that prayer's `at` (it already fired for this window). Sunrise has no
+/// adhan, so it is never a candidate.
+func prayerToMute(for snapshot: PrayerSnapshot, at now: Date, lastTriggered: Int64?) -> (name: String, at: Int64)? {
+    let nowSeconds = Int64(now.timeIntervalSince1970)
+    let today = snapshot.today
+    let leadSeconds: Int64 = 5 * 60
+
+    let prayers: [(name: String, at: Int64)] = [
+        ("Fajr", today.fajr.at),
+        ("Dhuhr", today.dhuhr.at),
+        ("Asr", today.asr.at),
+        ("Maghrib", today.maghrib.at),
+        ("Isha", today.isha.at),
+    ]
+    return prayers.first { prayer in
+        prayer.at != lastTriggered && (prayer.at - leadSeconds..<prayer.at).contains(nowSeconds)
+    }
+}

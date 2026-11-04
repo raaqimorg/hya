@@ -3,6 +3,7 @@ import SwiftUI
 struct SettingsView: View {
     @State private var latitude: String
     @State private var longitude: String
+    @State private var muteBeforePrayerEnabled: Bool
 
     let onSave: () -> Void
     let onCancel: (() -> Void)?
@@ -13,6 +14,7 @@ struct SettingsView: View {
         let initial = Self.initialText(for: SettingsStore.shared.coordinates)
         _latitude = State(initialValue: initial.latitude)
         _longitude = State(initialValue: initial.longitude)
+        _muteBeforePrayerEnabled = State(initialValue: SettingsStore.shared.muteBeforePrayerEnabled)
     }
 
     /// The fields' starting text: the existing saved coordinates when reopening Settings to
@@ -30,6 +32,7 @@ struct SettingsView: View {
         Form {
             TextField("Latitude", text: $latitude)
             TextField("Longitude", text: $longitude)
+            Toggle("Mute audio 5 minutes before each prayer", isOn: $muteBeforePrayerEnabled)
             HStack {
                 if let onCancel {
                     Button("Cancel", action: onCancel)
@@ -39,6 +42,10 @@ struct SettingsView: View {
                 Button("Save") {
                     guard let coordinates = validated else { return }
                     SettingsStore.shared.save(coordinates)
+                    SettingsStore.shared.setMuteBeforePrayerEnabled(muteBeforePrayerEnabled)
+                    if muteBeforePrayerEnabled {
+                        requestNotificationAuthorization()
+                    }
                     onSave()
                 }
                 .buttonStyle(.borderedProminent)

@@ -21,6 +21,7 @@ final class ScheduleController: ObservableObject {
     private var minuteTimer: Timer?
     private var midnightTimer: Timer?
     private var wakeObserver: NSObjectProtocol?
+    private var lastMutedPrayerAt: Int64?
 
     init(executableURL: URL) {
         self.executableURL = executableURL
@@ -37,6 +38,7 @@ final class ScheduleController: ObservableObject {
             queue: .main
         ) { [weak self] _ in
             self?.recomputeDisplayText()
+            self?.checkMuteTrigger()
         }
     }
 
@@ -58,6 +60,7 @@ final class ScheduleController: ObservableObject {
             self.snapshot = snapshot
             lastError = nil
             recomputeDisplayText()
+            checkMuteTrigger()
         case .failure(let error):
             lastError = error
             displayText = "hya: No times"
@@ -69,10 +72,19 @@ final class ScheduleController: ObservableObject {
         displayText = statusText(for: snapshot, at: Date())
     }
 
+    private func checkMuteTrigger() {
+        guard SettingsStore.shared.muteBeforePrayerEnabled, let snapshot else { return }
+        guard let next = prayerToMute(for: snapshot, at: Date(), lastTriggered: lastMutedPrayerAt) else { return }
+        lastMutedPrayerAt = next.at
+        muteSystemAudio()
+        postPrayerNotification(name: next.name)
+    }
+
     private func scheduleMinuteTimer() {
         let next = nextMinuteBoundary(after: Date())
         minuteTimer = Timer(fire: next, interval: 60, repeats: true) { [weak self] _ in
             self?.recomputeDisplayText()
+            self?.checkMuteTrigger()
         }
         if let minuteTimer {
             RunLoop.main.add(minuteTimer, forMode: .common)
