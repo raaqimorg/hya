@@ -4,6 +4,12 @@ All notable changes are listed here, newest first. The format follows [Keep a Ch
 
 ## [Unreleased]
 
+## [0.6.1] - 2026-11-04
+
+### Fixed
+
+- The README's flags table was missing `--lat`, `--lng`, `--tz`, `--asr`, `--shafaq`, and `--ramadan`.
+
 ## [0.6.0] - 2026-11-04
 
 ### Added
@@ -100,7 +106,8 @@ The first release.
 - `@raaqimorg/hya`: the JavaScript package, with the WebAssembly inlined and no network or async start-up.
 - `hya-cli`: the `hya` command, with saved defaults (`--save`), `--country`, `--clock 12`, and times on stdout and notes on stderr.
 
-[Unreleased]: https://github.com/raaqimorg/hya/compare/v0.6.0...HEAD
+[Unreleased]: https://github.com/raaqimorg/hya/compare/v0.6.1...HEAD
+[0.6.1]: https://github.com/raaqimorg/hya/compare/v0.6.0...v0.6.1
 [0.6.0]: https://github.com/raaqimorg/hya/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/raaqimorg/hya/compare/v0.4.1...v0.5.0
 [0.4.1]: https://github.com/raaqimorg/hya/compare/v0.4.0...v0.4.1
