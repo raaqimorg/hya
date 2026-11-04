@@ -19,6 +19,7 @@ mkdir -p "$app_dir/Contents/MacOS" "$app_dir/Contents/Resources"
 
 cp "$bin_path/Hya" "$app_dir/Contents/MacOS/Hya"
 cp "$repo_root/target/aarch64-apple-darwin/release/hya" "$app_dir/Contents/MacOS/hya-cli"
+cp "$menubar_dir/Resources/AppIcon.icns" "$app_dir/Contents/Resources/AppIcon.icns"
 sed "s/\${HYA_VERSION}/$version/" "$menubar_dir/Resources/Info.plist" > "$app_dir/Contents/Info.plist"
 
 codesign --force --deep --sign - "$app_dir"

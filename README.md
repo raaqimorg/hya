@@ -442,6 +442,7 @@ flowchart LR
 | [`fuzz/`](fuzz/fuzz_targets/compute.rs)           | cargo-fuzz target, in its own workspace                                                     | Rust nightly, libFuzzer |
 | [`fixtures/`](fixtures/)                          | adhan-js reference outputs; `official/` holds the authorities' own timetables               | JSON                    |
 | [`scripts/`](scripts/)                            | Fixture and Ramadan-table generators, the official-timetable fetcher, and the release check | Bun                     |
+| [`assets/icon/`](assets/icon/)                    | The Hya mark; source for `apps/menubar`'s `AppIcon.icns`                                    | SVG                     |
 
 A diagram-first map of how these link together, and how a release reaches a registry, is in [`docs/topology.md`](docs/topology.md). [`AGENTS.md`](AGENTS.md) is the guide for contributors and AI agents, with pointers to the rest of `docs/`.
 

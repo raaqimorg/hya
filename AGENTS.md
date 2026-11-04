@@ -9,10 +9,11 @@ This repo holds Hya: Islamic prayer times from coordinates alone, with no networ
 - `crates/wasm` (`hya-wasm`): WebAssembly bindings over `crates/engine`. Numbers in, numbers out; no logic of its own.
 - `packages/js` (`@raaqimorg/hya`): the TypeScript API, with the compiled WebAssembly inlined and the inputs branded the same way the Rust types are.
 - `apps/cli` (`hya`): the command. Prints today's times; asks for a place once and saves it; `--json` is the stable, tested contract that `apps/menubar` also relies on (`apps/cli/src/json.rs`).
-- `apps/menubar`: `Hya.app`, the macOS menu bar app. SwiftUI and AppKit, its own Swift package (`Package.swift`), outside the Bun workspace. It does not link `crates/engine`; it spawns the bundled `hya` CLI (renamed `hya-cli`) as a subprocess and reads its `--json` output. See [`docs/exceptions.md`](docs/exceptions.md) for why.
+- `apps/menubar`: `Hya.app`, the macOS menu bar app. SwiftUI and AppKit, its own Swift package (`Package.swift`), outside the Bun workspace. It does not link `crates/engine`; it spawns the bundled `hya` CLI (renamed `hya-cli`) as a subprocess and reads its `--json` output. See [`docs/exceptions.md`](docs/exceptions.md) for why. Its Finder, About-panel, and notification icon is `Resources/AppIcon.icns`, generated from `assets/icon/mark-black.svg` by `Scripts/generate-icon.sh`; run that script by hand after changing the mark, the build does not call it.
 - `fuzz/`: a `cargo-fuzz` target over `crates/engine`, in its own Cargo workspace, nightly only.
 - `fixtures/`: golden data from adhan-js and from official timetables, checked by `crates/engine/tests/` and `crates/countries/tests/`. Never hand-edit a fixture; regenerate it with the `scripts/` that produced it.
 - `scripts/`: the fixture and Ramadan-table generators, the official-timetable fetcher, and the release-version check, each with one `bun run` name.
+- `assets/icon/`: the Hya mark, as source SVGs (`mark.svg` uses `currentColor`; `mark-black.svg` and `mark-white.svg` are fixed-color). The only built artifact from it today is `apps/menubar/Resources/AppIcon.icns`.
 - `docs/`: everything that is not a doc comment or the README:
   - [`topology.md`](docs/topology.md): a diagram-first map, with the diagrams in `docs/architecture/*.svg`.
   - [`code-conventions.md`](docs/code-conventions.md): what the lints enforce, Swift conventions, comments, and writing.
@@ -46,6 +47,7 @@ Full list of scripts: `package.json`. Full contributor workflow, including addin
 - Hard rule: never run `bun run deep:*`, `cargo kani`, or `cargo fuzz` unless the user asks for that specific check. They are slow and some need extra tools; `bun run ci` is the default.
 - Hard rule: never tag, publish, or run anything in `release.yml` or `apps/menubar/Scripts/package-dmg.sh` unless the user asks for that release. Approval for one release does not carry over to the next.
 - An agent must not edit a fixture under `fixtures/` by hand to make a test pass. A fixture comes from `scripts/fetch-official.ts`, `scripts/generate-adhan-js.ts`, or `scripts/generate-asr-reference.ts`; change the generator, or the method's parameters, not the data.
+- Likewise, do not hand-edit `apps/menubar/Resources/AppIcon.icns`. Change `assets/icon/mark-black.svg` and re-run `apps/menubar/Scripts/generate-icon.sh`.
 - Changing the calculation (`crates/engine/src/`) needs a new test, almost always in `crates/engine/tests/properties.rs` for an invariant or `tests/official.rs`/`tests/golden.rs` for a case. Say in the pull request which `deep:*` checks you ran, if any.
 - Install the [GitHub CLI](https://cli.github.com) (`gh`) for issues and pull requests; see [`.github/CONTRIBUTING.md`](.github/CONTRIBUTING.md).
 - Commits: see [`.github/CONTRIBUTING.md`](.github/CONTRIBUTING.md), "Keeping your email private". The `commit-msg` and `pre-push` hooks reject any author, committer, or `Co-authored-by:` email but the one `hya.allowedEmail` names.
