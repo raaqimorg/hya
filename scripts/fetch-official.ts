@@ -1,14 +1,9 @@
-// Fetches official timetables into fixtures/official/: the ground truth that tests/official.rs
-// checks the presets against. This is the only script that touches the network; the tests read
-// the committed JSON and never do. Re-run only to refresh the data, and review the diff.
-// Run: bun scripts/fetch-official.ts
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const YEAR = 2026;
 const OUT = join(import.meta.dir, "..", "fixtures", "official");
 
-// Every JAKIM zone. Times are computed for each zone's westernmost reference point.
 const JAKIM_ZONES = [
   "JHR01", "JHR02", "JHR03", "JHR04",
   "KDH01", "KDH02", "KDH03", "KDH04", "KDH05", "KDH06", "KDH07",
@@ -20,7 +15,6 @@ const JAKIM_ZONES = [
   "SWK01", "SWK02", "SWK03", "SWK04", "SWK05", "SWK06", "SWK07", "SWK08", "SWK09",
   "TRG01", "TRG02", "TRG03", "TRG04", "WLY01", "WLY02",
 ];
-// Zones whose reference points are published, kept for the whole year; the rest are sampled.
 const FULL_YEAR = new Set(["WLY01", "WLY02"]);
 const SAMPLED_DAYS = new Set([1, 8, 15, 22]);
 
@@ -61,8 +55,6 @@ async function jakimZone(zone: string): Promise<Record<string, string[]>> {
   return days;
 }
 
-// Jordan's Ministry of Awqaf publishes only from today to 31 December, ten days per page of an
-// ASP.NET WebForms grid. Its date-range search fails server-side (HTTP 500), but paging works.
 const AWQAF = "https://www.awqaf.gov.jo/ar/Pages/PrayerTime";
 const AWQAF_CITIES: Record<string, string> = { "1": "amman", "2": "irbid", "6": "aqaba" };
 
@@ -95,7 +87,6 @@ class WebForm {
     }
   }
 
-  /** A postback carrying every field of the current page, as the browser would send it. */
   postback(target: string, argument: string, overrides: Record<string, string> = {}) {
     const form = this.html.slice(this.html.indexOf("<form"));
     const fields = new URLSearchParams();
@@ -120,7 +111,6 @@ class WebForm {
 const unescapeHtml = (s: string) =>
   s.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 
-/** Asr, Maghrib and Isha are printed on a 12-hour clock. */
 function awqafRow(cells: string[]): [string, string[]] | undefined {
   const [date, ...times] = cells;
   const match = /^(\d\d)\/(\d\d)\/(\d{4})$/.exec(date ?? "");
@@ -139,7 +129,6 @@ async function awqafCity(id: string): Promise<Record<string, string[]>> {
   await form.send();
   if (id !== "1") {
     await form.postback("ctl00$MainContent$DropCompany", "", { "ctl00$MainContent$DropCompany": id });
-    // The grid only rebinds to the new city on paging.
     await form.postback("ctl00$MainContent$gvWebparts", "Page$2");
     await form.postback("ctl00$MainContent$gvWebparts", "Page$1");
   }
@@ -158,8 +147,6 @@ async function awqafCity(id: string): Promise<Record<string, string[]>> {
   return days;
 }
 
-// The official Umm al-Qura calculator (ummulqura.org.sa) is backed by this KACST API, which
-// computes for exact coordinates: no reference point to guess.
 const UMM_AL_QURA_CITIES: Record<string, [number, number]> = {
   makkah: [21.4225, 39.8262],
   riyadh: [24.7136, 46.6753],
@@ -185,7 +172,6 @@ async function ummAlQuraCity([lat, lng]: [number, number]): Promise<Record<strin
   return days;
 }
 
-// MUIS publishes one timetable for the whole island on data.gov.sg (Singapore Open Data Licence).
 const MUIS_DATASET = "d_d441e7242e78efc566024dd5b0d9829c";
 
 async function muis(): Promise<Record<string, string[]>> {
@@ -212,7 +198,7 @@ const singapore = await muis();
 const zones: Record<string, Record<string, string[]>> = {};
 for (const zone of JAKIM_ZONES) {
   zones[zone] = await jakimZone(zone);
-  await Bun.sleep(1000); // be polite to a public government service
+  await Bun.sleep(1000); 
 }
 
 const jordan: Record<string, Record<string, string[]>> = {};

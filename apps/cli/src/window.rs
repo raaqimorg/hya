@@ -149,16 +149,13 @@ mod tests {
         assert_eq!(window_minutes(Prayer::Sunrise, true), None);
     }
 
-    // capped_end: the three worked examples from the design doc, in seconds-from-start terms.
     #[test]
     fn capped_end_is_inert_when_the_boundary_is_later() {
-        // Riyadh: window 40m, Sunrise 78m after start.
         assert_eq!(capped_end(0, 40, Some(78 * 60)), 40 * 60);
     }
 
     #[test]
     fn capped_end_shortens_the_window_when_the_boundary_is_earlier() {
-        // Short summer night: window 40m, Sunrise only 35m after start.
         assert_eq!(capped_end(0, 40, Some(35 * 60)), 35 * 60);
     }
 
@@ -167,7 +164,6 @@ mod tests {
         assert_eq!(capped_end(0, 35, None), 35 * 60);
     }
 
-    // waqt_end: picks the right field out of a real schedule.
     #[test]
     fn waqt_end_boundaries_match_the_table() {
         let times = riyadh();
@@ -195,7 +191,6 @@ mod tests {
 
     #[test]
     fn isha_is_uncapped_without_a_midnight() {
-        // Same fixture the existing `without_a_next_fajr_there_is_no_midnight` test uses.
         let last_day = compute(
             Date::new(2100, 12, 31).expect("valid"),
             Coordinates::new(24.7136, 46.6753).expect("valid"),
@@ -219,7 +214,6 @@ mod tests {
     fn asr_closes_after_its_window_and_before_maghrib_begins() {
         let times = riyadh();
         let at = times.get(Prayer::Asr).unix_seconds();
-        // 30m window: at the boundary instant, it has just closed.
         assert!(active_at(at + 30 * 60, &times, false, || None).is_none());
     }
 
@@ -263,8 +257,6 @@ mod tests {
 
     #[test]
     fn fajrs_window_is_capped_at_sunrise_when_shorter_than_its_own_length() {
-        // Oulu, 2026-06-21: Fajr to Sunrise is 16 minutes, far short of Fajr's 40-minute
-        // baseline window, so the cap — not the table length — decides when it closes.
         let times = compute(
             Date::new(2026, 6, 21).expect("valid"),
             Coordinates::new(65.0121, 25.4651).expect("valid"),
@@ -304,8 +296,6 @@ mod tests {
     fn todays_ramadan_flag_shortens_todays_own_window() {
         let times = riyadh();
         let at = times.get(Prayer::Isha).unix_seconds();
-        // Isha: 35m baseline, 30m in Ramadan. 32 minutes in is still open at baseline, already
-        // closed if the Ramadan flag passed to `active_at` is honored.
         assert!(active_at(at + 32 * 60, &times, false, || None).is_some());
         assert!(active_at(at + 32 * 60, &times, true, || None).is_none());
     }
@@ -355,7 +345,7 @@ mod tests {
 
     #[test]
     fn yesterdays_ramadan_status_is_used_for_yesterdays_isha_not_todays() {
-        let today = riyadh(); // not in Ramadan
+        let today = riyadh();
         let yesterday = compute(
             Date::new(2026, 10, 28).expect("valid"),
             Coordinates::new(24.7136, 46.6753).expect("valid"),
@@ -363,9 +353,6 @@ mod tests {
         )
         .expect("computable");
         let yesterday_isha = yesterday.get(Prayer::Isha).unix_seconds();
-        // Yesterday was (hypothetically) in Ramadan: a 30m window, not 35m. 32 minutes in should
-        // already be closed if yesterday's Ramadan status is honored, still open if today's
-        // (non-Ramadan, 35m) status is wrongly used instead.
         let active = active_at(yesterday_isha + 32 * 60, &today, false, || {
             Some((yesterday, true))
         });

@@ -1,7 +1,3 @@
-// Checks that a version is ready to release, then prints its CHANGELOG.md section: the notes of
-// the GitHub Release. Every version in the repository must equal it, so a tag can never publish
-// crates and a package that disagree.
-// Run: bun scripts/release-notes.ts 0.2.0   (the release workflow passes the tag without its v)
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -36,7 +32,6 @@ const found: [string, string | undefined][] = [
 const wrong = found.filter(([, value]) => value !== version);
 for (const [where, value] of wrong) console.error(`${where} is ${value}, not ${version}`);
 
-// The section runs from its `## [x.y.z] - YYYY-MM-DD` heading to the next `## ` heading.
 const changelog = read("CHANGELOG.md");
 const escaped = version.replaceAll(".", "\\.");
 const section = new RegExp(`^## \\[${escaped}\\] - \\d{4}-\\d{2}-\\d{2}\\n([\\s\\S]*?)(?=^## |^\\[)`, "m").exec(

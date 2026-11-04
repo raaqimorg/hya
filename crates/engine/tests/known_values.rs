@@ -29,13 +29,8 @@ fn hhmm_utc(minutes: i64) -> String {
     format!("{:02}:{:02}", of_day / 60, of_day % 60)
 }
 
-// ---------- hand-checked days and error paths ----------
-
 #[test]
 fn riyadh_today_umm_al_qura() {
-    // Riyadh is UTC+3; local 04:40 / 05:58 / 11:38 / 14:51 / 17:16 / 18:46, exactly as the
-    // official calculator at ummulqura.org.sa gives them. (adhan-js, which rounds to the
-    // nearest minute, gives 04:39 / 05:58 / 11:37 / 14:51 / 17:15 / 18:45.)
     let times = compute(
         Date::new(2026, 10, 29).expect("valid"),
         Coordinates::new(24.7136, 46.6753).expect("valid"),
@@ -55,7 +50,6 @@ fn riyadh_today_umm_al_qura() {
 
 #[test]
 fn ramadan_evening_in_makkah_uses_120_minutes() {
-    // 2027-02-20 is 13 Ramadan 1448, so its evening is still Ramadan.
     let times = compute(
         Date::new(2027, 2, 20).expect("valid"),
         Coordinates::new(21.4225, 39.8262).expect("valid"),
@@ -82,7 +76,6 @@ fn eve_of_first_ramadan_already_uses_120_and_eve_of_eid_does_not() {
         .expect("ok");
         t.isha().unix_minutes() - t.maghrib().unix_minutes()
     };
-    // Ramadan 1447: 2026-02-18 ..= 2026-03-19; Eid al-Fitr 2026-03-20.
     assert_eq!(
         gap(2026, 2, 17),
         90,
@@ -97,7 +90,6 @@ fn eve_of_first_ramadan_already_uses_120_and_eve_of_eid_does_not() {
 fn announced_dates_override_the_calendar() {
     let makkah = Coordinates::new(21.4225, 39.8262).expect("valid");
     let date = |m, d| Date::new(2026, m, d).expect("valid");
-    // Suppose the crescent is sighted a day after the calculation: 1447 runs 02-19 ..= 03-20.
     let late = RamadanDates::Announced(
         AnnouncedRamadan::new(date(2, 19), date(3, 20)).expect("valid announcement"),
     );
@@ -194,8 +186,6 @@ fn every_method_works_in_every_fixture_city_today() {
 
 #[test]
 fn tehran_falls_back_to_sunset_when_its_maghrib_angle_passes_isha() {
-    // Oslo, 1 June: the seventh-of-the-night Isha comes before the sun is 4.5° down. adhan-js
-    // gives Maghrib at sunset, 20:24, and Isha 21:13 (UTC). In January the angle stands.
     let oslo = Coordinates::new(59.9139, 10.7522).expect("valid");
     let summer = compute(
         Date::new(2026, 6, 1).expect("valid"),
@@ -223,8 +213,6 @@ fn tehran_falls_back_to_sunset_when_its_maghrib_angle_passes_isha() {
     );
     assert!(!winter.notes().maghrib_at_sunset, "angle used");
 }
-
-// ---------- user-visible strings ----------
 
 #[test]
 fn prayer_ids_and_display() {
@@ -283,8 +271,6 @@ fn date_and_method_display() {
     assert_eq!(Method::NorthAmerica.to_string(), "north_america", "method");
 }
 
-// ---------- instants ----------
-
 #[test]
 fn instant_unit_conversions() {
     let times = compute(
@@ -297,8 +283,6 @@ fn instant_unit_conversions() {
     assert_eq!(fajr.unix_seconds(), fajr.unix_minutes() * 60, "seconds");
     assert_eq!(fajr.unix_millis(), fajr.unix_minutes() * 60_000, "millis");
 }
-
-// ---------- method tables (values from adhan-js 4.4.4) ----------
 
 fn adjustments(sunrise: i16, dhuhr: i16, asr: i16, maghrib: i16) -> Adjustments {
     let m = |v| MinuteAdjustment::new(v).expect("in range");
@@ -348,8 +332,6 @@ fn method_adjustments_and_rounding() {
     }
 }
 
-// ---------- high-latitude rules ----------
-
 fn fajr_with(rule: HighLatitudeRule, coords: Coordinates, day: Date) -> i64 {
     let params = Parameters {
         high_latitude: rule,
@@ -369,7 +351,6 @@ fn recommended_switches_to_seventh_strictly_above_48_degrees() {
         (at(48.0, 2.0), june, HighLatitudeRule::MiddleOfTheNight),
         (at(47.9, 2.0), june, HighLatitudeRule::MiddleOfTheNight),
         (at(50.0, 2.0), june, HighLatitudeRule::SeventhOfTheNight),
-        // Southern summer: the switch uses |latitude|.
         (
             at(-50.0, -70.0),
             december,
@@ -385,7 +366,6 @@ fn recommended_switches_to_seventh_strictly_above_48_degrees() {
             "{lat}: like {equivalent:?}"
         );
     }
-    // At 48° itself the two rules really differ, so the boundary above is meaningful.
     let edge = at(48.0, 2.0);
     assert_ne!(
         fajr_with(HighLatitudeRule::MiddleOfTheNight, edge, june),
@@ -427,8 +407,6 @@ fn next_day(day: Date) -> Date {
 
 #[test]
 fn the_night_runs_from_maghrib_to_the_next_fajr() {
-    // Midnight is half of it and the last third begins at two thirds, each rounded to the
-    // nearest minute, a half minute up, as adhan-js's SunnahTimes does.
     let riyadh = at(24.7136, 46.6753);
     for day in [date(2026, 1, 1), date(2026, 6, 21), date(2026, 10, 29)] {
         let t = compute(day, riyadh, Parameters::default()).expect("ok");
@@ -445,9 +423,6 @@ fn the_night_runs_from_maghrib_to_the_next_fajr() {
         );
     }
 
-    // Hand-checked, Riyadh on 29 October 2026 (UTC+3): Maghrib 17:16, the next Fajr 04:40,
-    // a night of 684 minutes. Midnight is ⌊685 / 2⌋ = 342 minutes in, the last third
-    // ⌊2739 / 6⌋ = 456.
     let t = compute(date(2026, 10, 29), riyadh, Parameters::default()).expect("ok");
     let local = |minutes: i64| hhmm_utc(minutes + 180);
     assert_eq!(local(minutes(&t, Prayer::Maghrib)), "17:16");
@@ -465,7 +440,6 @@ fn the_night_runs_from_maghrib_to_the_next_fajr() {
 
 #[test]
 fn without_a_next_fajr_there_are_no_night_marks() {
-    // The last representable day: the next day is out of range.
     let last = compute(
         date(2100, 12, 31),
         at(24.7136, 46.6753),
@@ -474,8 +448,6 @@ fn without_a_next_fajr_there_are_no_night_marks() {
     .expect("the six times still compute");
     assert_eq!((last.midnight(), last.last_third()), (None, None));
 
-    // With no high-latitude rule, Fajr disappears in summer at 52°N. On the last day it occurs,
-    // the next day has none.
     let berlin = at(52.52, 13.405);
     let params = Parameters {
         high_latitude: HighLatitudeRule::None,
@@ -493,8 +465,6 @@ fn without_a_next_fajr_there_are_no_night_marks() {
         assert!(day < date(2026, 7, 1), "no edge found");
     }
 }
-
-// ---------- the ordering guard ----------
 
 /// Shifts `earlier` later and `later` earlier until they coincide; ties must be rejected.
 #[test]
@@ -546,8 +516,6 @@ fn coinciding_times_are_rejected() {
 
 #[test]
 fn a_night_squeezed_out_by_adjustments_is_rejected() {
-    // Every prayer is still in order, but Maghrib pushed late and Fajr pulled early leave no
-    // night between them on a short summer night.
     let trondheim = at(63.4305, 10.3951);
     let day = date(2026, 6, 21);
     let base = Method::MuslimWorldLeague.parameters();
@@ -569,8 +537,6 @@ fn a_night_squeezed_out_by_adjustments_is_rejected() {
         Err(ComputeError::OutOfOrder)
     );
 }
-
-// ---------- Moonsighting Committee ----------
 
 #[test]
 fn moonsighting_committee_preset() {
@@ -614,15 +580,12 @@ fn twilights(shafaq: Shafaq, coords: Coordinates, day: Date) -> (i64, i64, i64, 
 
 #[test]
 fn season_adjusted_shortens_summer_twilight_at_mid_latitudes() {
-    // Chicago, solstice: 18° twilight lasts over two hours, the committee's limit far less.
     let (morning, evening, _, fajr_flag, isha_flag) =
         twilights(Shafaq::General, at(41.8781, -87.6298), date(2026, 6, 21));
-    // 75 + 48.1 × 41.8781 / 55 and 75 + 6.14 × 41.8781 / 55, at 182 days from the solstice.
     assert!((111..=112).contains(&morning), "morning {morning}");
     assert!((79..=80).contains(&evening), "evening {evening}");
     assert!(fajr_flag && isha_flag, "both set by the rule");
 
-    // Riyadh, midwinter: 18° twilight is already shorter than the limit, so it stands.
     let riyadh = at(24.7136, 46.6753);
     let december = date(2026, 12, 21);
     let (_, _, _, fajr_set, isha_set) = twilights(Shafaq::General, riyadh, december);
@@ -661,7 +624,6 @@ fn season_adjusted_uses_a_seventh_of_the_night_from_55_degrees() {
         );
         assert!(fajr_flag && isha_flag, "{lat}: flagged");
 
-        // Just below, 18° twilight never ends, so the seasonal limit applies instead: far longer.
         let below = if lat > 0.0_f64 { 54.9_f64 } else { -54.9_f64 };
         let (seasonal, _, short_night, _, _) = twilights(Shafaq::General, at(below, 0.0), summer);
         assert!(
@@ -674,10 +636,8 @@ fn season_adjusted_uses_a_seventh_of_the_night_from_55_degrees() {
 #[test]
 fn shafaq_choices_end_isha_at_different_glows() {
     let london = at(51.5074, -0.1278);
-    // Winter: red ends earliest; general and white share the solstice value.
     let december = date(2026, 12, 21);
     let isha = |shafaq| twilights(shafaq, london, december).1;
-    // 62 + 17.4 × 51.5074 / 55 and 75 + 25.6 × 51.5074 / 55.
     assert!(
         (78..=79).contains(&isha(Shafaq::Red)),
         "red {}",
@@ -693,11 +653,8 @@ fn shafaq_choices_end_isha_at_different_glows() {
         isha(Shafaq::General),
         "white at the solstice"
     );
-    // Summer: white lasts far longer than general.
     let june = date(2026, 6, 21);
     let summer_isha = |shafaq| twilights(shafaq, london, june).1;
-    // Day 182 of the cycle, one before the peak (75 + 6.14 × 51.5074 / 55 for general,
-    // 75 + 81.84 × 51.5074 / 55 for white) on a 46-day slope: 80.7 and 150.7 minutes.
     assert!(
         (80..=81).contains(&summer_isha(Shafaq::General)),
         "general {}",

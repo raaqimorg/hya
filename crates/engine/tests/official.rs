@@ -79,8 +79,6 @@ fn degrees(d: f64, m: f64, s: f64) -> f64 {
 
 #[test]
 fn federal_territories_match_at_their_published_reference_points() {
-    // Almanak Falak Syarie Malaysia 2021 (JUPEM), via the Federal Territories mufti's office.
-    // Sunrise has its own reference point in each zone.
     let zones = [
         (
             "WLY01",
@@ -121,8 +119,6 @@ fn federal_territories_match_at_their_published_reference_points() {
             }
         }
         for (prayer, hits) in COLUMNS.iter().zip(exact) {
-            // Measured: 72–98% of days to the minute (Fajr in WLY01 is the lowest). The rest
-            // differ by the last rounding step; JAKIM's own solar model is not published.
             assert!(
                 hits * 100 >= days.len() * 70,
                 "{zone} {prayer}: {hits}/365 exact"
@@ -132,7 +128,6 @@ fn federal_territories_match_at_their_published_reference_points() {
 }
 
 fn isha_after_maghrib(method: Method, day: Date) -> i64 {
-    // Mid-peninsula; the interval moves by seconds across Malaysia's latitudes.
     let anywhere = Coordinates::new(4.0, 102.0).expect("valid");
     let times = compute(day, anywhere, method.parameters()).expect("ok");
     local_minutes(&times, Prayer::Isha, day)
@@ -159,7 +154,6 @@ fn every_lowland_zone_has_the_isha_angle_of_its_preset() {
             } else {
                 (Method::Malaysia, Method::MalaysiaKelantan)
             };
-            // Both ends are rounded up, so ±1 is the floor; latitude adds the odd second minute.
             assert!(
                 error(own).abs() <= 2,
                 "{zone} {key}: {own} off by {}",
@@ -168,7 +162,6 @@ fn every_lowland_zone_has_the_isha_angle_of_its_preset() {
             if error(own).abs() <= 1 {
                 close += 1;
             }
-            // The other angle is a degree away, about four minutes: never a rounding slip.
             assert!(error(other).abs() >= 3, "{zone} {key}: {other} fits too");
         }
         assert!(
@@ -239,12 +232,10 @@ fn jordan_matches_the_ministrys_timetables_from_dhuhr() {
                     )
                     .expect("small")
             };
-            // Both ends are rounded, so ±1 is the floor; reference points add up to one more.
             for prayer in [Prayer::Fajr, Prayer::Asr, Prayer::Isha] {
                 let e = error(&ours, prayer);
                 assert!(e.abs() <= 2, "{city} {key} {prayer}: off by {e}");
             }
-            // A degree either way is about five minutes: never a rounding slip.
             assert!(
                 error(&shallower, Prayer::Isha) <= -3,
                 "{city} {key}: Isha 17° fits too"
@@ -253,9 +244,6 @@ fn jordan_matches_the_ministrys_timetables_from_dhuhr() {
                 error(&deeper, Prayer::Fajr) <= -3,
                 "{city} {key}: Fajr 19° fits too"
             );
-            // Sunrise and Maghrib carry the ministry's elevation corrections, which the preset
-            // takes from Amman. Elsewhere it is more cautious, never less: sunrise (the end of
-            // Fajr) no later and Maghrib no earlier, by at most 5 minutes.
             let sunrise = error(&ours, Prayer::Sunrise);
             assert!(
                 (-6..=1).contains(&sunrise),
@@ -350,8 +338,6 @@ fn umm_al_qura_matches_the_official_calculator() {
         assert!(worst <= 2, "{name}: off by {worst}");
         let total_beyond: usize = beyond_one.iter().sum();
         assert!(total_beyond <= 3, "{name}: {total_beyond} times beyond ±1");
-        // Dhuhr to Isha follow the sun's position closely; Fajr's angle is where the two
-        // calculations differ most (still within a minute).
         for (prayer, hits) in COLUMNS.into_iter().zip(exact).skip(2) {
             assert!(hits >= 320, "{name} {prayer}: {hits}/365 exact");
         }
@@ -442,7 +428,6 @@ fn singapore_matches_muis() {
                 exact = exact.checked_add(1).expect("small");
             }
         }
-        // A degree either way is about four minutes this close to the equator.
         let [fajr, ..] = errors(
             &compute(day, at, shallower_fajr).expect("ok"),
             row,

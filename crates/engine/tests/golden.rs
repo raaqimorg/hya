@@ -75,7 +75,6 @@ fn agrees_with_adhan_js_within_one_minute() {
         let method: Method = case.method.parse().expect("known method");
         let mut parameters = method.parameters();
         parameters.high_latitude = match (method, case.shafaq.as_deref()) {
-            // The committee's own rule; adhan-js applies it regardless of its generic setting.
             (Method::MoonsightingCommittee, None | Some("general")) => {
                 HighLatitudeRule::SeasonAdjusted(Shafaq::General)
             }
@@ -97,8 +96,6 @@ fn agrees_with_adhan_js_within_one_minute() {
             if diff == 0 {
                 exact = exact.saturating_add(1);
             }
-            // adhan-js's Asr drifts up to ~2 min above 50° in winter; `asr_reference.rs` holds
-            // ours to the exact definition there instead.
             let tolerance = if prayer == Prayer::Asr && case.latitude.abs() > 50.0_f64 {
                 ADHAN_HIGH_LATITUDE_ASR_TOLERANCE
             } else {
@@ -136,7 +133,6 @@ fn agrees_with_adhan_js_within_one_minute() {
         failures.len(),
         failures.join("\n")
     );
-    // Guard against a tolerance that silently hides a systematic one-minute bias.
     assert!(
         exact * 10 >= fixture.cases.len() * 6 * 7,
         "only {exact} exact matches"

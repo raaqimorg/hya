@@ -22,7 +22,6 @@ fn entries_are_sorted_unique_and_well_formed() {
         assert!(a.country < b.country, "{} before {}", a.country, b.country);
     }
     for entry in ENTRIES {
-        // Built without `new`, so check each code is one `new` would produce.
         assert_eq!(code(&entry.country.to_string()), entry.country);
         assert!(!entry.authority.is_empty(), "{}", entry.country);
         assert_eq!(entry_for(entry.country), Some(entry));
@@ -56,8 +55,6 @@ fn each_country_gets_its_own_authoritys_method() {
 
 #[test]
 fn contested_or_unimplemented_customs_are_left_to_the_caller() {
-    // Split between methods (UK, North America, Europe), or an authority whose own method the
-    // core lacks (Indonesia's Kemenag, Morocco's ministry, Russia's DUM).
     for country in ["GB", "US", "CA", "FR", "DE", "ID", "MA", "RU", "IN", "BD"] {
         assert_eq!(
             entry_for(code(country)).map(|entry| entry.method),

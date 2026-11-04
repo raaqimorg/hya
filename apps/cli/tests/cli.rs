@@ -84,8 +84,6 @@ const AMMAN: [&str; 8] = [
     "2026-11-30",
 ];
 
-// ---------- the civil date ----------
-
 #[test]
 fn apia_gets_the_schedule_of_its_own_civil_day() {
     let dir = config_dir("apia");
@@ -109,7 +107,6 @@ fn apia_gets_the_schedule_of_its_own_civil_day() {
     assert!(output.status.success(), "{}", text(&output.stderr));
     let stdout = text(&output.stdout);
 
-    // Apia is UTC+13 at 171.76°W, so 30 October there is the solar day of 29 October.
     let times = compute(
         Date::new(2026, 10, 29).expect("valid"),
         Coordinates::new(-13.83, -171.76).expect("valid"),
@@ -126,8 +123,6 @@ fn apia_gets_the_schedule_of_its_own_civil_day() {
         assert!(stdout.contains(&line), "{prayer}: {stdout}");
     }
 }
-
-// ---------- --country ----------
 
 #[test]
 fn a_listed_country_selects_its_method_and_says_why() {
@@ -168,8 +163,6 @@ fn malformed_codes_and_conflicting_flags_are_rejected() {
     assert!(!saved_config(&dir).exists(), "nothing saved");
 }
 
-// ---------- saving, prompting, and streams ----------
-
 #[test]
 fn flags_apply_to_one_run_unless_saved() {
     let dir = config_dir("save");
@@ -208,7 +201,6 @@ fn without_a_terminal_a_missing_location_is_an_error_not_a_prompt() {
 #[test]
 fn stdout_carries_only_the_times() {
     let dir = config_dir("streams");
-    // Oslo in June: the high-latitude note goes to stderr.
     let output = hya(
         &dir,
         &[
@@ -278,8 +270,6 @@ fn the_clock_is_twelve_hour_unless_a_twenty_four_hour_one_is_saved() {
         "a flag overrides the saved clock"
     );
 }
-
-// ---------- the countdown ----------
 
 #[test]
 fn another_day_has_no_countdown() {
@@ -365,11 +355,6 @@ fn json_reports_midnight_and_last_third() {
     );
     assert!(out.status.success(), "{out:?}");
     let value: serde_json::Value = serde_json::from_slice(&out.stdout).expect("valid json");
-    // Pinning --tz to the coordinates' own zone matters here: night_marks_on decides which
-    // night's mark to report by which civil day the zone places it on, so a zone far from the
-    // location (as an unpinned, host-dependent zone could be) can shift the answer by a day.
-    // Last third is the end of the night before (just before today's Fajr); midnight is from
-    // tonight's own (just before tomorrow's Fajr), so it falls later, not earlier.
     assert!(value["midnight"].is_number(), "{value}");
     assert!(value["last_third"].is_number(), "{value}");
     assert!(value["last_third"].as_i64() < value["midnight"].as_i64());
@@ -388,7 +373,6 @@ fn json_and_next_conflict() {
 #[test]
 fn json_at_a_polar_night_date_fails_cleanly_not_with_malformed_output() {
     let dir = config_dir("json-polar");
-    // Tromsø, midwinter: polar night.
     let out = hya(
         &dir,
         &[
@@ -404,8 +388,6 @@ fn json_at_a_polar_night_date_fails_cleanly_not_with_malformed_output() {
     assert!(!out.status.success());
     assert!(serde_json::from_slice::<serde_json::Value>(&out.stdout).is_err());
 }
-
-// ---------- what a failed run leaves behind ----------
 
 #[test]
 fn a_failed_run_saves_nothing() {
@@ -440,8 +422,6 @@ fn coordinates_must_be_finite_numbers() {
     }
 }
 
-// ---------- time zones ----------
-
 #[test]
 fn without_tz_the_system_zone_is_used() {
     let dir = config_dir("system-zone");
@@ -462,7 +442,6 @@ fn without_tz_the_system_zone_is_used() {
 
 #[test]
 fn a_daylight_saving_change_moves_the_clock_not_the_sun() {
-    // Toronto springs forward at 02:00 on 8 March 2026 and falls back at 02:00 on 1 November.
     let dir = config_dir("dst");
     let toronto = Coordinates::new(43.6532, -79.3832).expect("valid");
     let zone = TimeZone::get("America/Toronto").expect("zone");
@@ -505,7 +484,6 @@ fn a_daylight_saving_change_moves_the_clock_not_the_sun() {
             let line = format!("{:<10} {}", name(prayer), local.strftime("%H:%M"));
             assert!(stdout.contains(&line), "{change} {prayer}: {stdout}");
         }
-        // The sun crosses the meridian within a minute of yesterday's time; the clock jumps.
         let jump = minute_of(&stdout, "Dhuhr")
             .checked_sub(minute_of(&run(before), "Dhuhr"))
             .expect("small");
@@ -516,12 +494,8 @@ fn a_daylight_saving_change_moves_the_clock_not_the_sun() {
     }
 }
 
-// ---------- method options ----------
-
 #[test]
 fn an_announced_ramadan_replaces_the_calculated_one() {
-    // The calculated Ramadan 1448 runs 8 February to 8 March 2027. Announced a day later,
-    // 8 February drops out and 10 March comes in, with Umm al-Qura's 120-minute Isha.
     let dir = config_dir("ramadan");
     let makkah = [
         "--lat",
@@ -583,7 +557,6 @@ fn shafaq_is_refused_outside_moonsighting_committee() {
     );
     assert!(!saved_config(&dir).exists(), "saved anyway");
 
-    // In London in January, the red glow fades first and the white one last.
     let london = [
         "--lat",
         "51.5074",
@@ -618,7 +591,6 @@ fn hanafi_asr_comes_later() {
         assert!(output.status.success(), "{}", text(&output.stderr));
         minute_of(&text(&output.stdout), "Asr")
     };
-    // Twice the shadow takes most of an hour longer to reach in Amman's late autumn.
     let later = asr("hanafi").checked_sub(asr("standard")).expect("small");
     assert!((30_i32..=60_i32).contains(&later), "{later} min");
 }
@@ -647,8 +619,6 @@ fn polar_day_is_an_error_not_a_schedule() {
         "{stderr}"
     );
 }
-
-// ---------- the saved config over time ----------
 
 #[test]
 fn reset_forgets_the_saved_defaults() {
@@ -716,7 +686,6 @@ fn settings_from_a_newer_version_are_skipped_with_a_note() {
 #[test]
 fn a_config_path_that_cannot_be_read_or_removed_is_an_error() {
     let dir = config_dir("unreadable");
-    // A directory where the file should be: neither readable as text nor removable as a file.
     fs::create_dir_all(saved_config(&dir)).expect("dir");
     for args in [AMMAN.as_slice(), ["--reset"].as_slice()] {
         let output = hya(&dir, args);

@@ -29,7 +29,7 @@ final class PrayerSnapshotTests: XCTestCase {
     }
 
     func testStatusTextJustAfterMidnightUsesYesterdaysIsha() {
-        let snapshot = fixture(yesterdayIsha: Window(at: -300, ends: 1500)) // still open 1200s after midnight
+        let snapshot = fixture(yesterdayIsha: Window(at: -300, ends: 1500))
         XCTAssertEqual(statusText(for: snapshot, at: Date(timeIntervalSince1970: 300)), "Ish -10m")
     }
 

@@ -1,5 +1,3 @@
-// Builds the Rust core to WebAssembly and inlines it as base64, so the package works offline,
-// synchronously, with no fetch and no bundler plugin: browsers, Bun, Node, Deno, workers.
 import { $ } from "bun";
 import { copyFile, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 
@@ -19,8 +17,6 @@ console.log(`inlined ${wasm.length} bytes of wasm`);
 
 await $`bun build ${new URL("../src/index.ts", import.meta.url).pathname} --outdir ${new URL("../dist", import.meta.url).pathname} --target browser --format esm`;
 await $`tsc -p tsconfig.build.json`.cwd(new URL("..", import.meta.url).pathname);
-// index.d.ts does not reference the generated modules; their declarations (one is the whole
-// base64 string as a literal type) would only bloat the tarball.
 await rm(new URL("../dist/generated", import.meta.url), { recursive: true, force: true });
 for (const file of ["LICENSE", "README.md"]) {
 	await copyFile(`${root}${file}`, new URL(`../${file}`, import.meta.url));

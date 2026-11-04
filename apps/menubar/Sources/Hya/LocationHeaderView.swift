@@ -1,9 +1,5 @@
 import SwiftUI
 
-/// The location editor: always on screen, never a separate mode to leave or get stuck in. Two
-/// columns of label and field, with a third column — a single refresh button covering both rows
-/// — that validates, persists, and restarts the schedule against whatever is currently typed.
-/// Pressing it with unchanged coordinates is a harmless way to force a recompute right now.
 struct LocationHeaderView: View {
     @State private var latitude: String
     @State private var longitude: String
@@ -19,7 +15,6 @@ struct LocationHeaderView: View {
         _muteBeforePrayerEnabled = State(initialValue: SettingsStore.shared.muteBeforePrayerEnabled)
     }
 
-    /// The fields' starting text: the existing saved coordinates, or blank on a first run.
     static func initialText(for coordinates: Coordinates?) -> (latitude: String, longitude: String) {
         guard let coordinates else { return ("", "") }
         return ("\(coordinates.latitude)", "\(coordinates.longitude)")
@@ -32,8 +27,6 @@ struct LocationHeaderView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .center, spacing: 8) {
-                // A Grid (not two independently-sized fields) is what makes the latitude and
-                // longitude columns line up at the same width regardless of their text.
                 Grid(alignment: .leading, horizontalSpacing: 8, verticalSpacing: 4) {
                     GridRow {
                         Text("Latitude")
@@ -66,10 +59,6 @@ struct LocationHeaderView: View {
 }
 
 private extension View {
-    /// `.plain`, not `.roundedBorder`: the rounded-border bezel draws a search-field-style
-    /// focus halo that's oversized at this field's width. A thin hairline border keeps it
-    /// reading as a text field at rest; focus then falls back to AppKit's ordinary, thinner
-    /// focus ring instead of that halo.
     func compactField() -> some View {
         textFieldStyle(.plain)
             .padding(.horizontal, 6)

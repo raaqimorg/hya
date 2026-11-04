@@ -21,10 +21,7 @@ fn cases() -> u32 {
         .unwrap_or(2_000)
 }
 
-// ---------- generators ----------
-
 fn any_date() -> impl Strategy<Value = Date> {
-    // 1900-01-01 ..= 2100-12-31 as day indexes.
     (-25_567_i32..=47_846)
         .prop_map(|days| Date::from_days_since_unix_epoch(days).expect("in range"))
 }
@@ -133,10 +130,8 @@ fn fraction_of_night(from: i64, to: i64, num: i64, den: i64) -> Option<i64> {
 }
 
 proptest! {
-    // 2000 cases by default; `PROPTEST_CASES=1000000` (`bun run deep:properties`) overrides it.
     #![proptest_config(ProptestConfig { cases: cases(), ..ProptestConfig::default() })]
 
-    // ---------- branded types accept exactly their ranges ----------
 
     #[test]
     fn latitude_validation_matches_range(value in proptest::num::f64::ANY) {
@@ -181,7 +176,6 @@ proptest! {
         }
     }
 
-    // ---------- totality and the output invariant ----------
 
     /// Anywhere on Earth, any date, any parameters: never panics, and any `Ok` is ordered.
     #[test]
@@ -192,8 +186,6 @@ proptest! {
                 for pair in order.windows(2) {
                     prop_assert!(t.get(pair[0]) < t.get(pair[1]), "{} !< {}", pair[0], pair[1]);
                 }
-                // The night marks exist exactly when the next day has a Fajr, and split the
-                // night from Maghrib to it at a half and two thirds.
                 let next = date
                     .days_since_unix_epoch()
                     .checked_add(1)
@@ -207,14 +199,11 @@ proptest! {
                     prop_assert_eq!(Some(midnight.unix_minutes()), fraction_of_night(from, to, 1, 2));
                     prop_assert_eq!(Some(last_third.unix_minutes()), fraction_of_night(from, to, 2, 3));
                 }
-                // Every time lies within the requested day ± one day.
                 for prayer in Prayer::ALL {
                     prop_assert!((-1440..=2880).contains(&day_offset(date, &t, prayer)), "{prayer}");
                 }
             }
             Err(ComputeError::PolarDayOrNight | ComputeError::Undefined(_) | ComputeError::OutOfOrder) => {
-                // Twilight at angle a ends only if |lat| > 90 - 23.44 - a; the deepest built-in
-                // angle is 20°, so without a fallback rule failures start at ~46.5°.
                 let floor = if params.high_latitude == HighLatitudeRule::None { 46.5_f64 } else { 48.0_f64 };
                 prop_assert!(coords.latitude.get().abs() > floor, "error at {:?}", coords.latitude);
             }
@@ -245,7 +234,6 @@ proptest! {
         prop_assert_eq!(compute(date, coords, params), compute(date, coords, params));
     }
 
-    // ---------- metamorphic relations ----------
 
     /// Adding k minutes to an adjustment moves exactly that prayer by exactly k minutes.
     #[test]

@@ -356,8 +356,6 @@ fn to_instant(
 fn night_marks(maghrib: Instant, next_fajr: Instant) -> Result<(Instant, Instant), ComputeError> {
     let start = maghrib.unix_minutes();
     let night = next_fajr.unix_minutes().saturating_sub(start);
-    // `night · numerator / denominator`, rounded half up: ⌊(2 · night · numerator + denominator)
-    // / (2 · denominator)⌋.
     let mark = |numerator: i64, denominator: i64| {
         night
             .checked_mul(numerator.saturating_mul(2))
@@ -448,7 +446,6 @@ fn day(
         DhuhrRule::AfterTheLimb => raw.dhuhr + LIMB_DELAY_HOURS,
     };
     let asr = raw.asr.ok_or(ComputeError::Undefined(Prayer::Asr))?;
-    // An angle-based Maghrib, when the method has one and the sun reaches it.
     let angle_maghrib = match parameters.maghrib {
         MaghribRule::Sunset => None,
         MaghribRule::Angle(_) => raw.maghrib,
@@ -459,7 +456,6 @@ fn day(
 
     let context = (date, latitude, night);
 
-    // Fajr: bounded by the high-latitude rule.
     let (morning, fajr_rule) = twilight_length(
         parameters.high_latitude,
         Side::Morning,
@@ -471,13 +467,8 @@ fn day(
     notes.fajr_high_latitude = fajr_rule;
     let fajr = sunrise - morning;
 
-    // Isha: an interval after Maghrib, or an angle bounded by the high-latitude rule.
     let isha = match parameters.isha {
         IshaRule::Interval { regular, ramadan } => {
-            // By calendar date, as the Umm al-Qura timetable and the Saudi Ministry of Islamic
-            // Affairs apply it: the evening of a day in Ramadan gets the Ramadan interval. The
-            // eve of 1 Ramadan does not (the sighting is announced after Maghrib), the eve of Eid
-            // does (it is still a Ramadan day).
             notes.ramadan_isha = parameters.ramadan.contains(date);
             let interval = if notes.ramadan_isha { ramadan } else { regular };
             angle_maghrib.unwrap_or(sunset) + f64::from(interval.get()) / 60.0_f64
@@ -544,17 +535,14 @@ mod tests {
 
     #[test]
     fn night_marks_round_to_the_nearest_minute_a_half_up() {
-        // Half of an odd night ends on a half minute, which rounds up.
         assert_eq!(marks(600), Ok((300, 400)));
         assert_eq!(marks(601), Ok((301, 401)));
-        // Two thirds of 3k + 1 is 2k + ⅔, up; of 3k + 2 is 2k + 1⅓, down.
         assert_eq!(marks(602), Ok((301, 401)));
         assert_eq!(marks(603), Ok((302, 402)));
     }
 
     #[test]
     fn a_night_too_short_to_split_is_out_of_order() {
-        // Four minutes is the shortest night with room for both marks strictly inside it.
         assert_eq!(marks(4), Ok((2, 3)));
         for night in [3, 2, 1, 0, -1, -600] {
             assert_eq!(marks(night), Err(ComputeError::OutOfOrder), "{night}");

@@ -144,7 +144,6 @@ impl Sky {
 
     /// Asr: when an object's shadow is `factor` times its length plus its noon shadow.
     pub(crate) fn asr(self, factor: f64, hours: f64) -> Option<f64> {
-        // The noon shadow is the shadow at transit, so it uses the declination at transit.
         let sun = self.sun_at(hours);
         let declination = self.sun_at(sun.transit()).declination;
         let altitude = acot_deg(factor + tan_deg(libm::fabs(self.latitude - declination)));
@@ -197,7 +196,6 @@ mod tests {
 
     #[test]
     fn equinox_declination_is_near_zero() {
-        // 2026-03-20 ≈ 20_532 days since epoch.
         let sun = sun_position(julian_day(20_532) + 0.5);
         assert!(
             sun.declination.abs() < 0.6_f64,
@@ -208,7 +206,6 @@ mod tests {
 
     #[test]
     fn solstice_declination_is_near_tilt() {
-        // 2026-06-21 = 20_625 days since epoch.
         let sun = sun_position(julian_day(20_625) + 0.5);
         assert!(
             (sun.declination - 23.44).abs() < 0.05_f64,
@@ -219,7 +216,6 @@ mod tests {
 
     #[test]
     fn polar_night_has_no_sunrise() {
-        // Longyearbyen (78°N) on 2026-12-21 (20_808).
         let sky = Sky::new(20_808, 78.2, 15.6);
         assert_eq!(
             sky.time_at_depression(0.833, 6.0, Side::Morning),

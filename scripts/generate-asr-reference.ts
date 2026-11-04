@@ -1,15 +1,9 @@
-// Generates fixtures/asr-reference.json: Asr from first principles, as an independent check that
-// does not trust adhan-js (which drifts up to ~2 min at high latitudes; see tests/asr_reference.rs).
-// A different solar model from the core's (NOAA / Meeus ch. 25, not USNO), the literal definition
-// (noon shadow from the declination at transit), and bisection on the sun's true altitude.
-// Run: bun scripts/generate-asr-reference.ts
 import { writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const rad = (d: number) => (d * Math.PI) / 180;
 const deg = (r: number) => (r * 180) / Math.PI;
 
-/** Declination (degrees) and equation of time (minutes) at a Julian Day. */
 function sun(jd: number): [number, number] {
   const t = (jd - 2451545) / 36525;
   const l0 = (280.46646 + t * (36000.76983 + t * 0.0003032)) % 360;
@@ -37,7 +31,6 @@ function sun(jd: number): [number, number] {
   return [declination, eot];
 }
 
-/** Asr in fractional minutes since the Unix epoch. */
 function asr(days: number, latitude: number, longitude: number, factor: number): number {
   const jd0 = 2440587.5 + days;
   let transit = 720 - 4 * longitude;
@@ -63,7 +56,6 @@ function asr(days: number, latitude: number, longitude: number, factor: number):
   return days * 1440 + lo;
 }
 
-// Equator to 60°, both hemispheres, both Asr conventions, every season.
 const CITIES: [string, number, number][] = [
   ["singapore", 1.3521, 103.8198],
   ["riyadh", 24.7136, 46.6753],

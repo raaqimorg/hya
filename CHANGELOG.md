@@ -45,7 +45,7 @@ All notable changes are listed here, newest first. The format follows [Keep a Ch
 
 ### Added
 
-- In a terminal, `hya` shows a prayer as current for a while after its own adhan — covering the adhan-to-iqama gap and time to pray — before it counts down to the next one, such as `Isha  now · 9m ago`. Plain output and `--next` are unchanged.
+- In a terminal, `hya` shows a prayer as current for a while after its own adhan (covering the adhan-to-iqama gap and time to pray) before it counts down to the next one, such as `Isha  now · 9m ago`. Plain output and `--next` are unchanged.
 
 ## [0.2.1] - 2026-10-31
 

@@ -56,6 +56,5 @@ fn asr_is_within_rounding_of_the_exact_definition() {
         );
         worst = worst.max(error);
     }
-    // Rounding to the minute alone costs up to 0.5; the model and solver add only hundredths.
     assert!(worst < 0.6_f64, "worst error {worst:.3} min");
 }

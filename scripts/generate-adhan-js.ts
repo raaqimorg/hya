@@ -1,6 +1,3 @@
-// Generates fixtures/adhan-js.json: golden prayer times and night marks (SunnahTimes) from adhan-js, an independent implementation
-// (Jean Meeus' higher-precision algorithms) that the Rust core must agree with to ±1 minute.
-// Run: bun scripts/generate-adhan-js.ts
 import { writeFileSync } from "node:fs";
 import { join } from "node:path";
 import * as adhan from "adhan";
@@ -31,9 +28,6 @@ const SHAFAQ: Record<Shafaq, adhan.CalculationParameters["shafaq"]> = {
   white: adhan.Shafaq.Abyad,
 };
 
-// Each city with the method its authorities use. Outside Moonsighting Committee, latitudes stay
-// below 48° so no high-latitude rule is involved; the two implementations' generic rules differ
-// by design. Moonsighting Committee's own rule is compared everywhere, including above 55°.
 const CITIES: [string, number, number, MethodId, Shafaq?][] = [
   ["riyadh", 24.7136, 46.6753, "umm_al_qura"],
   ["makkah", 21.4225, 39.8262, "umm_al_qura"],
@@ -75,12 +69,9 @@ for (const [city, latitude, longitude, method, shafaq] of CITIES) {
         fajr: minutes(t.fajr), sunrise: minutes(t.sunrise), dhuhr: minutes(t.dhuhr),
         asr: minutes(t.asr), maghrib: minutes(t.maghrib), isha: minutes(t.isha),
       };
-      // adhan-js leaves Umm al-Qura's Ramadan Isha (120 min instead of 90) to the caller.
-      // Applied by calendar date, as the Umm al-Qura timetable does.
       if (method === "umm_al_qura" && isRamadan(2026, month, day)) {
         times.isha += 30;
       }
-      // The night runs from Maghrib to the next day's Fajr; SunnahTimes computes that day itself.
       const sunnah = new adhan.SunnahTimes(t);
       const night = { midnight: minutes(sunnah.middleOfTheNight), last_third: minutes(sunnah.lastThirdOfTheNight) };
       cases.push({ city, latitude, longitude, method, ...(shafaq && { shafaq }), date: [2026, month, day], unix_minutes: times, night });

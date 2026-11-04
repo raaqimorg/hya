@@ -101,8 +101,6 @@ impl AnnouncedRamadan {
     fn contains_day(self, day: i32) -> bool {
         let first = self.first.days_since_unix_epoch();
         let last = self.last.days_since_unix_epoch();
-        // Days the calculated month and the announced one both cover or dispute are decided by
-        // the announcement; everything else falls through to the calendar.
         let disputed = first.min(self.replaces.first_day) <= day
             && day < (last.saturating_add(1)).max(self.replaces.end_day);
         if disputed {
@@ -208,14 +206,12 @@ mod tests {
 
     #[test]
     fn a_late_sighting_moves_both_edges() {
-        // Calculated 1447: 2026-02-18..=2026-03-19. Announced one day later, still 30 days.
         let late = announced(date(2026, 2, 19), date(2026, 3, 20));
         assert!(!late.contains(date(2026, 2, 18)), "calculated first day");
         assert!(late.contains(date(2026, 2, 19)), "announced first day");
         assert!(late.contains(date(2026, 3, 19)), "calculated last day");
         assert!(late.contains(date(2026, 3, 20)), "announced last day");
         assert!(!late.contains(date(2026, 3, 21)), "Eid");
-        // Other years keep the calendar.
         assert!(late.contains(date(2025, 3, 1)), "1 Ramadan 1446");
         assert!(!late.contains(date(2025, 2, 28)), "29 Sha'ban 1446");
     }

@@ -48,7 +48,6 @@ fn times_drift_smoothly_day_to_day() {
                         before.get(prayer).unix_minutes(),
                         times.get(prayer).unix_minutes(),
                     );
-                    // The Ramadan interval switch is the one legitimate jump (±30 min).
                     let ramadan_switch = prayer == Prayer::Isha
                         && before.notes().ramadan_isha != times.notes().ramadan_isha;
                     let limit = if ramadan_switch { 31 } else { 9 };
@@ -68,7 +67,6 @@ fn ramadan_isha_tracks_the_umm_al_qura_calendar_exactly() {
     let mut previous = None;
     for date in walk(Date::new(2020, 1, 1).expect("valid"), 10 * 366) {
         let times = compute(date, makkah, params).expect("computable");
-        // By calendar date: a day in Ramadan gets the Ramadan interval that evening.
         let in_ramadan = is_ramadan(date);
         assert_eq!(times.notes().ramadan_isha, in_ramadan, "{date}");
         let gap = times
@@ -81,14 +79,11 @@ fn ramadan_isha_tracks_the_umm_al_qura_calendar_exactly() {
         }
         previous = Some(in_ramadan);
     }
-    // Ten years contain ten Ramadans: an on and an off switch each.
     assert!((19..=21).contains(&switches), "{switches} switches");
 }
 
 #[test]
 fn high_latitude_rule_engages_in_summer_but_not_mid_latitude_winter() {
-    // At ~60°N even winter twilight is about a seventh of the night, so the clamp can engage
-    // year-round there (adhan-js agrees). At 51.5°N winter twilight is clearly shorter.
     let params = Parameters {
         high_latitude: HighLatitudeRule::SeventhOfTheNight,
         ..Method::MuslimWorldLeague.parameters()

@@ -41,8 +41,6 @@ func formatDuration(seconds: Int64) -> String {
     return "\(hours)h:\(String(format: "%02d", minutes))m"
 }
 
-/// Whether `now` falls inside `window`'s own `at...ends` span. Always `false` for a window
-/// with no `ends` (e.g. Sunrise).
 func isActive(_ window: Window, at now: Date) -> Bool {
     guard let ends = window.ends else { return false }
     let nowSeconds = Int64(now.timeIntervalSince1970)
@@ -86,9 +84,6 @@ func statusText(for snapshot: PrayerSnapshot, at now: Date) -> String {
     return "hya"
 }
 
-/// Today's prayer whose 5-minute pre-window `now` currently falls in, i.e. `[at - 5m, at)`, unless
-/// `lastTriggered` is already that prayer's `at` (it already fired for this window). Sunrise has no
-/// adhan, so it is never a candidate.
 func prayerToMute(for snapshot: PrayerSnapshot, at now: Date, lastTriggered: Int64?) -> (name: String, at: Int64)? {
     let nowSeconds = Int64(now.timeIntervalSince1970)
     let today = snapshot.today

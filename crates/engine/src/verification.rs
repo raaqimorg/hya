@@ -122,7 +122,6 @@ fn announced_ramadan_accepts_only_whole_months() {
 #[kani::proof]
 fn instant_conversions_are_exact_in_range() {
     let minutes: i64 = kani::any();
-    // 1899-12-24 .. 2101-01-08 in minutes, the widest span `compute` can emit.
     kani::assume((-36_828_000..=68_920_000).contains(&minutes));
     let instant = Instant::from_unix_minutes(minutes);
     assert_eq!(instant.unix_seconds(), minutes * 60);

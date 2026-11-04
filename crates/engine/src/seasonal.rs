@@ -29,7 +29,6 @@ pub(crate) fn days_since_solstice(date: Date, latitude: f64) -> Option<i32> {
 
 /// Twilight length in minutes, before rounding.
 pub(crate) fn minutes(side: Side, shafaq: Shafaq, latitude: f64, days_since_solstice: i32) -> f64 {
-    // (base, per-55°-of-latitude growth at the solstice, 91 days on, 137 days on, 183 days on)
     let (base, [a, b, c, d]) = match (side, shafaq) {
         (Side::Morning, _) => (75.0_f64, [28.65_f64, 19.44_f64, 32.74_f64, 48.1_f64]),
         (Side::Evening, Shafaq::General) => (75.0_f64, [25.6_f64, 2.05_f64, -9.21_f64, 6.14_f64]),
@@ -39,7 +38,6 @@ pub(crate) fn minutes(side: Side, shafaq: Shafaq, latitude: f64, days_since_sols
     let scale = libm::fabs(latitude) / 55.0_f64;
     let [a, b, c, d] = [a, b, c, d].map(|growth| base + growth * scale);
     let day = f64::from(days_since_solstice);
-    // Solstice → equinox → … → solstice → … → back, as adhan-js segments it.
     let (from, to, start, span) = if day < 91.0_f64 {
         (a, b, 0.0_f64, 91.0_f64)
     } else if day < 137.0_f64 {
@@ -106,7 +104,6 @@ mod tests {
 
     #[test]
     fn segment_anchors() {
-        // At latitude 0 every value is the base.
         for day in [0_i32, 91_i32, 137_i32, 183_i32, 229_i32, 275_i32, 364_i32] {
             assert!(
                 (minutes(Side::Morning, Shafaq::General, 0.0, day) - 75.0).abs() < 1e-9_f64,
@@ -117,7 +114,6 @@ mod tests {
                 "{day}"
             );
         }
-        // At 55°, the anchors are base + coefficient.
         let at = |side, shafaq, day| minutes(side, shafaq, 55.0, day);
         let close = |x: f64, y: f64| (x - y).abs() < 1e-9_f64;
         assert!(

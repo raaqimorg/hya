@@ -1,24 +1,15 @@
-/**
- * Offline Islamic prayer times. The calculation is the Rust `hya-engine` crate compiled to
- * WebAssembly and inlined into this module: no network, no async initialisation.
- *
- * Every input is a branded type that can only be obtained through a validating constructor, so
- * an unchecked `number` can never reach the calculation by accident.
- */
 import { compute as wasmCompute, initSync, isRamadan as wasmIsRamadan } from "./generated/hya.js";
 import { WASM_BASE64 } from "./generated/wasm-bytes.js";
 
 initSync({ module: Uint8Array.from(atob(WASM_BASE64), (c) => c.charCodeAt(0)) });
 
 declare const brand: unique symbol;
-/** A value of `T` that has passed the validator for `B`. */
 export type Brand<T, B extends string> = T & { readonly [brand]: B };
 
 export type Latitude = Brand<number, "Latitude">;
 export type Longitude = Brand<number, "Longitude">;
 export type Elevation = Brand<number, "Elevation">;
 
-/** Thrown for invalid input. `code` is stable; `message` is for humans. */
 export class PrayerTimesError extends Error {
 	override readonly name = "PrayerTimesError";
 	constructor(
@@ -68,10 +59,8 @@ export type HighLatitudeRule =
 	| "twilight_angle"
 	| "none"
 	| "season_adjusted";
-/** Which glow ends Isha under `season_adjusted`: red (Shafiʿi, Maliki, Hanbali), white (Hanafi), or the committee's blend. */
 export type Shafaq = "general" | "red" | "white";
 
-/** A calendar date. Months are 1-based. Supported years: 1900..=2100. */
 export interface CivilDate {
 	readonly year: number;
 	readonly month: number;
@@ -85,26 +74,11 @@ export interface Location {
 }
 
 export interface Options {
-	/** Default: `umm_al_qura`. */
 	readonly method?: Method;
-	/** Default: `standard`. */
 	readonly asr?: Asr;
-	/** Default: the method's own (`season_adjusted` for `moonsighting_committee`, `recommended` otherwise). */
 	readonly highLatitudeRule?: HighLatitudeRule;
-	/** Only with `season_adjusted`. Default: `general`. */
 	readonly shafaq?: Shafaq;
-	/**
-	 * The announced first and last day of Ramadan, when the sighting differs from the Umm al-Qura
-	 * calendar. Replaces only the Ramadan it overlaps; must span 29 or 30 days and start within
-	 * 3 days of the calendar. Default: the calendar.
-	 */
 	readonly ramadan?: { readonly first: CivilDate; readonly last: CivilDate };
-	/**
-	 * The IANA zone that `date` is a civil date in, e.g. `Pacific/Apia`. Without it, `date` is the
-	 * local solar day at the longitude, which is a day behind the civil date where a zone is far
-	 * east of its sun (UTC+13 and UTC+14 in the Pacific). With it, the schedule is the one whose
-	 * Dhuhr falls on `date` in that zone.
-	 */
 	readonly timeZone?: string;
 }
 
@@ -115,15 +89,12 @@ export interface PrayerTimes {
 	readonly asr: Date;
 	readonly maghrib: Date;
 	readonly isha: Date;
-	/** Halfway from Maghrib to the next day's Fajr. `null` when the next day has no Fajr. */
 	readonly midnight: Date | null;
-	/** Two thirds of the way from Maghrib to the next day's Fajr. `null` exactly when `midnight` is. */
 	readonly lastThird: Date | null;
 	readonly notes: {
 		readonly fajrHighLatitude: boolean;
 		readonly ishaHighLatitude: boolean;
 		readonly ramadanIsha: boolean;
-		/** The method's Maghrib angle falls at or after Isha (short summer nights), so Maghrib is sunset. */
 		readonly maghribAtSunset: boolean;
 	};
 }
@@ -164,7 +135,6 @@ function ramadanDates(ramadan: Options["ramadan"]): Int16Array {
 	);
 }
 
-/** Building an `Intl.DateTimeFormat` costs more than the calculation, so each zone gets one. */
 const dateFormats = new Map<string, Intl.DateTimeFormat>();
 
 function dateFormat(timeZone: string): Intl.DateTimeFormat {
@@ -180,7 +150,6 @@ function dateFormat(timeZone: string): Intl.DateTimeFormat {
 	return format;
 }
 
-/** One day's prayer times. All instants are absolute (`Date`); format them in any time zone. */
 export function prayerTimes(date: CivilDate, location: Location, options: Options = {}): PrayerTimes {
 	const times = solarDay(date, location, options);
 	if (options.timeZone === undefined) {
@@ -201,7 +170,6 @@ export function prayerTimes(date: CivilDate, location: Location, options: Option
 				return candidate;
 			}
 		} catch {
-			// Out of range or no schedule on the neighbouring day: keep looking.
 		}
 	}
 	return times;
@@ -241,7 +209,6 @@ function solarDay(date: CivilDate, location: Location, options: Options): Prayer
 	};
 }
 
-/** Whether a date falls in Ramadan per the Umm al-Qura calendar (1900..=2100). */
 export function isRamadan(date: CivilDate): boolean {
 	try {
 		return wasmIsRamadan(i16(date.year), u8(date.month, "month"), u8(date.day, "day"));

@@ -27,8 +27,6 @@ struct HyaApp: App {
         }
     }
 
-    /// One persistent view: the location header is always visible, never a separate screen to
-    /// leave or get stuck in, with whatever `mode` currently has below it.
     private var content: some View {
         VStack(alignment: .leading, spacing: 8) {
             LocationHeaderView(onApply: appState.applyLocation)

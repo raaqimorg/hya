@@ -140,7 +140,6 @@ const HELP: [(&str, &[Row]); 4] = [
 /// [`HELP`] in columns, then the method IDs. Clap strips the colour in a pipe and when
 /// `NO_COLOR` is set.
 fn help() -> String {
-    // Writing to a `String` cannot fail.
     write_help().unwrap_or_default()
 }
 
@@ -199,7 +198,6 @@ fn write_help() -> Result<String, fmt::Error> {
         line.push_str("  ");
     }
     writeln!(out, "  {}", line.trim_end())?;
-    // No full stop after the path: it would be copied with it.
     write!(out, "\n{dim}Saved defaults: {}{dim:#}", saved_at())?;
     Ok(out)
 }
@@ -261,7 +259,6 @@ fn load_config() -> Result<Config, String> {
     })?;
     let mut notes = io::stderr().lock();
     for key in unknown {
-        // A note that cannot be written changes nothing about the times.
         drop(writeln!(
             notes,
             "note: {}: skipping unknown setting `{key}`",
@@ -389,7 +386,6 @@ fn run() -> Result<(), String> {
         ..base
     };
     let date = engine_date(civil)?;
-    // Every input is valid by now, so a run that fails on one saves nothing.
     if args.save || asked {
         save_config(&config)?;
     }
@@ -431,7 +427,6 @@ fn run() -> Result<(), String> {
         color: io::stdout().is_terminal() && color_allowed(),
     };
     match show(&screen, args.next, chosen_for) {
-        // The reader went away (`hya | head -1`): nothing is wrong, and no one is listening.
         Err(e) if e.kind() == io::ErrorKind::BrokenPipe => Ok(()),
         result => result.map_err(|e| e.to_string()),
     }
@@ -773,7 +768,6 @@ impl Screen<'_> {
                     )
                 )
             )?;
-            // As wide as a row below it: the marker, the name, and the time.
             let width = self
                 .local(active.at)?
                 .chars()
@@ -804,7 +798,6 @@ impl Screen<'_> {
                 paint(BOLD, &format!("in {}", left(next.now, next.at)))
             )?;
             if let Some(start) = next.since {
-                // As wide as a row below it: the marker, the name, and the time.
                 let width = self
                     .local(next.at)?
                     .chars()
@@ -836,7 +829,6 @@ impl Screen<'_> {
                 {
                     writeln!(out, "  {} {}", paint(ACCENT, "▸"), paint(ACCENT_BOLD, &row))?;
                 }
-                // The night's marks are no prayer: always in the background.
                 _ if prayer.is_none() => writeln!(out, "    {}", paint(DIM, &row))?,
                 Some(next) if at <= next.now => writeln!(out, "    {}", paint(DIM, &row))?,
                 _ => writeln!(out, "    {row}")?,
@@ -1041,7 +1033,6 @@ fn main() -> ExitCode {
     match run() {
         Ok(()) => ExitCode::SUCCESS,
         Err(message) => {
-            // If stderr itself is gone there is nowhere left to report to.
             drop(writeln!(io::stderr().lock(), "hya: {message}"));
             ExitCode::FAILURE
         }
@@ -1086,7 +1077,6 @@ mod tests {
             config,
             times,
             night: &night,
-            // Near enough for a test: tomorrow's Fajr a day after today's.
             next: next_from(
                 now,
                 times,
@@ -1117,8 +1107,6 @@ mod tests {
 
     #[test]
     fn active_is_none_for_a_date_that_is_not_today() {
-        // Mirrors how `next` is already `None` for a non-today `--date`: viewing another day's
-        // schedule must not report an active window "now" either.
         let times = riyadh();
         let config = Config::default();
         let screen = Screen {
@@ -1153,13 +1141,11 @@ mod tests {
         let lines: Vec<&str> = screen.lines().collect();
         assert_eq!(lines.get(1), Some(&"  Asr  now · 9m ago"), "{screen}");
         assert!(screen.contains("  ▸ Asr         2:51 PM"), "{screen}");
-        // Maghrib (the literal next prayer) is plain, not highlighted, not dimmed.
         let maghrib_row = lines
             .iter()
             .find(|line| line.contains("Maghrib"))
             .expect("a Maghrib row");
         assert!(!maghrib_row.contains("▸"), "{screen}");
-        // `styled_at` strips ANSI codes, so a DIM check needs the raw, colored output.
         let raw = written(&times, at + 9 * 60, &config, true);
         assert!(!raw.contains(&format!("{DIM}Maghrib")), "{raw}");
     }
@@ -1182,7 +1168,6 @@ mod tests {
         let times = riyadh();
         let config = Config::default();
         let at = times.get(Prayer::Asr).unix_seconds();
-        // Halfway through Asr's 30m window.
         let screen = styled_at(at + 15 * 60, &config);
         let bar = screen.lines().nth(2).expect("the bar");
         let filled_cells = bar.chars().filter(|&c| c == '━').count();
@@ -1205,10 +1190,6 @@ mod tests {
 
     #[test]
     fn ishas_active_header_never_carries_the_tomorrow_suffix() {
-        // Once Isha has passed, `next_from` already points at tomorrow's Fajr (`next.tomorrow`
-        // is true) — exactly during Isha's own active window. The active header must win
-        // outright, with no trace of the "tomorrow HH:MM" suffix that next-prayer rendering
-        // would add.
         let times = riyadh();
         let config = Config::default();
         let at = times.get(Prayer::Isha).unix_seconds();
@@ -1223,8 +1204,6 @@ mod tests {
 
     #[test]
     fn the_active_header_renders_even_when_next_from_found_nothing() {
-        // Polar night: today has no Fajr tomorrow, so `next` is `None` and the pre-existing
-        // header block is skipped entirely today. An active window must still render on its own.
         let times = riyadh();
         let config = Config::default();
         let zone = TimeZone::get("Asia/Riyadh").expect("zone");
@@ -1251,9 +1230,6 @@ mod tests {
 
     #[test]
     fn the_active_marker_does_not_land_on_a_same_day_namesake_row() {
-        // `active.at` can belong to a different occurrence of the same prayer than the one in
-        // today's `rows()` (e.g. yesterday's Isha, still active across midnight). Only the row
-        // whose own instant matches `active.at` gets the ▸ marker.
         let times = riyadh();
         let config = Config::default();
         let zone = TimeZone::get("Asia/Riyadh").expect("zone");
@@ -1275,8 +1251,6 @@ mod tests {
         let mut out = Vec::new();
         screen.write(&mut out).expect("written");
         let text = String::from_utf8(out).expect("utf-8");
-        // The ▸ marker and the row's own ACCENT_BOLD span are adjacent only on a marked row;
-        // the active header also paints "Isha" ACCENT_BOLD, but never right after a "▸".
         assert!(
             !text.contains(&format!("▸{RESET} {ACCENT_BOLD}Isha")),
             "{text}"
@@ -1340,8 +1314,6 @@ mod tests {
             .saturating_sub(83 * 60);
         let screen = styled_at(before_asr, &config);
         let rows: Vec<&str> = screen.lines().skip(4).collect();
-        // The last third of the night before ends the day's small hours; midnight of the
-        // day's own night follows Isha. The next night's last third is tomorrow's.
         assert_eq!(
             rows,
             [
@@ -1357,18 +1329,14 @@ mod tests {
             "{screen}"
         );
 
-        // Gray whether past or ahead, and never the next prayer.
         let raw = written(&times, before_asr, &config, true);
         assert!(raw.contains(&format!("{DIM}Last third 12:52 AM")), "{raw}");
         assert!(raw.contains(&format!("{DIM}Midnight   10:58 PM")), "{raw}");
-        // Just after Isha, its own active window is open: the screen shows Isha as current,
-        // not tomorrow's Fajr countdown.
         let after_isha = times.get(Prayer::Isha).unix_seconds().saturating_add(60);
         assert_eq!(
             styled_at(after_isha, &config).lines().nth(1),
             Some("  Isha  now · 1m ago")
         );
-        // Once that window has closed, the tomorrow-Fajr countdown (with its suffix) returns.
         let well_after_isha = times
             .get(Prayer::Isha)
             .unix_seconds()
@@ -1459,7 +1427,6 @@ mod tests {
             config("/home/u/.config"),
             "then HOME"
         );
-        // Windows sets neither XDG_CONFIG_HOME nor HOME.
         assert_eq!(
             config_path_with(&[("APPDATA", "/appdata")]),
             config("/appdata"),

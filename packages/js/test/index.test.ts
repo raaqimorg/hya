@@ -44,18 +44,15 @@ describe("matches adhan-js fixtures", () => {
 			const t = prayerTimes(
 				{ year, month, day },
 				{ latitude: latitude(c.latitude), longitude: longitude(c.longitude) },
-				// Moonsighting Committee is compared under its own rule; the generic rules differ by design.
 				c.method === "moonsighting_committee"
 					? { method: "moonsighting_committee", ...(c.shafaq && { shafaq: c.shafaq as Shafaq }) }
 					: { method: c.method as Method, highLatitudeRule: "middle_of_the_night" },
 			);
 			for (const p of PRAYERS) {
 				const minutes = t[p].getTime() / 60_000;
-				// adhan-js's own Asr drifts up to 2 min above 50° (see crates/engine/tests/asr_reference.rs).
 				const tolerance = p === "asr" && Math.abs(c.latitude) > 50 ? 2 : 1;
 				expect(Math.abs(minutes - c.unix_minutes[p])).toBeLessThanOrEqual(tolerance);
 			}
-			// adhan-js's SunnahTimes: the night from Maghrib to the next day's Fajr.
 			expect(Math.abs(t.midnight!.getTime() / 60_000 - c.night.midnight)).toBeLessThanOrEqual(1);
 			expect(Math.abs(t.lastThird!.getTime() / 60_000 - c.night.last_third)).toBeLessThanOrEqual(1);
 		}
@@ -64,7 +61,6 @@ describe("matches adhan-js fixtures", () => {
 
 describe("the night", () => {
 	test("runs from Maghrib to the next day's Fajr", () => {
-		// Riyadh, 29 October 2026: Maghrib 17:16, the next Fajr 04:40 (UTC+3).
 		const riyadh = { latitude: latitude(24.7136), longitude: longitude(46.6753) };
 		const t = prayerTimes({ year: 2026, month: 10, day: 29 }, riyadh);
 		expect(t.midnight?.toISOString()).toBe("2026-10-29T19:58:00.000Z");
@@ -147,7 +143,6 @@ describe("examples", () => {
 		expect(() => prayerTimes(june, london, { method: "umm_al_qura", shafaq: "red" })).toThrow(PrayerTimesError);
 	});
 
-	// Exactly the official calculator at ummulqura.org.sa: 04:40 05:58 11:38 14:51 17:16 18:46 local.
 	test("defaults are Umm al-Qura: Riyadh 2026-10-29", () => {
 		const t = prayerTimes({ year: 2026, month: 10, day: 29 }, { latitude: latitude(24.7136), longitude: longitude(46.6753) });
 		const hhmm = (d: Date) => d.toISOString().slice(11, 16);

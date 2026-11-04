@@ -9,7 +9,6 @@ use crate::input::InvalidInput;
 /// The range is bounded by the bundled Umm al-Qura Ramadan table. Ordering follows the calendar.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct Date {
-    // Field order matters: the derived `Ord` compares `days` first, which is calendar order.
     days: i32,
     year: i16,
     month: u8,

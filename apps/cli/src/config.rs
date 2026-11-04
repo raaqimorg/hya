@@ -261,7 +261,6 @@ impl Config {
         let mut unknown = Vec::new();
         let (mut latitude, mut longitude) = (None, None);
         let mut seen: Vec<&str> = Vec::new();
-        // Windows editors may save a byte-order mark, which `trim` keeps.
         let text = text.strip_prefix('\u{feff}').unwrap_or(text);
         for (index, raw) in text.lines().enumerate() {
             let line = raw.trim();
@@ -296,7 +295,6 @@ impl Config {
                     }
                     config.ramadan.announce(announced);
                 }
-                // Every other key was skipped above.
                 _ => {}
             }
         }
@@ -669,7 +667,6 @@ mod state_machine {
             let location = config
                 .location
                 .map(|c| (c.latitude.get(), c.longitude.get()));
-            // Bitwise comparison: rendering must round-trip floats exactly.
             let bits = |l: Option<(f64, f64)>| l.map(|(a, b)| (a.to_bits(), b.to_bits()));
             assert_eq!(bits(location), bits(model.location), "location drifted");
             assert_eq!(config.method, model.method, "method drifted");

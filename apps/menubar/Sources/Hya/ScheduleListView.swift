@@ -1,8 +1,5 @@
 import SwiftUI
 
-/// Just the prayer rows: the header (location, refresh, mute) and the Quit footer live one
-/// level up, in `HyaApp`'s own `content`, since they're shown no matter what `scheduleController`
-/// has — this view only ever renders when there's a snapshot to show.
 struct ScheduleListView: View {
     @ObservedObject var scheduleController: ScheduleController
 
@@ -43,8 +40,6 @@ struct ScheduleListView: View {
         .fontWeight(isActive(window, at: Date()) ? .bold : .regular)
     }
 
-    /// Midnight and the last third are reference marks, not prayer windows: no `ends`, so never
-    /// bold like an active prayer.
     private func row(_ name: String, at timestamp: Int64) -> some View {
         HStack {
             Text(name)
