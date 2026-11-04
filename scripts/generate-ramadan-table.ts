@@ -48,10 +48,8 @@ ${rows.join("\n")}
 ];
 `;
 
-const withoutIcuVersion = (text: string): string => text.replace(/\(ICU [^)]*\)/, "(ICU)");
-
 if (process.argv.includes("--check")) {
-  if (withoutIcuVersion(readFileSync(OUT, "utf8")) !== withoutIcuVersion(source)) {
+  if (readFileSync(OUT, "utf8") !== source) {
     console.error("ramadan_table.rs is stale; run bun scripts/generate-ramadan-table.ts");
     process.exit(1);
   }
