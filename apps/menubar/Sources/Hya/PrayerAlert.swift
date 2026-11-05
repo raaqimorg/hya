@@ -14,7 +14,7 @@ func requestNotificationAuthorization() {
 func postPrayerNotification(name: String) {
     let content = UNMutableNotificationContent()
     content.title = "Hya"
-    content.body = "\(name) in 5 minutes. Audio muted."
+    content.body = "\(name) in 5 minutes. Audio muted"
     let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
     UNUserNotificationCenter.current().add(request)
 }
