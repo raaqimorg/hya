@@ -37,8 +37,7 @@ final class ScheduleController: ObservableObject {
             object: nil,
             queue: .main
         ) { [weak self] _ in
-            self?.recomputeDisplayText()
-            self?.checkMuteTrigger()
+            self?.refetch()
         }
     }
 

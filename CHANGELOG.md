@@ -4,6 +4,12 @@ All notable changes are listed here, newest first. The format follows [Keep a Ch
 
 ## [Unreleased]
 
+## [0.6.3] - 2026-11-05
+
+### Fixed
+
+- The menu bar app could wake from a long sleep still showing bare "hya" with no prayer time. Waking recomputed the display from the schedule already in memory instead of refetching it, and after sleeping past the day it was fetched for, every prayer in it (and the next day's Fajr) was already in the past.
+
 ## [0.6.2] - 2026-11-04
 
 ### Fixed
@@ -112,7 +118,8 @@ The first release.
 - `@raaqimorg/hya`: the JavaScript package, with the WebAssembly inlined and no network or async start-up.
 - `hya-cli`: the `hya` command, with saved defaults (`--save`), `--country`, `--clock 12`, and times on stdout and notes on stderr.
 
-[Unreleased]: https://github.com/raaqimorg/hya/compare/v0.6.2...HEAD
+[Unreleased]: https://github.com/raaqimorg/hya/compare/v0.6.3...HEAD
+[0.6.3]: https://github.com/raaqimorg/hya/compare/v0.6.2...v0.6.3
 [0.6.2]: https://github.com/raaqimorg/hya/compare/v0.6.1...v0.6.2
 [0.6.1]: https://github.com/raaqimorg/hya/compare/v0.6.0...v0.6.1
 [0.6.0]: https://github.com/raaqimorg/hya/compare/v0.5.0...v0.6.0

@@ -294,7 +294,7 @@ checksum = "2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea"
 
 [[package]]
 name = "hya-cli"
-version = "0.6.2"
+version = "0.6.3"
 dependencies = [
  "clap",
  "hya-countries",
@@ -308,7 +308,7 @@ dependencies = [
 
 [[package]]
 name = "hya-countries"
-version = "0.6.2"
+version = "0.6.3"
 dependencies = [
  "hya-engine",
  "proptest",
@@ -316,7 +316,7 @@ dependencies = [
 
 [[package]]
 name = "hya-engine"
-version = "0.6.2"
+version = "0.6.3"
 dependencies = [
  "libm",
  "proptest",
@@ -326,7 +326,7 @@ dependencies = [
 
 [[package]]
 name = "hya-wasm"
-version = "0.6.2"
+version = "0.6.3"
 dependencies = [
  "hya-engine",
  "wasm-bindgen",
